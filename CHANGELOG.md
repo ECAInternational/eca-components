@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.1](https://github.com/ECAInternational/eca-components/compare/v1.0.0...v1.0.1) (2023-11-17)
+
+
+### Features
+
+* Add ECA svg logo ([586f757](https://github.com/ECAInternational/eca-components/commit/586f75791c15b81d9661f7629a3d8cf937d2f1a0))
+
+
+### Bug Fixes
+
+* Fix release process dependencies ([1b5442b](https://github.com/ECAInternational/eca-components/commit/1b5442bae175e27001bb3512afe712a57be66dfc))
+
 ## 1.0.0 (2023-11-17)
 
 
