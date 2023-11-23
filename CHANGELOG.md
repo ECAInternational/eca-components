@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.9](https://github.com/ECAInternational/eca-components/compare/v1.0.8...v1.0.9) (2023-11-23)
+
+
+### Bug Fixes
+
+* Add Pull Request Workflow ([606fc59](https://github.com/ECAInternational/eca-components/commit/606fc5942517f71bbdb84acf8a48fbaa8978417e))
+* Change PR build to PR action ([7e99edf](https://github.com/ECAInternational/eca-components/commit/7e99edf198acd52ae7342f7aa948810742b85832))
+* Change PR build to PR action ([91373d3](https://github.com/ECAInternational/eca-components/commit/91373d349e0d940d9bc8349d1703ef92ff51d2fd))
+* Fix dependabot.yml ([f60d240](https://github.com/ECAInternational/eca-components/commit/f60d24007119742ac38730b42ca8f81f28a4bd5f))
+* Fixing CI build ([7d66898](https://github.com/ECAInternational/eca-components/commit/7d668980f19eb50459c430561d8ba40e8ad367d6))
+
 ## [1.0.8](https://github.com/ECAInternational/eca-components/compare/v1.0.7...v1.0.8) (2023-11-23)
 
 
