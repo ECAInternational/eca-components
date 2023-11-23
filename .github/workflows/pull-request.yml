@@ -5,6 +5,7 @@ on:
 
 env:
   NODE_VERSION: 20
+  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 permissions:
   contents: read
