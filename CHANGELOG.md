@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.6](https://github.com/ECAInternational/eca-components/compare/v1.0.5...v1.0.6) (2023-11-23)
+
+
+### Bug Fixes
+
+* Build library correctly ([c680684](https://github.com/ECAInternational/eca-components/commit/c6806846c658f3d667147dd67e9721906b2c1799))
+* Extract node version to env ([42bdbc3](https://github.com/ECAInternational/eca-components/commit/42bdbc32f8936da91c99e0464aa00ee2fbfc31a4))
+* Remove env from npm publish ([045e479](https://github.com/ECAInternational/eca-components/commit/045e479afc1ad235e2fcf881bce1c053fbd24be9))
+
 ## [1.0.5](https://github.com/ECAInternational/eca-components/compare/v1.0.4...v1.0.5) (2023-11-23)
 
 
