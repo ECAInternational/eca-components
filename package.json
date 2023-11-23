@@ -39,7 +39,7 @@
     "@ecainternational/eca-components": "^1.0.5",
     "@ecainternational/eca-design-tokens": "^1.0.4",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.3",
     "@storybook/addon-actions": "^7.5.3",
