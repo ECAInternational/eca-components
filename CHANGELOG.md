@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.5](https://github.com/ECAInternational/eca-components/compare/v1.0.4...v1.0.5) (2023-11-23)
+
+
+### Bug Fixes
+
+* Add env back in, node version 20 ([e7e9603](https://github.com/ECAInternational/eca-components/commit/e7e960392b312f0eb0497a1c2acb7f5aa9a02c59))
+* Include all styles in tailwind safelist ([0d127ac](https://github.com/ECAInternational/eca-components/commit/0d127ac44304781b053a5e2f98f6c7309d52984d))
+
 ## [1.0.4](https://github.com/ECAInternational/eca-components/compare/v1.0.3...v1.0.4) (2023-11-23)
 
 
