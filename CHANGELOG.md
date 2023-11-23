@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/ECAInternational/eca-components/compare/v1.0.2...v1.0.3) (2023-11-23)
+
+
+### Bug Fixes
+
+* Fixing publish ([7b0c67d](https://github.com/ECAInternational/eca-components/commit/7b0c67d17b69e6e0d7de8a43e450f828c6927ffd))
+
 ## [1.0.2](https://github.com/ECAInternational/eca-components/compare/v1.0.1...v1.0.2) (2023-11-17)
 
 
