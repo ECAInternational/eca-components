@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.7](https://github.com/ECAInternational/eca-components/compare/v1.0.6...v1.0.7) (2023-11-23)
+
+
+### Bug Fixes
+
+* Change Tailwind classes to be static ([68f0aec](https://github.com/ECAInternational/eca-components/commit/68f0aecb3990c3f35e7b51d1fb5bd23c13910a12))
+* Fix module paths in package.json ([073321d](https://github.com/ECAInternational/eca-components/commit/073321d6313d20abadca7c05fd27ab192de502b7))
+* Fix storybook ([4cd66a3](https://github.com/ECAInternational/eca-components/commit/4cd66a3cf12c53c815eaef525ee3a63f152d53ad))
+
 ## [1.0.6](https://github.com/ECAInternational/eca-components/compare/v1.0.5...v1.0.6) (2023-11-23)
 
 
