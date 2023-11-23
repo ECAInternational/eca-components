@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/ECAInternational/eca-components/compare/v1.0.3...v1.0.4) (2023-11-23)
+
+
+### Bug Fixes
+
+* Add missing dependency ([d838ad5](https://github.com/ECAInternational/eca-components/commit/d838ad5a444f462ff9858edbc29427766abea8fc))
+
 ## [1.0.3](https://github.com/ECAInternational/eca-components/compare/v1.0.2...v1.0.3) (2023-11-23)
 
 
