@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/ECAInternational/eca-components/compare/v1.0.7...v1.0.8) (2023-11-23)
+
+
+### Bug Fixes
+
+* Change build directory in rollup ([fdca7d6](https://github.com/ECAInternational/eca-components/commit/fdca7d602874eb132a207ea81d9ffebadfb08a96))
+
 ## [1.0.7](https://github.com/ECAInternational/eca-components/compare/v1.0.6...v1.0.7) (2023-11-23)
 
 
