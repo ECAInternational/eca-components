@@ -12,8 +12,8 @@ permissions:
   packages: read
 
 jobs:
-  test:
-    name: Test
+  visual-review:
+    name: Create Visual Review
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

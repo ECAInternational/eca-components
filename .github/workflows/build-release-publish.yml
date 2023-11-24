@@ -24,15 +24,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-    #  - name: Setup Node
-    #    uses: actions/setup-node@v3
-    #    with:
-    #      cache: 'npm'
-    #      node-version: ${{env.NODE_VERSION}}
-
-    #  - name: Prettier Check
-    #    run: npx prettier . --check
-
   update-release:
     name: Update Release PR
     needs: build
