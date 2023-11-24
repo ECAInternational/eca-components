@@ -16,8 +16,10 @@ export default {
       options: ['primary', 'secondary']
     },
     onClick: {
-      description: 'The function to be called when the button is clicked',
-      action: 'clicked'
+      action: true
+    },
+    onMouseOver: {
+      action: true
     }
   }
 };
@@ -43,13 +45,22 @@ export const Secondary = {
   }
 };
 
-export const Clicked = {
+export const Interactions = {
   args: {
-    type: 'primary'
+    type: 'primary',
+    children: 'Interactions'
   },
-  play: async ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement, step }) => {
     const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole('button'));
-    await waitFor(() => expect(args.onClick).toHaveBeenCalled());
+
+    await step('Click', async () => {
+      await userEvent.click(canvas.getByRole('button'));
+      await waitFor(() => expect(args.onClick).toHaveBeenCalled());
+    });
+
+    await step('Hover', async () => {
+      await userEvent.hover(canvas.getByRole('button'));
+      await waitFor(() => expect(args.onMouseOver).toHaveBeenCalled());
+    });
   }
 };
