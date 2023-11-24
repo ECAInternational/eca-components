@@ -1,4 +1,4 @@
-name: Build, Test & Update Release
+name: Build, Test, Update Release & Publish
 
 on:
   push:
@@ -17,12 +17,37 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  build-test:
     name: Build & Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
+          node-version: ${{env.NODE_VERSION}}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Prettier Check
+        run: npx prettier . --check
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Build Storybook
+        run: yarn build-storybook --quiet
+
+      - name: Run Tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && yarn test-storybook"
 
   update-release:
     name: Update Release PR

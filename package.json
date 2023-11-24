@@ -22,8 +22,6 @@
   },
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
-    "watch": "rollup --watch -c --bundleConfigAsCjs",
-    "clean": "rimraf ./dist",
     "test": "test-storybook",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
