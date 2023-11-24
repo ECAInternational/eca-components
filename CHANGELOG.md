@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.10](https://github.com/ECAInternational/eca-components/compare/v1.0.9...v1.0.10) (2023-11-24)
+
+
+### Features
+
+* Change Brand Button Text ([#16](https://github.com/ECAInternational/eca-components/issues/16)) ([7c42aa8](https://github.com/ECAInternational/eca-components/commit/7c42aa884d163f8bbb947f9fb25ecdfad5df265a))
+
+
+### Bug Fixes
+
+* Fix workflow ([7994ac2](https://github.com/ECAInternational/eca-components/commit/7994ac2acd7daa8bb731f9668e7a10497150cf70))
+
 ## [1.0.9](https://github.com/ECAInternational/eca-components/compare/v1.0.8...v1.0.9) (2023-11-23)
 
 
