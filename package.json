@@ -58,7 +58,7 @@
     "autoprefixer": "^10.4.16",
     "axe-playwright": "^1.2.3",
     "boxen": "^7.1.1",
-    "chromatic": "^9.0.0",
+    "chromatic": "^9.1.0",
     "clean-publish": "^4.2.0",
     "daisyui": "^4.0.4",
     "dedent": "^1.5.1",
