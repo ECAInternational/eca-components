@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.11](https://github.com/ECAInternational/eca-components/compare/v1.0.10...v1.0.11) (2023-11-27)
+
+
+### Features
+
+* Add scripts to readme ([d4e6135](https://github.com/ECAInternational/eca-components/commit/d4e61357d52c3cc7afb0e7c325e6ec174691996d))
+* Remove Test word from BrandTest ([6aed615](https://github.com/ECAInternational/eca-components/commit/6aed6150e62fe2c7570aa6e79ee06069306e2680))
+
 ## [1.0.10](https://github.com/ECAInternational/eca-components/compare/v1.0.9...v1.0.10) (2023-11-24)
 
 
