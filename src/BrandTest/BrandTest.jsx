@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function BrandTest() {
+export default function BrandTest() {
   return (
     <>
       <button className='bg-red-600'>Red 600</button>

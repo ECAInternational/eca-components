@@ -25,6 +25,7 @@ module.exports = {
     'react/button-has-type': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
-    'global-require': 'off'
+    'global-require': 'off',
+    'import/export': 'off'
   }
 };

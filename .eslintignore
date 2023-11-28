@@ -2,4 +2,4 @@
 **/*.mdx
 **/*.json
 **/*.css
-dist
+node_modules

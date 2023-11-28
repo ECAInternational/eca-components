@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function Button(props) {
+export default function Button(props) {
   const {
     variant,
     type = 'button',

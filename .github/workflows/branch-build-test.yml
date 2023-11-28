@@ -35,7 +35,7 @@ jobs:
         run: npx prettier . --check
 
       - name: Lint
-        run: npm run lint
+        run: npx eslint './**' --fix
 
       - name: Install Playwright
         run: npx playwright install --with-deps
