@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.12](https://github.com/ECAInternational/eca-components/compare/v1.0.11...v1.0.12) (2023-11-28)
+
+
+### Features
+
+* Add Linting ([3cbe6be](https://github.com/ECAInternational/eca-components/commit/3cbe6beb893cf89554ae51fc32bec446fc7026c2))
+
+
+### Bug Fixes
+
+* Fix linting ([210f64f](https://github.com/ECAInternational/eca-components/commit/210f64f4a7f7b55c35d4c58f778be94e365a66f9))
+* Fix storybook ([d0d9fbf](https://github.com/ECAInternational/eca-components/commit/d0d9fbf46ab5580d7bb205eadc392dd7420b128a))
+* Fix storybook ([025b07a](https://github.com/ECAInternational/eca-components/commit/025b07ae0de9f1457f1a00d9b3d1f3242d972344))
+* Still trying to fix linting ([18e96d1](https://github.com/ECAInternational/eca-components/commit/18e96d14c23d13b6bdfd6741af491034eafe9284))
+* Still trying to fix linting ([8c51208](https://github.com/ECAInternational/eca-components/commit/8c51208b7fb154100d35b1f6c67dadf9a3e8fb63))
+* Still trying to fix linting ([7ca3ca6](https://github.com/ECAInternational/eca-components/commit/7ca3ca65a1a6961f040b4f7868171e1423f6a14f))
+* Update Chromatic ([e539334](https://github.com/ECAInternational/eca-components/commit/e539334cde4b9cc3136cd687cb54206b0db2e778))
+
 ## [1.0.11](https://github.com/ECAInternational/eca-components/compare/v1.0.10...v1.0.11) (2023-11-27)
 
 
