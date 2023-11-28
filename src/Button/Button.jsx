@@ -1,7 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const Button = (props) => {
-  const { type, onClick = () => {}, children, ...others } = props;
+export default function Button(props) {
+  const {
+    variant,
+    type = 'button',
+    onClick = () => {},
+    children,
+    ...others
+  } = props;
 
   const variants = {
     primary: 'btn-primary',
@@ -9,8 +16,20 @@ export const Button = (props) => {
   };
 
   return (
-    <button className={`btn ${variants[type]}`} onClick={onClick} {...others}>
+    <button
+      className={`btn ${variants[variant]}`}
+      type={type}
+      onClick={onClick}
+      {...others}
+    >
       {children}
     </button>
   );
+}
+
+Button.propTypes = {
+  variant: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired
 };

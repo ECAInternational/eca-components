@@ -37,6 +37,9 @@ jobs:
       - name: Prettier Check
         run: npx prettier . --check
 
+      - name: Lint
+        run: npx eslint './**' --fix
+
       - name: Install Playwright
         run: npx playwright install --with-deps
 
@@ -50,7 +53,7 @@ jobs:
             "npx wait-on tcp:6006 && yarn test-storybook"
 
   update-release:
-    name: Update Release PR
+    name: Update Release
     needs: build-test
     runs-on: ubuntu-latest
     outputs:

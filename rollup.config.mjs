@@ -8,6 +8,7 @@ import { babel } from '@rollup/plugin-babel';
 // using Native ES modules in Node.js
 // https://rollupjs.org/command-line-interface/#importing-package-json
 import { createRequire } from 'node:module';
+
 const requireFile = createRequire(import.meta.url);
 const packageJson = requireFile('./package.json');
 

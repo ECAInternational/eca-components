@@ -1,4 +1,4 @@
-import { BrandTest } from './BrandTest';
+import BrandTest from './BrandTest';
 
 export default {
   component: BrandTest,

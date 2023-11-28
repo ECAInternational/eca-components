@@ -1,6 +1,6 @@
-import { Button } from './Button';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
+import Button from './Button';
 
 export default {
   component: Button,
@@ -9,7 +9,7 @@ export default {
     componentSubtitle: 'A standard button component'
   },
   argTypes: {
-    type: {
+    variant: {
       control: 'select',
       description:
         'Defines the colour scheme of the button based on the current theme',
@@ -26,28 +26,28 @@ export default {
 
 export const Default = {
   args: {
-    type: 'primary',
+    variant: 'primary',
     children: 'Button'
   }
 };
 
 export const Primary = {
   args: {
-    type: 'primary',
+    variant: 'primary',
     children: 'Primary'
   }
 };
 
 export const Secondary = {
   args: {
-    type: 'secondary',
+    variant: 'secondary',
     children: 'Secondary'
   }
 };
 
 export const Interactions = {
   args: {
-    type: 'primary',
+    variant: 'primary',
     children: 'Interactions'
   },
   play: async ({ args, canvasElement, step }) => {
