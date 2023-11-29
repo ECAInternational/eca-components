@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.13](https://github.com/ECAInternational/eca-components/compare/v1.0.12...v1.0.13) (2023-11-29)
+
+
+### Features
+
+* Change BrandTest ([adc50ba](https://github.com/ECAInternational/eca-components/commit/adc50ba3c629b60d22295ccbb2aa752791c00618))
+* Change BrandTest ([#26](https://github.com/ECAInternational/eca-components/issues/26)) ([967039f](https://github.com/ECAInternational/eca-components/commit/967039f3ba3dacbc179b2fff347cee42f728cd9b))
+
 ## [1.0.12](https://github.com/ECAInternational/eca-components/compare/v1.0.11...v1.0.12) (2023-11-28)
 
 
