@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.15](https://github.com/ECAInternational/eca-components/compare/v1.0.14...v1.0.15) (2023-12-01)
+
+
+### Features
+
+* Upgrade to 1.0.10 reusables ([8a7ba5a](https://github.com/ECAInternational/eca-components/commit/8a7ba5a340afc9c1e8fe0963ff068a32d8e248c6))
+* Upgrade to 1.0.11 reusables ([d379625](https://github.com/ECAInternational/eca-components/commit/d379625037b22b475036432cb962084100f0af82))
+* Upgrade to 1.0.9 reusables ([daf7368](https://github.com/ECAInternational/eca-components/commit/daf736891cb30bea4006bfe646ef199027a2e3cf))
+
 ## [1.0.14](https://github.com/ECAInternational/eca-components/compare/v1.0.13...v1.0.14) (2023-11-29)
 
 
