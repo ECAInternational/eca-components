@@ -5,10 +5,6 @@ on:
     branches:
       - main
 
-env:
-  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  NODE_VERSION: 20
-
 permissions:
   contents: write
   pull-requests: write
@@ -17,120 +13,34 @@ permissions:
   id-token: write
 
 jobs:
-  build-test:
-    name: Build & Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  build-lint:
+    name: Build & Lint
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v1.0.11
+    secrets: inherit
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          cache: 'npm'
-          registry-url: 'https://npm.pkg.github.com'
-          node-version: ${{env.NODE_VERSION}}
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Prettier Check
-        run: npx prettier . --check
-
-      - name: Lint
-        run: npx eslint './**' --fix
-
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-
-      - name: Build Storybook
-        run: yarn build-storybook --quiet
-
-      - name: Run Tests
-        run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && yarn test-storybook"
+  test:
+    name: Test
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-test-storybook.yml@v1.0.11
+    secrets: inherit
 
   update-release:
     name: Update Release
-    needs: build-test
-    runs-on: ubuntu-latest
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-    steps:
-      - name: Run Release Please
-        uses: google-github-actions/release-please-action@v3
-        id: release
-        with:
-          pull-request-title-pattern: 'Release${component} ${version}'
-          release-type: node
-          package-name: '@ecainternational/eca-components'
+    needs: [build-lint, test]
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-update-release.yml@v1.0.11
+    with:
+      package-name: '@ecainternational/eca-components'
 
   publish:
     name: Publish NPM Package
-    runs-on: ubuntu-latest
     needs: update-release
     if: ${{ needs.update-release.outputs.release_created }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{env.NODE_VERSION}}
-          cache: 'npm'
-          registry-url: 'https://npm.pkg.github.com'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Publish NPM Package
-        run: |
-          npx clear-package-json package.json > dist/package.json --fields "type, files, private, publishConfig, peerDependencies, peerDependenciesMeta"
-          cd dist
-          npm publish
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-package.yml@v1.0.11
+    with:
+      build-directory: dist
+    secrets: inherit
 
   deploy-documentation:
     name: Deploy Documentation
     needs: update-release
     if: ${{ needs.update-release.outputs.release_created }}
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{env.NODE_VERSION}}
-          cache: 'npm'
-          registry-url: 'https://npm.pkg.github.com'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Storybook Docs
-        run: npm run build-storybook-docs
-
-      - name: Fix permissions
-        run: |
-          chmod -c -R +rX "_site/" | while read line; do
-          echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
-
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: storybook-static/
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-storybook-documentation.yml@v1.0.11

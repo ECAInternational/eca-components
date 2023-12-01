@@ -5,46 +5,13 @@ on:
     branches-ignore:
       - main
 
-env:
-  NODE_VERSION: 20
-  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-permissions:
-  contents: read
-  packages: read
-
 jobs:
-  build-test:
-    name: Build & Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  build-lint:
+    name: Build & Lint
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v1.0.11
+    secrets: inherit
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          cache: 'npm'
-          registry-url: 'https://npm.pkg.github.com'
-          node-version: ${{env.NODE_VERSION}}
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Prettier Check
-        run: npx prettier . --check
-
-      - name: Lint
-        run: npx eslint './**' --fix
-
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-
-      - name: Build Storybook
-        run: yarn build-storybook --quiet
-
-      - name: Run Tests
-        run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && yarn test-storybook"
+  test:
+    name: Test
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-test-storybook.yml@v1.0.11
+    secrets: inherit
