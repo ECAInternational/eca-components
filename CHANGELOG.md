@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.17](https://github.com/ECAInternational/eca-components/compare/v1.0.16...v1.0.17) (2023-12-07)
+
+
+### Features
+
+* Remove BrandTest ([970fe77](https://github.com/ECAInternational/eca-components/commit/970fe7712de2f8446d0ff108cefc7aaeaf6b4795))
+* Update Readme ([a4087e5](https://github.com/ECAInternational/eca-components/commit/a4087e576559274f49e0fb8809f249a376acb3e6))
+* Upgrade to design tokens 1.0.15 ([c98b092](https://github.com/ECAInternational/eca-components/commit/c98b092750a291ae84abe3f4d444d183166761be))
+
+
+### Bug Fixes
+
+* Don't to visual diff for dependabot PRs ([1dbd1bc](https://github.com/ECAInternational/eca-components/commit/1dbd1bcda005ee4244a173c16f571ec9d1756961))
+* Fixing build ([13f16a5](https://github.com/ECAInternational/eca-components/commit/13f16a5f2438ba764d4aa54095494f263bf998ce))
+* Group dependabot PRs ([1dbd1bc](https://github.com/ECAInternational/eca-components/commit/1dbd1bcda005ee4244a173c16f571ec9d1756961))
+* Remove brandtest export ([3a10296](https://github.com/ECAInternational/eca-components/commit/3a10296c141e2bd32a2d20dfd4aa9a163cf4edad))
+
 ## [1.0.16](https://github.com/ECAInternational/eca-components/compare/v1.0.15...v1.0.16) (2023-12-01)
 
 
