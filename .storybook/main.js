@@ -1,4 +1,3 @@
-/** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
   stories: [
     '../src/Intro.mdx',
@@ -12,7 +11,10 @@ const config = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     'storybook-addon-data-theme-switcher',
-    '@storybook/addon-mdx-gfm'
+    {
+      name: 'storybook-design-token',
+      options: { designTokenGlob: 'tokens/*' }
+    }
   ],
   framework: {
     name: '@storybook/react-vite',

@@ -4,6 +4,9 @@ import '../src/index.css';
 
 const preview = {
   parameters: {
+    designToken: {
+      disable: true
+    },
     actions: { argTypesRegex: '^on.*' },
     controls: {
       matchers: {
