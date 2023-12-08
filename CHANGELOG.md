@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.19](https://github.com/ECAInternational/eca-components/compare/v1.0.18...v1.0.19) (2023-12-08)
+
+
+### Features
+
+* Create storybook docs for design tokens ([#45](https://github.com/ECAInternational/eca-components/issues/45)) ([7f008f7](https://github.com/ECAInternational/eca-components/commit/7f008f7e364dc1e8e5886228b2787f14cb151bcc))
+
 ## [1.0.18](https://github.com/ECAInternational/eca-components/compare/v1.0.17...v1.0.18) (2023-12-07)
 
 
