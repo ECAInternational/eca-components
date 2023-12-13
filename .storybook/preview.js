@@ -3,6 +3,9 @@ import { themes } from '@storybook/theming';
 
 const preview = {
   parameters: {
+    designToken: {
+      disable: true
+    },
     actions: { argTypesRegex: '^on.*' },
     docs: {
       theme: themes.dark
