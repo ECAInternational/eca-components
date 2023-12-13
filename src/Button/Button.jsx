@@ -11,27 +11,30 @@ export function Button(props) {
   } = props;
 
   const bg = {
-    primary: 'bg-primary-main',
-    info: 'bg-states-info',
-    error: 'bg-states-error'
+    primary: 'bg-primary-main border-0 text-default-white',
+    outline:
+      'bg-transparent border border-neutral-detail-bolder text-neutral-detail-bolder',
+    ghost: 'bg-transparent border-0 text-neutral-detail-boldest'
   };
 
-  const border = {
-    primary: 'border-primary-accent',
-    info: 'border-states-info-accent',
-    error: 'border-states-error-accent'
+  const disabled = {
+    primary: 'disabled:bg-controls-bg-disabled disabled:text-neutral-detail',
+    outline:
+      'disabled:controls-border-disabled disabled:text-controls-content-disabled',
+    ghost: 'disabled:text-controls-content-disabled'
   };
 
-  const hover = {
-    primary: 'hover:bg-primary-accent',
-    info: 'hover:bg-states-info-accent',
-    error: 'hover:bg-states-error-accent'
+  const states = {
+    primary: 'hover:bg-primary-bold focus:bg-primary-bold',
+    outline: 'hover:bg-neutral-body',
+    ghost: 'hover:bg-controls-highlight-palest'
   };
 
   return (
     <button
-      className={`transition btn 
-      ${bg[variant]} ${border[variant]} ${hover[variant]}`}
+      className={`transition btn
+      ${bg[variant]} ${disabled[variant]} ${states[variant]}
+      rounded px-5 py-3`}
       type={type}
       onClick={onClick}
       {...others}

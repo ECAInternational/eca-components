@@ -13,14 +13,29 @@ export default {
       control: 'select',
       description:
         'Defines the colour scheme of the button based on the current theme',
-      options: ['primary', 'info']
+      options: ['primary', 'outline', 'ghost']
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Disables the button'
+    },
+    type: {
+      table: { disable: true }
+    },
+    children: {
+      name: 'Label'
     },
     onClick: {
-      action: true
+      action: true,
+      table: { disable: true }
     },
     onMouseOver: {
-      action: true
+      action: true,
+      table: { disable: true }
     }
+  },
+  args: {
+    disabled: false
   }
 };
 
@@ -30,18 +45,24 @@ export const Default = {
     children: 'Button'
   }
 };
-
-export const Info = {
+export const Primary = {
   args: {
-    variant: 'info',
-    children: 'Info'
+    variant: 'primary',
+    children: 'Button'
   }
 };
 
-export const Error = {
+export const Outline = {
   args: {
-    variant: 'error',
-    children: 'Error'
+    variant: 'outline',
+    children: 'Outline'
+  }
+};
+
+export const Ghost = {
+  args: {
+    variant: 'ghost',
+    children: 'Ghost'
   }
 };
 

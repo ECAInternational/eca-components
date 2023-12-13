@@ -1,6 +1,13 @@
 import { addons } from '@storybook/manager-api';
-import ecaTheme from './eca-theme.js';
+import { create } from '@storybook/theming/create';
+import ecaLogo from './.public/eca-logo.svg';
 
 addons.setConfig({
-  theme: ecaTheme
+  theme: create({
+    base: 'dark',
+    brandTitle: 'ECA International',
+    brandUrl: 'https://www.eca-international.com/',
+    brandImage: ecaLogo,
+    brandTarget: '_self'
+  })
 });
