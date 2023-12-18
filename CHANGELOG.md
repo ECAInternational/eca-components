@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.20](https://github.com/ECAInternational/eca-components/compare/v1.0.19...v1.0.20) (2023-12-18)
+
+
+### Features
+
+* Implement Buttons ([#55](https://github.com/ECAInternational/eca-components/issues/55)) ([606ce61](https://github.com/ECAInternational/eca-components/commit/606ce619cc9b997a5c86557a7ad62fdf4dddf30e))
+
 ## [1.0.19](https://github.com/ECAInternational/eca-components/compare/v1.0.18...v1.0.19) (2023-12-08)
 
 
