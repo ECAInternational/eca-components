@@ -8,7 +8,7 @@ const preview = {
     },
     actions: { argTypesRegex: '^on.*' },
     docs: {
-      theme: themes.dark
+      theme: themes.light
     },
     controls: {
       matchers: {
@@ -26,8 +26,8 @@ export const globalTypes = {
   dataThemes: {
     defaultValue: {
       list: [
-        { name: 'ECA Light', dataTheme: 'eca-light', color: '#00755e' },
-        { name: 'ECA Dark', dataTheme: 'eca-dark', color: '#ffb7d5' }
+        { name: 'ECA Light', dataTheme: 'eca-light', color: '#ffffff' },
+        { name: 'ECA Dark', dataTheme: 'eca-dark', color: '#000000' }
       ]
     }
   }

@@ -24,8 +24,7 @@ export function Button(props) {
       'disabled:bg-controls-bg-disabled disabled:text-controls-content-disabled',
     outline:
       'disabled:border-controls-content-disabled disabled:text-controls-content-disabled',
-    ghost:
-      'disabled:text-controls-content-disabled disabled:border disabled:border-controls-border-disabled'
+    ghost: 'disabled:text-controls-content-disabled'
   };
 
   const hover = {

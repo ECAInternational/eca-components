@@ -4,7 +4,7 @@ import ecaLogo from './.public/eca-logo.svg';
 
 addons.setConfig({
   theme: create({
-    base: 'dark',
+    base: 'light',
     brandTitle: 'ECA International',
     brandUrl: 'https://www.eca-international.com/',
     brandImage: ecaLogo,
