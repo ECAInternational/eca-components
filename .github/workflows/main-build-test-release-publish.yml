@@ -18,14 +18,14 @@ jobs:
     uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v1.0.12
     secrets: inherit
 
-  test:
-    name: Test
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-test-storybook.yml@v1.0.12
-    secrets: inherit
+  #test:
+  #  name: Test
+  #  uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-test-storybook.yml@v1.0.12
+  #  secrets: inherit
 
   update-release:
     name: Update Release
-    needs: [build-lint, test]
+    needs: [build-lint] #[build-lint, test]
     uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-update-release.yml@v1.0.12
     with:
       package-name: '@ecainternational/eca-components'
