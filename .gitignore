@@ -2,6 +2,7 @@
 
 #docs
 /storybook-static
+/public
 
 # dependencies
 /node_modules
