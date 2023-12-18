@@ -5,7 +5,8 @@ export function Button(props) {
   const {
     variant,
     type = 'button',
-    onClick = () => {},
+    size = 'medium',
+    className = '',
     children,
     ...others
   } = props;
@@ -30,13 +31,18 @@ export function Button(props) {
     ghost: 'hover:bg-controls-highlight-palest'
   };
 
+  const sizes = {
+    small: 'text-sm rounded px-4 py-2',
+    medium: 'text-base rounded px-5 py-3',
+    large: 'text-lg rounded-md px-6 py-4'
+  };
+
   return (
     <button
       className={`transition btn
-      ${bg[variant]} ${disabled[variant]} ${states[variant]}
-      rounded px-5 py-3`}
+      ${bg[variant]} ${disabled[variant]} 
+      ${states[variant]} ${sizes[size]} ${className}`}
       type={type}
-      onClick={onClick}
       {...others}
     >
       {children}
@@ -47,6 +53,7 @@ export function Button(props) {
 Button.propTypes = {
   variant: PropTypes.string.isRequired,
   type: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  size: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired
 };

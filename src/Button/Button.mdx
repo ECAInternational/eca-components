@@ -6,7 +6,6 @@ import {
   Subtitle,
   Title
 } from '@storybook/blocks';
-
 import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} />
@@ -18,14 +17,56 @@ import * as ButtonStories from './Button.stories';
 
 ## Variants
 
-Primary
+### Primary
 
 <Canvas of={ButtonStories.Primary} />
 
-Outline
+### Outline
+
+Usually used alongside a primary button e.g. as a ‘cancel’ option next to another action
 
 <Canvas of={ButtonStories.Outline} />
 
-Ghost
+### Ghost
+
+A third style, used for more subtle actions e.g a forgotten password
 
 <Canvas of={ButtonStories.Ghost} />
+
+### Block
+
+Buttons which take up the whole width of the container
+
+<Canvas of={ButtonStories.Block} />
+
+## Icon Buttons
+
+Buttons might have icons on the left, or the right, or both. They can also be icons only.
+
+### Icon at Start
+
+<Canvas of={ButtonStories.IconAtStart} />
+
+### Icon at End
+
+<Canvas of={ButtonStories.IconAtEnd} />
+
+### Icon Only
+
+<Canvas of={ButtonStories.IconOnly} />
+
+## Sizes
+
+Each of the above types are available in small, medium & large
+
+### Small
+
+<Canvas of={ButtonStories.Small} />
+
+### Medium
+
+<Canvas of={ButtonStories.Medium} />
+
+### Large
+
+<Canvas of={ButtonStories.Large} />

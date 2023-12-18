@@ -1,3 +1,5 @@
+import { themes } from '@storybook/theming';
+
 const config = {
   stories: [
     '../src/Intro.mdx',
