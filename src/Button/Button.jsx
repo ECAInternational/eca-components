@@ -12,8 +12,7 @@ export function Button(props) {
   } = props;
 
   const bg = {
-    primary:
-      'bg-status-success border-0 text-default-white text-sm font-medium',
+    primary: 'bg-primary-main border-0 text-default-white text-sm font-medium',
     outline:
       'bg-transparent border border-neutral-detail-boldest text-neutral-detail-boldest text-sm font-medium',
     ghost:
