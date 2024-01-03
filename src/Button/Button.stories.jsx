@@ -6,7 +6,6 @@ import { Button } from './Button';
 export default {
   component: Button,
   title: 'Components/Button',
-  excludeStories: ['Interactions'],
   parameters: {
     componentSubtitle: 'A standard button component'
   },
