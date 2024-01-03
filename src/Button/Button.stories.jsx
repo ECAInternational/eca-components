@@ -54,6 +54,24 @@ export const Primary = {
   }
 };
 
+export const OutlineClick = {
+  args: {
+    variant: 'outline',
+    children: 'Primary Click'
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('Click', async () => {
+      await userEvent.click(canvas.getByRole('button'));
+    });
+
+    await step('Hover', async () => {
+      await userEvent.hover(canvas.getByRole('button'));
+    });
+  }
+};
+
 export const Outline = {
   args: {
     variant: 'outline',
@@ -147,23 +165,5 @@ export const Block = {
     variant: 'primary',
     children: 'Block',
     className: 'btn-block'
-  }
-};
-
-export const Interactions = {
-  args: {
-    variant: 'primary',
-    children: 'Interactions'
-  },
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-
-    await step('Click', async () => {
-      await userEvent.click(canvas.getByRole('button'));
-    });
-
-    await step('Hover', async () => {
-      await userEvent.hover(canvas.getByRole('button'));
-    });
   }
 };
