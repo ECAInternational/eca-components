@@ -9,10 +9,13 @@ module.exports = {
     ...ecaBrand,
     extend: {
       transitionDuration: {
-        DEFAULT: '500ms'
+        DEFAULT: '200ms'
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out'
+      },
+      scale: {
+        92: '0.92'
       }
     }
   },

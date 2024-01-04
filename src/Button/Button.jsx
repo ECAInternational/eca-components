@@ -12,11 +12,11 @@ export function Button(props) {
   } = props;
 
   const bg = {
-    primary: 'bg-primary-main border-0 text-default-white text-sm font-medium',
+    primary: 'bg-primary-main border-0 text-default-white font-medium',
     outline:
-      'bg-transparent border border-neutral-detail-boldest text-neutral-detail-boldest text-sm font-medium',
+      'bg-transparent border border-neutral-detail-boldest text-neutral-detail-boldest font-medium',
     ghost:
-      'bg-transparent border-0 text-neutral-detail-boldest text-sm font-medium'
+      'bg-transparent border-2 border-transparent text-neutral-detail-boldest font-medium'
   };
 
   const disabled = {
@@ -34,26 +34,33 @@ export function Button(props) {
       'hover:bg-controls-highlight-palest hover:text-neutral-detail-boldest'
   };
 
+  const active = {
+    primary: 'active:bg-primary-accent',
+    outline: 'active:bg-neutral-detail-boldest active:text-neutral-layer-1',
+    ghost:
+      'active:bg-controls-highlight-palest active:text-neutral-detail-boldest'
+  };
+
   const focus = {
     primary:
-      'focus:bg-primary-main focus:outline focus:outline-primary-main focus:outline-2 focus:outline-offset-2',
+      'focus-visible:outline focus-visible:outline-primary-main focus-visible:outline-2 focus-visible:outline-offset-2',
     outline:
-      'focus:bg-transparent focus:text-neutral-detail-boldest focus:outline focus:outline-neutral-detail-boldest focus:outline-2 focus:outline-offset-2',
+      'focus-visible:text-neutral-detail-boldest focus-visible:outline focus-visible:outline-neutral-detail-boldest focus-visible:outline-2 focus-visible:outline-offset-2',
     ghost:
-      'focus:bg-transparent focus:text-neutral-detail-boldest focus:border focus:border-neutral-detail-boldest'
+      'focus-visible:text-neutral-detail-boldest focus-visible:border-neutral-detail-boldest'
   };
 
   const sizes = {
     small: 'text-sm rounded px-4 py-2',
     medium: 'text-sm rounded px-5 py-3',
-    large: 'text-base leading-none rounded-md px-6 py-4'
+    large: 'text-base rounded-md px-6 py-4'
   };
 
   return (
     <button
-      className={`transition btn
+      className={`transition flex items-center justify-center active:scale-92 
       ${bg[variant]} ${disabled[variant]} 
-      ${hover[variant]} ${focus[variant]}  
+      ${hover[variant]} ${active[variant]} ${focus[variant]}  
       ${sizes[size]} ${className}`}
       type={type}
       {...others}
