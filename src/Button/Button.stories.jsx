@@ -1,5 +1,6 @@
+import { expect } from '@storybook/jest';
 import React from 'react';
-import { userEvent, within } from '@storybook/testing-library';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
 import { Button } from './Button';
 
 export default {
@@ -32,7 +33,8 @@ export default {
     },
     children: {
       name: 'Label'
-    }
+    },
+    onClick: { action: true }
   },
   args: {
     disabled: false,
@@ -59,11 +61,12 @@ export const OutlineClick = {
     variant: 'outline',
     children: 'Primary Click'
   },
-  play: async ({ canvasElement, step }) => {
+  play: async ({ args, canvasElement, step }) => {
     const canvas = within(canvasElement);
 
     await step('Click', async () => {
       await userEvent.click(canvas.getByRole('button'));
+      await waitFor(() => expect(args.onClick).toHaveBeenCalled());
     });
 
     await step('Hover', async () => {

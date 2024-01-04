@@ -15,7 +15,8 @@ export function Button(props) {
     primary: 'bg-primary-main border-0 text-default-white font-medium',
     outline:
       'bg-transparent border border-neutral-detail-boldest text-neutral-detail-boldest font-medium',
-    ghost: 'bg-transparent border-0 text-neutral-detail-boldest font-medium'
+    ghost:
+      'bg-transparent border-2 border-transparent text-neutral-detail-boldest font-medium'
   };
 
   const disabled = {
@@ -46,7 +47,7 @@ export function Button(props) {
     outline:
       'focus-visible:text-neutral-detail-boldest focus-visible:outline focus-visible:outline-neutral-detail-boldest focus-visible:outline-2 focus-visible:outline-offset-2',
     ghost:
-      'focus-visible:text-neutral-detail-boldest focus-visible:border focus-visible:border-neutral-detail-boldest'
+      'focus-visible:text-neutral-detail-boldest focus-visible:border-neutral-detail-boldest'
   };
 
   const sizes = {
@@ -57,7 +58,7 @@ export function Button(props) {
 
   return (
     <button
-      className={`transition flex items-center justify-center active:scale-92
+      className={`transition flex items-center justify-center active:scale-92 
       ${bg[variant]} ${disabled[variant]} 
       ${hover[variant]} ${active[variant]} ${focus[variant]}  
       ${sizes[size]} ${className}`}
