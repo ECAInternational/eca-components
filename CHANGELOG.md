@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.22](https://github.com/ECAInternational/eca-components/compare/v1.0.21...v1.0.22) (2024-01-04)
+
+
+### Features
+
+* Auto accept baseline changes in Chromatic ([cb349cb](https://github.com/ECAInternational/eca-components/commit/cb349cb5385709154ccd74457e9876f56eed5036))
+* Green button ([#60](https://github.com/ECAInternational/eca-components/issues/60)) ([1a793f5](https://github.com/ECAInternational/eca-components/commit/1a793f5ee286b3fd050eab7ade7b4e7e1aae0243))
+* Red button ([#61](https://github.com/ECAInternational/eca-components/issues/61)) ([17364ba](https://github.com/ECAInternational/eca-components/commit/17364ba3363b0d001c60f15fc295bda38a6ceb6f))
+
+
+### Bug Fixes
+
+* Button tweaks based on feedback ([#66](https://github.com/ECAInternational/eca-components/issues/66)) ([f4f5aa7](https://github.com/ECAInternational/eca-components/commit/f4f5aa75b7442ef3c61b888a69095a1934c1876c))
+
 ## [1.0.21](https://github.com/ECAInternational/eca-components/compare/v1.0.20...v1.0.21) (2023-12-19)
 
 
