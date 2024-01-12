@@ -11,13 +11,12 @@ export function TextInput(props) {
   };
 
   const hover = {
-    default: 'hover:border-controls-border-hover',
     warning: 'hover:border-states-warning-accent',
     error: 'hover:border-states-error-accent'
   };
 
   const focus = {
-    default: 'focus-within:border-controls-highlight focus-within:outline focus-within:outline-controls-highlight focus-within:outline-2 focus-within:outline-offset-2',
+    default: 'focus-within:outline focus-within:border-controls-highlight focus-within:outline-controls-highlight focus-within:outline-2 focus-within:outline-offset-2',
     warning: 'focus-within:outline focus-within:outline-states-warning-accent focus-within:outline-2 focus-within:outline-offset-2',
     error: 'focus-within:outline focus-within:outline-states-error-accent focus-within:outline-2 focus-within:outline-offset-2'
   };
@@ -43,7 +42,7 @@ export function TextInput(props) {
           type={type}
           disabled={disabled}
           {...others}
-          className={`font-light w-full rounded focus-visible:outline-0 
+          className={`font-light w-full rounded focus-visible:outline-0 bg-transparent
                placeholder-controls-placeholder-text focus:placeholder-transparent 
                disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1`}
         />
