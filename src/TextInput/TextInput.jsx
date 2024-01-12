@@ -2,17 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function TextInput(props) {
-  const {
-    state = 'default',
-    type = 'text',
-    label,
-    icon,
-    prefix,
-    suffix,
-    id,
-    disabled,
-    ...others
-  } = props;
+  const { state = 'default', type = 'text', label, icon, prefix, suffix, id, disabled, ...others } = props;
 
   const border = {
     default: 'border-controls-border',
@@ -27,25 +17,15 @@ export function TextInput(props) {
   };
 
   const focus = {
-    default:
-      'focus-within:border-controls-highlight focus-within:outline focus-within:outline-controls-highlight focus-within:outline-2 focus-within:outline-offset-2',
-    warning:
-      'focus-within:outline focus-within:outline-states-warning-accent focus-within:outline-2 focus-within:outline-offset-2',
-    error:
-      'focus-within:outline focus-within:outline-states-error-accent focus-within:outline-2 focus-within:outline-offset-2'
+    default: 'focus-within:border-controls-highlight focus-within:outline focus-within:outline-controls-highlight focus-within:outline-2 focus-within:outline-offset-2',
+    warning: 'focus-within:outline focus-within:outline-states-warning-accent focus-within:outline-2 focus-within:outline-offset-2',
+    error: 'focus-within:outline focus-within:outline-states-error-accent focus-within:outline-2 focus-within:outline-offset-2'
   };
 
   return (
     <>
       {label && (
-        <label
-          htmlFor={id}
-          className={`block py-1 ${
-            disabled
-              ? 'text-controls-content-disabled'
-              : 'text-neutral-detail-bolder'
-          }`}
-        >
+        <label htmlFor={id} className={`block py-1 ${disabled ? 'text-controls-content-disabled' : 'text-neutral-detail-bolder'}`}>
           {label}
         </label>
       )}
