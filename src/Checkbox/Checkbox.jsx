@@ -2,47 +2,44 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Checkbox(props) {
-  const { label, id, disabled, ...others } = props;
-
-  const border = {
-    default: 'border-controls-border',
-    warning: 'border-states-warning-accent',
-    error: 'border-states-error-accent'
-  };
-
-  const hover = {
-    default: 'hover:border-controls-border-hover',
-    warning: 'hover:border-states-warning-accent',
-    error: 'hover:border-states-error-accent'
-  };
-
-  const focus = {
-    default: 'focus-within:border-controls-highlight focus-within:outline focus-within:outline-controls-highlight focus-within:outline-2 focus-within:outline-offset-2',
-    warning: 'focus-within:outline focus-within:outline-states-warning-accent focus-within:outline-2 focus-within:outline-offset-2',
-    error: 'focus-within:outline focus-within:outline-states-error-accent focus-within:outline-2 focus-within:outline-offset-2'
-  };
+  const { leftLabel, rightLabel, id, disabled, ...others } = props;
 
   return (
-    <>
-      {label && (
-        <label htmlFor={id} className={`block py-1 ${disabled ? 'text-controls-content-disabled' : 'text-neutral-detail-bolder'}`}>
-          {label}
+    <div className='flex items-center'>
+      {leftLabel && (
+        <label htmlFor={id} className={`text-sm font-light se-2 ${disabled ? 'text-controls-content-disabled' : 'text-neutral-body'}`}>
+          {leftLabel}
         </label>
       )}
 
-      <span
-        className={`text-sm text-controls-placeholder-text p-3 font-regular border rounded relative flex
-        has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:border-controls-border-disabled has-[:disabled]:text-controls-content-disabled 
-        ${hover[state]} ${border[state]} ${focus[state]}`}
-      >
-        <input id={id} disabled={disabled} {...others} />
-      </span>
-    </>
+      <input
+        type='checkbox'
+        id={id}
+        disabled={disabled}
+        {...others}
+        className='appearance-none w-6 h-6 border rounded unchecked:border-controls-border
+      checked:border-controls-highlight checked:bg-controls-highlight
+      hover:ring-2 hover:ring-offset-1
+      focus-visible:ring-2 focus-visible:ring-offset-1
+      checked:hover:ring-controls-highlight-paler
+      unchecked:hover:ring-controls-border-hover
+      checked:focus-visible:ring-controls-highlight
+      unchecked:focus-visible:border-controls-border
+      active:border-2 active:border-controls-highlight-palest'
+      />
+
+      {rightLabel && (
+        <label htmlFor={id} className={`text-sm font-light ps-2  ${disabled ? 'text-controls-content-disabled' : 'text-neutral-body'}`}>
+          {rightLabel}
+        </label>
+      )}
+    </div>
   );
 }
 
 Checkbox.propTypes = {
   id: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
-  label: PropTypes.string
+  leftLabel: PropTypes.string,
+  rightLabel: PropTypes.string
 };

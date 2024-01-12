@@ -1,4 +1,4 @@
-import { Checkbox } from './Checkbox.jsx';
+import { Checkbox } from './Checkbox';
 
 export default {
   component: Checkbox,
@@ -13,6 +13,9 @@ export default {
     },
     className: {
       table: { disable: true }
+    },
+    id: {
+      table: { disable: true }
     }
   },
   args: {
@@ -20,8 +23,30 @@ export default {
   }
 };
 
+export const Default = {
+  args: {}
+};
+
 export const Unchecked = {
   args: {
-    label: 'Label'
+    checked: false
+  }
+};
+
+export const Checked = {
+  args: {
+    checked: true
+  }
+};
+
+export const RightLabel = {
+  args: {
+    rightLabel: 'Right Label'
+  }
+};
+
+export const LeftLabel = {
+  args: {
+    leftLabel: 'Left Label'
   }
 };
