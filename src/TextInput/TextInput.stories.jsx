@@ -50,6 +50,16 @@ export const Enabled = {
   }
 };
 
+export const Disabled = {
+  args: {
+    id: 'disabled-button',
+    disabled: true,
+    state: 'default',
+    placeholder: 'Placeholder text',
+    label: 'Disabled'
+  }
+};
+
 export const Warning = {
   args: {
     id: 'warning-button',
@@ -81,27 +91,7 @@ export const Description = {
     id: 'description-button',
     state: 'default',
     label: 'Label',
-    description: '(description)',
-    placeholder: 'Placeholder text'
-  }
-};
-
-export const Mandatory = {
-  args: {
-    id: 'mandatory-button',
-    state: 'default',
-    label: 'Label',
-    description: '(mandatory)',
-    placeholder: 'Placeholder text'
-  }
-};
-
-export const Optional = {
-  args: {
-    id: 'optional-button',
-    state: 'default',
-    label: 'Label',
-    description: '(optional)',
+    description: '(required)',
     placeholder: 'Placeholder text'
   }
 };
