@@ -5,7 +5,6 @@ export function TextInput(props) {
   const {
     state = 'default',
     type = 'text',
-    className = '',
     label,
     icon,
     prefix,
@@ -29,11 +28,11 @@ export function TextInput(props) {
 
   const focus = {
     default:
-      'focus:border-controls-highlight focus:outline focus:outline-controls-highlight focus:outline-2 focus:outline-offset-2',
+      'focus-within:border-controls-highlight focus-within:outline focus-within:outline-controls-highlight focus-within:outline-2 focus-within:outline-offset-2',
     warning:
-      'focus:outline focus:outline-states-warning-accent focus:outline-2 focus:outline-offset-2',
+      'focus-within:outline focus-within:outline-states-warning-accent focus-within:outline-2 focus-within:outline-offset-2',
     error:
-      'focus:outline focus:outline-states-error-accent focus:outline-2 focus:outline-offset-2'
+      'focus-within:outline focus-within:outline-states-error-accent focus-within:outline-2 focus-within:outline-offset-2'
   };
 
   return (
@@ -41,7 +40,7 @@ export function TextInput(props) {
       {label && (
         <label
           htmlFor={id}
-          className={`block ${
+          className={`block py-1 ${
             disabled
               ? 'text-controls-content-disabled'
               : 'text-neutral-detail-bolder'
@@ -51,50 +50,26 @@ export function TextInput(props) {
         </label>
       )}
 
-      <div
-        className={`relative ${(icon || prefix) && 'mb-4 flex items-stretch'}`}
+      <span
+        className={`text-sm text-controls-placeholder-text p-3 font-regular border rounded relative flex
+        has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:border-controls-border-disabled has-[:disabled]:text-controls-content-disabled 
+        ${hover[state]} ${border[state]} ${focus[state]}`}
       >
-        {icon && (
-          <i
-            className={`fi ${icon} absolute inset-y-0 start-0 flex items-center ps-3.5 ${
-              disabled && 'text-controls-content-disabled'
-            }`}
-          />
-        )}
+        {prefix && <span className='pe-1'>{prefix}</span>}
+        {icon && <i className={`fi ${icon} flex items-center pe-2.5`} />}
 
         <input
           id={id}
           type={type}
           disabled={disabled}
           {...others}
-          className={`peer order-2 border rounded p-3 text-sm font-light placeholder-neutral-detail-bolder 
-               disabled:bg-neutral-layer-1 disabled:border-controls-border-disabled disabled:placeholder-controls-content-disabled 
-               focus:placeholder-transparent
-               ${icon && 'ps-10'} ${hover[state]} ${border[state]} ${
-                 focus[state]
-               } ${className}`}
+          className={`font-light w-full rounded focus-visible:outline-0 
+               placeholder-controls-placeholder-text focus:placeholder-transparent 
+               disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1`}
         />
 
-        {prefix && (
-          <span
-            className={`flex order-2 items-center border-y border-s rounded-l ${
-              disabled && 'text-controls-content-disabled'
-            }`}
-          >
-            {prefix}
-          </span>
-        )}
-
-        {suffix && (
-          <span
-            className={`flex items-center text-center ${
-              disabled && 'text-controls-content-disabled'
-            }`}
-          >
-            {suffix}
-          </span>
-        )}
-      </div>
+        {suffix && <span className='ps-3'>{suffix}</span>}
+      </span>
     </>
   );
 }
@@ -107,6 +82,5 @@ TextInput.propTypes = {
   prefix: PropTypes.string,
   suffix: PropTypes.string,
   disabled: PropTypes.bool.isRequired,
-  label: PropTypes.string,
-  className: PropTypes.string
+  label: PropTypes.string
 };

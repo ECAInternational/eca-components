@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextInput } from './TextInput';
 
 export default {
@@ -119,10 +118,32 @@ export const Icon = {
 
 export const Prefix = {
   args: {
-    id: 'icon-button',
+    id: 'prefix-button',
     state: 'default',
     label: 'Prefix',
     placeholder: 'Placeholder text',
-    prefix: 'GBP'
+    prefix: '£'
+  }
+};
+
+export const Suffix = {
+  args: {
+    id: 'suffix-button',
+    state: 'default',
+    label: 'Suffix',
+    placeholder: 'Placeholder text',
+    suffix: 'GBP'
+  }
+};
+
+export const PrefixSuffixIcon = {
+  args: {
+    id: 'prefix-suffix-icon-button',
+    state: 'default',
+    label: 'Prefix & Suffix & Icon',
+    placeholder: 'Placeholder text',
+    prefix: '£',
+    suffix: 'GBP',
+    icon: 'fi-rr-search'
   }
 };
