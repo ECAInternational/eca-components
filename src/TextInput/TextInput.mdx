@@ -1,0 +1,48 @@
+import {
+  Canvas,
+  Controls,
+  Primary,
+  Meta,
+  Subtitle,
+  Title
+} from '@storybook/blocks';
+import * as TextInput from './TextInput.stories';
+
+<Meta of={TextInput} />
+<Title>Components/TextInput</Title>
+<Subtitle>Basic Text Fields</Subtitle>
+
+<Primary />
+<Controls />
+
+## States
+
+### Enabled
+
+<Canvas of={TextInput.Enabled} />
+
+### Warning
+
+<Canvas of={TextInput.Warning} />
+
+### Error
+
+<Canvas of={TextInput.Error} />
+
+### No Label
+
+<Canvas of={TextInput.NoLabel} />
+
+### With Description
+
+<Canvas of={TextInput.Description} />
+<Canvas of={TextInput.Mandatory} />
+<Canvas of={TextInput.Optional} />
+
+### Icon
+
+<Canvas of={TextInput.Icon} />
+
+### Prefix
+
+<Canvas of={TextInput.Prefix} />
