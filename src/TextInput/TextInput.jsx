@@ -11,6 +11,7 @@ export function TextInput(props) {
   };
 
   const hover = {
+    default: 'hover:outline hover:outline-neutral-detail-paler hover:outline-2 hover:outline-offset-2',
     warning: 'hover:border-states-warning-accent',
     error: 'hover:border-states-error-accent'
   };
@@ -24,7 +25,7 @@ export function TextInput(props) {
   return (
     <>
       {label && (
-        <label htmlFor={id} className={`block py-1 ${disabled ? 'text-controls-content-disabled' : 'text-neutral-detail-bolder'}`}>
+        <label htmlFor={id} className={`text-sm block py-1 ${disabled ? 'text-controls-content-disabled' : 'text-neutral-detail-bolder'}`}>
           {label}
         </label>
       )}
@@ -42,8 +43,8 @@ export function TextInput(props) {
           type={type}
           disabled={disabled}
           {...others}
-          className={`font-light w-full rounded focus-visible:outline-0 bg-transparent
-               placeholder-controls-placeholder-text focus:placeholder-transparent 
+          className={`font-light w-full rounded focus-visible:outline-0 bg-transparent text-neutral-body
+               placeholder-controls-placeholder-text placeholder-opacity-40 focus:placeholder-transparent 
                disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1`}
         />
 

@@ -135,15 +135,3 @@ export const Suffix = {
     suffix: 'GBP'
   }
 };
-
-export const PrefixSuffixIcon = {
-  args: {
-    id: 'prefix-suffix-icon-button',
-    state: 'default',
-    label: 'Prefix & Suffix & Icon',
-    placeholder: 'Placeholder text',
-    prefix: '£',
-    suffix: 'GBP',
-    icon: 'fi-rr-search'
-  }
-};
