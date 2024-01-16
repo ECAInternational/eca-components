@@ -35,11 +35,11 @@ export function TextInput(props) {
         className={`p-3 text-sm text-controls-placeholder-text font-regular border rounded relative flex
         hover:outline hover:outline-2 hover:outline-offset-2
         focus-within:outline focus-within:outline-2 focus-within:outline-offset-2
-        has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:border-controls-border-disabled has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
+        has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:border-neutral-detail-paler has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
         ${hover[state]} ${border[state]} ${focus[state]}`}
       >
         {prefix && <span className='pe-1 flex items-center'>{prefix}</span>}
-        {icon && <i className={`fi ${icon} flex items-center pe-2.5`} />}
+        {icon && <i className={`fi ${icon} text-neutral-detail-bold flex items-center pe-2.5`} />}
 
         <input
           id={id}
@@ -47,12 +47,12 @@ export function TextInput(props) {
           disabled={disabled}
           {...others}
           className={`font-light w-full rounded focus-visible:outline-0 bg-transparent text-neutral-body
-               placeholder-controls-placeholder-text placeholder-opacity-40 focus:placeholder-transparent 
-               disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1`}
+               placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-transparent 
+               disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1 disabled:placeholder-opacity-60 disabled:text-opacity-60`}
         />
-        {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center pe-2.5 text-states-warning-accent' />}
-        {state === 'error' && <i className='fi fi-rr-exclamation flex items-center pe-2.5 text-states-error-accent' />}
-        {suffix && <span className='ps-3 flex items-center'>{suffix}</span>}
+        {suffix && <span className='flex pe-2.5 items-center'>{suffix}</span>}
+        {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning-accent' />}
+        {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error-accent' />}
       </span>
     </>
   );
