@@ -42,7 +42,7 @@ export function Button(props) {
 
   return (
     <button
-      className={`transition flex items-center justify-center active:scale-92 
+      className={`transition flex items-center justify-center active:scale-92 disabled:cursor-not-allowed 
       ${bg[variant]} ${disabled[variant]} 
       ${hover[variant]} ${active[variant]} ${focus[variant]}  
       ${sizes[size]} ${className}`}

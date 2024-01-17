@@ -1,3 +1,4 @@
+import { within } from '@storybook/testing-library';
 import { Checkbox } from './Checkbox';
 
 export default {
@@ -15,6 +16,13 @@ export default {
       table: { disable: true }
     },
     id: {
+      table: { disable: true }
+    },
+    checked: {
+      table: { disable: true }
+    },
+    onChange: {
+      action: true,
       table: { disable: true }
     }
   },
@@ -36,6 +44,14 @@ export const Unchecked = {
 export const Checked = {
   args: {
     checked: true
+  }
+};
+
+export const Indeterminate = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByRole('checkbox');
+    checkbox.indeterminate = true;
   }
 };
 
