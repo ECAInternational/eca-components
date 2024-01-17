@@ -1,11 +1,4 @@
-import {
-  Canvas,
-  Controls,
-  Primary,
-  Meta,
-  Subtitle,
-  Title
-} from '@storybook/blocks';
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
 import * as TextInput from './TextInput.stories';
 
 <Meta of={TextInput} />
@@ -15,11 +8,17 @@ import * as TextInput from './TextInput.stories';
 <Primary />
 <Controls />
 
-## States
-
 ### Enabled
 
 <Canvas of={TextInput.Enabled} />
+
+### Disabled
+
+<Canvas of={TextInput.Disabled} />
+
+## States
+
+Text Input support 2 states, Warning & Error
 
 ### Warning
 
@@ -36,8 +35,6 @@ import * as TextInput from './TextInput.stories';
 ### With Description
 
 <Canvas of={TextInput.Description} />
-<Canvas of={TextInput.Mandatory} />
-<Canvas of={TextInput.Optional} />
 
 ### Icon
 
@@ -50,5 +47,3 @@ import * as TextInput from './TextInput.stories';
 ### Suffix
 
 <Canvas of={TextInput.Suffix} />
-
-<Canvas of={TextInput.PrefixSuffixIcon} />
