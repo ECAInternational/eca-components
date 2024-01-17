@@ -48,7 +48,7 @@ export function TextInput(props) {
           {...others}
           className={`font-light w-full rounded focus-visible:outline-0 bg-transparent text-neutral-body
                placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-transparent 
-               disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1 disabled:placeholder-opacity-60 disabled:text-opacity-60`}
+               disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1 disabled:placeholder-opacity-60 disabled:text-opacity-60 disabled:cursor-not-allowed`}
         />
         {suffix && <span className='flex pe-2.5 items-center'>{suffix}</span>}
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning-accent' />}
