@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.0.23](https://github.com/ECAInternational/eca-components/compare/v1.0.22...v1.0.23) (2024-01-16)
+
+
+### Features
+
+* Add Text Inputs ([2808727](https://github.com/ECAInternational/eca-components/commit/280872759e0d7292e4014c65efeecfe84211168b))
+* Bump @vitejs/plugin-react from 3.1.0 to 4.2.1 ([#50](https://github.com/ECAInternational/eca-components/issues/50)) ([ce075ae](https://github.com/ECAInternational/eca-components/commit/ce075ae5488314dd034272177b31aa4b2aca34d8))
+* Bump the eslint group with 2 updates ([#62](https://github.com/ECAInternational/eca-components/issues/62)) ([f679d0e](https://github.com/ECAInternational/eca-components/commit/f679d0e9f9e8da762838fca4c0c9b15c7615eb8f))
+* Bump the storybook group with 9 updates ([#64](https://github.com/ECAInternational/eca-components/issues/64)) ([ef05529](https://github.com/ECAInternational/eca-components/commit/ef05529b0642b365f49bd9c1234e2fd2fc504cbf))
+* Package Updates ([#68](https://github.com/ECAInternational/eca-components/issues/68)) ([ce6100a](https://github.com/ECAInternational/eca-components/commit/ce6100a1d9ebaaada4b6e6230c98618a208ef48e))
+
+
+### Bug Fixes
+
+* Trying to fix build ([ce6100a](https://github.com/ECAInternational/eca-components/commit/ce6100a1d9ebaaada4b6e6230c98618a208ef48e))
+
 ## [1.0.22](https://github.com/ECAInternational/eca-components/compare/v1.0.21...v1.0.22) (2024-01-04)
 
 
