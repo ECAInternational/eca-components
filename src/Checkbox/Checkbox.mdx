@@ -1,0 +1,29 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as Checkbox from './Checkbox.stories.jsx';
+
+<Meta of={Checkbox} />
+<Title>Components/Checkbox</Title>
+<Subtitle>Basic Checkboxes</Subtitle>
+
+<Primary />
+<Controls />
+
+### Unchecked
+
+<Canvas of={Checkbox.Unchecked} />
+
+### Checked
+
+<Canvas of={Checkbox.Checked} />
+
+### Indeterminate
+
+<Canvas of={Checkbox.Indeterminate} />
+
+### Right Label
+
+<Canvas of={Checkbox.RightLabel} />
+
+### Left Label
+
+<Canvas of={Checkbox.LeftLabel} />

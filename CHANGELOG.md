@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.24](https://github.com/ECAInternational/eca-components/compare/v1.0.23...v1.0.24) (2024-01-18)
+
+
+### Features
+
+* Add Checkbox Component ([9b2deb3](https://github.com/ECAInternational/eca-components/commit/9b2deb391f8e6a5eac7cf72b2357a2f5632bd699))
+* Add Radio Buttons ([#81](https://github.com/ECAInternational/eca-components/issues/81)) ([1765018](https://github.com/ECAInternational/eca-components/commit/17650186d1598a549405b09951fc4c946f6624f0))
+
+
+### Bug Fixes
+
+* Update Packages ([#79](https://github.com/ECAInternational/eca-components/issues/79)) ([ddfd9a2](https://github.com/ECAInternational/eca-components/commit/ddfd9a28bf3599c433db02d54874e7d346064e65))
+
 ## [1.0.23](https://github.com/ECAInternational/eca-components/compare/v1.0.22...v1.0.23) (2024-01-16)
 
 

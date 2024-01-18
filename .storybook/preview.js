@@ -8,7 +8,10 @@ const preview = {
     },
     actions: { argTypesRegex: '^on.*' },
     docs: {
-      theme: themes.light
+      theme: themes.light,
+      story: {
+        autoplay: true
+      }
     },
     controls: {
       matchers: {
