@@ -1,4 +1,4 @@
-import { Radio } from './Radio.jsx';
+import { Radio } from './Radio';
 
 export default {
   component: Radio,
