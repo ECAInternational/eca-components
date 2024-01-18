@@ -25,16 +25,15 @@ export function TextInput(props) {
   return (
     <div className='text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled'>
       {label && (
-        <label htmlFor={id} className='text-sm block py-1'>
+        <label htmlFor={id} className='text-sm block py-1 transition-all'>
           {label}
           {description && <span className='font-light ps-1'>{description}</span>}
         </label>
       )}
 
       <span
-        className={`p-3 text-sm text-controls-placeholder-text font-regular border rounded relative flex
-        hover:outline hover:outline-2 hover:outline-offset-2
-        focus-within:outline focus-within:outline-2 focus-within:outline-offset-2
+        className={`p-3 text-sm text-controls-placeholder-text font-regular border rounded relative flex transition-all
+        outline outline-2 outline-offset-2 outline-default-transparent
         has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:border-neutral-detail-paler has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
         ${hover[state]} ${border[state]} ${focus[state]}`}
       >
