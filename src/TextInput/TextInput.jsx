@@ -44,8 +44,8 @@ export function TextInput(props) {
           id={id}
           type={type}
           {...others}
-          className={`font-light w-full rounded focus-visible:outline-0 bg-transparent text-neutral-body
-               placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-transparent 
+          className={`font-light w-full rounded focus-visible:outline-0 bg-default-transparent text-neutral-body
+               placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-default-transparent 
                disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1 disabled:placeholder-opacity-60 disabled:text-opacity-60 disabled:cursor-not-allowed`}
         />
         {suffix && <span className='flex pe-2.5 items-center'>{suffix}</span>}

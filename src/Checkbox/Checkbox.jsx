@@ -5,7 +5,7 @@ export function Checkbox(props) {
   const { leftLabel, rightLabel, id, checked, disabled = false, ...others } = props;
 
   return (
-    <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled'>
+    <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled transition-all'>
       {leftLabel && (
         <label htmlFor={id} className='text-sm font-light pe-2'>
           {leftLabel}
@@ -19,12 +19,13 @@ export function Checkbox(props) {
           disabled={disabled}
           checked={checked}
           {...others}
-          className='peer cursor-pointer appearance-none w-6 h-6 border border-controls-border rounded transition-opacity
+          className='peer cursor-pointer appearance-none w-6 h-6 border border-controls-border rounded transition-all
+          outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent
 
           disabled:border-neutral-detail-paler disabled:hover:outline-0 disabled:cursor-not-allowed
-          hover:border-controls-border-hover hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-neutral-detail-paler hover:outline-offset-transparent
-          focus-visible:border-controls-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-controls-border
-          active:border-controls-border-hover active:bg-neutral-detail-palest active:outline active:outline-4 active:outline-offset-0 active:outline-neutral-detail-palest
+          hover:border-controls-border-hover hover:outline-neutral-detail-paler
+          focus-visible:border-controls-border focus-visible:outline-controls-border
+          active:border-controls-border-hover active:bg-neutral-detail-palest active:outline-4 active:outline-neutral-detail-palest
 
           checked:border-0 checked:bg-controls-highlight
           checked:disabled:bg-controls-bg-disabled checked:disabled:border-controls-bg-disabled

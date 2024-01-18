@@ -13,12 +13,13 @@ export function Radio(props) {
         name={name}
         checked={checked}
         {...others}
-        className='peer appearance-none cursor-pointer w-6 h-6 border border-controls-border rounded-full place-content-center grid
+        className='peer appearance-none cursor-pointer w-6 h-6 border border-controls-border rounded-full place-content-center grid transition-all
+          outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent
 
           disabled:border-neutral-detail-paler disabled:hover:outline-0 disabled:cursor-not-allowed
-          hover:border-controls-border-hover hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-neutral-detail-paler hover:outline-offset-transparent
-          focus-visible:border-controls-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-controls-border
-          active:border-controls-border-hover active:[&:not(:disabled)]:bg-neutral-detail-palest active:outline active:outline-4 active:outline-offset-0 active:outline-neutral-detail-palest
+          hover:border-controls-border-hover hover:outline-neutral-detail-paler
+          focus-visible:border-controls-border focus-visible:outline-controls-border
+          active:border-controls-border-hover active:[&:not(:disabled)]:bg-neutral-detail-palest active:outline-4 active:outline-offset-0 active:outline-neutral-detail-palest
 
           before:content[""] before:w-3.5 before:h-3.5 before:bg-controls-highlight before:rounded-full before:transition before:scale-0
 
@@ -30,7 +31,7 @@ export function Radio(props) {
           checked:active:outline-neutral-detail-palest'
       />
       {label && (
-        <label htmlFor={id} className='text-sm font-light ps-2'>
+        <label htmlFor={id} className='text-sm font-light ps-2 transition-all'>
           {label}
         </label>
       )}
