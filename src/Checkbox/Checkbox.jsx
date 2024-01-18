@@ -39,8 +39,8 @@ export function Checkbox(props) {
           indeterminate:focus-visible:outline-controls-highlight
           indeterminate:active:bg-controls-highlight'
         />
-        <i className='fi fi-br-minus w-6 h-6 text-controls-highlight-palest peer-disabled:text-controls-content-disabled absolute flex items-center place-content-center transition-opacity opacity-0 pointer-events-none peer-indeterminate:opacity-100' />
-        <i className='fi fi-br-check w-6 h-6 text-controls-highlight-palest peer-disabled:text-controls-content-disabled absolute flex items-center place-content-center transition-opacity opacity-0 pointer-events-none peer-checked:opacity-100' />
+        <i className='fi fi-br-minus w-6 h-6 absolute flex items-center place-content-center pointer-events-none transition-all text-controls-highlight-palest peer-disabled:text-controls-content-disabled opacity-0 scale-0 peer-indeterminate:scale-100 peer-indeterminate:opacity-100' />
+        <i className='fi fi-br-check w-6 h-6 absolute flex items-center place-content-center pointer-events-none transition-all text-controls-highlight-palest peer-disabled:text-controls-content-disabled opacity-0 scale-0 peer-checked:scale-100 peer-checked:opacity-100' />
       </div>
       {rightLabel && (
         <label htmlFor={id} className='text-sm font-light ps-2'>
