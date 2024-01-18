@@ -23,3 +23,7 @@ export default {
 export const Selected = {
   args: {}
 };
+
+export const Unselected = {
+  args: {}
+};
