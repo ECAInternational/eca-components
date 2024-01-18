@@ -19,23 +19,23 @@ export function Checkbox(props) {
           disabled={disabled}
           checked={checked}
           {...others}
-          className='peer cursor-pointer appearance-none w-6 h-6 border border-controls-border rounded transition-all
+          className='peer cursor-pointer appearance-none w-6 h-6 border border-controls-border rounded transition-opacity
 
-          disabled:border-neutral-detail-paler disabled:hover:ring-0 disabled:cursor-not-allowed
-          hover:border-controls-border-hover hover:ring-2 hover:ring-offset-2 hover:ring-neutral-detail-paler
-          focus-visible:border-controls-border focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-controls-border
-          active:border-controls-border active:bg-neutral-detail-palest active:ring active:ring-offset-1 active:ring-offset-neutral-detail-palest active:ring-neutral-detail-palest
+          disabled:border-neutral-detail-paler disabled:hover:outline-0 disabled:cursor-not-allowed
+          hover:border-controls-border-hover hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-neutral-detail-paler hover:outline-offset-transparent
+          focus-visible:border-controls-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-controls-border
+          active:border-controls-border active:bg-neutral-detail-palest active:outline active:outline-4 active:outline-offset-0 active:outline-neutral-detail-palest
 
           checked:border-0 checked:bg-controls-highlight
-          checked:disabled:bg-neutral-detail-paler
-          checked:hover:ring-controls-highlight-paler
-          checked:focus-visible:ring-controls-highlight
+          checked:disabled:bg-controls-bg-disabled checked:disabled:border-controls-bg-disabled
+          checked:hover:outline-controls-highlight-paler
+          checked:focus-visible:outline-controls-highlight
           checked:active:bg-controls-highlight
 
           indeterminate:border-0 indeterminate:bg-controls-highlight
           indeterminate:disabled:bg-neutral-detail-paler
-          indeterminate:hover:ring-controls-highlight-paler
-          indeterminate:focus-visible:ring-controls-highlight
+          indeterminate:hover:outline-controls-highlight-paler
+          indeterminate:focus-visible:outline-controls-highlight
           indeterminate:active:bg-controls-highlight'
         />
         <i className='fi fi-br-minus w-6 h-6 text-controls-highlight-palest peer-disabled:text-controls-content-disabled absolute flex items-center place-content-center transition-opacity opacity-0 pointer-events-none peer-indeterminate:opacity-100' />
