@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function TextInput(props) {
-  const { state = 'default', type = 'text', label, description, icon, prefix, suffix, id, disabled, ...others } = props;
+  const { state = 'default', type = 'text', label, description, icon, prefix, suffix, id, ...others } = props;
 
   const border = {
     default: 'border-controls-border',
@@ -23,9 +23,9 @@ export function TextInput(props) {
   };
 
   return (
-    <>
+    <div className='text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled'>
       {label && (
-        <label htmlFor={id} className={`text-sm block py-1 ${disabled ? 'text-controls-content-disabled' : 'text-neutral-detail-bolder'}`}>
+        <label htmlFor={id} className='text-sm block py-1'>
           {label}
           {description && <span className='font-light ps-1'>{description}</span>}
         </label>
@@ -44,7 +44,6 @@ export function TextInput(props) {
         <input
           id={id}
           type={type}
-          disabled={disabled}
           {...others}
           className={`font-light w-full rounded focus-visible:outline-0 bg-transparent text-neutral-body
                placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-transparent 
@@ -54,7 +53,7 @@ export function TextInput(props) {
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning-accent' />}
         {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error-accent' />}
       </span>
-    </>
+    </div>
   );
 }
 
@@ -65,7 +64,6 @@ TextInput.propTypes = {
   icon: PropTypes.string,
   prefix: PropTypes.string,
   suffix: PropTypes.string,
-  disabled: PropTypes.bool.isRequired,
   label: PropTypes.string,
   description: PropTypes.string
 };
