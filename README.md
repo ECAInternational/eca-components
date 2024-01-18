@@ -34,11 +34,7 @@ export default {
   theme: {
     ...myBrand
   },
-  daisyui: {
-    themes: []
-  },
   plugins: [
-    require('daisyui'),
     createThemes(
             {
               'eca-light': ecaLight,

@@ -19,11 +19,7 @@ module.exports = {
       }
     }
   },
-  daisyui: {
-    themes: []
-  },
   plugins: [
-    require('daisyui'),
     createThemes({
       'eca-light': ecaLight,
       'eca-dark': ecaDark

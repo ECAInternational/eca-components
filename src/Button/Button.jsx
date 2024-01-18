@@ -5,15 +5,15 @@ export function Button(props) {
   const { variant, type = 'button', size = 'medium', className = '', children, ...others } = props;
 
   const bg = {
-    primary: 'bg-primary-main border-0 text-default-white font-medium',
-    outline: 'bg-transparent border border-neutral-detail-boldest text-neutral-detail-boldest font-medium',
-    ghost: 'bg-transparent border-2 border-transparent text-neutral-detail-boldest font-medium'
+    primary: 'bg-primary-main border-0 text-default-white',
+    outline: 'bg-transparent border border-neutral-detail-boldest text-neutral-detail-boldest',
+    ghost: 'bg-transparent border-2 border-transparent text-neutral-detail-boldest'
   };
 
   const disabled = {
-    primary: 'disabled:bg-controls-bg-disabled disabled:text-controls-content-disabled',
-    outline: 'disabled:border-controls-content-disabled disabled:text-controls-content-disabled',
-    ghost: 'disabled:text-controls-content-disabled'
+    primary: 'disabled:bg-controls-bg-disabled',
+    outline: 'disabled:border-controls-content-disabled',
+    ghost: ''
   };
 
   const hover = {
@@ -42,7 +42,9 @@ export function Button(props) {
 
   return (
     <button
-      className={`transition flex items-center justify-center active:scale-92 disabled:cursor-not-allowed 
+      className={`transition flex items-center justify-center font-medium
+      active:scale-92 
+      disabled:text-controls-content-disabled disabled:cursor-not-allowed
       ${bg[variant]} ${disabled[variant]} 
       ${hover[variant]} ${active[variant]} ${focus[variant]}  
       ${sizes[size]} ${className}`}
