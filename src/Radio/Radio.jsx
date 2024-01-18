@@ -13,7 +13,7 @@ export function Radio(props) {
         name={name}
         checked={checked}
         {...others}
-        className='peer appearance-none w-6 h-6 border border-controls-border rounded-full place-content-center grid
+        className='peer appearance-none cursor-pointer w-6 h-6 border border-controls-border rounded-full place-content-center grid
 
           disabled:border-neutral-detail-paler disabled:hover:outline-0 disabled:cursor-not-allowed
           hover:border-controls-border-hover hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-neutral-detail-paler hover:outline-offset-transparent

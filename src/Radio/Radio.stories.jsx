@@ -33,8 +33,7 @@ export default {
     }
   },
   args: {
-    disabled: false,
-    value: 'test'
+    disabled: false
   }
 };
 
@@ -46,10 +45,10 @@ export const Default = {
   render: (args) => (
     <div className='flex flex-col justify-start'>
       <div className='py-2'>
-        <Radio {...args} label='Radio 1' value='one' />
+        <Radio {...args} label='Radio 1' id='one' value='one' defaultChecked />
       </div>
       <div className='py-2'>
-        <Radio {...args} label='Radio 2' value='two' />
+        <Radio {...args} label='Radio 2' id='two' value='two' />
       </div>
     </div>
   )
@@ -59,7 +58,8 @@ export const Selected = {
   args: {
     checked: true,
     id: 'selected',
-    name: 'selected'
+    name: 'selected',
+    value: 'selected'
   }
 };
 
@@ -67,7 +67,8 @@ export const Unselected = {
   args: {
     checked: false,
     id: 'unselected',
-    name: 'unselected'
+    name: 'unselected',
+    value: 'unselected'
   }
 };
 
@@ -75,7 +76,8 @@ export const Label = {
   args: {
     label: 'A Label',
     id: 'label',
-    name: 'label'
+    name: 'label',
+    value: 'label'
   }
 };
 
@@ -86,19 +88,19 @@ export const Vertical = {
   render: (args) => (
     <div className='flex flex-col justify-start'>
       <div className='py-2'>
-        <Radio {...args} label='Apples' value='apples' />
+        <Radio {...args} label='Apples' id='apples' value='apples' defaultChecked />
       </div>
       <div className='py-2'>
-        <Radio {...args} label='Bananas' value='bananas' />
+        <Radio {...args} label='Bananas' id='bananas' value='bananas' />
       </div>
       <div className='py-2'>
-        <Radio {...args} label='Oranges' value='oranges' />
+        <Radio {...args} label='Oranges' id='oranges' value='oranges' />
       </div>
       <div className='py-2'>
-        <Radio {...args} label='Mangos' value='mangos' />
+        <Radio {...args} label='Mangos' id='mangos' value='mangos' />
       </div>
       <div className='py-2'>
-        <Radio {...args} label='Strawberries' value='strawberries' />
+        <Radio {...args} label='Strawberries' id='strawberries' value='strawberries' />
       </div>
     </div>
   )
@@ -111,19 +113,19 @@ export const Horizontal = {
   render: (args) => (
     <div className='flex flex-row items-center'>
       <span className='pe-4'>
-        <Radio {...args} label='Apples' value='apples' />
+        <Radio {...args} label='Apples' id='apples2' value='apples' defaultChecked />
       </span>
       <span className='pe-4'>
-        <Radio {...args} label='Bananas' value='bananas' />
+        <Radio {...args} label='Bananas' id='bananas2' value='bananas' />
       </span>
       <span className='pe-4'>
-        <Radio {...args} label='Oranges' value='oranges' />
+        <Radio {...args} label='Oranges' id='oranges2' value='oranges' />
       </span>
       <span className='pe-4'>
-        <Radio {...args} label='Mangos' value='mangos' />
+        <Radio {...args} label='Mangos' id='mangos2' value='mangos' />
       </span>
       <span className='pe-4'>
-        <Radio {...args} label='Strawberries' value='strawberries' />
+        <Radio {...args} label='Strawberries' id='strawberries2' value='strawberries' />
       </span>
     </div>
   )
