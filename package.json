@@ -58,7 +58,7 @@
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.6.9",
     "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.17",
     "axe-playwright": "^2.0.1",
     "boxen": "^7.1.1",
     "chromatic": "^10.3.1",
