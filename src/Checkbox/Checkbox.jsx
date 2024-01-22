@@ -5,9 +5,9 @@ export function Checkbox(props) {
   const { leftLabel, rightLabel, id, checked, disabled = false, ...others } = props;
 
   return (
-    <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled transition-all'>
+    <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled'>
       {leftLabel && (
-        <label htmlFor={id} className='text-sm font-light pe-2'>
+        <label htmlFor={id} className='text-sm font-light pe-2 transition-all'>
           {leftLabel}
         </label>
       )}
@@ -19,7 +19,7 @@ export function Checkbox(props) {
           disabled={disabled}
           checked={checked}
           {...others}
-          className='peer cursor-pointer appearance-none w-6 h-6 border border-controls-border rounded transition-all
+          className='peer cursor-pointer appearance-none w-6 h-6 border border-controls-border rounded transition
           outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent
 
           disabled:border-neutral-detail-paler disabled:hover:outline-0 disabled:cursor-not-allowed

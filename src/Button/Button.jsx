@@ -42,7 +42,7 @@ export function Button(props) {
 
   return (
     <button
-      className={`transition-all flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent
+      className={`transition flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent
       active:scale-92 
       disabled:text-controls-content-disabled disabled:cursor-not-allowed
       ${bg[variant]} ${disabled[variant]} 

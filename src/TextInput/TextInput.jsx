@@ -32,7 +32,7 @@ export function TextInput(props) {
       )}
 
       <span
-        className={`p-3 text-sm text-controls-placeholder-text font-regular border rounded relative flex transition-all
+        className={`p-3 text-sm text-controls-placeholder-text font-regular border rounded relative flex transition
         outline outline-2 outline-offset-2 outline-default-transparent
         has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:border-neutral-detail-paler has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
         ${hover[state]} ${border[state]} ${focus[state]}`}
