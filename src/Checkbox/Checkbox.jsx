@@ -25,7 +25,7 @@ export function Checkbox(props) {
           disabled:border-neutral-detail-paler disabled:hover:outline-0 disabled:cursor-not-allowed
           hover:border-controls-border-hover hover:outline-neutral-detail-paler
           focus-visible:border-controls-border focus-visible:outline-controls-border
-          active:border-controls-border-hover active:bg-neutral-detail-palest active:outline-4 active:outline-neutral-detail-palest
+          active:border-controls-border-hover active:bg-neutral-detail-palest active:outline-4 active:outline-offset-0 active:outline-neutral-detail-palest
 
           checked:border-0 checked:bg-controls-highlight
           checked:disabled:bg-controls-bg-disabled checked:disabled:border-controls-bg-disabled
