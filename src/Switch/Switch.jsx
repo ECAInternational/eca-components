@@ -25,23 +25,27 @@ export function Switch(props) {
           disabled={disabled}
           checked={checked}
           {...others}
-          className='peer cursor-pointer appearance-none w-12 h-7 p-px border border-controls-border rounded-full place-content-center grid transition
-          outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent
-
-          disabled:border-neutral-detail-pale disabled:bg-neutral-detail-palest disabled:hover:outline-0 disabled:cursor-not-allowed
-          hover:outline-neutral-detail-paler
-          focus-visible:outline-controls-border
-          active:border-controls-border-hover active:bg-neutral-detail-palest active:outline-4 active:outline-offset-0 active:outline-neutral-detail-palest
+          className='peer cursor-pointer appearance-none w-12 h-7 p-px border border-neutral-detail rounded-full place-content-center grid transition
+          outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent bg-controls-highlight-palest
 
           before:content[""] before:w-5 before:h-5 before:-translate-x-1/2 before:bg-neutral-detail before:rounded-full before:transition
 
-          disabled:before:bg-neutral-detail-pale
+          disabled:border-neutral-detail-paler disabled:bg-neutral-detail-palest disabled:hover:outline-0 disabled:cursor-not-allowed
+          disabled:before:bg-neutral-detail-pale disabled:before:opacity-60
+
+          active:border-neutral-detail-bold active:outline-4 active:outline-offset-0 active:outline-neutral-detail-palest
+          active:before:bg-neutral-detail-bold
+
+          hover:outline-neutral-detail-paler
+          focus-visible:outline-controls-border
+
           checked:border-controls-highlight
           checked:before:translate-x-1/2 checked:before:bg-controls-highlight checked:disabled:before:bg-controls-highlight-pale
           checked:disabled:bg-controls-bg-disabled checked:disabled:border-controls-highlight-pale
           checked:hover:outline-controls-highlight-paler
           checked:focus-visible:outline-controls-highlight
-          checked:active:outline-controls-highlight-palest checked:active:bg-controls-highlight-palest checked:active:border-controls-highlight'
+          checked:active:outline-controls-highlight-palest checked:active:bg-controls-highlight-palest checked:active:border-controls-highlight-bold
+          checked:active:before:bg-controls-highlight-bold'
         />
       </div>
       {label && alignment === 'right' && (
