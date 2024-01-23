@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Checkbox(props) {
-  const { leftLabel, rightLabel, id, checked, disabled = false, ...others } = props;
+  const { label, alignment = 'left', id, checked, disabled = false, ...others } = props;
 
   return (
     <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled'>
-      {leftLabel && (
+      {label && alignment === 'left' && (
         <label htmlFor={id} className='text-sm font-light pe-2 transition-all'>
-          {leftLabel}
+          {label}
         </label>
       )}
 
@@ -42,9 +42,9 @@ export function Checkbox(props) {
         <i className='fi fi-br-minus w-6 h-6 absolute flex items-center place-content-center pointer-events-none transition-all text-controls-highlight-palest peer-disabled:text-controls-content-disabled opacity-0 scale-0 peer-indeterminate:scale-100 peer-indeterminate:opacity-100' />
         <i className='fi fi-br-check w-6 h-6 absolute flex items-center place-content-center pointer-events-none transition-all text-controls-highlight-palest peer-disabled:text-controls-content-disabled opacity-0 scale-0 peer-checked:scale-100 peer-checked:opacity-100' />
       </div>
-      {rightLabel && (
+      {label && alignment === 'right' && (
         <label htmlFor={id} className='text-sm font-light ps-2'>
-          {rightLabel}
+          {label}
         </label>
       )}
     </div>
@@ -55,6 +55,6 @@ Checkbox.propTypes = {
   id: PropTypes.string,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
-  leftLabel: PropTypes.string,
-  rightLabel: PropTypes.string
+  label: PropTypes.string,
+  alignment: PropTypes.oneOf(['left', 'right'])
 };

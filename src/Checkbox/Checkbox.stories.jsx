@@ -27,7 +27,9 @@ export default {
     }
   },
   args: {
-    disabled: false
+    disabled: false,
+    alignment: 'left',
+    label: 'A Label'
   }
 };
 
@@ -57,12 +59,14 @@ export const Indeterminate = {
 
 export const RightLabel = {
   args: {
-    rightLabel: 'Right Label'
+    label: 'Right Label',
+    alignment: 'right'
   }
 };
 
 export const LeftLabel = {
   args: {
-    leftLabel: 'Left Label'
+    label: 'Left Label',
+    alignment: 'left'
   }
 };
