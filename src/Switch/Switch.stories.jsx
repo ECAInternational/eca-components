@@ -17,6 +17,9 @@ export default {
     id: {
       table: { disable: true }
     },
+    checked: {
+      table: { disable: true }
+    },
     onChange: {
       action: true,
       table: { disable: true }
