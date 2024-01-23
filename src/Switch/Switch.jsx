@@ -41,7 +41,7 @@ export function Switch(props) {
           checked:disabled:bg-controls-bg-disabled checked:disabled:border-controls-highlight-pale
           checked:hover:outline-controls-highlight-paler
           checked:focus-visible:outline-controls-highlight
-          checked:active:outline-neutral-detail-palest checked:active:border-controls-highlight'
+          checked:active:outline-controls-highlight-palest checked:active:bg-controls-highlight-palest checked:active:border-controls-highlight'
         />
       </div>
       {label && alignment === 'right' && (
