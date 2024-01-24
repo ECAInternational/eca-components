@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.25](https://github.com/ECAInternational/eca-components/compare/v1.0.24...v1.0.25) (2024-01-24)
+
+
+### Features
+
+* Add Color Transitions to Components ([#82](https://github.com/ECAInternational/eca-components/issues/82)) ([eb88e87](https://github.com/ECAInternational/eca-components/commit/eb88e87de6a7c73479746496f075e0b9cb058daa))
+* Add Switch Component ([#89](https://github.com/ECAInternational/eca-components/issues/89)) ([7d148ce](https://github.com/ECAInternational/eca-components/commit/7d148ce89d7f76092441a1c7fbd66a6420631d29))
+
+
+### Bug Fixes
+
+* Fix checkbox label alignment ([#90](https://github.com/ECAInternational/eca-components/issues/90)) ([29920d1](https://github.com/ECAInternational/eca-components/commit/29920d1ef0e5e8e7b2d774847556e06f549f77c4))
+
 ## [1.0.24](https://github.com/ECAInternational/eca-components/compare/v1.0.23...v1.0.24) (2024-01-18)
 
 
