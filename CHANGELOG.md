@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.26](https://github.com/ECAInternational/eca-components/compare/v1.0.25...v1.0.26) (2024-01-26)
+
+
+### Bug Fixes
+
+* Export all components properly ([#91](https://github.com/ECAInternational/eca-components/issues/91)) ([083664e](https://github.com/ECAInternational/eca-components/commit/083664e6e721a435f552918f0f3c246ee757c79e))
+
 ## [1.0.25](https://github.com/ECAInternational/eca-components/compare/v1.0.24...v1.0.25) (2024-01-24)
 
 
