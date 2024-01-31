@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.27](https://github.com/ECAInternational/eca-components/compare/v1.0.26...v1.0.27) (2024-01-31)
+
+
+### Features
+
+* Fix checkbox control ([#94](https://github.com/ECAInternational/eca-components/issues/94)) ([08f09b4](https://github.com/ECAInternational/eca-components/commit/08f09b4e3d77ead8188850022b833885ddcc6dcd))
+
 ## [1.0.26](https://github.com/ECAInternational/eca-components/compare/v1.0.25...v1.0.26) (2024-01-26)
 
 
