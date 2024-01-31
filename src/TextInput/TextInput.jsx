@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function TextInput(props) {
-  const { state = 'default', type = 'text', label, description, icon, prefix, suffix, id, ...others } = props;
+  const { name, id, label, state = 'default', type = 'text', description, icon, prefix, suffix, ...others } = props;
 
   const border = {
     default: 'border-controls-border',
@@ -42,6 +42,7 @@ export function TextInput(props) {
 
         <input
           id={id}
+          name={name}
           type={type}
           {...others}
           className={`font-light w-full rounded focus-visible:outline-0 bg-default-transparent text-neutral-body
@@ -57,12 +58,13 @@ export function TextInput(props) {
 }
 
 TextInput.propTypes = {
+  name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  label: PropTypes.string,
   state: PropTypes.string,
   type: PropTypes.string,
   icon: PropTypes.string,
   prefix: PropTypes.string,
   suffix: PropTypes.string,
-  label: PropTypes.string,
   description: PropTypes.string
 };

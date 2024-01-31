@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Radio(props) {
-  const { label, id, value, checked, name, ...others } = props;
+  const { name, id, label, value, checked, ...others } = props;
 
   return (
     <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled'>
       <input
         type='radio'
         id={id}
-        value={value}
         name={name}
+        value={value}
         checked={checked}
         {...others}
         className='peer appearance-none cursor-pointer w-6 h-6 border border-controls-border rounded-full place-content-center grid transition
@@ -40,9 +40,9 @@ export function Radio(props) {
 }
 
 Radio.propTypes = {
-  id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  checked: PropTypes.bool,
-  label: PropTypes.string
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  checked: PropTypes.bool
 };

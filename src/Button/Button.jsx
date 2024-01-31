@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Button(props) {
-  const { variant, type = 'button', size = 'medium', className = '', children, ...others } = props;
+  const { name, id, variant, type = 'button', size = 'medium', children, ...others } = props;
 
   const bg = {
     primary: 'bg-primary-main border-0 text-default-white',
@@ -42,12 +42,14 @@ export function Button(props) {
 
   return (
     <button
+      id={id}
+      name={name}
       className={`transition flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent
       active:scale-92 
       disabled:text-controls-content-disabled disabled:cursor-not-allowed
       ${bg[variant]} ${disabled[variant]} 
       ${hover[variant]} ${active[variant]} ${focus[variant]}  
-      ${sizes[size]} ${className}`}
+      ${sizes[size]}`}
       type={type}
       {...others}
     >
@@ -57,9 +59,10 @@ export function Button(props) {
 }
 
 Button.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   variant: PropTypes.string.isRequired,
   type: PropTypes.string,
   size: PropTypes.string,
-  className: PropTypes.string,
   children: PropTypes.node.isRequired
 };

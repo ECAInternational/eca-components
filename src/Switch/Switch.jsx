@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Switch(props) {
-  const { label, alignment = 'left', id, checked, disabled = false, ...others } = props;
+  const { name, id, label, alignment = 'left', checked, disabled = false, ...others } = props;
 
   return (
     <div className={`flex ${alignment === 'top' && 'flex-col'} items-center text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled`}>
@@ -22,6 +22,7 @@ export function Switch(props) {
         <input
           type='checkbox'
           id={id}
+          name={name}
           disabled={disabled}
           checked={checked}
           {...others}
@@ -47,6 +48,7 @@ export function Switch(props) {
           checked:active:outline-controls-highlight-palest checked:active:bg-controls-highlight-palest checked:active:border-controls-highlight-bold
           checked:active:before:bg-controls-highlight-bold'
         />
+        <input type='hidden' name={name} value={checked} />
       </div>
       {label && alignment === 'right' && (
         <label htmlFor={id} className='text-sm font-light ps-2'>
@@ -58,9 +60,10 @@ export function Switch(props) {
 }
 
 Switch.propTypes = {
-  id: PropTypes.string,
-  checked: PropTypes.bool,
-  disabled: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  checked: PropTypes.bool.isRequired,
   label: PropTypes.string,
+  disabled: PropTypes.bool,
   alignment: PropTypes.oneOf(['left', 'right', 'top'])
 };

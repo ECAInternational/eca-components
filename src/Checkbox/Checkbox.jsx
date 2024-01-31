@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Checkbox(props) {
-  const { label, alignment = 'left', id, checked, disabled = false, ...others } = props;
+  const { name, id, label, checked, alignment = 'left', disabled = false, ...others } = props;
 
   return (
     <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled'>
@@ -16,8 +16,10 @@ export function Checkbox(props) {
         <input
           type='checkbox'
           id={id}
+          name={name}
           disabled={disabled}
           checked={checked}
+          value={checked}
           {...others}
           className='peer cursor-pointer appearance-none w-6 h-6 border border-controls-border rounded transition
           outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent
@@ -41,6 +43,7 @@ export function Checkbox(props) {
         />
         <i className='fi fi-br-minus w-6 h-6 absolute flex items-center place-content-center pointer-events-none transition-all text-controls-highlight-palest peer-disabled:text-controls-content-disabled opacity-0 scale-0 peer-indeterminate:scale-100 peer-indeterminate:opacity-100' />
         <i className='fi fi-br-check w-6 h-6 absolute flex items-center place-content-center pointer-events-none transition-all text-controls-highlight-palest peer-disabled:text-controls-content-disabled opacity-0 scale-0 peer-checked:scale-100 peer-checked:opacity-100' />
+        <input type='hidden' name={name} value={checked} />
       </div>
       {label && alignment === 'right' && (
         <label htmlFor={id} className='text-sm font-light ps-2'>
@@ -52,9 +55,10 @@ export function Checkbox(props) {
 }
 
 Checkbox.propTypes = {
-  id: PropTypes.string,
-  checked: PropTypes.bool,
-  disabled: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  checked: PropTypes.bool.isRequired,
   label: PropTypes.string,
+  disabled: PropTypes.bool,
   alignment: PropTypes.oneOf(['left', 'right'])
 };

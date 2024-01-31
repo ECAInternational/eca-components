@@ -12,8 +12,7 @@ export default {
   argTypes: {
     variant: {
       control: 'select',
-      description:
-        'Defines the colour scheme of the button based on the current theme',
+      description: 'Defines the colour scheme of the button based on the current theme',
       options: ['primary', 'outline', 'ghost']
     },
     size: {
@@ -45,12 +44,16 @@ export default {
 
 export const Default = {
   args: {
+    id: 'default',
+    name: 'default',
     variant: 'primary',
     children: 'Button'
   }
 };
 export const Primary = {
   args: {
+    id: 'primary',
+    name: 'primary',
     variant: 'primary',
     children: 'Button'
   }
@@ -58,6 +61,8 @@ export const Primary = {
 
 export const OutlineClick = {
   args: {
+    id: 'outlineClick',
+    name: 'outlineClick',
     variant: 'outline',
     children: 'Primary Click'
   },
@@ -77,6 +82,8 @@ export const OutlineClick = {
 
 export const Outline = {
   args: {
+    id: 'outline',
+    name: 'outline',
     variant: 'outline',
     children: 'Outline'
   }
@@ -84,22 +91,13 @@ export const Outline = {
 
 export const IconAtStart = {
   args: {
+    id: 'iconAtStart',
+    name: 'iconAtStart',
     variant: 'primary',
     children: (
       <>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          className='h-6 w-6'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-          />
+        <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' />
         </svg>
         &nbsp; Button
       </>
@@ -109,23 +107,14 @@ export const IconAtStart = {
 
 export const IconAtEnd = {
   args: {
+    id: 'iconAtEnd',
+    name: 'iconAtEnd',
     variant: 'primary',
     children: (
       <>
         Button &nbsp;
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          className='h-6 w-6'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-          />
+        <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' />
         </svg>
       </>
     )
@@ -134,6 +123,8 @@ export const IconAtEnd = {
 
 export const Ghost = {
   args: {
+    id: 'ghost',
+    name: 'ghost',
     variant: 'ghost',
     children: 'Ghost'
   }
@@ -141,6 +132,8 @@ export const Ghost = {
 
 export const Small = {
   args: {
+    id: 'small',
+    name: 'small',
     variant: 'primary',
     children: 'Small',
     size: 'small'
@@ -149,6 +142,8 @@ export const Small = {
 
 export const Medium = {
   args: {
+    id: 'medium',
+    name: 'medium',
     variant: 'primary',
     children: 'Medium',
     size: 'medium'
@@ -157,6 +152,8 @@ export const Medium = {
 
 export const Large = {
   args: {
+    id: 'large',
+    name: 'large',
     variant: 'primary',
     children: 'Large',
     size: 'large'
@@ -165,6 +162,8 @@ export const Large = {
 
 export const Block = {
   args: {
+    id: 'block',
+    name: 'block',
     variant: 'primary',
     children: 'Block',
     className: 'btn-block'

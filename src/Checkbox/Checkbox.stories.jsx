@@ -18,15 +18,13 @@ export default {
     id: {
       table: { disable: true }
     },
-    checked: {
-      table: { disable: true }
-    },
     onChange: {
       action: true,
       table: { disable: true }
     }
   },
   args: {
+    checked: false,
     disabled: false,
     alignment: 'left',
     label: 'A Label'
@@ -34,22 +32,33 @@ export default {
 };
 
 export const Default = {
-  args: {}
+  args: {
+    id: 'default',
+    name: 'default'
+  }
 };
 
 export const Unchecked = {
   args: {
+    id: 'unchecked',
+    name: 'unchecked',
     checked: false
   }
 };
 
 export const Checked = {
   args: {
+    id: 'checked',
+    name: 'checked',
     checked: true
   }
 };
 
 export const Indeterminate = {
+  args: {
+    id: 'indeterminate',
+    name: 'indeterminate'
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const checkbox = canvas.getByRole('checkbox');
@@ -59,6 +68,8 @@ export const Indeterminate = {
 
 export const RightLabel = {
   args: {
+    id: 'rightLabel',
+    name: 'rightLabel',
     label: 'Right Label',
     alignment: 'right'
   }
@@ -66,6 +77,8 @@ export const RightLabel = {
 
 export const LeftLabel = {
   args: {
+    id: 'leftLabel',
+    name: 'leftLabel',
     label: 'Left Label',
     alignment: 'left'
   }
