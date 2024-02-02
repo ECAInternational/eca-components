@@ -8,7 +8,7 @@ export function Radio(props) {
     <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled'>
       <input
         type='radio'
-        id={id}
+        id={id || name}
         name={name}
         value={value}
         checked={checked}
@@ -41,7 +41,7 @@ export function Radio(props) {
 
 Radio.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string.isRequired,
   checked: PropTypes.bool

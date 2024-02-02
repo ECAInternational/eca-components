@@ -34,7 +34,6 @@ export default {
 
 export const Default = {
   args: {
-    id: 'default-button',
     name: 'default-button',
     state: 'default',
     placeholder: 'Placeholder text',
@@ -44,7 +43,6 @@ export const Default = {
 
 export const Enabled = {
   args: {
-    id: 'enabled-button',
     name: 'enabled-button',
     state: 'default',
     placeholder: 'Placeholder text',
@@ -54,7 +52,6 @@ export const Enabled = {
 
 export const Disabled = {
   args: {
-    id: 'disabled-button',
     name: 'disabled-button',
     disabled: true,
     state: 'default',
@@ -65,7 +62,6 @@ export const Disabled = {
 
 export const Warning = {
   args: {
-    id: 'warning-button',
     name: 'warning-button',
     state: 'warning',
     placeholder: 'Placeholder text',
@@ -75,7 +71,6 @@ export const Warning = {
 
 export const Error = {
   args: {
-    id: 'error-button',
     name: 'error-button',
     state: 'error',
     placeholder: 'Placeholder text',
@@ -85,7 +80,6 @@ export const Error = {
 
 export const NoLabel = {
   args: {
-    id: 'no-label-button',
     name: 'no-label-button',
     state: 'default',
     placeholder: 'Placeholder text'
@@ -94,7 +88,6 @@ export const NoLabel = {
 
 export const Description = {
   args: {
-    id: 'description-button',
     name: 'description-button',
     state: 'default',
     label: 'Label',
@@ -105,7 +98,6 @@ export const Description = {
 
 export const Icon = {
   args: {
-    id: 'icon-button',
     name: 'icon-button',
     state: 'default',
     label: 'Icon',
@@ -116,7 +108,6 @@ export const Icon = {
 
 export const Prefix = {
   args: {
-    id: 'prefix-button',
     name: 'prefix-button',
     state: 'default',
     label: 'Prefix',
@@ -127,7 +118,6 @@ export const Prefix = {
 
 export const Suffix = {
   args: {
-    id: 'suffix-button',
     name: 'suffix-button',
     state: 'default',
     label: 'Suffix',

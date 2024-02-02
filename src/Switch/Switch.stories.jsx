@@ -32,14 +32,12 @@ export default {
 
 export const Default = {
   args: {
-    id: 'default',
     name: 'default'
   }
 };
 
 export const On = {
   args: {
-    id: 'on',
     name: 'on',
     checked: true
   }
@@ -47,7 +45,6 @@ export const On = {
 
 export const Off = {
   args: {
-    id: 'off',
     name: 'off',
     checked: false
   }
@@ -55,7 +52,6 @@ export const Off = {
 
 export const Right = {
   args: {
-    id: 'right',
     name: 'right',
     alignment: 'right'
   }
@@ -63,7 +59,6 @@ export const Right = {
 
 export const Left = {
   args: {
-    id: 'left',
     name: 'left',
     alignment: 'left'
   }
@@ -71,7 +66,6 @@ export const Left = {
 
 export const Top = {
   args: {
-    id: 'top',
     name: 'top',
     alignment: 'top'
   }

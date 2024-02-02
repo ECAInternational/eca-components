@@ -42,7 +42,7 @@ export function Button(props) {
 
   return (
     <button
-      id={id}
+      id={id || name}
       name={name}
       className={`transition flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent
       active:scale-92 
@@ -60,7 +60,7 @@ export function Button(props) {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   variant: PropTypes.string.isRequired,
   type: PropTypes.string,
   size: PropTypes.string,

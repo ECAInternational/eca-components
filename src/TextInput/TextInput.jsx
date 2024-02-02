@@ -41,7 +41,7 @@ export function TextInput(props) {
         {icon && <i className={`fi ${icon} text-neutral-detail-bold flex items-center pe-2.5`} />}
 
         <input
-          id={id}
+          id={id || name}
           name={name}
           type={type}
           {...others}
@@ -59,7 +59,7 @@ export function TextInput(props) {
 
 TextInput.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.string,
   state: PropTypes.string,
   type: PropTypes.string,

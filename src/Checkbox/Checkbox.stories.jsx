@@ -33,14 +33,12 @@ export default {
 
 export const Default = {
   args: {
-    id: 'default',
     name: 'default'
   }
 };
 
 export const Unchecked = {
   args: {
-    id: 'unchecked',
     name: 'unchecked',
     checked: false
   }
@@ -48,7 +46,6 @@ export const Unchecked = {
 
 export const Checked = {
   args: {
-    id: 'checked',
     name: 'checked',
     checked: true
   }
@@ -56,7 +53,6 @@ export const Checked = {
 
 export const Indeterminate = {
   args: {
-    id: 'indeterminate',
     name: 'indeterminate'
   },
   play: async ({ canvasElement }) => {
@@ -68,7 +64,6 @@ export const Indeterminate = {
 
 export const RightLabel = {
   args: {
-    id: 'rightLabel',
     name: 'rightLabel',
     label: 'Right Label',
     alignment: 'right'
@@ -77,7 +72,6 @@ export const RightLabel = {
 
 export const LeftLabel = {
   args: {
-    id: 'leftLabel',
     name: 'leftLabel',
     label: 'Left Label',
     alignment: 'left'

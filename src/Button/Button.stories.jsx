@@ -44,7 +44,6 @@ export default {
 
 export const Default = {
   args: {
-    id: 'default',
     name: 'default',
     variant: 'primary',
     children: 'Button'
@@ -52,7 +51,6 @@ export const Default = {
 };
 export const Primary = {
   args: {
-    id: 'primary',
     name: 'primary',
     variant: 'primary',
     children: 'Button'
@@ -61,7 +59,6 @@ export const Primary = {
 
 export const OutlineClick = {
   args: {
-    id: 'outlineClick',
     name: 'outlineClick',
     variant: 'outline',
     children: 'Primary Click'
@@ -82,7 +79,6 @@ export const OutlineClick = {
 
 export const Outline = {
   args: {
-    id: 'outline',
     name: 'outline',
     variant: 'outline',
     children: 'Outline'
@@ -91,7 +87,6 @@ export const Outline = {
 
 export const IconAtStart = {
   args: {
-    id: 'iconAtStart',
     name: 'iconAtStart',
     variant: 'primary',
     children: (
@@ -107,7 +102,6 @@ export const IconAtStart = {
 
 export const IconAtEnd = {
   args: {
-    id: 'iconAtEnd',
     name: 'iconAtEnd',
     variant: 'primary',
     children: (
@@ -123,7 +117,6 @@ export const IconAtEnd = {
 
 export const Ghost = {
   args: {
-    id: 'ghost',
     name: 'ghost',
     variant: 'ghost',
     children: 'Ghost'
@@ -132,7 +125,6 @@ export const Ghost = {
 
 export const Small = {
   args: {
-    id: 'small',
     name: 'small',
     variant: 'primary',
     children: 'Small',
@@ -142,7 +134,6 @@ export const Small = {
 
 export const Medium = {
   args: {
-    id: 'medium',
     name: 'medium',
     variant: 'primary',
     children: 'Medium',
@@ -152,7 +143,6 @@ export const Medium = {
 
 export const Large = {
   args: {
-    id: 'large',
     name: 'large',
     variant: 'primary',
     children: 'Large',
@@ -162,7 +152,6 @@ export const Large = {
 
 export const Block = {
   args: {
-    id: 'block',
     name: 'block',
     variant: 'primary',
     children: 'Block',

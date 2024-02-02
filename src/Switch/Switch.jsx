@@ -21,10 +21,11 @@ export function Switch(props) {
       <div className='flex items-center'>
         <input
           type='checkbox'
-          id={id}
+          id={id || name}
           name={name}
           disabled={disabled}
           checked={checked}
+          value={checked}
           {...others}
           className='peer cursor-pointer appearance-none w-12 h-7 p-px border border-neutral-detail rounded-full place-content-center grid transition
           outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent bg-controls-highlight-palest
@@ -61,8 +62,8 @@ export function Switch(props) {
 
 Switch.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  checked: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  checked: PropTypes.bool,
   label: PropTypes.string,
   disabled: PropTypes.bool,
   alignment: PropTypes.oneOf(['left', 'right', 'top'])

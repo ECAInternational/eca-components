@@ -15,7 +15,7 @@ export function Checkbox(props) {
       <div className='flex items-center'>
         <input
           type='checkbox'
-          id={id}
+          id={id || name}
           name={name}
           disabled={disabled}
           checked={checked}
@@ -56,8 +56,8 @@ export function Checkbox(props) {
 
 Checkbox.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  checked: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  checked: PropTypes.bool,
   label: PropTypes.string,
   disabled: PropTypes.bool,
   alignment: PropTypes.oneOf(['left', 'right'])
