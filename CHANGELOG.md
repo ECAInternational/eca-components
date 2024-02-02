@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.28](https://github.com/ECAInternational/eca-components/compare/v1.0.27...v1.0.28) (2024-02-02)
+
+
+### Bug Fixes
+
+* Make id not required ([d81c1e7](https://github.com/ECAInternational/eca-components/commit/d81c1e70b73baed471e53fa5b2342ad7ca394264))
+* Make Id not required ([#96](https://github.com/ECAInternational/eca-components/issues/96)) ([d81c1e7](https://github.com/ECAInternational/eca-components/commit/d81c1e70b73baed471e53fa5b2342ad7ca394264))
+
 ## [1.0.27](https://github.com/ECAInternational/eca-components/compare/v1.0.26...v1.0.27) (2024-01-31)
 
 
