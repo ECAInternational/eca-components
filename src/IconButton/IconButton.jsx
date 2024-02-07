@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function IconButton(props) {
-  const { name, id, variant, size = 'medium', selected = false, icon, ...others } = props;
+  const { name, id, variant, size = 'medium', icon, ...others } = props;
 
   const bg = {
     standard: 'bg-neutral-layer-1 text-neutral-detail-bold',
