@@ -21,18 +21,33 @@ export default {
       control: 'boolean',
       description: 'Disables the icon button'
     },
+    selected: {
+      control: 'boolean',
+      description: 'Changes the icon button to a selected state'
+    },
     className: {
       table: { disable: true }
     },
     children: {
       table: { disable: true }
     },
-    onClick: { action: true }
+    id: {
+      table: { disable: true }
+    },
+    name: {
+      table: { disable: true }
+    },
+    onClick: {
+      action: true,
+      table: { disable: true }
+    }
   },
   args: {
     disabled: false,
     size: 'medium',
-    variant: 'standard'
+    variant: 'standard',
+    selected: false,
+    icon: 'fi-rr-envelope'
   }
 };
 
@@ -47,40 +62,34 @@ export const Default = {
 export const Standard = {
   args: {
     name: 'standard',
-    variant: 'standard',
-    icon: 'fi-rr-envelope'
+    variant: 'standard'
   }
 };
 
 export const Filled = {
   args: {
     name: 'filled',
-    variant: 'filled',
-    icon: 'fi-rr-envelope'
+    variant: 'filled'
   }
 };
 
 export const Tonal = {
   args: {
     name: 'tonal',
-    variant: 'tonal',
-    icon: 'fi-rr-envelope'
+    variant: 'tonal'
   }
 };
 
 export const Outline = {
   args: {
     name: 'outline',
-    variant: 'outline',
-    icon: 'fi-rr-envelope'
+    variant: 'outline'
   }
 };
 
 export const XSmall = {
   args: {
     name: 'xsmall',
-    variant: 'standard',
-    icon: 'fi-rr-envelope',
     size: 'xsmall'
   }
 };
@@ -88,8 +97,6 @@ export const XSmall = {
 export const Small = {
   args: {
     name: 'small',
-    variant: 'standard',
-    icon: 'fi-rr-envelope',
     size: 'small'
   }
 };
@@ -97,8 +104,6 @@ export const Small = {
 export const Medium = {
   args: {
     name: 'medium',
-    variant: 'standard',
-    icon: 'fi-rr-envelope',
     size: 'medium'
   }
 };
@@ -106,8 +111,37 @@ export const Medium = {
 export const Large = {
   args: {
     name: 'large',
-    variant: 'standard',
-    icon: 'fi-rr-envelope',
     size: 'large'
+  }
+};
+
+export const SelectedStandard = {
+  args: {
+    name: 'large',
+    selected: true
+  }
+};
+
+export const SelectedTonal = {
+  args: {
+    name: 'large',
+    selected: true,
+    variant: 'tonal'
+  }
+};
+
+export const SelectedOutline = {
+  args: {
+    name: 'large',
+    selected: true,
+    variant: 'outline'
+  }
+};
+
+export const SelectedFilled = {
+  args: {
+    name: 'large',
+    selected: true,
+    variant: 'filled'
   }
 };
