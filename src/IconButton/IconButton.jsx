@@ -40,7 +40,7 @@ export function IconButton(props) {
   };
 
   const sizes = {
-    xsmall: 'm-2.5 text-sm',
+    xsmall: 'm-1 text-sm',
     small: 'm-2.5 text-lg',
     medium: 'm-3 text-xl',
     large: 'm-3.5 text-2xl'
