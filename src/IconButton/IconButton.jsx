@@ -19,7 +19,7 @@ export function IconButton(props) {
   };
 
   const focus = {
-    standard: 'focus-visible:outline focus-visible:outline-neutral-detail-bold',
+    standard: 'focus-visible:outline focus-visible:outline-neutral-detail-bold focus-visible:bg-controls-highlight-palest',
     filled: 'focus-visible:outline focus-visible:outline-primary-main',
     tonal: 'focus-visible:outline focus-visible:outline-controls-highlight-paler focus-visible:bg-controls-highlight-paler focus-visible:text-neutral-detail-bolder',
     outline: 'focus-visible:outline focus-visible:outline-neutral-detail-bold'
