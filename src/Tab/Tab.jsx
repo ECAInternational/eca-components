@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Tab(props) {
-  const { id, name, size = 'medium', label, selected = false, ref, ...others } = props;
+  const { id, name, size = 'medium', label, selected = false, ...others } = props;
 
   const sizes = {
     medium: 'text-sm font-regular py-2 px-3',
@@ -13,7 +13,6 @@ export function Tab(props) {
     <button
       id={id || name}
       name={name}
-      ref={ref}
       className={`group transition
       flex items-center justify-center
       text-neutral-body
