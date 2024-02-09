@@ -2,19 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Tab(props) {
-  const { id, size = 'medium', label, selected = false, ...others } = props;
+  const { id, name, size = 'medium', label, selected = false, ...others } = props;
 
   const sizes = {
-    medium: 'text-sm py-2 px-3',
-    large: 'text-base py-2.5 px-3.5'
+    medium: 'text-sm font-regular py-2 px-3',
+    large: 'text-base font-medium py-2.5 px-3.5'
   };
 
   return (
     <button
-      id={id}
+      id={id || name}
+      name={name}
       className={`group transition
       flex items-center justify-center
-      text-neutral-body font-medium
+      text-neutral-body
       outline-none
       disabled:default-transparent disabled:cursor-not-allowed
       p-1 rounded-lg
@@ -41,6 +42,7 @@ export function Tab(props) {
 }
 
 Tab.propTypes = {
+  name: PropTypes.string.isRequired,
   id: PropTypes.string,
   type: PropTypes.string,
   size: PropTypes.string,

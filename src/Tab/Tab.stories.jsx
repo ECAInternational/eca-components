@@ -1,3 +1,4 @@
+import React from 'react';
 import { Tab } from './Tab';
 
 export default {
@@ -17,8 +18,7 @@ export default {
       description: 'Disables the tab'
     },
     selected: {
-      control: 'boolean',
-      description: 'Selects the tab'
+      table: { disable: true }
     },
     type: {
       table: { disable: true }
@@ -32,18 +32,57 @@ export default {
     children: {
       table: { disable: true }
     },
-    onClick: { action: true }
+    onClick: {
+      table: { disable: true }
+    },
+    label: {
+      table: { disable: true }
+    },
+    id: {
+      table: { disable: true }
+    }
   },
   args: {
     disabled: false,
     size: 'medium',
-    label: 'Lorem ipsum'
+    label: 'Lorem Ipsum'
   }
 };
 
 export const Default = {
   args: {
-    name: 'default',
-    children: 'Tab'
+    name: 'default'
+  },
+  render: (args) => (
+    <div className='flex gap-4 justify-start'>
+      <Tab {...args} id='tabOne' label='Tab One' selected />
+      <Tab {...args} id='tabTwo' label='Tab Two' />
+    </div>
+  )
+};
+
+export const Unselected = {
+  args: {
+    name: 'unselected'
+  }
+};
+
+export const Selected = {
+  args: {
+    name: 'selected',
+    selected: true
+  }
+};
+
+export const Medium = {
+  args: {
+    name: 'medium'
+  }
+};
+
+export const Large = {
+  args: {
+    name: 'large',
+    size: 'large'
   }
 };
