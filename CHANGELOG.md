@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.29](https://github.com/ECAInternational/eca-components/compare/v1.0.28...v1.0.29) (2024-02-09)
+
+
+### Features
+
+* Add tab component ([#101](https://github.com/ECAInternational/eca-components/issues/101)) ([3b577b2](https://github.com/ECAInternational/eca-components/commit/3b577b2f38a38b8ea337097bffef59d81e63a6ff))
+
 ## [1.0.28](https://github.com/ECAInternational/eca-components/compare/v1.0.27...v1.0.28) (2024-02-02)
 
 
