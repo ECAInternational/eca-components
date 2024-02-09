@@ -54,10 +54,10 @@ export function IconButton(props) {
   };
 
   const activeSelected = {
-    standard: 'active:bg-controls-highlight-pale active:text-controls-higlight-bold',
+    standard: 'active:bg-controls-highlight-pale active:text-controls-highlight-bold',
     filled: 'active:bg-primary-accent active:text-default-white',
     tonal: 'active:bg-controls-highlight-paler active:text-controls-highlight-bold',
-    outline: 'active:bg-controls-highlight-pale active:text-controls-highlight-bold active:boder-highlight-bold'
+    outline: 'active:bg-controls-highlight-pale active:text-controls-highlight-bold active:border-highlight-bold'
   };
 
   const disabled = {
