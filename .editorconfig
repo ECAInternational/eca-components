@@ -1,0 +1,6 @@
+root = true
+[*]
+
+max_line_length = 500
+resharper_js_max_line_length = 500
+indent_size = 2

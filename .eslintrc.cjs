@@ -28,6 +28,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'global-require': 'off',
     'import/export': 'off',
-    'max-len': 'off'
+    'max-len': 'off',
+    'react/no-array-index-key': 'off'
   }
 };
