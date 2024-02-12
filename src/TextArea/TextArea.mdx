@@ -1,0 +1,33 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as TextArea from './TextArea.stories';
+
+<Meta of={TextArea} />
+<Title>Components/TextArea</Title>
+<Subtitle>Basic Text Area</Subtitle>
+
+<Primary />
+<Controls />
+
+### Enabled
+
+<Canvas of={TextArea.Enabled} />
+
+### Disabled
+
+<Canvas of={TextArea.Disabled} />
+
+## States
+
+Text Input support 2 states, Warning & Error
+
+### Error
+
+<Canvas of={TextArea.Error} />
+
+### No Label
+
+<Canvas of={TextArea.NoLabel} />
+
+### With Description
+
+<Canvas of={TextArea.Description} />
