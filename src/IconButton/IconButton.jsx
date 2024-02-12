@@ -67,12 +67,9 @@ export function IconButton(props) {
     outline: 'disabled:border-neutral-detail-paler disabled:text-neutral-detail-paler disabled:[box-shadow:none]'
   };
 
-  const sizes = {
-    xsmall: 'm-1 text-sm',
-    small: 'm-2.5 text-lg',
-    medium: 'm-3 text-xl',
-    large: 'm-3.5 text-2xl'
-  };
+  const margin = { xsmall: 'm-1', small: 'm-2.5', medium: 'm-3', large: 'm-3.5' };
+  const outlineMarin = { xsmall: 'm-0.5', small: 'm-2', medium: 'm-2.5', large: 'm-3' };
+  const textSize = { xsmall: 'text-sm', small: 'text-lg', medium: 'text-xl', large: 'text-2xl' };
 
   return (
     <button
@@ -80,6 +77,7 @@ export function IconButton(props) {
       name={name}
       className={`transition flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent
       ${size === 'large' ? 'rounded-md' : 'rounded'}
+      ${variant === 'outline' ? 'p-px' : 'p-0'}
       ${(selected ? bgSelected : bg)[variant]}
       ${(selected ? hoverSelected : hover)[variant]}
       ${(selected ? focusSelected : focus)[variant]}
@@ -89,7 +87,7 @@ export function IconButton(props) {
       disabled:cursor-not-allowed`}
       {...others}
     >
-      <i className={`fi ${icon} ${sizes[size]} flex items-center justify-center`} />
+      <i className={`fi ${icon} ${textSize[size]} ${(variant === 'outline' ? outlineMarin : margin)[size]} flex items-center justify-center`} />
     </button>
   );
 }
