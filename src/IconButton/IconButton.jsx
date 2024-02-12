@@ -5,7 +5,7 @@ export function IconButton(props) {
   const { name, id, variant, selected, size = 'medium', icon, ...others } = props;
 
   const bg = {
-    standard: 'bg-neutral-layer-1 text-neutral-detail-bold',
+    standard: 'bg-default-transparent text-neutral-detail-bold',
     filled: 'bg-primary-main text-default-white',
     tonal: 'bg-controls-highlight-palest text-neutral-detail-bold',
     outline: 'border text-neutral-detail-bold border-neutral-detail-bold'
@@ -34,16 +34,16 @@ export function IconButton(props) {
 
   const focus = {
     standard: 'focus-visible:outline focus-visible:outline-neutral-detail-bold focus-visible:bg-controls-highlight-palest',
-    filled: 'focus-visible:outline focus-visible:outline-primary-main',
+    filled: 'focus-visible:outline focus-visible:outline-primary-main focus-visible:bg-primary-main',
     tonal: 'focus-visible:outline focus-visible:outline-controls-highlight-paler focus-visible:bg-controls-highlight-paler focus-visible:text-neutral-detail-bolder',
-    outline: 'focus-visible:outline focus-visible:outline-neutral-detail-bold'
+    outline: 'focus-visible:outline focus-visible:outline-neutral-detail-bold focus-visible:[box-shadow:none]'
   };
 
   const focusSelected = {
     standard: 'focus-visible:outline focus-visible:outline-controls-highlight focus-visible:bg-controls-highlight-palest',
-    filled: 'focus-visible:outline focus-visible:outline-primary-paler',
-    tonal: 'focus-visible:outline focus-visible:outline-controls-highlight-paler focus-visible:bg-controls-highlight-paler',
-    outline: 'focus-visible:outline focus-visible:outline-controls-highlight'
+    filled: 'focus-visible:outline focus-visible:outline-primary-paler focus-visible:bg-primary-paler focus-visible:text-primary-bolder',
+    tonal: 'focus-visible:outline focus-visible:outline-controls-highlight-paler focus-visible:bg-controls-highlight-paler focus-visible:text-neutral-detail-bold',
+    outline: 'focus-visible:outline focus-visible:outline-controls-highlight focus-visible:bg-controls-highlight-palest focus-visible:text-controls-highlight'
   };
 
   const active = {
@@ -78,7 +78,8 @@ export function IconButton(props) {
     <button
       id={id || name}
       name={name}
-      className={`transition flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent rounded
+      className={`transition flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent
+      ${size === 'large' ? 'rounded-md' : 'rounded'}
       ${(selected ? bgSelected : bg)[variant]}
       ${(selected ? hoverSelected : hover)[variant]}
       ${(selected ? focusSelected : focus)[variant]}
