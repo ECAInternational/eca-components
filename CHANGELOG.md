@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.30](https://github.com/ECAInternational/eca-components/compare/v1.0.29...v1.0.30) (2024-02-15)
+
+
+### Features
+
+* Add TextArea component ([#107](https://github.com/ECAInternational/eca-components/issues/107)) ([46c9e1f](https://github.com/ECAInternational/eca-components/commit/46c9e1fc3d3e45e133809820a756da7ac40ef592))
+* Added Icon Button ([0394679](https://github.com/ECAInternational/eca-components/commit/0394679012d115b3f927d712312d957e4b255cc5))
+
 ## [1.0.29](https://github.com/ECAInternational/eca-components/compare/v1.0.28...v1.0.29) (2024-02-09)
 
 
