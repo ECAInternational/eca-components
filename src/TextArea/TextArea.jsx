@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 function getStyleValue(value) {
@@ -112,6 +112,10 @@ export function TextArea(props) {
   }
   const charCountLabelId = `${id || name}_count`;
 
+  useEffect(() => {
+    syncHeight();
+  });
+
   const handleChange = (event) => {
     if (!isControlled) {
       syncHeight();
@@ -164,6 +168,7 @@ export function TextArea(props) {
         // Apply the rows prop to get a "correct" first SSR paint
         rows={minRows}
         disabled={disabled}
+        placeholder={placeholder}
         {...others}
         className={className}
         onChange={handleChange}
