@@ -25,24 +25,6 @@ function isEmpty(obj) {
   return obj === undefined || obj === null || Object.keys(obj).length === 0 || (obj.outerHeightStyle === 0 && !obj.overflowing);
 }
 
-// const useEnhancedEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
-
-// function debounce(func, wait = 166) {
-//   let timeout;
-//   function debounced(...args) {
-//     const later = () => {
-//       func.apply(this, args);
-//     };
-//     clearTimeout(timeout);
-//     timeout = setTimeout(later, wait);
-//   }
-//   debounced.clear = () => {
-//     clearTimeout(timeout);
-//   };
-
-//   return debounced;
-// }
-
 export function TextArea(props) {
   const { name, id, label, description, state = 'default', placeholder, value, maxLength = 0, minRows = 1, maxRows, disabled, onChange, ...others } = props;
   const [count, setCount] = React.useState(value != null ? value.length : 0);
@@ -129,50 +111,6 @@ export function TextArea(props) {
     charCountLabel += invalid ? ' too many' : ' remaing';
   }
   const charCountLabelId = `${id || name}_count`;
-
-  // useEnhancedEffect(() => {
-  //   const handleResize = () => {
-  //     syncHeight();
-  //   };
-  //   // Workaround a "ResizeObserver loop completed with undelivered notifications" error
-  //   // in test.
-  //   // Note that we might need to use this logic in production per https://github.com/WICG/resize-observer/issues/38
-  //   let rAF;
-  //   const rAFHandleResize = () => {
-  //     cancelAnimationFrame(rAF);
-  //     rAF = requestAnimationFrame(() => {
-  //       handleResize();
-  //     });
-  //   };
-  //   const debounceHandleResize = debounce(handleResize);
-  //   const input = inputRef.current;
-  //   const ownerDocument = (input && input.ownerDocument) || document;
-  //   const containerWindow = ownerDocument.defaultView || window;
-
-  //   containerWindow.addEventListener('resize', debounceHandleResize);
-
-  //   let resizeObserver;
-
-  //   if (typeof ResizeObserver !== 'undefined') {
-  //     resizeObserver = new ResizeObserver(
-  //       process.env.NODE_ENV === 'test' ? rAFHandleResize : handleResize,
-  //     );
-  //     resizeObserver.observe(input);
-  //   }
-
-  //   return () => {
-  //     debounceHandleResize.clear();
-  //     cancelAnimationFrame(rAF);
-  //     containerWindow.removeEventListener('resize', debounceHandleResize);
-  //     if (resizeObserver) {
-  //       resizeObserver.disconnect();
-  //     }
-  //   };
-  // }, [calculateTextareaStyles, syncHeight]);
-
-  // useEnhancedEffect(() => {
-  //   syncHeight();
-  // });
 
   const handleChange = (event) => {
     if (!isControlled) {
