@@ -201,7 +201,7 @@ export function TextArea(props) {
     error: 'focus-within:outline-states-error-accent hover:focus-within:outline-states-error-accent'
   };
 
-  const className = `p-3 w-full text-sm font-light text-neutral-body border rounded relative transition resize peer
+  const className = `p-3 w-full text-sm font-light bg-default-transparent text-neutral-body border rounded relative transition resize peer
   outline outline-2 outline-offset-2 outline-default-transparent
   placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-default-transparent
   disabled:bg-neutral-layer-1 disabled:border-neutral-detail-paler disabled:text-controls-content-disabled disabled:outline-0
