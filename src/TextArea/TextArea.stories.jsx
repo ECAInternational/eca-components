@@ -18,7 +18,15 @@ export default {
     },
     maxLength: {
       control: 'number',
-      description: 'Maximum number of characters allowed. If defined, a character count will be displayed.'
+      description: 'Optional. Maximum number of characters allowed. If defined, a character count will be displayed.'
+    },
+    minRows: {
+      control: 'number',
+      description: 'Optional. The minimum number of rows to display. Default is 1.'
+    },
+    maxRows: {
+      control: 'number',
+      description: 'Optional the maximum number of rows the text area will grow to before scrolling.'
     },
     id: {
       table: { disable: true }
@@ -28,9 +36,16 @@ export default {
     },
     className: {
       table: { disable: true }
+    },
+    value: {
+      table: { disable: true }
+    },
+    onChange: {
+      table: { disable: true }
     }
   },
   args: {
+    maxLength: 200,
     disabled: false,
     state: 'default'
   }
@@ -62,6 +77,16 @@ export const Disabled = {
     state: 'default',
     placeholder: 'Placeholder text',
     label: 'Disabled'
+  }
+};
+
+export const NoMaxLength = {
+  args: {
+    name: 'no-max-length-text-area',
+    maxLength: undefined,
+    state: 'default',
+    placeholder: 'No Max Length',
+    label: 'No Max Length'
   }
 };
 

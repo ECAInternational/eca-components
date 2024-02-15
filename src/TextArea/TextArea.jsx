@@ -1,9 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-
-function getStyleValue(value) {
-  return parseInt(value, 10) || 0;
-}
 
 const styles = {
   shadow: {
@@ -21,17 +17,43 @@ const styles = {
   }
 };
 
-function isEmpty(obj) {
-  return obj === undefined || obj === null || Object.keys(obj).length === 0 || (obj.outerHeightStyle === 0 && !obj.overflowing);
-}
+const isEmpty = (obj) => obj === undefined || obj === null || Object.keys(obj).length === 0 || (obj.outerHeightStyle === 0 && !obj.overflowing);
 
-export function TextArea(props) {
-  const { name, id, label, description, state = 'default', placeholder, value, maxLength = 0, minRows = 1, maxRows, disabled, onChange, ...others } = props;
-  const [count, setCount] = React.useState(value != null ? value.length : 0);
+const getStyleValue = (v) => parseInt(v, 10) || 0;
 
-  const { current: isControlled } = React.useRef(value != null);
+export function TextArea({ name, id, label, description, state = 'default', placeholder, value, maxLength, minRows = 1, maxRows, disabled, onChange, ...others }) {
+  const [count, setCount] = useState(value?.length ?? 0);
+
+  const { current: isControlled } = React.useRef(value !== undefined);
   const inputRef = React.useRef();
   const shadowRef = React.useRef();
+
+  useEffect(() => {
+    syncHeight();
+  });
+
+  const handleChange = (e) => {
+    if (!isControlled) {
+      syncHeight();
+    }
+
+    if (onChange) {
+      onChange(e);
+    }
+
+    setCount(e.target.value.length);
+  };
+
+  let charCount;
+  let charCountLabel;
+  let invalid = false;
+  const charCountLabelId = `${id || name}_count`;
+
+  if (maxLength) {
+    invalid = count > maxLength;
+    charCount = invalid ? count - maxLength : maxLength - count;
+    charCountLabel = `${charCount} character${charCount > 1 ? 's' : ''} ${invalid ? ' too many' : ' remaining'}`;
+  }
 
   const calculateTextareaStyles = React.useCallback(() => {
     const input = inputRef.current;
@@ -39,15 +61,6 @@ export function TextArea(props) {
     const ownerDocument = (input && input.ownerDocument) || document;
     const containerWindow = ownerDocument.defaultView || window;
     const computedStyle = containerWindow.getComputedStyle(input);
-
-    // If input's width is shrunk and it's not visible, don't sync height.
-    if (computedStyle.width === '0px') {
-      return {
-        outerHeightStyle: 0,
-        overflowing: false
-      };
-    }
-
     const inputShallow = shadowRef.current;
 
     inputShallow.style.width = computedStyle.width;
@@ -100,34 +113,6 @@ export function TextArea(props) {
     input.style.overflow = textareaStyles.overflowing ? 'hidden' : '';
   }, [calculateTextareaStyles]);
 
-  const validate = maxLength > 0;
-  const invalid = validate && count > maxLength;
-  let charCount = count;
-  if (validate) {
-    charCount = invalid ? count - maxLength : maxLength - count;
-  }
-  let charCountLabel = `${charCount} character${charCount === 1 ? '' : 's'}`;
-  if (validate) {
-    charCountLabel += invalid ? ' too many' : ' remaing';
-  }
-  const charCountLabelId = `${id || name}_count`;
-
-  useEffect(() => {
-    syncHeight();
-  });
-
-  const handleChange = (event) => {
-    if (!isControlled) {
-      syncHeight();
-    }
-
-    if (onChange) {
-      onChange(event);
-    }
-
-    setCount(event.target.value.length);
-  };
-
   const border = {
     default: 'border-controls-border',
     error: 'border-states-error-accent'
@@ -161,41 +146,17 @@ export function TextArea(props) {
           {description && <span className='font-light ps-1'>{description}</span>}
         </label>
       )}
-      <textarea
-        id={id || name}
-        name={name}
-        value={value}
-        // Apply the rows prop to get a "correct" first SSR paint
-        rows={minRows}
-        disabled={disabled}
-        placeholder={placeholder}
-        {...others}
-        className={className}
-        onChange={handleChange}
-        ref={inputRef}
-        aria-describedby={charCountLabelId}
-        {...(invalid ? { 'aria-invalid': true } : {})}
-      />
-      <textarea
-        aria-hidden
-        className={className}
-        readOnly
-        ref={shadowRef}
-        tabIndex={-1}
-        style={{
-          ...styles.shadow,
-          paddingTop: 0,
-          paddingBottom: 0
-        }}
-      />
-      <p
-        id={charCountLabelId}
-        className={`text-sm font-light mt-1
-        ${validate ? '' : 'hidden'}
+      <textarea onChange={handleChange} id={id || name} name={name} value={value} rows={minRows} disabled={disabled} placeholder={placeholder} {...others} className={className} ref={inputRef} aria-describedby={charCountLabelId} {...(invalid ? { 'aria-invalid': true } : {})} />
+      <textarea aria-hidden className={className} readOnly ref={shadowRef} tabIndex={-1} style={{ ...styles.shadow, paddingTop: 0, paddingBottom: 0 }} />
+      {maxLength && (
+        <p
+          id={charCountLabelId}
+          className={`text-sm font-light mt-1
         ${invalid ? 'text-states-error-accent' : 'invisible peer-focus:visible peer-focus:text-controls-highlight'}`}
-      >
-        {charCountLabel}
-      </p>
+        >
+          {charCountLabel}
+        </p>
+      )}
     </div>
   );
 }
