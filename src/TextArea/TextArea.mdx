@@ -16,6 +16,14 @@ import * as TextArea from './TextArea.stories';
 
 <Canvas of={TextArea.Disabled} />
 
+### No Label
+
+<Canvas of={TextArea.NoLabel} />
+
+### With Description
+
+<Canvas of={TextArea.Description} />
+
 ## States
 
 Text Input support 2 states, Warning & Error
@@ -24,10 +32,14 @@ Text Input support 2 states, Warning & Error
 
 <Canvas of={TextArea.Error} />
 
-### No Label
+## Character Count
 
-<Canvas of={TextArea.NoLabel} />
+When a `maxLength` is defined, a character count will be displayed when the textarea has focus or is invalid. If the character count exceeds the `maxLength`, the textarea will render in an error state
 
-### With Description
+### Valid
 
-<Canvas of={TextArea.Description} />
+<Canvas of={TextArea.MaxLengthValid} />
+
+### Invalid
+
+<Canvas of={TextArea.MaxLengthInvalid} />

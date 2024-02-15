@@ -1,3 +1,4 @@
+import React from 'react';
 import { TextArea } from './TextArea';
 
 export default {
@@ -18,7 +19,7 @@ export default {
     },
     maxLength: {
       control: 'number',
-      description: 'Maximum number of characters allowed'
+      description: 'Maximum number of characters allowed. If defined, a character count will be displayed.'
     },
     id: {
       table: { disable: true }
@@ -42,7 +43,7 @@ export const Default = {
     state: 'default',
     placeholder: 'Placeholder text',
     label: 'Label',
-    maxLength: 100
+    description: '(required)'
   }
 };
 
@@ -90,4 +91,36 @@ export const Description = {
     description: '(required)',
     placeholder: 'Placeholder text'
   }
+};
+
+export const MaxLengthValid = {
+  args: {
+    name: 'max-length-valid-text-area',
+    state: 'default',
+    label: 'Label',
+    value: 'Bean beet bitter brinjal broccoli burdock cardoon cauliflower celery ceylon chicory daikon eggplant fennel florence fluted garbanzo garden good green henry jerusalem.',
+    maxLength: 200,
+    minRows: 6
+  },
+  render: (args) => (
+    <div className='w-56'>
+      <TextArea {...args} />
+    </div>
+  )
+};
+
+export const MaxLengthInvalid = {
+  args: {
+    name: 'max-length-valid-text-area',
+    state: 'default',
+    label: 'Label',
+    value: 'Bean beet bitter brinjal broccoli burdock cardoon cauliflower celery ceylon chicory daikon eggplant fennel florence fluted garbanzo garden good green henry jerusalem.',
+    maxLength: 100,
+    minRows: 6
+  },
+  render: (args) => (
+    <div className='w-56'>
+      <TextArea {...args} />
+    </div>
+  )
 };
