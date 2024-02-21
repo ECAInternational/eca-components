@@ -43,7 +43,6 @@ export function Tooltip(props) {
   };
 
   const hideTooltip = () => {
-    if (!visible) return;
     setVisible(false);
     timeoutID && clearTimeout(timeoutID);
   };
