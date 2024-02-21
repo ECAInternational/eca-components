@@ -1,29 +1,30 @@
 import { Tooltip } from './Tooltip';
+import { Button } from '../Button/Button';
 
 export default {
   component: Tooltip,
   title: 'Components/Tooltip',
   parameters: {
-    componentSubtitle: 'Basic Text Fields'
+    componentSubtitle: 'Basic Tooltip'
   },
   argTypes: {
-    title: {
-      description: 'Defines the text of the tooltip'
+    content: {
+      description: 'Defines the content of the tooltip'
     },
     state: {
       control: 'select',
-      description: 'Defines the state of the tooltip',
-      options: ['info', 'warning', 'error']
+      description: 'Defines the state of the tooltip'
     },
     size: {
       control: 'select',
-      description: 'Defines the size of the tooltip',
-      options: ['small', 'large', 'error']
+      description: 'Defines the size of the tooltip'
     },
     position: {
       control: 'select',
-      description: 'Defines the position of the tooltip',
-      options: ['top', 'right', 'bottom', 'left']
+      description: 'Defines the position of the tooltip'
+    },
+    delay: {
+      description: 'Defines the delay in ms before the tooltip appears'
     },
     id: {
       table: { disable: true }
@@ -33,19 +34,29 @@ export default {
     },
     name: {
       table: { disable: true }
+    },
+    title: {
+      table: { disable: true }
     }
   },
   args: {
-    state: 'info'
+    state: 'info',
+    content: 'Refresh',
+    size: 'small',
+    position: 'bottom',
+    delay: 300
   }
 };
 
 export const Default = {
   args: {
-    name: 'default-tooltip',
-    state: 'info',
-    title: 'Refresh',
-    size: 'small',
-    position: 'bottom'
-  }
+    name: 'default-tooltip'
+  },
+  render: (args) => (
+    <Tooltip {...args}>
+      <Button variant='primary' name='button'>
+        Button
+      </Button>
+    </Tooltip>
+  )
 };
