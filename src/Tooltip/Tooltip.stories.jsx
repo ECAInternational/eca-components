@@ -43,7 +43,7 @@ export default {
     state: 'info',
     content: 'Refresh',
     size: 'small',
-    position: 'bottom',
+    position: 'top',
     delay: 300
   }
 };

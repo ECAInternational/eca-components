@@ -84,6 +84,10 @@ export function Tooltip(props) {
           break;
       }
     }
+
+    x = Math.round(x);
+    y = Math.round(y);
+
     setTransform({ x, y });
   }, [visible]);
 
@@ -91,9 +95,28 @@ export function Tooltip(props) {
     setTooltipID(`tooltip-${Math.random().toString(36).substring(2, 15)}`);
   }, [visible]);
 
+  const states = {
+    info: 'border-states-info-accent bg-states-info text-black',
+    warning: 'border-states-warning-accent bg-states-warning text-black',
+    error: 'border-states-error-accent bg-states-error text-black'
+  };
+
+  const sizes = {
+    small: 'text-xs font-regular py-1.5 px-2 rounded-sm',
+    large: 'text-sm font-light p-3 rounded'
+  };
+
+  const positions = {
+    top: '-bottom-px left-1/2 transform -translate-x-1/2 translate-y-1/2 border-b border-r rounded-br',
+    right: '-left-px top-1/2 transform -translate-y-1/2 -translate-x-1/2 border-b border-l rounded-bl',
+    bottom: '-top-px left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-t border-l rounded-tl',
+    left: '-right-px top-1/2 transform -translate-y-1/2 translate-x-1/2 border-t border-r rounded-tr'
+  };
+
   const tooltip = (
-    <div ref={tooltipRef} className='absolute top-0 left-0 will-change-transform' role='tooltip' id={tooltipID} style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}>
-      {content}
+    <div ref={tooltipRef} className={`absolute top-0 left-0 will-change-transform border leading-none ${states[state]} ${sizes[size]}`} role='tooltip' id={tooltipID} style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}>
+      <div className={`absolute w-2.5 h-2.5 rotate-45 z-0 ${states[state]} ${positions[position]}`}></div>
+      <span className='relative'>{content}</span>
     </div>
   );
 
