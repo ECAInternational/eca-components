@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
@@ -46,6 +46,12 @@ export function Tooltip(props) {
     setVisible(false);
     timeoutID && clearTimeout(timeoutID);
   };
+
+  useEffect(() => {
+    return () => {
+      timeoutID && clearTimeout(timeoutID);
+    };
+  }, []);
 
   useLayoutEffect(() => {
     let x = 0,
