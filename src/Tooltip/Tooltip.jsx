@@ -21,7 +21,7 @@ export function Tooltip(props) {
   const handleMouseLeave = () => {
     setIsMouseOver(false);
     const hostElement = hostRef.current;
-    if (hostElement.matches(':focus-within')) return;
+    if (hostElement.matches(':focus-within') && document.activeElement?.matches(':focus-visible')) return;
     hideTooltip();
   };
 
@@ -34,28 +34,36 @@ export function Tooltip(props) {
     hideTooltip();
   };
 
-  const handleClick = () => hideTooltip();
-
   const showTooltip = () => {
     if (visible) return;
-    const timeoutID = setTimeout(() => setVisible(true), delay);
-    setTimeoutID(timeoutID);
+    setTimeoutID(setTimeout(() => setVisible(true), delay));
   };
 
   const hideTooltip = () => {
     setVisible(false);
-    timeoutID && clearTimeout(timeoutID);
+    if (timeoutID) clearTimeout(timeoutID);
   };
 
-  useEffect(() => {
-    return () => {
-      timeoutID && clearTimeout(timeoutID);
-    };
-  }, []);
+  const handleKeyDown = (event) => {
+    if (event.key === 'Escape') {
+      hideTooltip();
+    }
+  };
+
+  useEffect(
+    () => () => {
+      document.addEventListener('keydown', handleKeyDown);
+      if (timeoutID) clearTimeout(timeoutID);
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    },
+    []
+  );
 
   useLayoutEffect(() => {
-    let x = 0,
-      y = 0;
+    let x = 0;
+    let y = 0;
     if (visible) {
       const tooltipElement = tooltipRef.current;
       const hostElement = hostRef.current;
@@ -120,14 +128,14 @@ export function Tooltip(props) {
 
   const tooltip = (
     <div ref={tooltipRef} className={`absolute top-0 left-0 will-change-transform border leading-none ${states[state]} ${sizes[size]}`} role='tooltip' id={tooltipID} style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}>
-      <div className={`absolute w-2.5 h-2.5 rotate-45 z-0 ${states[state]} ${positions[position]}`}></div>
+      <div className={`absolute w-2.5 h-2.5 rotate-45 z-0 ${states[state]} ${positions[position]}`} />
       <span className='relative'>{content}</span>
     </div>
   );
 
   return (
     <>
-      <span className='inline-block' ref={hostRef} aria-describedby={visible ? tooltipID : undefined} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onFocus={handleFocus} onBlur={handleBlur} onClick={handleClick}>
+      <span className='inline-block' ref={hostRef} aria-describedby={visible ? tooltipID : undefined} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onFocus={handleFocus} onBlur={handleBlur}>
         {children}
       </span>
       {visible && ReactDOM.createPortal(tooltip, document.body)}
