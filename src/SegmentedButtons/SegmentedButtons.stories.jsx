@@ -10,7 +10,11 @@ export default {
   argTypes: {
     disabled: {
       control: 'boolean',
-      description: 'Disables the segmented button control'
+      description: 'Disables the entire segmented button control'
+    },
+    size: {
+      control: 'select',
+      description: 'Defines the size of the segmented button control, medium is the default size'
     },
     id: {
       table: { disable: true }
@@ -29,7 +33,8 @@ export default {
     }
   },
   args: {
-    disabled: false
+    disabled: false,
+    size: 'medium'
   }
 };
 
@@ -38,10 +43,28 @@ export const Default = {
     name: 'default'
   },
   render: (args) => (
-    <SegmentedButtons {...args}>
-      <input type='radio' name='options' aria-label='Radio 1' />
-      <input type='radio' name='options' aria-label='Radio 2' />
-      <input type='radio' name='options' aria-label='Radio 3' />
-    </SegmentedButtons>
+    <>
+      <SegmentedButtons {...args}>
+        <input type='radio' name='options' aria-label='Radio 1' />
+      </SegmentedButtons>
+      <br />
+      <SegmentedButtons {...args}>
+        <input type='radio' name='options' aria-label='Radio 1' />
+        <input type='radio' name='options' aria-label='Radio 2' />
+      </SegmentedButtons>
+      <br />
+      <SegmentedButtons {...args}>
+        <input type='radio' name='options' aria-label='Radio 1' />
+        <input type='radio' name='options' aria-label='Radio 2' />
+        <input type='radio' name='options' aria-label='Radio 3' />
+      </SegmentedButtons>
+      <br />
+      <SegmentedButtons {...args}>
+        <input type='radio' name='options' aria-label='Radio 1' />
+        <input type='radio' name='options' aria-label='Radio 2' />
+        <input type='radio' name='options' aria-label='Radio 3' />
+        <input type='radio' name='options' aria-label='Radio 4' disabled />
+      </SegmentedButtons>
+    </>
   )
 };
