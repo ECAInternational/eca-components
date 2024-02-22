@@ -12,8 +12,9 @@ export function SegmentedButtons(props) {
           className='group flex-1 flex flex-col items-center justify-center cursor-pointer gap-1.5 pt-3 
                 text-sm text-neutral-body overflow-hidden
                 bg-neutral-layer-2 has-[:checked]:bg-neutral-layer-2
-                border border-controls-border hover:border-controls-border-hover -mx-px z-10
-                first:rounded-l first:-mr-px first:z-0 last:rounded-r last:-ml-px last:z-0 only:border only:mx-0'
+                border border-controls-border border-l-0 first:border-l first:rounded-l last:rounded-r
+                hover:border-controls-border-hover hover:border-l
+                [&:has(+:hover)]:border-r-0'
         >
           {React.cloneElement(child, {
             className: `after:content-[attr(aria-label)] after:cursor-pointer appearance-none peer`
