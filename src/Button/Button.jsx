@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Button(props) {
-  const { name, id, variant, type = 'button', size = 'medium', children, ...others } = props;
+  const { name, id, variant, type = 'button', size = 'medium', children, className = '', ...others } = props;
 
   const bg = {
     primary: 'bg-primary-main border-0 text-default-white',
@@ -49,7 +49,7 @@ export function Button(props) {
       disabled:text-controls-content-disabled disabled:cursor-not-allowed
       ${bg[variant]} ${disabled[variant]} 
       ${hover[variant]} ${active[variant]} ${focus[variant]}  
-      ${sizes[size]}`}
+      ${sizes[size]} ${className}`}
       type={type}
       {...others}
     >
@@ -61,6 +61,7 @@ export function Button(props) {
 Button.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string,
+  className: PropTypes.string,
   variant: PropTypes.string.isRequired,
   type: PropTypes.string,
   size: PropTypes.string,
