@@ -109,9 +109,9 @@ export function Tooltip(props) {
   }, [visible]);
 
   const states = {
-    info: 'border-states-info-accent bg-states-info text-black',
-    warning: 'border-states-warning-accent bg-states-warning text-black',
-    error: 'border-states-error-accent bg-states-error text-black'
+    info: 'border-states-info bg-states-info-paler text-states-info-boldest',
+    warning: 'border-states-warning bg-states-warning-paler text-states-warning-boldest',
+    error: 'border-states-error bg-states-error-paler text-states-error-boldest'
   };
 
   const sizes = {
