@@ -115,17 +115,17 @@ export function TextArea({ name, id, label, description, state = 'default', plac
 
   const border = {
     default: 'border-controls-border',
-    error: 'border-states-error-accent'
+    error: 'border-states-error'
   };
 
   const hover = {
     default: 'hover:outline-neutral-detail-paler',
-    error: 'hover:border-states-error-accent hover:outline-states-error'
+    error: 'hover:border-states-error-accent hover:outline-states-error-paler'
   };
 
   const focus = {
     default: 'focus-within:border-controls-highlight hover:focus-within:outline-controls-highlight focus-within:outline-controls-highlight',
-    error: 'focus-within:outline-states-error-accent hover:focus-within:outline-states-error-accent'
+    error: 'focus-within:outline-states-error hover:focus-within:outline-states-error'
   };
 
   const className = `p-3 w-full text-sm font-light bg-default-transparent text-neutral-body border rounded relative transition resize peer
@@ -152,7 +152,7 @@ export function TextArea({ name, id, label, description, state = 'default', plac
         <p
           id={charCountLabelId}
           className={`text-sm font-light mt-1
-        ${invalid ? 'text-states-error-accent' : 'invisible peer-focus:visible peer-focus:text-controls-highlight'}`}
+        ${invalid ? 'text-states-error' : 'invisible peer-focus:visible peer-focus:text-controls-highlight'}`}
         >
           {charCountLabel}
         </p>
