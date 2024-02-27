@@ -20,10 +20,10 @@ export function SegmentedButtons(props) {
   return (
     <div role='radiogroup' aria-labelledby={labelID} className='text-controls-content-disabled has-[:enabled]:text-neutral-detail-bolder'>
       {label && (
-        <label id={labelID} className='text-sm block py-1 transition-all'>
+        <span id={labelID} className='text-sm block py-1 transition-all'>
           {label}
           {description && <span className='font-light ps-1'>{description}</span>}
-        </label>
+        </span>
       )}
       <div className='flex'>
         {React.Children.map(children, (child) => (
@@ -56,5 +56,7 @@ SegmentedButtons.propTypes = {
   name: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium'])
+  size: PropTypes.oneOf(['small', 'medium']),
+  label: PropTypes.string,
+  description: PropTypes.string
 };
