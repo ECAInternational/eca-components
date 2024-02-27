@@ -24,7 +24,6 @@ export default {
     }
   },
   args: {
-    checked: false,
     disabled: false,
     alignment: 'left',
     label: 'A Label'
