@@ -155,6 +155,6 @@ export const Block = {
     name: 'block',
     variant: 'primary',
     children: 'Block',
-    className: 'btn-block'
+    className: 'w-full'
   }
 };
