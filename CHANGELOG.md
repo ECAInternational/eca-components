@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.31](https://github.com/ECAInternational/eca-components/compare/v1.0.30...v1.0.31) (2024-02-27)
+
+
+### Features
+
+* Upgrade to token 1.0.22 and fix states tokens ([#117](https://github.com/ECAInternational/eca-components/issues/117)) ([8c3056a](https://github.com/ECAInternational/eca-components/commit/8c3056a33061450375a959d721c94c13c243ea89))
+
+
+### Bug Fixes
+
+* Ensure all components are included in the exported package ([#121](https://github.com/ECAInternational/eca-components/issues/121)) ([35345e3](https://github.com/ECAInternational/eca-components/commit/35345e3392e81904c0a13d29e08ab04322c70861))
+
 ## [1.0.30](https://github.com/ECAInternational/eca-components/compare/v1.0.29...v1.0.30) (2024-02-15)
 
 
