@@ -27,44 +27,124 @@ export default {
     },
     checked: {
       table: { disable: true }
-    },
-    label: {
-      table: { disable: true }
     }
   },
   args: {
     disabled: false,
-    size: 'medium'
+    size: 'medium',
+    description: ''
   }
 };
 
 export const Default = {
   args: {
-    name: 'default'
+    name: 'default',
+    label: 'Label'
   },
   render: (args) => (
-    <>
+    <div className='w-72'>
       <SegmentedButtons {...args}>
-        <input type='radio' name='options' aria-label='Radio 1' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
       </SegmentedButtons>
-      <br />
+    </div>
+  )
+};
+
+export const OneDisabled = {
+  args: {
+    name: 'one-disabled',
+    label: 'One disabled option'
+  },
+  render: (args) => (
+    <div className='w-72'>
       <SegmentedButtons {...args}>
-        <input type='radio' name='options' aria-label='Radio 1' />
-        <input type='radio' name='options' aria-label='Radio 2' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' disabled />
       </SegmentedButtons>
-      <br />
+    </div>
+  )
+};
+
+export const AllDisabled = {
+  args: {
+    name: 'all-disabled',
+    label: 'All disabled'
+  },
+  render: (args) => (
+    <div className='w-96'>
+      <SegmentedButtons {...args} disabled>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedButtons>
+    </div>
+  )
+};
+
+export const Small = {
+  args: {
+    name: 'small',
+    label: 'Small',
+    size: 'small'
+  },
+  render: (args) => (
+    <div className='w-32'>
       <SegmentedButtons {...args}>
-        <input type='radio' name='options' aria-label='Radio 1' />
-        <input type='radio' name='options' aria-label='Radio 2' />
-        <input type='radio' name='options' aria-label='Radio 3' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
       </SegmentedButtons>
-      <br />
+    </div>
+  )
+};
+
+export const Medium = {
+  args: {
+    name: 'medium',
+    label: 'Medium (default)'
+  },
+  render: (args) => (
+    <div className='w-72'>
       <SegmentedButtons {...args}>
-        <input type='radio' name='options' aria-label='Radio 1' />
-        <input type='radio' name='options' aria-label='Radio 2' />
-        <input type='radio' name='options' aria-label='Radio 3' />
-        <input type='radio' name='options' aria-label='Radio 4' disabled />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
       </SegmentedButtons>
-    </>
+    </div>
+  )
+};
+
+export const NoLabel = {
+  args: {
+    name: 'no-label'
+  },
+  render: (args) => (
+    <div className='w-72'>
+      <SegmentedButtons {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedButtons>
+    </div>
+  )
+};
+
+export const Description = {
+  args: {
+    name: 'description',
+    label: 'Label',
+    description: '(required)'
+  },
+  render: (args) => (
+    <div className='w-72'>
+      <SegmentedButtons {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedButtons>
+    </div>
   )
 };
