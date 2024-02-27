@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 export function Tooltip(props) {
-  const { content, state = 'info', size = 'small', position = 'bottom', delay = 0, children } = props;
+  const { content, icon = '', state = 'info', size = 'small', position = 'bottom', delay = 0, children } = props;
 
   const [visible, setVisible] = useState(false);
   const [transform, setTransform] = useState({ x: 0, y: 0 });
@@ -114,6 +114,12 @@ export function Tooltip(props) {
     error: 'border-states-error bg-states-error-paler text-states-error-boldest'
   };
 
+  const iconStates = {
+    info: 'text-states-info',
+    warning: 'text-states-warning',
+    error: 'text-states-error'
+  };
+
   const sizes = {
     small: 'text-xs font-regular py-1.5 px-2 rounded-sm',
     large: 'text-sm font-light p-3 rounded'
@@ -129,7 +135,10 @@ export function Tooltip(props) {
   const tooltip = (
     <div ref={tooltipRef} className={`absolute top-0 left-0 will-change-transform border leading-none ${states[state]} ${sizes[size]}`} role='tooltip' id={tooltipID} style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}>
       <div className={`absolute w-2.5 h-2.5 rotate-45 z-0 ${states[state]} ${positions[position]}`} />
-      <span className='relative'>{content}</span>
+      <span className='relative flex'>
+        {icon && <i className={`fi ${icon} ${iconStates[state]} flex items-center pe-1`} />}
+        <span>{content}</span>
+      </span>
     </div>
   );
 
@@ -145,6 +154,7 @@ export function Tooltip(props) {
 
 Tooltip.propTypes = {
   content: PropTypes.string.isRequired,
+  icon: PropTypes.string,
   state: PropTypes.oneOf(['info', 'warning', 'error']),
   size: PropTypes.oneOf(['small', 'large']),
   position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),

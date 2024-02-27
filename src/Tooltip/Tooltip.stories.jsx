@@ -12,6 +12,9 @@ export default {
     content: {
       description: 'Defines the content of the tooltip'
     },
+    icon: {
+      description: 'Defines an optional icon to display in the tooltip'
+    },
     state: {
       control: 'select',
       description: 'Defines the state of the tooltip'
@@ -80,6 +83,30 @@ export const Error = {
   args: {
     name: 'error-tooltip',
     state: 'error'
+  }
+};
+
+export const IconInfo = {
+  args: {
+    name: 'info-tooltip',
+    state: 'info',
+    icon: 'fi-rr-info'
+  }
+};
+
+export const IconWarning = {
+  args: {
+    name: 'warning-tooltip',
+    state: 'warning',
+    icon: 'fi-rr-triangle-warning'
+  }
+};
+
+export const IconError = {
+  args: {
+    name: 'error-tooltip',
+    state: 'error',
+    icon: 'fi-rr-exclamation'
   }
 };
 
