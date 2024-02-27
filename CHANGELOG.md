@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.32](https://github.com/ECAInternational/eca-components/compare/v1.0.31...v1.0.32) (2024-02-27)
+
+
+### Bug Fixes
+
+* Fix checkbox state ([#124](https://github.com/ECAInternational/eca-components/issues/124)) ([6a2308a](https://github.com/ECAInternational/eca-components/commit/6a2308ad8badbb90f5411553c53d09a38b5d0d14))
+* Package updates ([#122](https://github.com/ECAInternational/eca-components/issues/122)) ([253d469](https://github.com/ECAInternational/eca-components/commit/253d469fa0ff9ecf552c83fe501e7938ea9d429c))
+
 ## [1.0.31](https://github.com/ECAInternational/eca-components/compare/v1.0.30...v1.0.31) (2024-02-27)
 
 
