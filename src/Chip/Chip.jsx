@@ -2,8 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Chip(props) {
-  const { label, variant = 'neutral', deletable, ...others } = props;
-  const variants = {
+  const { label, variant = 'neutral', deletable = false, onDelete, ...others } = props;
+
+  const handleDelete = (e) => {
+    if (onDelete) {
+      onDelete(e);
+    }
+  };
+
+  const chip = {
     yellow: 'border-visualisation-2-accent text-visualisation-2-boldest bg-visualisation-2-palest',
     green: 'border-visualisation-3-accent text-visualisation-3-boldest bg-visualisation-3-palest',
     blue: 'border-visualisation-4-accent text-visualisation-4-boldest bg-visualisation-4-palest',
@@ -14,9 +21,27 @@ export function Chip(props) {
     black: 'border-neutral-detail-boldest text-neutral-layer-1 bg-neutral-detail-bold',
     neutral: 'border-neutral-detail-pale text-neutral-detail-bolder bg-neutral-layer-2'
   };
+
+  const close = {
+    yellow: 'text-visualisation-2-paler bg-visualisation-2-bolder',
+    green: 'text-visualisation-3-paler bg-visualisation-3-bolder',
+    blue: 'text-visualisation-4-paler bg-visualisation-4-bolder',
+    purple: 'text-visualisation-5-paler bg-visualisation-5-bolder',
+    pink: 'text-visualisation-6-paler bg-visualisation-6-bolder',
+    orange: 'text-visualisation-1-paler bg-visualisation-1-bolder',
+    red: 'text-visualisation-7-paler bg-visualisation-7-bolder',
+    black: 'text-neutral-detail-palest bg-neutral-body',
+    neutral: 'text-neutral-detail-boldest bg-neutral-detail-paler'
+  };
+
   return (
-    <span className={`py-1.5 px-2.5 border rounded font-regular text-sm leading-[1.125rem] font-[350] ${variants[variant]}`} {...others}>
-      {label}
+    <span className={`py-1.5 px-2.5 inline-flex gap-2 border rounded font-regular text-sm leading-[1.125rem] font-[350] ${chip[variant]}`} {...others}>
+      <span>{label}</span>
+      {deletable && (
+        <button onClick={handleDelete}>
+          <i className={`fi fi-rr-cross-small w-3.5 h-3.5 flex items-center justify-center rounded-sm opacity-50 ${close[variant]}`}></i>
+        </button>
+      )}
     </span>
   );
 }
@@ -24,5 +49,6 @@ export function Chip(props) {
 Chip.propTypes = {
   label: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(['yellow', 'green', 'blue', 'purple', 'pink', 'orange', 'red', 'black', 'neutral']),
-  deletable: PropTypes.bool
+  deletable: PropTypes.bool,
+  onDelete: PropTypes.func
 };

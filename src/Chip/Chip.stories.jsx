@@ -7,6 +7,11 @@ export default {
     componentSubtitle: 'Basic Chip'
   },
   argTypes: {
+    deletable: {
+      control: { type: 'boolean' },
+      description: 'Chip can be deleted by clicking on the close button.'
+    },
+    onDelete: { action: true },
     className: {
       table: { disable: true }
     },
@@ -81,5 +86,77 @@ export const Neutral = {
   args: {
     label: 'Neutral',
     variant: 'neutral'
+  }
+};
+
+export const DeletableYellow = {
+  args: {
+    label: 'Deletable',
+    variant: 'yellow',
+    deletable: true
+  }
+};
+
+export const DeletableGreen = {
+  args: {
+    label: 'Deletable',
+    variant: 'green',
+    deletable: true
+  }
+};
+
+export const DeletableBlue = {
+  args: {
+    label: 'Deletable',
+    variant: 'blue',
+    deletable: true
+  }
+};
+
+export const DeletablePurple = {
+  args: {
+    label: 'Deletable',
+    variant: 'purple',
+    deletable: true
+  }
+};
+
+export const DeletablePink = {
+  args: {
+    label: 'Deletable',
+    variant: 'pink',
+    deletable: true
+  }
+};
+
+export const DeletableOrange = {
+  args: {
+    label: 'Deletable',
+    variant: 'orange',
+    deletable: true
+  }
+};
+
+export const DeletableRed = {
+  args: {
+    label: 'Deletable',
+    variant: 'red',
+    deletable: true
+  }
+};
+
+export const DeletableBlack = {
+  args: {
+    label: 'Deletable',
+    variant: 'black',
+    deletable: true
+  }
+};
+
+export const DeletableNeutral = {
+  args: {
+    label: 'Deletable',
+    variant: 'neutral',
+    deletable: true
   }
 };
