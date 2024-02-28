@@ -7,3 +7,4 @@ export * from './Tab/Tab';
 export * from './TextArea/TextArea';
 export * from './TextInput/TextInput';
 export * from './Chip/Chip';
+export * from './Tooltip/Tooltip';

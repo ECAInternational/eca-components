@@ -1,0 +1,85 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as Tooltip from './Tooltip.stories';
+
+<Meta of={Tooltip} />
+<Title>Components/Tooltip</Title>
+<Subtitle>Basic Tooltip</Subtitle>
+
+<Primary />
+<Controls />
+
+## States
+
+Tooltip supports 3 states: Info (default), Warning & Error
+
+### Info (default)
+
+<Canvas of={Tooltip.Info} />
+
+### Warning
+
+<Canvas of={Tooltip.Warning} />
+
+### Error
+
+<Canvas of={Tooltip.Error} />
+
+## Icon
+
+Tooltip supports an optional icon
+
+### Info
+
+<Canvas of={Tooltip.IconInfo} />
+
+### Warning
+
+<Canvas of={Tooltip.IconWarning} />
+
+### Error
+
+<Canvas of={Tooltip.IconError} />
+
+## Sizes
+
+Tooltip supports 2 sizes: Small (default) & Large
+
+### Small (default)
+
+<Canvas of={Tooltip.Small} />
+
+### Large
+
+<Canvas of={Tooltip.Large} />
+
+## Sizes
+
+Tooltip supports 4 Positions: Top, Right, Bottom (default) & Left
+
+### Top
+
+<Canvas of={Tooltip.Top} />
+
+### Right
+
+<Canvas of={Tooltip.Right} />
+
+### Bottom (default)
+
+<Canvas of={Tooltip.Bottom} />
+
+### Left
+
+<Canvas of={Tooltip.Left} />
+
+## Delay
+
+"Tooltip supports a configurable delay that allows you to control how much time elapses (in ms) before the tooltip appears on your screen
+
+### No delay (default)
+
+<Canvas of={Tooltip.NoDelay} />
+
+### Delay
+
+<Canvas of={Tooltip.Delay} />
