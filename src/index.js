@@ -6,3 +6,4 @@ export * from './Switch/Switch';
 export * from './Tab/Tab';
 export * from './TextArea/TextArea';
 export * from './TextInput/TextInput';
+export * from './Tooltip/Tooltip';
