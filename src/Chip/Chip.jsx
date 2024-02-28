@@ -18,7 +18,7 @@ export function Chip(props) {
     pink: 'border-visualisation-6-accent text-visualisation-6-boldest bg-visualisation-6-palest',
     orange: 'border-visualisation-1-accent text-visualisation-1-boldest bg-visualisation-1-palest',
     red: 'border-visualisation-7-accent text-visualisation-7-boldest bg-visualisation-7-palest',
-    black: 'border-neutral-detail-boldest text-neutral-layer-1 bg-neutral-detail-bold',
+    monochrome: 'border-neutral-detail-boldest text-neutral-layer-1 bg-neutral-detail-bold',
     neutral: 'border-neutral-detail-pale text-neutral-detail-bolder bg-neutral-layer-2'
   };
 
@@ -30,16 +30,22 @@ export function Chip(props) {
     pink: 'text-visualisation-6-paler bg-visualisation-6-bolder',
     orange: 'text-visualisation-1-paler bg-visualisation-1-bolder',
     red: 'text-visualisation-7-paler bg-visualisation-7-bolder',
-    black: 'text-neutral-detail-palest bg-neutral-body',
+    monochrome: 'text-neutral-detail-palest bg-neutral-body',
     neutral: 'text-neutral-detail-boldest bg-neutral-detail-paler'
   };
 
   return (
-    <span className={`py-1.5 px-2.5 inline-flex gap-2 border rounded font-regular text-sm leading-[1.125rem] font-[350] ${chip[variant]}`} {...others}>
+    <span className={`py-1.5 px-2.5 inline-flex gap-2 items-center border rounded font-regular text-sm leading-[1.125rem] font-[350] ${chip[variant]}`} {...others}>
       <span>{label}</span>
       {deletable && (
-        <button onClick={handleDelete}>
-          <i className={`fi fi-rr-cross-small w-3.5 h-3.5 flex items-center justify-center rounded-sm opacity-50 ${close[variant]}`}></i>
+        <button
+          onClick={handleDelete}
+          aria-label={`Delete ${label}`}
+          className={`rounded-sm flex items-center justify-center ${close[variant]} 
+          opacity-50 hover:opacity-70 active:opacity-60
+          focus-visible:outline focus-visible:outline-neutral-detail-boldest`}
+        >
+          <i className='fi fi-rr-cross-small w-3.5 h-3.5' />
         </button>
       )}
     </span>
@@ -48,7 +54,7 @@ export function Chip(props) {
 
 Chip.propTypes = {
   label: PropTypes.string.isRequired,
-  variant: PropTypes.oneOf(['yellow', 'green', 'blue', 'purple', 'pink', 'orange', 'red', 'black', 'neutral']),
+  variant: PropTypes.oneOf(['yellow', 'green', 'blue', 'purple', 'pink', 'orange', 'red', 'monochrome', 'neutral']),
   deletable: PropTypes.bool,
   onDelete: PropTypes.func
 };

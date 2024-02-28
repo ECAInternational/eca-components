@@ -1,4 +1,6 @@
 import { Chip } from './Chip';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 export default {
   component: Chip,
@@ -75,10 +77,10 @@ export const Red = {
   }
 };
 
-export const Black = {
+export const Monochrome = {
   args: {
-    label: 'Black',
-    variant: 'black'
+    label: 'Monochrome',
+    variant: 'monochrome'
   }
 };
 
@@ -145,10 +147,10 @@ export const DeletableRed = {
   }
 };
 
-export const DeletableBlack = {
+export const DeletableMonochrome = {
   args: {
     label: 'Deletable',
-    variant: 'black',
+    variant: 'monochrome',
     deletable: true
   }
 };
@@ -158,5 +160,20 @@ export const DeletableNeutral = {
     label: 'Deletable',
     variant: 'neutral',
     deletable: true
+  }
+};
+
+export const DeletableClick = {
+  args: {
+    label: 'Deletable',
+    deletable: true
+  },
+  play: async ({ args, canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('Click', async () => {
+      await userEvent.click(canvas.getByRole('button'));
+      await waitFor(() => expect(args.onDelete).toHaveBeenCalled());
+    });
   }
 };
