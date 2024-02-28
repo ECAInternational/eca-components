@@ -2,13 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Chip(props) {
-  const { label, variant = 'neutral', deletable = false, onDelete, ...others } = props;
-
-  const handleDelete = (e) => {
-    if (onDelete) {
-      onDelete(e);
-    }
-  };
+  const { label, variant = 'neutral', onDelete, ...others } = props;
 
   const chip = {
     yellow: 'border-visualisation-2-accent text-visualisation-2-boldest bg-visualisation-2-palest',
@@ -37,9 +31,9 @@ export function Chip(props) {
   return (
     <span className={`py-1.5 px-2.5 inline-flex gap-2 items-center border rounded font-regular text-sm leading-[1.125rem] font-[350] ${chip[variant]}`} {...others}>
       <span>{label}</span>
-      {deletable && (
+      {onDelete && (
         <button
-          onClick={handleDelete}
+          onClick={onDelete}
           aria-label={`Delete ${label}`}
           className={`rounded-sm flex items-center justify-center ${close[variant]} 
           opacity-50 hover:opacity-70 active:opacity-60
@@ -55,6 +49,5 @@ export function Chip(props) {
 Chip.propTypes = {
   label: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(['yellow', 'green', 'blue', 'purple', 'pink', 'orange', 'red', 'monochrome', 'neutral']),
-  deletable: PropTypes.bool,
   onDelete: PropTypes.func
 };

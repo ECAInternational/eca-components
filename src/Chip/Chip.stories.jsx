@@ -1,6 +1,6 @@
 import { Chip } from './Chip';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, jest } from '@storybook/jest';
 
 export default {
   component: Chip,
@@ -9,11 +9,10 @@ export default {
     componentSubtitle: 'Basic Chip'
   },
   argTypes: {
-    deletable: {
-      control: { type: 'boolean' },
-      description: 'Chip can be deleted by clicking on the close button.'
+    onDelete: {
+      action: 'deleted',
+      description: 'Providing an `onDelete` function will render a close button to delete the chip.'
     },
-    onDelete: { action: true },
     className: {
       table: { disable: true }
     },
@@ -22,7 +21,8 @@ export default {
     }
   },
   args: {
-    label: 'Label'
+    label: 'Label',
+    onDelete: null
   }
 };
 
@@ -95,7 +95,7 @@ export const DeletableYellow = {
   args: {
     label: 'Deletable',
     variant: 'yellow',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
@@ -103,7 +103,7 @@ export const DeletableGreen = {
   args: {
     label: 'Deletable',
     variant: 'green',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
@@ -111,7 +111,7 @@ export const DeletableBlue = {
   args: {
     label: 'Deletable',
     variant: 'blue',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
@@ -119,7 +119,7 @@ export const DeletablePurple = {
   args: {
     label: 'Deletable',
     variant: 'purple',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
@@ -127,7 +127,7 @@ export const DeletablePink = {
   args: {
     label: 'Deletable',
     variant: 'pink',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
@@ -135,7 +135,7 @@ export const DeletableOrange = {
   args: {
     label: 'Deletable',
     variant: 'orange',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
@@ -143,7 +143,7 @@ export const DeletableRed = {
   args: {
     label: 'Deletable',
     variant: 'red',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
@@ -151,7 +151,7 @@ export const DeletableMonochrome = {
   args: {
     label: 'Deletable',
     variant: 'monochrome',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
@@ -159,14 +159,14 @@ export const DeletableNeutral = {
   args: {
     label: 'Deletable',
     variant: 'neutral',
-    deletable: true
+    onDelete: () => {}
   }
 };
 
 export const DeletableClick = {
   args: {
     label: 'Deletable',
-    deletable: true
+    onDelete: jest.fn()
   },
   play: async ({ args, canvasElement, step }) => {
     const canvas = within(canvasElement);
