@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.34](https://github.com/ECAInternational/eca-components/compare/v1.0.33...v1.0.34) (2024-02-29)
+
+
+### Features
+
+* Add Chip component ([#120](https://github.com/ECAInternational/eca-components/issues/120)) ([6174a2b](https://github.com/ECAInternational/eca-components/commit/6174a2b159f00cdf2e27e96fb12a6b437f7fcbeb))
+
 ## [1.0.33](https://github.com/ECAInternational/eca-components/compare/v1.0.32...v1.0.33) (2024-02-28)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@ecainternational/eca-components",
   "description": "ECA Component Library",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "type": "module",
   "private": false,
   "main": "cjs/index.js",
