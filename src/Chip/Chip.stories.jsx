@@ -11,7 +11,16 @@ export default {
   argTypes: {
     onDelete: {
       action: 'deleted',
-      description: 'Providing an `onDelete` function will render a close button to delete the chip.'
+      description: 'Providing an `onDelete` function will render a close button to delete the chip.',
+      table: {
+        defaultValue: { summary: undefined }
+      },
+      control: 'none'
+    },
+    variant: {
+      table: {
+        defaultValue: { summary: 'neutral' }
+      }
     },
     className: {
       table: { disable: true }
@@ -22,7 +31,7 @@ export default {
   },
   args: {
     label: 'Label',
-    onDelete: null
+    onDelete: undefined
   }
 };
 
@@ -86,8 +95,7 @@ export const Monochrome = {
 
 export const Neutral = {
   args: {
-    label: 'Neutral',
-    variant: 'neutral'
+    label: 'Neutral'
   }
 };
 
@@ -158,7 +166,6 @@ export const DeletableMonochrome = {
 export const DeletableNeutral = {
   args: {
     label: 'Deletable',
-    variant: 'neutral',
     onDelete: () => {}
   }
 };
