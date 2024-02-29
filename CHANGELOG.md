@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.33](https://github.com/ECAInternational/eca-components/compare/v1.0.32...v1.0.33) (2024-02-28)
+
+
+### Features
+
+* Create tooltip component ([#112](https://github.com/ECAInternational/eca-components/issues/112)) ([eec5dbf](https://github.com/ECAInternational/eca-components/commit/eec5dbf3ecf547cf2255d93011c9fd01d4bcf6d8))
+
+
+### Bug Fixes
+
+* Update pressed selected and indeterminate bg-color ([#119](https://github.com/ECAInternational/eca-components/issues/119)) ([6556db9](https://github.com/ECAInternational/eca-components/commit/6556db91022decf46d4485ff65053b1cb0bd631e))
+
 ## [1.0.32](https://github.com/ECAInternational/eca-components/compare/v1.0.31...v1.0.32) (2024-02-27)
 
 
