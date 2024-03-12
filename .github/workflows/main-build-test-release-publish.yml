@@ -28,7 +28,7 @@ jobs:
     needs: [build-lint] #[build-lint, test]
     uses: ECAInternational/eca-reusable-workflows/.github/workflows/update-release.yml@v1.0.18
     with:
-      package-name: '@ecainternational/eca-components'
+      release-type: 'node'
 
   publish:
     name: Publish NPM Package
