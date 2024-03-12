@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.35](https://github.com/ECAInternational/eca-components/compare/v1.0.34...v1.0.35) (2024-03-12)
+
+
+### Features
+
+* Add beta build ([#133](https://github.com/ECAInternational/eca-components/issues/133)) ([5a63339](https://github.com/ECAInternational/eca-components/commit/5a63339fa60a9e8707a5857e46c5f16d72ed0dd0))
+
+
+### Bug Fixes
+
+* JS Build ([#134](https://github.com/ECAInternational/eca-components/issues/134)) ([76620df](https://github.com/ECAInternational/eca-components/commit/76620df0728c3153e8d9997a47c306d978f0209d))
+* JS build fix ([#135](https://github.com/ECAInternational/eca-components/issues/135)) ([bd57632](https://github.com/ECAInternational/eca-components/commit/bd57632fbe2c81d774a82766cd08d777d4d21891))
+
 ## [1.0.34](https://github.com/ECAInternational/eca-components/compare/v1.0.33...v1.0.34) (2024-02-29)
 
 
