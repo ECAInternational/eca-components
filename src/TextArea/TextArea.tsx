@@ -2,16 +2,12 @@ import React, { useEffect, useState, useCallback } from 'react';
 
 const styles = {
   shadow: {
-    // Visibility needed to hide the extra text area on iPads
-    visibility: 'hidden',
-    // Remove from the content flow
-    position: 'absolute',
-    // Ignore the scrollbar width
+    visibility: 'hidden' as 'hidden',
+    position: 'absolute' as 'absolute',
     overflow: 'hidden',
     height: 0,
     top: 0,
     left: 0,
-    // Create a new layer, increase the isolation of the computed values
     transform: 'translateZ(0)'
   }
 };

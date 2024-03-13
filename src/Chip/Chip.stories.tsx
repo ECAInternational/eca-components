@@ -1,6 +1,6 @@
 import { expect, jest } from '@storybook/jest';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
-import { Chip } from './Chip.tsx';
+import { Chip, ChipProps } from './Chip.tsx';
 
 export default {
   component: Chip,
@@ -179,7 +179,7 @@ export const DeletableClick = {
     label: 'Deletable',
     onDelete: jest.fn()
   },
-  play: async ({ args, canvasElement, step }) => {
+  play: async ({ args, canvasElement, step }: { args: ChipProps; canvasElement: any; step: any }) => {
     const canvas = within(canvasElement);
 
     await step('Click', async () => {
