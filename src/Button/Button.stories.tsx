@@ -1,4 +1,3 @@
-import { Meta } from '@storybook/react';
 import React from 'react';
 import { Button } from './Button.tsx';
 
@@ -39,7 +38,7 @@ export default {
     size: 'medium',
     variant: 'primary'
   }
-} as Meta;
+};
 
 export const Default = {
   args: {
