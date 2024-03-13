@@ -4,12 +4,14 @@ module.exports = {
     es2021: true
   },
   extends: ['airbnb', 'prettier', 'plugin:storybook/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   overrides: [
     {
       env: {
         node: true
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: ['.eslintrc.cjs'],
       parserOptions: {
         sourceType: 'script'
       }
@@ -26,6 +28,7 @@ module.exports = {
     'react/button-has-type': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'global-require': 'off',
     'import/export': 'off',
     'max-len': 'off',

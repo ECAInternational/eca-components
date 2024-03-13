@@ -1,4 +1,4 @@
-import { TextInput } from './TextInput';
+import { TextInput } from './TextInput.tsx';
 
 export default {
   component: TextInput,

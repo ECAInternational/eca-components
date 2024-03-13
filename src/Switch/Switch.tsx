@@ -1,7 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { InputHTMLAttributes } from 'react';
 
-export function Switch(props) {
+interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
+  name: string;
+  id?: string;
+  label?: string;
+  alignment?: 'left' | 'right' | 'top';
+  checked?: boolean;
+
+  disabled?: boolean;
+}
+
+export function Switch(props: SwitchProps) {
   const { name, id, label, alignment = 'left', checked, disabled = false, ...others } = props;
 
   return (
@@ -25,7 +34,6 @@ export function Switch(props) {
           name={name}
           disabled={disabled}
           checked={checked}
-          value={checked}
           {...others}
           className='peer cursor-pointer appearance-none w-12 h-7 p-px border border-neutral-detail rounded-full place-content-center grid transition
           outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent bg-controls-highlight-palest
@@ -49,7 +57,6 @@ export function Switch(props) {
           checked:active:outline-controls-highlight-palest checked:active:bg-controls-highlight-palest checked:active:border-controls-highlight-bold
           checked:active:before:bg-controls-highlight-bold'
         />
-        <input type='hidden' name={name} value={checked} />
       </div>
       {label && alignment === 'right' && (
         <label htmlFor={id} className='text-sm font-light ps-2'>
@@ -59,12 +66,3 @@ export function Switch(props) {
     </div>
   );
 }
-
-Switch.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  checked: PropTypes.bool,
-  label: PropTypes.string,
-  disabled: PropTypes.bool,
-  alignment: PropTypes.oneOf(['left', 'right', 'top'])
-};

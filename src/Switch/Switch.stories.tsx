@@ -1,4 +1,4 @@
-import { Switch } from './Switch';
+import { Switch } from './Switch.tsx';
 
 export default {
   component: Switch,
@@ -23,7 +23,6 @@ export default {
     }
   },
   args: {
-    checked: false,
     disabled: false,
     alignment: 'left',
     label: 'A Label'

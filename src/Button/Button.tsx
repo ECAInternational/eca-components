@@ -1,7 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 
-export function Button(props) {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  name: string;
+  id?: string;
+  variant: 'primary' | 'outline' | 'ghost';
+  type?: 'button' | 'submit' | 'reset';
+  size?: 'small' | 'medium' | 'large';
+  children: ReactNode;
+  className?: string;
+}
+
+export function Button(props: ButtonProps) {
   const { name, id, variant, type = 'button', size = 'medium', children, className = '', ...others } = props;
 
   const bg = {
@@ -45,10 +54,10 @@ export function Button(props) {
       id={id || name}
       name={name}
       className={`transition flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent
-      active:scale-92 
+      active:scale-92
       disabled:text-controls-content-disabled disabled:cursor-not-allowed
-      ${bg[variant]} ${disabled[variant]} 
-      ${hover[variant]} ${active[variant]} ${focus[variant]}  
+      ${bg[variant]} ${disabled[variant]}
+      ${hover[variant]} ${active[variant]} ${focus[variant]}
       ${sizes[size]} ${className}`}
       type={type}
       {...others}
@@ -57,13 +66,3 @@ export function Button(props) {
     </button>
   );
 }
-
-Button.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  className: PropTypes.string,
-  variant: PropTypes.string.isRequired,
-  type: PropTypes.string,
-  size: PropTypes.string,
-  children: PropTypes.node.isRequired
-};

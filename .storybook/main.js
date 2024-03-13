@@ -1,11 +1,7 @@
 import { themes } from '@storybook/theming';
 
 const config = {
-  stories: [
-    '../src/Intro.mdx',
-    '../src/**/*.mdx',
-    '../src/**/*.stories.@(js|jsx)'
-  ],
+  stories: ['../src/Intro.mdx', '../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-links',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab } from './Tab';
+import { Tab, TabProps } from './Tab.tsx';
 
 export default {
   component: Tab,
@@ -53,7 +53,7 @@ export const Default = {
   args: {
     name: 'default'
   },
-  render: (args) => (
+  render: (args: TabProps) => (
     <div className='flex gap-4 justify-start'>
       <Tab {...args} id='tabOne' label='Tab One' selected />
       <Tab {...args} id='tabTwo' label='Tab Two' />

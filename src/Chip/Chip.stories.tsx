@@ -1,6 +1,6 @@
-import { Chip } from './Chip';
-import { userEvent, waitFor, within } from '@storybook/testing-library';
 import { expect, jest } from '@storybook/jest';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { Chip } from './Chip.tsx';
 
 export default {
   component: Chip,
@@ -35,7 +35,11 @@ export default {
   }
 };
 
-export const Default = {};
+export const Default = {
+  args: {
+    label: 'Default'
+  }
+};
 
 export const Yellow = {
   args: {

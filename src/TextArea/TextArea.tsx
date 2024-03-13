@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState, useCallback } from 'react';
 
 const styles = {
   shadow: {
@@ -17,22 +16,39 @@ const styles = {
   }
 };
 
-const isEmpty = (obj) => obj === undefined || obj === null || Object.keys(obj).length === 0 || (obj.outerHeightStyle === 0 && !obj.overflowing);
+const isEmpty = (obj: any) => obj === undefined || obj === null || Object.keys(obj).length === 0 || (obj.outerHeightStyle === 0 && !obj.overflowing);
 
-const getStyleValue = (v) => parseInt(v, 10) || 0;
+const getStyleValue = (v: string) => parseInt(v, 10) || 0;
 
-export function TextArea({ name, id, label, description, state = 'default', placeholder, value, maxLength, minRows = 1, maxRows, disabled, onChange, ...others }) {
+export interface TextAreaProps {
+  name: string;
+  id: string;
+  label: string;
+  description: string;
+  state?: string;
+  placeholder: string;
+  value: string;
+  maxLength: number;
+  minRows?: number;
+  maxRows?: number;
+  disabled: boolean;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  [key: string]: any;
+}
+
+export function TextArea(props: TextAreaProps) {
+  const { name, id, label, description, state = 'default', placeholder, value, maxLength, minRows = 1, maxRows, disabled, onChange, ...others } = props;
   const [count, setCount] = useState(value?.length ?? 0);
 
   const { current: isControlled } = React.useRef(value !== undefined);
-  const inputRef = React.useRef();
-  const shadowRef = React.useRef();
+  const inputRef = React.useRef<HTMLTextAreaElement | null>(null);
+  const shadowRef = React.useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
     syncHeight();
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (!isControlled) {
       syncHeight();
     }
@@ -55,13 +71,21 @@ export function TextArea({ name, id, label, description, state = 'default', plac
     charCountLabel = `${charCount} character${charCount > 1 ? 's' : ''} ${invalid ? ' too many' : ' remaining'}`;
   }
 
-  const calculateTextareaStyles = React.useCallback(() => {
+  const calculateTextareaStyles = useCallback((): { outerHeightStyle: number; overflowing: boolean } | undefined => {
     const input = inputRef.current;
+
+    if (!input) {
+      return;
+    }
 
     const ownerDocument = (input && input.ownerDocument) || document;
     const containerWindow = ownerDocument.defaultView || window;
     const computedStyle = containerWindow.getComputedStyle(input);
     const inputShallow = shadowRef.current;
+
+    if (!inputShallow) {
+      return;
+    }
 
     inputShallow.style.width = computedStyle.width;
     inputShallow.value = input.value || placeholder || 'x';
@@ -101,7 +125,7 @@ export function TextArea({ name, id, label, description, state = 'default', plac
     return { outerHeightStyle, overflowing };
   }, [maxRows, minRows, placeholder]);
 
-  const syncHeight = React.useCallback(() => {
+  const syncHeight = useCallback(() => {
     const textareaStyles = calculateTextareaStyles();
 
     if (isEmpty(textareaStyles)) {
@@ -109,8 +133,10 @@ export function TextArea({ name, id, label, description, state = 'default', plac
     }
 
     const input = inputRef.current;
-    input.style.height = `${textareaStyles.outerHeightStyle}px`;
-    input.style.overflow = textareaStyles.overflowing ? 'hidden' : '';
+    if (input && textareaStyles) {
+      input.style.height = `${textareaStyles.outerHeightStyle}px`;
+      input.style.overflow = textareaStyles.overflowing ? 'hidden' : '';
+    }
   }, [calculateTextareaStyles]);
 
   const border = {
@@ -134,9 +160,9 @@ export function TextArea({ name, id, label, description, state = 'default', plac
   disabled:bg-neutral-layer-1 disabled:border-neutral-detail-paler disabled:text-controls-content-disabled disabled:outline-0
   disabled:placeholder-controls-content-disabled disabled:placeholder-opacity-60
   disabled:text-opacity-60 disabled:cursor-not-allowed
-  ${hover[invalid ? 'error' : state]} 
-  ${border[invalid ? 'error' : state]} 
-  ${focus[invalid ? 'error' : state]}`;
+  ${hover[invalid ? 'error' : (state as keyof typeof hover)]}
+  ${border[invalid ? 'error' : (state as keyof typeof border)]}
+  ${focus[invalid ? 'error' : (state as keyof typeof focus)]}`;
 
   return (
     <div className='text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled'>
@@ -160,18 +186,3 @@ export function TextArea({ name, id, label, description, state = 'default', plac
     </div>
   );
 }
-
-TextArea.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  label: PropTypes.string,
-  description: PropTypes.string,
-  state: PropTypes.string,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  maxLength: PropTypes.number,
-  minRows: PropTypes.number,
-  maxRows: PropTypes.number,
-  disabled: PropTypes.bool,
-  onChange: PropTypes.func
-};

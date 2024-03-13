@@ -1,7 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { InputHTMLAttributes } from 'react';
 
-export function Radio(props) {
+export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
+  name: string;
+  id?: string;
+  label?: string;
+  value: string;
+  checked?: boolean;
+}
+
+export function Radio(props: RadioProps) {
   const { name, id, label, value, checked, ...others } = props;
 
   return (
@@ -38,11 +45,3 @@ export function Radio(props) {
     </div>
   );
 }
-
-Radio.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  label: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  checked: PropTypes.bool
-};

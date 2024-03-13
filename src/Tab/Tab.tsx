@@ -1,7 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ButtonHTMLAttributes } from 'react';
 
-export function Tab(props) {
+export interface TabProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  name: string;
+  id?: string;
+  size?: 'medium' | 'large';
+  label: string;
+  selected?: boolean;
+}
+
+export function Tab(props: TabProps) {
   const { id, name, size = 'medium', label, selected = false, ...others } = props;
 
   const sizes = {
@@ -40,12 +47,3 @@ export function Tab(props) {
     </button>
   );
 }
-
-Tab.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  type: PropTypes.string,
-  size: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  selected: PropTypes.bool
-};

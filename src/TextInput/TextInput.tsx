@@ -1,7 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { InputHTMLAttributes } from 'react';
 
-export function TextInput(props) {
+export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  name: string;
+  id?: string;
+  label?: string;
+  state?: 'default' | 'warning' | 'error';
+  type?: string;
+  description?: string;
+  icon?: string;
+  prefix?: string;
+  suffix?: string;
+}
+
+export function TextInput(props: TextInputProps) {
   const { name, id, label, state = 'default', type = 'text', description, icon, prefix, suffix, ...others } = props;
 
   const border = {
@@ -56,15 +67,3 @@ export function TextInput(props) {
     </div>
   );
 }
-
-TextInput.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  label: PropTypes.string,
-  state: PropTypes.string,
-  type: PropTypes.string,
-  icon: PropTypes.string,
-  prefix: PropTypes.string,
-  suffix: PropTypes.string,
-  description: PropTypes.string
-};

@@ -1,5 +1,5 @@
 import { within } from '@storybook/testing-library';
-import { Checkbox } from './Checkbox';
+import { Checkbox } from './Checkbox.tsx';
 
 export default {
   component: Checkbox,
@@ -54,9 +54,9 @@ export const Indeterminate = {
   args: {
     name: 'indeterminate'
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
-    const checkbox = canvas.getByRole('checkbox');
+    const checkbox = canvas.getByRole('checkbox') as HTMLInputElement;
     checkbox.indeterminate = true;
   }
 };
