@@ -28,7 +28,7 @@ export interface TextAreaProps {
   minRows?: number;
   maxRows?: number;
   disabled: boolean;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange: any;
   [key: string]: any;
 }
 
@@ -71,7 +71,7 @@ export function TextArea(props: TextAreaProps) {
     const input = inputRef.current;
 
     if (!input) {
-      return;
+      return { outerHeightStyle: 0, overflowing: false };
     }
 
     const ownerDocument = (input && input.ownerDocument) || document;
@@ -80,7 +80,7 @@ export function TextArea(props: TextAreaProps) {
     const inputShallow = shadowRef.current;
 
     if (!inputShallow) {
-      return;
+      return { outerHeightStyle: 0, overflowing: false };
     }
 
     inputShallow.style.width = computedStyle.width;
