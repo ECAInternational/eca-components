@@ -12,6 +12,6 @@ jobs:
     secrets: inherit
 
   #test:
-  #  name: Test
+  #  name: Tests
   #  uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-test-storybook.yml@v1.0.14
   #  secrets: inherit
