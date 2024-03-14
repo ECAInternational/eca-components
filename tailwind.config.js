@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin');
 const { createThemes } = require('tw-colors');
 const ecaBrand = require('@ecainternational/eca-design-tokens/tailwind/eca-brand.tailwind');
 const ecaDark = require('@ecainternational/eca-design-tokens/tailwind/eca-dark-theme.tailwind');
