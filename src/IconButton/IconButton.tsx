@@ -1,7 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ButtonHTMLAttributes } from 'react';
 
-export function IconButton(props) {
+export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  name: string;
+  id?: string;
+  variant: 'standard' | 'filled' | 'tonal' | 'outline';
+  size?: 'xsmall' | 'small' | 'medium' | 'large';
+  selected?: boolean;
+  icon: string;
+}
+
+export function IconButton(props: IconButtonProps) {
   const { name, id, variant, selected, size = 'medium', icon, ...others } = props;
 
   const bg = {
@@ -91,12 +99,3 @@ export function IconButton(props) {
     </button>
   );
 }
-
-IconButton.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  variant: PropTypes.string.isRequired,
-  size: PropTypes.string,
-  selected: PropTypes.bool,
-  icon: PropTypes.string.isRequired
-};

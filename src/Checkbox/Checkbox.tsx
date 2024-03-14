@@ -1,7 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { InputHTMLAttributes } from 'react';
 
-export function Checkbox(props) {
+export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+  name: string;
+  id?: string;
+  checked?: boolean;
+  label?: string;
+  disabled?: boolean;
+  alignment?: 'left' | 'right';
+}
+
+export function Checkbox(props: CheckboxProps) {
   const { name, id, label, checked, alignment = 'left', disabled = false, ...others } = props;
 
   return (
@@ -51,12 +59,3 @@ export function Checkbox(props) {
     </div>
   );
 }
-
-Checkbox.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  checked: PropTypes.bool,
-  label: PropTypes.string,
-  disabled: PropTypes.bool,
-  alignment: PropTypes.oneOf(['left', 'right'])
-};

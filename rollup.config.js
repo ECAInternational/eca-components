@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import typescript from '@rollup/plugin-typescript';
 import { babel } from '@rollup/plugin-babel';
 
 // This is required to read package.json file when
@@ -14,7 +15,7 @@ const packageJson = requireFile('./package.json');
 
 export default [
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: [
       {
         file: `dist/${packageJson.main}`,
@@ -30,13 +31,15 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
+      typescript(),
       resolve({
-        extensions: ['.js', '.jsx']
+        extensions: ['.ts', '.tsx']
       }),
       commonjs(),
       terser(),
       babel({
-        extensions: ['.js', '.jsx'],
+        babelHelpers: 'bundled',
+        extensions: ['.ts', '.tsx'],
         exclude: 'node_modules/**'
       })
     ],

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio } from './Radio';
+import { Radio, RadioProps } from './Radio.tsx';
 
 export default {
   component: Radio,
@@ -41,7 +41,7 @@ export const Default = {
   args: {
     name: 'default'
   },
-  render: (args) => (
+  render: (args: RadioProps) => (
     <div className='flex flex-col justify-start'>
       <div className='py-2'>
         <Radio {...args} label='Radio 1' id='one' value='one' defaultChecked />
@@ -81,7 +81,7 @@ export const Vertical = {
   args: {
     name: 'vertical'
   },
-  render: (args) => (
+  render: (args: RadioProps) => (
     <div className='flex flex-col justify-start'>
       <div className='py-2'>
         <Radio {...args} label='Apples' name='apples' value='apples' defaultChecked />
@@ -106,7 +106,7 @@ export const Horizontal = {
   args: {
     name: 'horizontal'
   },
-  render: (args) => (
+  render: (args: RadioProps) => (
     <div className='flex flex-row items-center'>
       <span className='pe-4'>
         <Radio {...args} label='Apples' name='apples2' value='apples' defaultChecked />

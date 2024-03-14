@@ -1,7 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ButtonHTMLAttributes } from 'react';
 
-export function Chip(props) {
+export interface ChipProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  label: string;
+  variant?: 'yellow' | 'green' | 'blue' | 'purple' | 'pink' | 'orange' | 'red' | 'monochrome' | 'neutral';
+  onDelete?: () => void;
+}
+
+export function Chip(props: ChipProps) {
   const { label, variant = 'neutral', onDelete, ...others } = props;
 
   const chip = {
@@ -35,7 +40,7 @@ export function Chip(props) {
         <button
           onClick={onDelete}
           aria-label={`Delete ${label}`}
-          className={`rounded-sm flex items-center justify-center ${close[variant]} 
+          className={`rounded-sm flex items-center justify-center ${close[variant]}
           opacity-50 hover:opacity-70 active:opacity-60
           focus-visible:outline focus-visible:outline-neutral-detail-boldest`}
         >
@@ -45,9 +50,3 @@ export function Chip(props) {
     </span>
   );
 }
-
-Chip.propTypes = {
-  label: PropTypes.string.isRequired,
-  variant: PropTypes.oneOf(['yellow', 'green', 'blue', 'purple', 'pink', 'orange', 'red', 'monochrome', 'neutral']),
-  onDelete: PropTypes.func
-};

@@ -21,3 +21,6 @@ jobs:
     name: Get Beta Version
     needs: build-lint
     uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-beta-package.yml@v1.0.18
+    with:
+      build-directory: dist
+    secrets: inherit

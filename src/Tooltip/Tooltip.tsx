@@ -1,17 +1,26 @@
-import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect, useEffect, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
-export function Tooltip(props) {
+export interface TooltipProps {
+  content: string;
+  icon?: string;
+  state?: 'info' | 'warning' | 'error';
+  size?: 'small' | 'large';
+  position?: 'top' | 'right' | 'bottom' | 'left';
+  delay?: number;
+  children: ReactNode;
+}
+
+export function Tooltip(props: TooltipProps) {
   const { content, icon = '', state = 'info', size = 'small', position = 'bottom', delay = 0, children } = props;
 
-  const [visible, setVisible] = useState(false);
-  const [transform, setTransform] = useState({ x: 0, y: 0 });
-  const [tooltipID, setTooltipID] = useState('');
-  const [isMouseOver, setIsMouseOver] = useState(false);
-  const [timeoutID, setTimeoutID] = useState(null);
-  const hostRef = useRef(null);
-  const tooltipRef = useRef(null);
+  const [visible, setVisible] = useState<boolean>(false);
+  const [transform, setTransform] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [tooltipID, setTooltipID] = useState<string>('');
+  const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
+  const [timeoutID, setTimeoutID] = useState<ReturnType<typeof setTimeout> | null>(null);
+  const hostRef = useRef<HTMLSpanElement | null>(null);
+  const tooltipRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseEnter = () => {
     setIsMouseOver(true);
@@ -21,7 +30,7 @@ export function Tooltip(props) {
   const handleMouseLeave = () => {
     setIsMouseOver(false);
     const hostElement = hostRef.current;
-    if (hostElement.matches(':focus-within') && document.activeElement?.matches(':focus-visible')) return;
+    if (hostElement && hostElement.matches(':focus-within') && document.activeElement?.matches(':focus-visible')) return;
     hideTooltip();
   };
 
@@ -44,22 +53,19 @@ export function Tooltip(props) {
     if (timeoutID) clearTimeout(timeoutID);
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
       hideTooltip();
     }
   };
 
-  useEffect(
-    () => () => {
-      document.addEventListener('keydown', handleKeyDown);
-      if (timeoutID) clearTimeout(timeoutID);
-      return () => {
-        document.removeEventListener('keydown', handleKeyDown);
-      };
-    },
-    []
-  );
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    if (timeoutID) clearTimeout(timeoutID);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   useLayoutEffect(() => {
     let x = 0;
@@ -67,13 +73,16 @@ export function Tooltip(props) {
     if (visible) {
       const tooltipElement = tooltipRef.current;
       const hostElement = hostRef.current;
+
+      if (!tooltipElement || !hostElement) return;
+
       const containerElement = document.body;
 
-      let offsetElement = hostElement;
+      let offsetElement: HTMLElement | null = hostElement;
       while (offsetElement && offsetElement !== containerElement) {
         x += offsetElement.offsetLeft;
         y += offsetElement.offsetTop;
-        offsetElement = offsetElement.offsetParent;
+        offsetElement = offsetElement.offsetParent as HTMLElement;
       }
 
       const offset = 8;
@@ -151,13 +160,3 @@ export function Tooltip(props) {
     </>
   );
 }
-
-Tooltip.propTypes = {
-  content: PropTypes.string.isRequired,
-  icon: PropTypes.string,
-  state: PropTypes.oneOf(['info', 'warning', 'error']),
-  size: PropTypes.oneOf(['small', 'large']),
-  position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-  delay: PropTypes.number,
-  children: PropTypes.node.isRequired
-};
