@@ -33,7 +33,7 @@ jobs:
   publish:
     name: Publish NPM Package
     needs: update-release
-    if: ${{ needs.update-release.outputs.release_created }}
+    if: ${{ needs.update-release.outputs.release-created }}
     uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-package.yml@v1.0.18
     with:
       build-directory: dist
@@ -42,5 +42,5 @@ jobs:
   deploy-documentation:
     name: Deploy Documentation
     needs: update-release
-    if: ${{ needs.update-release.outputs.release_created }}
+    if: ${{ needs.update-release.outputs.release-created }}
     uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-storybook-documentation.yml@v1.0.18
