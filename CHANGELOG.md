@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://github.com/ECAInternational/eca-components/compare/v1.0.35...v2.0.0) (2024-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Convert to typescript ([#137](https://github.com/ECAInternational/eca-components/issues/137))
+
+### Features
+
+* Convert to typescript ([#137](https://github.com/ECAInternational/eca-components/issues/137)) ([df9c541](https://github.com/ECAInternational/eca-components/commit/df9c54185566863f3e0dd07488aff4c414db34d9))
+
+
+### Bug Fixes
+
+* Fix the exported package ([#140](https://github.com/ECAInternational/eca-components/issues/140)) ([88132c9](https://github.com/ECAInternational/eca-components/commit/88132c9b3ed610bc3170ad4122a1d18c384ae059))
+* Fix the package ([88132c9](https://github.com/ECAInternational/eca-components/commit/88132c9b3ed610bc3170ad4122a1d18c384ae059))
+
 ## [1.0.35](https://github.com/ECAInternational/eca-components/compare/v1.0.34...v1.0.35) (2024-03-12)
 
 
