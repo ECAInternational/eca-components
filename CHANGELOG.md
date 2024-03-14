@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.0.35](https://github.com/ECAInternational/eca-components/compare/v1.0.34...v1.0.35) (2024-03-12)
+
+
+### Features
+
+* Add beta build ([#133](https://github.com/ECAInternational/eca-components/issues/133)) ([5a63339](https://github.com/ECAInternational/eca-components/commit/5a63339fa60a9e8707a5857e46c5f16d72ed0dd0))
+
+
+### Bug Fixes
+
+* JS Build ([#134](https://github.com/ECAInternational/eca-components/issues/134)) ([76620df](https://github.com/ECAInternational/eca-components/commit/76620df0728c3153e8d9997a47c306d978f0209d))
+* JS build fix ([#135](https://github.com/ECAInternational/eca-components/issues/135)) ([bd57632](https://github.com/ECAInternational/eca-components/commit/bd57632fbe2c81d774a82766cd08d777d4d21891))
+
+## [1.0.34](https://github.com/ECAInternational/eca-components/compare/v1.0.33...v1.0.34) (2024-02-29)
+
+
+### Features
+
+* Add Chip component ([#120](https://github.com/ECAInternational/eca-components/issues/120)) ([6174a2b](https://github.com/ECAInternational/eca-components/commit/6174a2b159f00cdf2e27e96fb12a6b437f7fcbeb))
+
+## [1.0.33](https://github.com/ECAInternational/eca-components/compare/v1.0.32...v1.0.33) (2024-02-28)
+
+
+### Features
+
+* Create tooltip component ([#112](https://github.com/ECAInternational/eca-components/issues/112)) ([eec5dbf](https://github.com/ECAInternational/eca-components/commit/eec5dbf3ecf547cf2255d93011c9fd01d4bcf6d8))
+
+
+### Bug Fixes
+
+* Update pressed selected and indeterminate bg-color ([#119](https://github.com/ECAInternational/eca-components/issues/119)) ([6556db9](https://github.com/ECAInternational/eca-components/commit/6556db91022decf46d4485ff65053b1cb0bd631e))
+
 ## [1.0.32](https://github.com/ECAInternational/eca-components/compare/v1.0.31...v1.0.32) (2024-02-27)
 
 

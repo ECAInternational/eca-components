@@ -32,13 +32,13 @@ export function Checkbox(props) {
           checked:disabled:bg-controls-bg-disabled checked:disabled:border-controls-bg-disabled
           checked:hover:outline-controls-highlight-paler
           checked:focus-visible:outline-controls-highlight
-          checked:active:bg-controls-highlight
+          checked:active:bg-controls-highlight-bold
 
           indeterminate:border-0 indeterminate:bg-controls-highlight
           indeterminate:disabled:bg-neutral-detail-paler
           indeterminate:hover:outline-controls-highlight-paler
           indeterminate:focus-visible:outline-controls-highlight
-          indeterminate:active:bg-controls-highlight'
+          indeterminate:active:bg-controls-highlight-bold'
         />
         <i className='fi fi-br-minus w-6 h-6 absolute flex items-center place-content-center pointer-events-none transition-all text-controls-highlight-palest peer-disabled:text-controls-content-disabled opacity-0 scale-0 peer-indeterminate:scale-100 peer-indeterminate:opacity-100' />
         <i className='fi fi-br-check w-6 h-6 absolute flex items-center place-content-center pointer-events-none transition-all text-controls-highlight-palest peer-disabled:text-controls-content-disabled opacity-0 scale-0 peer-checked:scale-100 peer-checked:opacity-100' />
