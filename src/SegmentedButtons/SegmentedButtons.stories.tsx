@@ -1,5 +1,5 @@
 import React from 'react';
-import { SegmentedButtons } from './SegmentedButtons';
+import { SegmentedButtons, SegmentedButtonsProps } from './SegmentedButtons';
 
 export default {
   component: SegmentedButtons,
@@ -41,7 +41,7 @@ export const Default = {
     name: 'default',
     label: 'Label'
   },
-  render: (args) => (
+  render: (args: SegmentedButtonsProps) => (
     <div className='w-72'>
       <SegmentedButtons {...args}>
         <input type='radio' aria-label='Option' />
@@ -57,7 +57,7 @@ export const OneDisabled = {
     name: 'one-disabled',
     label: 'One disabled option'
   },
-  render: (args) => (
+  render: (args: SegmentedButtonsProps) => (
     <div className='w-72'>
       <SegmentedButtons {...args}>
         <input type='radio' aria-label='Option' />
@@ -73,7 +73,7 @@ export const AllDisabled = {
     name: 'all-disabled',
     label: 'All disabled'
   },
-  render: (args) => (
+  render: (args: SegmentedButtonsProps) => (
     <div className='w-96'>
       <SegmentedButtons {...args} disabled>
         <input type='radio' aria-label='Option' />
@@ -91,7 +91,7 @@ export const Small = {
     label: 'Small',
     size: 'small'
   },
-  render: (args) => (
+  render: (args: SegmentedButtonsProps) => (
     <div className='w-32'>
       <SegmentedButtons {...args}>
         <input type='radio' aria-label='Option' />
@@ -106,7 +106,7 @@ export const Medium = {
     name: 'medium',
     label: 'Medium (default)'
   },
-  render: (args) => (
+  render: (args: SegmentedButtonsProps) => (
     <div className='w-72'>
       <SegmentedButtons {...args}>
         <input type='radio' aria-label='Option' />
@@ -121,7 +121,7 @@ export const NoLabel = {
   args: {
     name: 'no-label'
   },
-  render: (args) => (
+  render: (args: SegmentedButtonsProps) => (
     <div className='w-72'>
       <SegmentedButtons {...args}>
         <input type='radio' aria-label='Option' />
@@ -138,7 +138,7 @@ export const Description = {
     label: 'Label',
     description: '(required)'
   },
-  render: (args) => (
+  render: (args: SegmentedButtonsProps) => (
     <div className='w-72'>
       <SegmentedButtons {...args}>
         <input type='radio' aria-label='Option' />

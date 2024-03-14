@@ -8,3 +8,4 @@ export * from './TextArea/TextArea.tsx';
 export * from './TextInput/TextInput.tsx';
 export * from './Chip/Chip.tsx';
 export * from './Tooltip/Tooltip.tsx';
+export * from './SegmentedButtons/SegmentedButtons.tsx';

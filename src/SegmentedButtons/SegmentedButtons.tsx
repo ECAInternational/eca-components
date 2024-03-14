@@ -1,7 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement, Children, cloneElement } from 'react';
 
-export function SegmentedButtons(props) {
+export interface SegmentedButtonsProps {
+  name: string;
+  id?: string;
+  disabled?: boolean;
+  children: ReactElement<HTMLInputElement>[];
+  size: 'small' | 'medium';
+  label?: string;
+  description?: string;
+}
+
+export function SegmentedButtons(props: SegmentedButtonsProps) {
   const { id, name, children, disabled, size = 'medium', label, description } = props;
 
   const sizes = {
@@ -26,10 +35,10 @@ export function SegmentedButtons(props) {
         </span>
       )}
       <div className='flex'>
-        {React.Children.map(children, (child) => (
+        {Children.map(children, (child: ReactElement<HTMLInputElement>) => (
           <>
-            {React.cloneElement(child, {
-              disabled: disabled || child.props.disabled,
+            {cloneElement(child as ReactElement<any>, {
+              disabled: disabled || (child && child.props.disabled),
               name,
               className: `cursor-pointer peer appearance-none w-full z-10 relative overflow-hidden transition text-neutral-body
             flex flex-col items-center justify-center bg-controls-bg-unselected ${sizes.input[size]}
@@ -50,13 +59,3 @@ export function SegmentedButtons(props) {
     </div>
   );
 }
-
-SegmentedButtons.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  disabled: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium']),
-  label: PropTypes.string,
-  description: PropTypes.string
-};
