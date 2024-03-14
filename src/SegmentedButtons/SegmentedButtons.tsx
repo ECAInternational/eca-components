@@ -35,10 +35,10 @@ export function SegmentedButtons(props: SegmentedButtonsProps) {
         </span>
       )}
       <div className='flex'>
-        {Children.map(children, (child: ReactElement<HTMLInputElement>) => (
+        {Children.map(children, (child) => (
           <>
-            {cloneElement(child as ReactElement<any>, {
-              disabled: disabled || (child && child.props.disabled),
+            {cloneElement(child, {
+              disabled: disabled || child.props.disabled,
               name,
               className: `cursor-pointer peer appearance-none w-full z-10 relative overflow-hidden transition text-neutral-body
             flex flex-col items-center justify-center bg-controls-bg-unselected ${sizes.input[size]}
