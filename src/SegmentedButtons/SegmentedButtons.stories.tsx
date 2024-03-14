@@ -1,5 +1,5 @@
 import React from 'react';
-import { SegmentedButtons, SegmentedButtonsProps } from './SegmentedButtons';
+import { SegmentedButtons, SegmentedButtonsProps } from './SegmentedButtons.tsx';
 
 export default {
   component: SegmentedButtons,
