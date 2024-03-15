@@ -47,6 +47,30 @@ export default {
 };
 ```
 
+### Remix Setup
+To use in a remix app you'll need to create a tailwind.css file with the following
+
+```js
+    @import '@flaticon/flaticon-uicons/css/all/all.css';
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+```
+
+and in your root.jsx add the following
+
+```js
+import stylesheet from './tailwind.css';
+
+export const links = () => [
+	...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+	{
+		rel: 'stylesheet',
+		href: stylesheet,
+	},
+];
+```
+
 ### Theme Switching
 To switch themes, set the `data-theme` attribute on the `html` element to the name of the theme.
 
