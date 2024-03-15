@@ -1,6 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
-import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
+import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from '@rollup/plugin-typescript';
@@ -39,9 +39,7 @@ export default [
         exclude: 'node_modules/**'
       }),
       postcss({
-        plugins: [
-          require('tailwindcss')('./tailwind.config.js') // replace with path to your Tailwind config
-        ],
+        plugins: [require('tailwindcss')('./tailwind.config.js')],
         extract: true
       })
     ],

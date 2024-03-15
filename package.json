@@ -68,6 +68,7 @@
     "boxen": "^7.1.1",
     "chromatic": "^10.3.1",
     "clean-publish": "^4.2.0",
+    "daisyui": "^4.7.3",
     "dedent": "^1.5.1",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
