@@ -13,8 +13,7 @@ https://ecainternational.github.io/eca-components
 ```npm i -D @ecainternational/eca-components```
 
 ### tailwind.config.js Setup
-
-Import and use `brand` and `theme` files in you `tailwind.config.js` file as shown below. 
+Import the eca-components tailwind plugin and `theme` files in your `tailwind.config.js` file as shown below. 
 
 The [tw-colors](https://github.com/L-Blondy/tw-colors) package can be used to easily specify
 different themes for your application. You can specify as many themes as you like as set a 
@@ -22,7 +21,6 @@ default light and dark theme.
 
 ```js
 const { createThemes } = require('tw-colors');
-import myBrand from '@ecainternational/eca-design-tokens/tailwind/my-brand.tailwind';
 import myLightTheme from '@ecainternational/eca-design-tokens/tailwind/my-dark-theme.tailwind';
 import myDarkTheme from '@ecainternational/eca-design-tokens/tailwind/my-light-theme.tailwind';
 
@@ -31,10 +29,8 @@ export default {
     './app/**/*.{js,jsx,ts,tsx}',
     './node_modules/@ecainternational/eca-components/**/*.js'
   ],
-  theme: {
-    ...myBrand
-  },
   plugins: [
+    require('@ecainternational/eca-components'),
     createThemes(
             {
               'eca-light': ecaLight,

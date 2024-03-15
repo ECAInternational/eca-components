@@ -29,13 +29,13 @@ export default [
       peerDepsExternal(),
       typescript(),
       resolve({
-        extensions: ['.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
       }),
       commonjs(),
       terser(),
       babel({
         babelHelpers: 'bundled',
-        extensions: ['.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         exclude: 'node_modules/**'
       }),
       postcss({
