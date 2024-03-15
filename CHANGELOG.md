@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/ECAInternational/eca-components/compare/v2.0.1...v2.0.2) (2024-03-14)
+
+
+### Bug Fixes
+
+* Fix release ([#143](https://github.com/ECAInternational/eca-components/issues/143)) ([fcc231d](https://github.com/ECAInternational/eca-components/commit/fcc231d1bde857be46e1f981bb448cb3ee251313))
+
 ## [2.0.1](https://github.com/ECAInternational/eca-components/compare/v2.0.0...v2.0.1) (2024-03-14)
 
 
