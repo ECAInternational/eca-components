@@ -1,4 +1,5 @@
 import resolve from '@rollup/plugin-node-resolve';
+import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
@@ -18,11 +19,6 @@ export default [
     input: 'src/index.ts',
     output: [
       {
-        file: `dist/${packageJson.main}`,
-        format: 'cjs',
-        sourcemap: true
-      },
-      {
         file: `dist/${packageJson.module}`,
         format: 'esm',
         exports: 'named',
@@ -41,6 +37,12 @@ export default [
         babelHelpers: 'bundled',
         extensions: ['.ts', '.tsx'],
         exclude: 'node_modules/**'
+      }),
+      postcss({
+        plugins: [
+          require('tailwindcss')('./tailwind.config.js') // replace with path to your Tailwind config
+        ],
+        extract: true
       })
     ],
     external: ['react', 'react-dom']

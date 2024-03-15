@@ -93,6 +93,7 @@
     "rollup": "^4.12.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.6.17",
     "storybook-addon-data-theme-switcher": "^0.3.0",
     "storybook-design-token": "^3.0.0",
