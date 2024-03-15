@@ -1,10 +1,9 @@
-const { createThemes } = require('tw-colors');
+import { createThemes } from 'tw-colors';
+import ecaDark from '@ecainternational/eca-design-tokens/tailwind/eca-dark-theme.tailwind';
+import ecaLight from '@ecainternational/eca-design-tokens/tailwind/eca-light-theme.tailwind';
+import theme from './src/theme.ts';
 
-const ecaDark = require('@ecainternational/eca-design-tokens/tailwind/eca-dark-theme.tailwind');
-const ecaLight = require('@ecainternational/eca-design-tokens/tailwind/eca-light-theme.tailwind');
-const theme = require('./src/theme.ts');
-
-module.exports = {
+export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   ...theme,
   plugins: [
