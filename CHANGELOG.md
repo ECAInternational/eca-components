@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/ECAInternational/eca-components/compare/v2.0.2...v2.0.3) (2024-03-15)
+
+
+### Features
+
+* Convert to proper tailwind package ([122a119](https://github.com/ECAInternational/eca-components/commit/122a119700f3120e5ae61858f09f8a5488816db7))
+
 ## [2.0.2](https://github.com/ECAInternational/eca-components/compare/v2.0.1...v2.0.2) (2024-03-14)
 
 
