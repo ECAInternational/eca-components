@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['airbnb', 'prettier', 'plugin:storybook/recommended'],
+  extends: ['airbnb', 'prettier', 'plugin:storybook/recommended', 'plugin:tailwindcss/recommended'],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   overrides: [
