@@ -9,7 +9,7 @@ export default {
     },
     extend: {
       transitionDuration: {
-        DEFAULT: '200ms'
+        DEFAULT: '2000ms'
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out'
