@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.5](https://github.com/ECAInternational/eca-components/compare/v2.0.4...v2.0.5) (2024-03-18)
+
+
+### Bug Fixes
+
+* Fix imports ([#154](https://github.com/ECAInternational/eca-components/issues/154)) ([d0d20eb](https://github.com/ECAInternational/eca-components/commit/d0d20eb3720ceca6bc5f2dd1fb2f4dbd5210b60b))
+* Update readme ([#150](https://github.com/ECAInternational/eca-components/issues/150)) ([30ea70a](https://github.com/ECAInternational/eca-components/commit/30ea70acc5b25e84442a5ae56730b105a1f6f009))
+
 ## [2.0.4](https://github.com/ECAInternational/eca-components/compare/v2.0.3...v2.0.4) (2024-03-15)
 
 
