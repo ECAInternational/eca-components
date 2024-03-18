@@ -25,4 +25,4 @@ export { Chip };
 export { Tooltip };
 
 // Export the tailwind plugin
-export const tailwindPlugin = plugin(() => {}, theme);
+export default plugin(() => {}, theme);
