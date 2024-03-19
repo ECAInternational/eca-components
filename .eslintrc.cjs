@@ -32,6 +32,7 @@ module.exports = {
     'global-require': 'off',
     'import/export': 'off',
     'max-len': 'off',
+    'tailwindcss/no-custom-classname': 'off',
     'no-use-before-define': 'off'
   }
 };

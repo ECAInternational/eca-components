@@ -20,25 +20,25 @@ export function Radio(props: RadioProps) {
         value={value}
         checked={checked}
         {...others}
-        className='peer appearance-none cursor-pointer w-6 h-6 border border-controls-border rounded-full place-content-center grid transition
-          outline outline-2 outline-offset-2 outline-default-transparent outline-offset-default-transparent
+        className='outline-offset-default-transparent before:content[""] peer grid size-6 cursor-pointer appearance-none place-content-center rounded-full border
+          border-controls-border outline outline-2 outline-offset-2 outline-default-transparent
 
-          disabled:border-neutral-detail-paler disabled:hover:outline-0 disabled:cursor-not-allowed
-          hover:border-controls-border-hover hover:outline-neutral-detail-paler
-          focus-visible:border-controls-border focus-visible:outline-controls-border
-          active:border-controls-border-hover active:[&:not(:disabled)]:bg-neutral-detail-palest active:outline-4 active:outline-offset-0 active:outline-neutral-detail-palest
+          transition before:size-3.5
+          before:scale-0 before:rounded-full
+          before:bg-controls-highlight before:transition
+          checked:border-controls-highlight checked:before:scale-100 hover:border-controls-border-hover hover:outline-neutral-detail-paler checked:hover:border-controls-highlight
 
-          before:content[""] before:w-3.5 before:h-3.5 before:bg-controls-highlight before:rounded-full before:transition before:scale-0
+          checked:hover:outline-controls-highlight-paler focus-visible:border-controls-border focus-visible:outline-controls-border checked:focus-visible:border-controls-highlight checked:focus-visible:outline-controls-highlight active:border-controls-border-hover active:outline-4
 
-          checked:border-controls-highlight
-          checked:before:scale-100
-          checked:disabled:border-controls-bg-disabled before:checked:disabled:bg-controls-bg-disabled
-          checked:hover:outline-controls-highlight-paler checked:hover:border-controls-highlight
-          checked:focus-visible:outline-controls-highlight checked:focus-visible:border-controls-highlight
-          checked:active:outline-neutral-detail-palest'
+          active:outline-offset-0
+          active:outline-neutral-detail-palest
+          checked:active:outline-neutral-detail-palest disabled:cursor-not-allowed
+          disabled:border-neutral-detail-paler checked:disabled:border-controls-bg-disabled
+          before:checked:disabled:bg-controls-bg-disabled disabled:hover:outline-0
+          active:[&:not(:disabled)]:bg-neutral-detail-palest'
       />
       {label && (
-        <label htmlFor={id} className='text-sm font-light ps-2 transition-all'>
+        <label htmlFor={id} className='ps-2 text-sm font-light transition-all'>
           {label}
         </label>
       )}
