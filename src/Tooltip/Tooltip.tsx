@@ -142,8 +142,8 @@ export function Tooltip(props: TooltipProps) {
   };
 
   const tooltip = (
-    <div ref={tooltipRef} className={`absolute top-0 left-0 will-change-transform border leading-none ${states[state]} ${sizes[size]}`} role='tooltip' id={tooltipID} style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}>
-      <div className={`absolute w-2.5 h-2.5 rotate-45 z-0 ${states[state]} ${positions[position]}`} />
+    <div ref={tooltipRef} className={`absolute left-0 top-0 border leading-none will-change-transform ${states[state]} ${sizes[size]}`} role='tooltip' id={tooltipID} style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}>
+      <div className={`absolute z-0 size-2.5 rotate-45 ${states[state]} ${positions[position]}`} />
       <span className='relative flex'>
         {icon && <i className={`fi ${icon} ${iconStates[state]} flex items-center pe-1`} />}
         <span>{content}</span>

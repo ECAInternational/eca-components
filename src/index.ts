@@ -1,11 +1,31 @@
-export * from './Button/Button.tsx';
-export * from './Checkbox/Checkbox.tsx';
-export * from './IconButton/IconButton.tsx';
-export * from './Radio/Radio.tsx';
-export * from './Switch/Switch.tsx';
-export * from './Tab/Tab.tsx';
-export * from './TextArea/TextArea.tsx';
-export * from './TextInput/TextInput.tsx';
-export * from './Chip/Chip.tsx';
-export * from './Tooltip/Tooltip.tsx';
-export * from './SegmentedButtons/SegmentedButtons.tsx';
+import plugin from 'tailwindcss/plugin';
+import theme from './theme.ts';
+import { Button } from './Button/Button.tsx';
+import { Checkbox } from './Checkbox/Checkbox.tsx';
+import { IconButton } from './IconButton/IconButton.tsx';
+import { Radio } from './Radio/Radio.tsx';
+import { Switch } from './Switch/Switch.tsx';
+import { Tab } from './Tab/Tab.tsx';
+import { TextArea } from './TextArea/TextArea.tsx';
+import { TextInput } from './TextInput/TextInput.tsx';
+import { Chip } from './Chip/Chip.tsx';
+import { Tooltip } from './Tooltip/Tooltip.tsx';
+import { SegmentedButtons } from './SegmentedButtons/SegmentedButtons.tsx';
+
+import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
+
+export { Card, CardBody, CardFooter, CardHeader };
+export { Button };
+export { Checkbox };
+export { IconButton };
+export { Radio };
+export { Switch };
+export { Tab };
+export { TextArea };
+export { TextInput };
+export { Chip };
+export { Tooltip };
+export { SegmentedButtons };
+
+// Export the tailwind plugin
+export default plugin(() => {}, theme);

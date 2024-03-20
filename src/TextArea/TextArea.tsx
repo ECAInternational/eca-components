@@ -163,9 +163,9 @@ export function TextArea(props: TextAreaProps) {
   return (
     <div className='text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled'>
       {label && (
-        <label htmlFor={id} className='text-sm block py-1 transition-all'>
+        <label htmlFor={id} className='block py-1 text-sm transition-all'>
           {label}
-          {description && <span className='font-light ps-1'>{description}</span>}
+          {description && <span className='ps-1 font-light'>{description}</span>}
         </label>
       )}
       <textarea onChange={handleChange} id={id || name} name={name} value={value} rows={minRows} disabled={disabled} placeholder={placeholder} {...others} className={className} ref={inputRef} aria-describedby={charCountLabelId} {...(invalid ? { 'aria-invalid': true } : {})} />
@@ -173,7 +173,7 @@ export function TextArea(props: TextAreaProps) {
       {maxLength && (
         <p
           id={charCountLabelId}
-          className={`text-sm font-light mt-1
+          className={`mt-1 text-sm font-light
         ${invalid ? 'text-states-error' : 'invisible peer-focus:visible peer-focus:text-controls-highlight'}`}
         >
           {charCountLabel}

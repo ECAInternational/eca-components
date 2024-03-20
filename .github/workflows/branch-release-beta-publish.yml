@@ -14,13 +14,13 @@ permissions:
 jobs:
   build-lint:
     name: Build & Lint
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v1.0.18
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v1.0.20
     secrets: inherit
 
   publish-beta-version:
     name: Get Beta Version
     needs: build-lint
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-beta-package.yml@v1.0.18
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-beta-package.yml@v1.0.20
     with:
       build-directory: dist
     secrets: inherit

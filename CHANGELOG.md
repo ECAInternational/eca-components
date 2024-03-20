@@ -1,5 +1,58 @@
 # Changelog
 
+## [2.0.5](https://github.com/ECAInternational/eca-components/compare/v2.0.4...v2.0.5) (2024-03-18)
+
+
+### Bug Fixes
+
+* Fix imports ([#154](https://github.com/ECAInternational/eca-components/issues/154)) ([d0d20eb](https://github.com/ECAInternational/eca-components/commit/d0d20eb3720ceca6bc5f2dd1fb2f4dbd5210b60b))
+* Update readme ([#150](https://github.com/ECAInternational/eca-components/issues/150)) ([30ea70a](https://github.com/ECAInternational/eca-components/commit/30ea70acc5b25e84442a5ae56730b105a1f6f009))
+
+## [2.0.4](https://github.com/ECAInternational/eca-components/compare/v2.0.3...v2.0.4) (2024-03-15)
+
+
+### Bug Fixes
+
+* Fix release ([#148](https://github.com/ECAInternational/eca-components/issues/148)) ([0318ecb](https://github.com/ECAInternational/eca-components/commit/0318ecb85f76fba1af042342fb526bd55d1fe5ab))
+
+## [2.0.3](https://github.com/ECAInternational/eca-components/compare/v2.0.2...v2.0.3) (2024-03-15)
+
+
+### Features
+
+* Convert to proper tailwind package ([122a119](https://github.com/ECAInternational/eca-components/commit/122a119700f3120e5ae61858f09f8a5488816db7))
+
+## [2.0.2](https://github.com/ECAInternational/eca-components/compare/v2.0.1...v2.0.2) (2024-03-14)
+
+
+### Bug Fixes
+
+* Fix release ([#143](https://github.com/ECAInternational/eca-components/issues/143)) ([fcc231d](https://github.com/ECAInternational/eca-components/commit/fcc231d1bde857be46e1f981bb448cb3ee251313))
+
+## [2.0.1](https://github.com/ECAInternational/eca-components/compare/v2.0.0...v2.0.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* Package Updates ([#141](https://github.com/ECAInternational/eca-components/issues/141)) ([187e3cc](https://github.com/ECAInternational/eca-components/commit/187e3cc90765c044b41b6f5e7982994019d33650))
+
+## [2.0.0](https://github.com/ECAInternational/eca-components/compare/v1.0.35...v2.0.0) (2024-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Convert to typescript ([#137](https://github.com/ECAInternational/eca-components/issues/137))
+
+### Features
+
+* Convert to typescript ([#137](https://github.com/ECAInternational/eca-components/issues/137)) ([df9c541](https://github.com/ECAInternational/eca-components/commit/df9c54185566863f3e0dd07488aff4c414db34d9))
+
+
+### Bug Fixes
+
+* Fix the exported package ([#140](https://github.com/ECAInternational/eca-components/issues/140)) ([88132c9](https://github.com/ECAInternational/eca-components/commit/88132c9b3ed610bc3170ad4122a1d18c384ae059))
+* Fix the package ([88132c9](https://github.com/ECAInternational/eca-components/commit/88132c9b3ed610bc3170ad4122a1d18c384ae059))
+
 ## [1.0.35](https://github.com/ECAInternational/eca-components/compare/v1.0.34...v1.0.35) (2024-03-12)
 
 

@@ -54,7 +54,7 @@ export const Default = {
     name: 'default'
   },
   render: (args: TabProps) => (
-    <div className='flex gap-4 justify-start'>
+    <div className='flex justify-start gap-4'>
       <Tab {...args} id='tabOne' label='Tab One' selected />
       <Tab {...args} id='tabTwo' label='Tab Two' />
     </div>
