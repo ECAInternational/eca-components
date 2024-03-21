@@ -10,6 +10,7 @@ import { TextArea } from './TextArea/TextArea.tsx';
 import { TextInput } from './TextInput/TextInput.tsx';
 import { Chip } from './Chip/Chip.tsx';
 import { Tooltip } from './Tooltip/Tooltip.tsx';
+import { Step } from './Step/Step.tsx';
 
 export { Button };
 export { Checkbox };
@@ -21,6 +22,7 @@ export { TextArea };
 export { TextInput };
 export { Chip };
 export { Tooltip };
+export { Step };
 
 // Export the tailwind plugin
 export default plugin(() => {}, theme);

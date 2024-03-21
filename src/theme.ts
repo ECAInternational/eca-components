@@ -8,6 +8,9 @@ export default {
       'inner-button': 'inset 0 0 0 0.2rem rgba(0, 0, 0, 1)'
     },
     extend: {
+      spacing: {
+        '5.5': '1.375rem'
+      },
       transitionDuration: {
         DEFAULT: '200ms'
       },
