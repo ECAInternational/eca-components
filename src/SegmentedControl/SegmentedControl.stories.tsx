@@ -148,3 +148,22 @@ export const Description = {
     </div>
   )
 };
+
+export const Highlights = {
+  args: {
+    name: 'Highlights',
+    label: 'Label'
+  },
+  render: (args: SegmentedControlProps) => (
+    <SegmentedControl {...args}>
+      <input type='radio' aria-label='Default' />
+      <input type='radio' aria-label='Orange' data-highlight='orange' />
+      <input type='radio' aria-label='Yelow' data-highlight='yellow' />
+      <input type='radio' aria-label='Green' data-highlight='green' />
+      <input type='radio' aria-label='Blue' data-highlight='blue' />
+      <input type='radio' aria-label='Purple' data-highlight='purple' />
+      <input type='radio' aria-label='Pink' data-highlight='pink' />
+      <input type='radio' aria-label='Red' data-highlight='red' />
+    </SegmentedControl>
+  )
+};
