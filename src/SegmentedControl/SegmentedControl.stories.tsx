@@ -1,20 +1,20 @@
 import React from 'react';
-import { SegmentedButtons, SegmentedButtonsProps } from './SegmentedButtons.tsx';
+import { SegmentedControl, SegmentedControlProps } from './SegmentedControl.tsx';
 
 export default {
-  component: SegmentedButtons,
-  title: 'Components/SegmentedButtons',
+  component: SegmentedControl,
+  title: 'Components/SegmentedControl',
   parameters: {
-    componentSubtitle: 'Basic Segmented Buttons Control'
+    componentSubtitle: 'Basic Segmented Control'
   },
   argTypes: {
     disabled: {
       control: 'boolean',
-      description: 'Disables the entire segmented button control'
+      description: 'Disables the entire segmented control'
     },
     size: {
       control: 'select',
-      description: 'Defines the size of the segmented button control, medium is the default size'
+      description: 'Defines the size of the segmented control, medium is the default size'
     },
     id: {
       table: { disable: true }
@@ -41,13 +41,13 @@ export const Default = {
     name: 'default',
     label: 'Label'
   },
-  render: (args: SegmentedButtonsProps) => (
+  render: (args: SegmentedControlProps) => (
     <div className='w-72'>
-      <SegmentedButtons {...args}>
+      <SegmentedControl {...args}>
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
-      </SegmentedButtons>
+      </SegmentedControl>
     </div>
   )
 };
@@ -57,13 +57,13 @@ export const OneDisabled = {
     name: 'one-disabled',
     label: 'One disabled option'
   },
-  render: (args: SegmentedButtonsProps) => (
+  render: (args: SegmentedControlProps) => (
     <div className='w-72'>
-      <SegmentedButtons {...args}>
+      <SegmentedControl {...args}>
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' disabled />
-      </SegmentedButtons>
+      </SegmentedControl>
     </div>
   )
 };
@@ -73,14 +73,14 @@ export const AllDisabled = {
     name: 'all-disabled',
     label: 'All disabled'
   },
-  render: (args: SegmentedButtonsProps) => (
+  render: (args: SegmentedControlProps) => (
     <div className='w-96'>
-      <SegmentedButtons {...args} disabled>
+      <SegmentedControl {...args} disabled>
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
-      </SegmentedButtons>
+      </SegmentedControl>
     </div>
   )
 };
@@ -91,12 +91,12 @@ export const Small = {
     label: 'Small',
     size: 'small'
   },
-  render: (args: SegmentedButtonsProps) => (
+  render: (args: SegmentedControlProps) => (
     <div className='w-32'>
-      <SegmentedButtons {...args}>
+      <SegmentedControl {...args}>
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
-      </SegmentedButtons>
+      </SegmentedControl>
     </div>
   )
 };
@@ -106,13 +106,13 @@ export const Medium = {
     name: 'medium',
     label: 'Medium (default)'
   },
-  render: (args: SegmentedButtonsProps) => (
+  render: (args: SegmentedControlProps) => (
     <div className='w-72'>
-      <SegmentedButtons {...args}>
+      <SegmentedControl {...args}>
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
-      </SegmentedButtons>
+      </SegmentedControl>
     </div>
   )
 };
@@ -121,13 +121,13 @@ export const NoLabel = {
   args: {
     name: 'no-label'
   },
-  render: (args: SegmentedButtonsProps) => (
+  render: (args: SegmentedControlProps) => (
     <div className='w-72'>
-      <SegmentedButtons {...args}>
+      <SegmentedControl {...args}>
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
-      </SegmentedButtons>
+      </SegmentedControl>
     </div>
   )
 };
@@ -138,13 +138,13 @@ export const Description = {
     label: 'Label',
     description: '(required)'
   },
-  render: (args: SegmentedButtonsProps) => (
+  render: (args: SegmentedControlProps) => (
     <div className='w-72'>
-      <SegmentedButtons {...args}>
+      <SegmentedControl {...args}>
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
-      </SegmentedButtons>
+      </SegmentedControl>
     </div>
   )
 };

@@ -1,6 +1,6 @@
 import React, { ReactElement, Children, cloneElement } from 'react';
 
-export interface SegmentedButtonsProps {
+export interface SegmentedControlProps {
   name: string;
   id?: string;
   disabled?: boolean;
@@ -10,7 +10,7 @@ export interface SegmentedButtonsProps {
   description?: string;
 }
 
-export function SegmentedButtons(props: SegmentedButtonsProps) {
+export function SegmentedControl(props: SegmentedControlProps) {
   const { id, name, children, disabled, size = 'medium', label, description } = props;
 
   const sizes = {
@@ -34,7 +34,7 @@ export function SegmentedButtons(props: SegmentedButtonsProps) {
           {description && <span className='ps-1 font-light'>{description}</span>}
         </span>
       )}
-      <div className='flex rounded outline outline-2 outline-offset-2 outline-default-transparent focus-within:outline-offset-4 focus-within:outline-controls-highlight'>
+      <div className='flex rounded outline outline-2 outline-offset-2 outline-default-transparent has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-controls-highlight'>
         {Children.map(children, (child) => (
           <>
             {cloneElement(child, {
