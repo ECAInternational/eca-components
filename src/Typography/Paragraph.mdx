@@ -1,0 +1,27 @@
+import {
+  Canvas,
+  Meta,
+  Subtitle,
+  Title
+} from '@storybook/blocks';
+import * as ParagraphStories from './Paragraph.stories.tsx';
+
+<Meta of={ParagraphStories} />
+<Title>Components/Typography/Paragraph</Title>
+<Subtitle>Paragraph</Subtitle>
+
+<Canvas of={ParagraphStories.ParagraphLgLighter} />
+<Canvas of={ParagraphStories.ParagraphLgMid} />
+<Canvas of={ParagraphStories.ParagraphLgHeavier} />
+
+<Canvas of={ParagraphStories.ParagraphMdLighter} />
+<Canvas of={ParagraphStories.ParagraphMdMid} />
+<Canvas of={ParagraphStories.ParagraphMdHeavier} />
+
+<Canvas of={ParagraphStories.ParagraphSmLighter} />
+<Canvas of={ParagraphStories.ParagraphSmMid} />
+<Canvas of={ParagraphStories.ParagraphSmHeavier} />
+
+<Canvas of={ParagraphStories.ParagraphXsLighter} />
+<Canvas of={ParagraphStories.ParagraphXsMid} />
+<Canvas of={ParagraphStories.ParagraphXsHeavier} />

@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@ecainternational/eca-design-tokens": "^1.0.26",
+    "@ecainternational/eca-design-tokens": "^1.0.29",
     "@playwright/test": "^1.41.2",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",

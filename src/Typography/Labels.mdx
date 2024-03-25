@@ -1,0 +1,27 @@
+import {
+  Canvas,
+  Meta,
+  Subtitle,
+  Title
+} from '@storybook/blocks';
+import * as LabelStories from './Label.stories.tsx';
+
+<Meta of={LabelStories} />
+<Title>Components/Typography/Label</Title>
+<Subtitle>Label</Subtitle>
+
+<Canvas of={LabelStories.LgLighter} />
+<Canvas of={LabelStories.LgMid} />
+<Canvas of={LabelStories.LgHeavier} />
+
+<Canvas of={LabelStories.MdLighter} />
+<Canvas of={LabelStories.MdMid} />
+<Canvas of={LabelStories.MdHeavier} />
+
+<Canvas of={LabelStories.SmLighter} />
+<Canvas of={LabelStories.SmMid} />
+<Canvas of={LabelStories.SmHeavier} />
+
+<Canvas of={LabelStories.XsLighter} />
+<Canvas of={LabelStories.XsMid} />
+<Canvas of={LabelStories.XsHeavier} />

@@ -1,0 +1,27 @@
+import {
+  Canvas,
+  Meta,
+  Subtitle,
+  Title
+} from '@storybook/blocks';
+import * as DisplayStories from './Display.stories.tsx';
+
+<Meta of={DisplayStories} />
+<Title>Components/Typography/Display</Title>
+<Subtitle>Display</Subtitle>
+
+<Canvas of={DisplayStories.DisplayLgLighter} />
+<Canvas of={DisplayStories.DisplayLgMid} />
+<Canvas of={DisplayStories.DisplayLgHeavier} />
+
+<Canvas of={DisplayStories.DisplayMdLighter} />
+<Canvas of={DisplayStories.DisplayMdMid} />
+<Canvas of={DisplayStories.DisplayMdHeavier} />
+
+<Canvas of={DisplayStories.DisplaySmLighter} />
+<Canvas of={DisplayStories.DisplaySmMid} />
+<Canvas of={DisplayStories.DisplaySmHeavier} />
+
+<Canvas of={DisplayStories.DisplayXsLighter} />
+<Canvas of={DisplayStories.DisplayXsMid} />
+<Canvas of={DisplayStories.DisplayXsHeavier} />

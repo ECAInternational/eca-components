@@ -1,5 +1,5 @@
 import plugin from 'tailwindcss/plugin';
-import theme from './theme.ts';
+import ecaTheme from './eca-theme.ts';
 import { Button } from './Button/Button.tsx';
 import { Checkbox } from './Checkbox/Checkbox.tsx';
 import { IconButton } from './IconButton/IconButton.tsx';
@@ -28,4 +28,22 @@ export { Tooltip };
 export { SegmentedControl };
 
 // Export the tailwind plugin
-export default plugin(() => {}, theme);
+export const tailwindPlugin = plugin(({addUtilities, theme}) => {
+  const newUtilities: Record<string, any> = {};
+  let typographyStyles = {
+    display: theme('display'),
+    heading: theme('heading'),
+    label: theme('label'),
+    paragraph: theme('paragraph'),
+  };
+
+  // Iterate over each property in displayStyles
+  for (const [parentKey, parentValue] of Object.entries(typographyStyles)) {
+    for (const [childKey, childValue] of Object.entries(parentValue as Record<string, any>)) {
+      // Create a new utility for each nested property
+      newUtilities[`.${parentKey}-${childKey}`] = childValue;
+    }
+  }
+
+  addUtilities(newUtilities);
+}, ecaTheme);

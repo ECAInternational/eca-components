@@ -1,6 +1,5 @@
 // @ts-ignore
 import ecaBrand from '@ecainternational/eca-design-tokens/tailwind/eca-brand.tailwind';
-
 export default {
   theme: {
     ...ecaBrand,
