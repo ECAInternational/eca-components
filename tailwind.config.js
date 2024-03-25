@@ -1,7 +1,7 @@
 import { createThemes } from 'tw-colors';
 import ecaDark from '@ecainternational/eca-design-tokens/tailwind/eca-dark-theme.tailwind';
 import ecaLight from '@ecainternational/eca-design-tokens/tailwind/eca-light-theme.tailwind';
-const { tailwindPlugin } = require('./src/index.ts');
+import { tailwindPlugin } from './src/tailwindPlugin.js';
 
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
