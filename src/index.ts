@@ -9,8 +9,8 @@ import { TextInput } from './TextInput/TextInput.tsx';
 import { Chip } from './Chip/Chip.tsx';
 import { Tooltip } from './Tooltip/Tooltip.tsx';
 import { SegmentedControl } from './SegmentedControl/SegmentedControl.tsx';
-import { Card, CardBody, CardFooter, CardHeader } from '~/Card';
-import { tailwindPlugin } from '~/tailwindPlugin.ts';
+import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
+import { tailwindPlugin } from './tailwindPlugin.ts';
 
 export { Card, CardBody, CardFooter, CardHeader };
 export { Button };
