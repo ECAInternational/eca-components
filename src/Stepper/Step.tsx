@@ -1,15 +1,14 @@
-import React, { ReactElement } from 'react';
+import React, { HTMLAttributes, PropsWithChildren, ReactElement } from 'react';
 
 type StepState = 'default' | 'completed' | 'error';
 
-export interface StepProps {
-  index: number;
-  label?: string;
-  state: StepState;
+export interface StepProps extends HTMLAttributes<HTMLButtonElement> {
+  index?: number;
+  state?: StepState;
 }
 
-export function Step(props: StepProps) {
-  const { index, label, state = 'default' } = props;
+export function Step(props: PropsWithChildren<StepProps>) {
+  const { children, index, state = 'default' } = props;
 
   const text: Record<StepState, string> = {
     default: 'text-neutral-detail-bold hover:text-neutral-detail-bolder focus-visible:text-neutral-detail-boldest active:text-neutral-detail-boldest',
@@ -30,10 +29,10 @@ export function Step(props: StepProps) {
   };
 
   return (
-    <button className={`group flex items-center cursor-pointer outline-0 text-sm ${text[state]}`}>
-      {label && <span className='pr-4'>{label}</span>}
+    <button className={`group flex cursor-pointer items-center text-sm outline-0 ${text[state]}`}>
+      {children && <span className='mr-4'>{children}</span>}
       <span
-        className={`size-5.5 m-1 rounded-full flex items-center justify-center ${disc[state]} font-medium
+        className={`m-1 flex size-5.5 items-center justify-center rounded-full ${disc[state]} font-medium
         outline outline-2 outline-offset-2 outline-default-transparent`}
       >
         {discContent[state]}
