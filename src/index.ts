@@ -10,8 +10,12 @@ import { TextArea } from './TextArea/TextArea.tsx';
 import { TextInput } from './TextInput/TextInput.tsx';
 import { Chip } from './Chip/Chip.tsx';
 import { Tooltip } from './Tooltip/Tooltip.tsx';
+import { SegmentedControl } from './SegmentedControl/SegmentedControl.tsx';
 import { Step } from './Step/Step.tsx';
 
+import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
+
+export { Card, CardBody, CardFooter, CardHeader };
 export { Button };
 export { Checkbox };
 export { IconButton };
@@ -22,6 +26,7 @@ export { TextArea };
 export { TextInput };
 export { Chip };
 export { Tooltip };
+export { SegmentedControl };
 export { Step };
 
 // Export the tailwind plugin

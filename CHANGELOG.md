@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.6](https://github.com/ECAInternational/eca-components/compare/v2.0.5...v2.0.6) (2024-03-22)
+
+
+### Features
+
+* Add Card Component ([#155](https://github.com/ECAInternational/eca-components/issues/155)) ([a516384](https://github.com/ECAInternational/eca-components/commit/a5163849abe05b92ca9f489ea13b77bb863db323))
+* Added SegmentedControl ([#114](https://github.com/ECAInternational/eca-components/issues/114)) ([e54e2cc](https://github.com/ECAInternational/eca-components/commit/e54e2ccc72f396a6dfe1009ff123ad71a2298e09))
+
 ## [2.0.5](https://github.com/ECAInternational/eca-components/compare/v2.0.4...v2.0.5) (2024-03-18)
 
 

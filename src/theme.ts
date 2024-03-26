@@ -4,9 +4,7 @@ import ecaBrand from '@ecainternational/eca-design-tokens/tailwind/eca-brand.tai
 export default {
   theme: {
     ...ecaBrand,
-    boxShadow: {
-      'inner-button': 'inset 0 0 0 0.2rem rgba(0, 0, 0, 1)'
-    },
+
     extend: {
       spacing: {
         '5.5': '1.375rem'
@@ -19,6 +17,9 @@ export default {
       },
       scale: {
         92: '0.92'
+      },
+      boxShadow: {
+        'inner-button': 'inset 0 0 0 0.2rem rgba(0, 0, 0, 1)'
       }
     }
   }
