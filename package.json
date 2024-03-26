@@ -80,6 +80,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.15.1",
+    "@headlessui/tailwindcss": "^0.2.0",
     "husky": "^8.0.3",
     "jest": "^29.7.0",
     "lint-staged": "^15.2.0",
@@ -124,6 +125,7 @@
     "jackspeak": "2.1.1"
   },
   "dependencies": {
-    "@flaticon/flaticon-uicons": "^3.1.0"
+    "@flaticon/flaticon-uicons": "^3.1.0",
+    "@headlessui/react": "^1.7.18"
   }
 }
