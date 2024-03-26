@@ -5,6 +5,8 @@ import { AutoCompleteInput } from './AutoComplete.Input.tsx';
 import { AutoCompleteOptions } from './AutoComplete.Options.tsx';
 import { AutoCompleteOption } from './AutoComplete.Option.tsx';
 import { FieldSet } from './FieldSet.tsx';
+import { HighlightMatched } from './HighlightMatched.tsx';
+import { DefaultOptionViewer } from './DefaultOptionViewer.tsx';
 
 const people = ['Durward Reynolds', 'Kenton Towne', 'Therese Wunsch', 'Benedict Kessler', 'Katelyn Rohan'];
 
@@ -98,7 +100,9 @@ export const Default = {
             <AutoCompleteOptions onClose={() => setQuery('')}>
               {filteredPeople.map((person) => (
                 <AutoCompleteOption key={person} value={person}>
-                  {person}
+                  <DefaultOptionViewer>
+                    <HighlightMatched content={person} query={query} />
+                  </DefaultOptionViewer>
                 </AutoCompleteOption>
               ))}
             </AutoCompleteOptions>
@@ -132,7 +136,9 @@ export const Multiple = {
             <AutoCompleteOptions onClose={() => setQuery('')}>
               {filteredPeople.map((person) => (
                 <AutoCompleteOption key={person} value={person}>
-                  {person}
+                  <DefaultOptionViewer>
+                    <HighlightMatched content={person} query={query} />
+                  </DefaultOptionViewer>
                 </AutoCompleteOption>
               ))}
             </AutoCompleteOptions>
@@ -160,7 +166,9 @@ const defaultRender = ({ name, state, label, description, disabled }: { name: st
           <AutoCompleteOptions onClose={() => setQuery('')}>
             {filteredPeople.map((person) => (
               <AutoCompleteOption key={person} value={person}>
-                {person}
+                <DefaultOptionViewer>
+                  <HighlightMatched content={person} query={query} />
+                </DefaultOptionViewer>
               </AutoCompleteOption>
             ))}
           </AutoCompleteOptions>

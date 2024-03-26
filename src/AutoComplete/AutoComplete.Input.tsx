@@ -1,5 +1,7 @@
 import { Combobox } from '@headlessui/react';
 import React, { ComponentPropsWithRef } from 'react';
+import { useAutoCompleteContext } from './AutoComplete.tsx';
+import { callAll } from '../utils/call-all.ts';
 
 export function AutoCompleteInput({
   className,
@@ -9,6 +11,8 @@ export function AutoCompleteInput({
 }: ComponentPropsWithRef<typeof Combobox.Input> & {
   state: 'default' | 'error' | 'warning';
 }) {
+  const { open } = useAutoCompleteContext();
+
   const border = {
     default: 'border-controls-border',
     warning: 'border-states-warning',
@@ -27,6 +31,10 @@ export function AutoCompleteInput({
     error: 'focus-within:outline-states-error hover:focus-within:outline-states-error'
   };
 
+  const stopPropagation = (e: MouseEvent) => {
+    if (open) e.stopPropagation();
+  };
+
   return (
     <Combobox.Button
       className={`font-regular relative flex w-full rounded border p-3 text-sm text-controls-placeholder-text outline
@@ -34,26 +42,16 @@ export function AutoCompleteInput({
         has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
         ${hover[state]} ${border[state]} ${focus[state]}`}
     >
-      {({ open }) => (
-        <>
-          <Combobox.Input
-            className='w-full rounded bg-default-transparent font-light text-neutral-body placeholder:text-controls-placeholder-text
+      <Combobox.Input
+        className='font-light w-full rounded bg-default-transparent text-neutral-body placeholder:text-controls-placeholder-text
                placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
                disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60'
-            onClick={(e: MouseEvent) => {
-              if (open) e.stopPropagation();
-              if (onClick) {
-                onClick(e);
-              }
-            }}
-            {...props}
-          />
-
-          <i className='fi fi-sr-angle-small-down size-5' aria-hidden='true' />
-          {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
-          {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
-        </>
-      )}
+        onClick={callAll(stopPropagation, onClick)}
+        {...props}
+      />
+      <i className='fi fi-sr-angle-small-down size-5' aria-hidden='true' />
+      {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
+      {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
     </Combobox.Button>
   );
 }
