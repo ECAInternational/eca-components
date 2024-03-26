@@ -62,7 +62,7 @@ export const Default = {
               {label} <span className='ps-1 font-light'>Description</span>
             </AutoCompleteLabel>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
-            <AutoCompleteOptions>
+            <AutoCompleteOptions onClose={() => setQuery('')}>
               {filteredPeople.map((person) => (
                 <AutoCompleteOption key={person} value={person}>
                   {person}
@@ -96,7 +96,7 @@ export const Multiple = {
               {label} <span className='ps-1 font-light'>Description</span>
             </AutoCompleteLabel>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={(p: string[]) => p.join(', ')} />
-            <AutoCompleteOptions>
+            <AutoCompleteOptions onClose={() => setQuery('')}>
               {filteredPeople.map((person) => (
                 <AutoCompleteOption key={person} value={person}>
                   {person}
@@ -124,7 +124,7 @@ const defaultRender = ({ name, state, label, description, disabled }: { name: st
             {label} <span className='ps-1 font-light'>{description}</span>
           </AutoCompleteLabel>
           <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
-          <AutoCompleteOptions>
+          <AutoCompleteOptions onClose={() => setQuery('')}>
             {filteredPeople.map((person) => (
               <AutoCompleteOption key={person} value={person}>
                 {person}
