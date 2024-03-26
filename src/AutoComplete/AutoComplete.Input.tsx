@@ -28,12 +28,6 @@ export function AutoCompleteInput({
   };
 
   return (
-    // <span
-    //   className={`font-regular relative flex rounded border p-3 text-sm text-controls-placeholder-text outline
-    //     outline-2 outline-offset-2 outline-default-transparent transition
-    //     has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
-    //     ${hover[state]} ${border[state]} ${focus[state]}`}
-    // >
     <Combobox.Button
       className={`font-regular relative flex w-full rounded border p-3 text-sm text-controls-placeholder-text outline
         outline-2 outline-offset-2 outline-default-transparent transition
@@ -61,6 +55,5 @@ export function AutoCompleteInput({
         </>
       )}
     </Combobox.Button>
-    // </span>
   );
 }
