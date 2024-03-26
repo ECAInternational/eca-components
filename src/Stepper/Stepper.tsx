@@ -7,7 +7,7 @@ export function Stepper(props: PropsWithChildren<StepperProps>) {
   const { children } = props;
 
   return (
-    <div>
+    <div className='flex w-full justify-between'>
       {Children.map(children, (child, index) => {
         const isElement = isValidElement<StepProps>(child);
         if (isElement) {

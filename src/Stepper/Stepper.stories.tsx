@@ -13,9 +13,11 @@ export default {
   args: {},
   render: (args) => (
     <Stepper {...args}>
+      <Step selected>Selected</Step>
       <Step>Label</Step>
-      <Step state='completed'>Label</Step>
-      <Step state='error'>Label</Step>
+      <Step state='completed'>Completed</Step>
+      <Step state='error'>Error</Step>
+      <Step disabled>Disabled</Step>
     </Stepper>
   )
 } satisfies Meta<StepperProps>;
