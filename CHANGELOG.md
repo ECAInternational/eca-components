@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.7](https://github.com/ECAInternational/eca-components/compare/v2.0.6...v2.0.7) (2024-03-26)
+
+
+### Features
+
+* Add Typography ([#160](https://github.com/ECAInternational/eca-components/issues/160)) ([98928c6](https://github.com/ECAInternational/eca-components/commit/98928c6be0bdf969509e06be92eedbd3800a27c7))
+
 ## [2.0.6](https://github.com/ECAInternational/eca-components/compare/v2.0.5...v2.0.6) (2024-03-22)
 
 
