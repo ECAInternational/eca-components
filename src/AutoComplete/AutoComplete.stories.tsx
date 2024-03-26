@@ -25,6 +25,12 @@ export default {
       control: 'boolean',
       description: 'Disables the autocomplete field'
     },
+    defaultValue: {
+      table: { disable: true }
+    },
+    value: {
+      table: { disable: true }
+    },
     id: {
       table: { disable: true }
     },
@@ -32,6 +38,33 @@ export default {
       table: { disable: true }
     },
     className: {
+      table: { disable: true }
+    },
+    multiple: {
+      table: { disable: true }
+    },
+    form: {
+      table: { disable: true }
+    },
+    as: {
+      table: { disable: true }
+    },
+    refName: {
+      table: { disable: true }
+    },
+    nullable: {
+      table: { disable: true }
+    },
+    onChange: {
+      table: { disable: true }
+    },
+    by: {
+      table: { disable: true }
+    },
+    ref: {
+      table: { disable: true }
+    },
+    __demoMode: {
       table: { disable: true }
     }
   },
