@@ -3,7 +3,7 @@ import { AutoComplete } from './AutoComplete.tsx';
 import { AutoCompleteLabel } from './AutoComplete.Label.tsx';
 import { AutoCompleteInput } from './AutoComplete.Input.tsx';
 import { AutoCompleteOptions } from './AutoComplete.Options.tsx';
-import { AutoCompleteOption } from './AutoCompleteOption.tsx';
+import { AutoCompleteOption } from './AutoComplete.Option.tsx';
 import { FieldSet } from './FieldSet.tsx';
 
 const people = ['Durward Reynolds', 'Kenton Towne', 'Therese Wunsch', 'Benedict Kessler', 'Katelyn Rohan'];
@@ -59,7 +59,7 @@ export const Default = {
         <FieldSet>
           <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} disabled={disabled}>
             <AutoCompleteLabel>
-              {label} <span className='ps-1 font-light'>Description</span>
+              {label} <span className='font-light ps-1'>Description</span>
             </AutoCompleteLabel>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
@@ -93,7 +93,7 @@ export const Multiple = {
         <FieldSet>
           <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} multiple>
             <AutoCompleteLabel>
-              {label} <span className='ps-1 font-light'>Description</span>
+              {label} <span className='font-light ps-1'>Description</span>
             </AutoCompleteLabel>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={(p: string[]) => p.join(', ')} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
@@ -121,7 +121,7 @@ const defaultRender = ({ name, state, label, description, disabled }: { name: st
       <FieldSet>
         <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} disabled={disabled}>
           <AutoCompleteLabel>
-            {label} <span className='ps-1 font-light'>{description}</span>
+            {label} <span className='font-light ps-1'>{description}</span>
           </AutoCompleteLabel>
           <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
           <AutoCompleteOptions onClose={() => setQuery('')}>
