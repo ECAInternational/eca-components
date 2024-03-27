@@ -12,7 +12,6 @@ The design goal is to:
 The AutoComplete component is composed of the following components:
 - `AutoComplete` - the main component that wraps the `ComboBox` component
 - `AutoCompleteInput` - the input field that the user interacts with to search for items
-- `AutoCompleteLabel` - the label that describes the input field
 - `AutoCompleteOptions` - the list of options that the user can select from
 - `AutoCompleteOption` - an individual option in the list of options
 - a collection of pre-styled option viewer components, for example: `DefaultOptionViewer`, `IconOptionViewer`, `ImageOptionViewer`, `TableOptionViewer`
@@ -23,9 +22,9 @@ Consumers can use the pre-styled option viewer components directly, or develop t
 ```tsx
 <FieldSet disabled={disabled}>
   <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
-    <AutoCompleteLabel>
+    <Label>
       {label} <span className="font-light ps-1">Description</span>
-    </AutoCompleteLabel>
+    </Label>
     <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
     <AutoCompleteOptions onClose={() => setQuery('')}>
       {filteredPeople.map((person) => (
