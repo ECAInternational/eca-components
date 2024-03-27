@@ -98,7 +98,11 @@ export const Default = {
             </Label>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
-              {filteredPeople.length === 0 && <AutoCompleteOption value=''>No Options</AutoCompleteOption>}
+              {filteredPeople.length === 0 && (
+                <AutoCompleteOption value='' disabled>
+                  No Options
+                </AutoCompleteOption>
+              )}
               {filteredPeople.map((person) => (
                 <AutoCompleteOption key={person} value={person}>
                   <DefaultOptionViewer>
@@ -135,7 +139,11 @@ export const Multiple = {
             </Label>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={(p: string[]) => p.join(', ')} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
-              {filteredPeople.length === 0 && <AutoCompleteOption value=''>No Options</AutoCompleteOption>}
+              {filteredPeople.length === 0 && (
+                <AutoCompleteOption value='' disabled>
+                  No Options
+                </AutoCompleteOption>
+              )}
               {filteredPeople.map((person) => (
                 <AutoCompleteOption key={person} value={person}>
                   <DefaultOptionViewer>
@@ -166,7 +174,11 @@ const defaultRender = ({ name, state, label, description, disabled, defaultValue
           </Label>
           <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
           <AutoCompleteOptions onClose={() => setQuery('')}>
-            {filteredPeople.length === 0 && <AutoCompleteOption value=''>No Options</AutoCompleteOption>}
+            {filteredPeople.length === 0 && (
+              <AutoCompleteOption value='' disabled>
+                No Options
+              </AutoCompleteOption>
+            )}
             {filteredPeople.map((person) => (
               <AutoCompleteOption key={person} value={person}>
                 <DefaultOptionViewer>
