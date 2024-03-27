@@ -1,7 +1,7 @@
 {
   "name": "@ecainternational/eca-components",
   "description": "ECA Component Library",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "type": "module",
   "private": false,
   "main": "index.js",
@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@ecainternational/eca-design-tokens": "^1.0.26",
+    "@ecainternational/eca-design-tokens": "^1.0.31",
     "@playwright/test": "^1.41.2",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -108,6 +108,9 @@
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.13.0"
   },
   "peerDependenciesMeta": {
     "react": {
