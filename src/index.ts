@@ -11,7 +11,7 @@ import { Tooltip } from './Tooltip/Tooltip.tsx';
 import { SegmentedControl } from './SegmentedControl/SegmentedControl.tsx';
 import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
 import { tailwindPlugin } from './tailwindPlugin.ts';
-import { AutoComplete, AutoCompleteInput, Label, AutoCompleteOption, AutoCompleteOptions, HighlightMatched, DefaultOptionViewer } from './AutoComplete/index.ts';
+import { AutoComplete, AutoCompleteInput, Label, AutoCompleteOption, AutoCompleteOptions, HighlightMatched, DefaultOptionViewer, FieldSet } from './AutoComplete/index.ts';
 
 export { Card, CardBody, CardFooter, CardHeader };
 export { Button };
@@ -25,7 +25,7 @@ export { TextInput };
 export { Chip };
 export { Tooltip };
 export { SegmentedControl };
-export { AutoComplete, Label, AutoCompleteOptions, AutoCompleteOption, AutoCompleteInput, DefaultOptionViewer, HighlightMatched };
+export { AutoComplete, Label, AutoCompleteOptions, AutoCompleteOption, AutoCompleteInput, DefaultOptionViewer, HighlightMatched, FieldSet };
 
 // Export the tailwind plugin
 export default tailwindPlugin;
