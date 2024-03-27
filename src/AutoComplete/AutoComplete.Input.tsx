@@ -37,8 +37,8 @@ export function AutoCompleteInput({
 
   return (
     <Combobox.Button
-      className={`font-regular relative flex w-full rounded border p-3 text-sm text-controls-placeholder-text outline
-        outline-2 outline-offset-2 outline-default-transparent transition
+      className={`font-regular relative flex w-full rounded border p-3 text-controls-placeholder-text outline outline-2
+        outline-offset-2 outline-default-transparent transition paragraph-sm-mid
         has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
         ${hover[state]} ${border[state]} ${focus[state]}`}
     >
@@ -49,7 +49,7 @@ export function AutoCompleteInput({
         onClick={callAll(stopPropagation, onClick)}
         {...props}
       />
-      <i className='fi fi-sr-angle-small-down size-5' aria-hidden='true' />
+      {open ? <i className='fi fi-sr-angle-small-up size-5' aria-hidden='true' /> : <i className='fi fi-sr-angle-small-down size-5' aria-hidden='true' />}
       {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
       {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
     </Combobox.Button>

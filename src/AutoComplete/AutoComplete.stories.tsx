@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AutoComplete } from './AutoComplete.tsx';
-import { AutoCompleteLabel } from './AutoComplete.Label.tsx';
+import { Label } from './Label.tsx';
 import { AutoCompleteInput } from './AutoComplete.Input.tsx';
 import { AutoCompleteOptions } from './AutoComplete.Options.tsx';
 import { AutoCompleteOption } from './AutoComplete.Option.tsx';
@@ -84,18 +84,18 @@ export const Default = {
     disabled: false
   },
   render: ({ name, state, label, disabled }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean }) => {
-    const [selectedPerson, setSelectedPerson] = useState(people[0]);
+    const [selectedPerson, setSelectedPerson] = useState('');
     const [query, setQuery] = useState('');
 
     const filteredPeople = query === '' ? people : people.filter((person) => person.toLowerCase().includes(query.toLowerCase()));
 
     return (
       <div className='h-72'>
-        <FieldSet>
-          <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} disabled={disabled}>
-            <AutoCompleteLabel>
-              {label} <span className='font-light ps-1'>Description</span>
-            </AutoCompleteLabel>
+        <FieldSet disabled={disabled}>
+          <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
+            <Label>
+              {label} <span className='ps-1 label-xs-lighter'>Description</span>
+            </Label>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
               {filteredPeople.map((person) => (
@@ -120,7 +120,7 @@ export const Multiple = {
     label: 'Label'
   },
   render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => {
-    const [selectedPerson, setSelectedPerson] = useState([people[0], people[1]]);
+    const [selectedPerson, setSelectedPerson] = useState([]);
     const [query, setQuery] = useState('');
 
     const filteredPeople = query === '' ? people : people.filter((person) => person.toLowerCase().includes(query.toLowerCase()));
@@ -129,9 +129,9 @@ export const Multiple = {
       <div className='h-72'>
         <FieldSet>
           <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} multiple>
-            <AutoCompleteLabel>
-              {label} <span className='font-light ps-1'>Description</span>
-            </AutoCompleteLabel>
+            <Label>
+              {label} <span className='ps-1 label-xs-lighter'>Description</span>
+            </Label>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={(p: string[]) => p.join(', ')} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
               {filteredPeople.map((person) => (
@@ -149,19 +149,19 @@ export const Multiple = {
   }
 };
 
-const defaultRender = ({ name, state, label, description, disabled }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean }) => {
-  const [selectedPerson, setSelectedPerson] = useState(people[0]);
+const defaultRender = ({ name, state, label, description, disabled, defaultValue }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean; defaultValue?: string }) => {
+  const [selectedPerson, setSelectedPerson] = useState(defaultValue || '');
   const [query, setQuery] = useState('');
 
   const filteredPeople = query === '' ? people : people.filter((person) => person.toLowerCase().includes(query.toLowerCase()));
 
   return (
     <div className={`${disabled ? 'h-24' : 'h-72'}`}>
-      <FieldSet>
-        <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} disabled={disabled}>
-          <AutoCompleteLabel>
-            {label} <span className='font-light ps-1'>{description}</span>
-          </AutoCompleteLabel>
+      <FieldSet disabled={disabled}>
+        <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
+          <Label>
+            {label} <span className='ps-1 label-xs-lighter'>{description}</span>
+          </Label>
           <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
           <AutoCompleteOptions onClose={() => setQuery('')}>
             {filteredPeople.map((person) => (
@@ -225,6 +225,16 @@ export const Description = {
     label: 'Label',
     description: '(required)',
     placeholder: 'Placeholder text'
+  },
+  render: defaultRender
+};
+
+export const DefaultValue = {
+  args: {
+    name: 'default-value-button',
+    state: 'default',
+    label: 'Label',
+    defaultValue: 'Durward Reynolds'
   },
   render: defaultRender
 };

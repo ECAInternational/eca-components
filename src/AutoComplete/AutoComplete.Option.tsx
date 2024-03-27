@@ -5,7 +5,7 @@ export interface AutoCompleteOptionProps extends Omit<ComponentPropsWithRef<type
 
 export function AutoCompleteOption({ className, children, ...props }: PropsWithChildren<AutoCompleteOptionProps>) {
   return (
-    <Combobox.Option className={`ui-not-active:text-gray-900 relative cursor-default select-none py-2 pl-10 pr-4 ui-active:bg-controls-highlight-palest ${className}`} {...props}>
+    <Combobox.Option className={`relative cursor-default select-none p-3 paragraph-sm-lighter ui-selected:bg-controls-highlight-palest ui-active:bg-controls-highlight-palest ${className}`} {...props}>
       {(renderProps) => <AutoCompleteOptionContext.Provider value={renderProps}>{children}</AutoCompleteOptionContext.Provider>}
     </Combobox.Option>
   );

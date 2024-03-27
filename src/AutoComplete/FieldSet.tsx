@@ -1,8 +1,8 @@
-import React, { HTMLAttributes, PropsWithChildren } from 'react';
+import React, { FieldsetHTMLAttributes, PropsWithChildren } from 'react';
 
-export function FieldSet({ children, className, ...props }: PropsWithChildren<HTMLAttributes<HTMLFieldSetElement>>) {
+export function FieldSet({ children, className, ...props }: PropsWithChildren<FieldsetHTMLAttributes<HTMLFieldSetElement>>) {
   return (
-    <fieldset className={`relative w-full text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled ${className}`} {...props}>
+    <fieldset className={`relative w-full has-[:disabled]:text-controls-content-disabled ${className}`} {...props}>
       {children}
     </fieldset>
   );

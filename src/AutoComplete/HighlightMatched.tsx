@@ -4,7 +4,7 @@ export function HighlightMatched({
   content,
   query,
   className,
-  highlightClassName = 'text-blue-700'
+  highlightClassName = 'paragraph-sm-heavier'
 }: HTMLAttributes<HTMLSpanElement> & {
   query?: string;
   content: string;

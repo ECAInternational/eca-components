@@ -21,8 +21,8 @@ The AutoComplete component is composed of the following components:
 Consumers can use the pre-styled option viewer components directly, or develop their own option viewer components.
 
 ```tsx
-<FieldSet>
-  <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} disabled={disabled}>
+<FieldSet disabled={disabled}>
+  <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
     <AutoCompleteLabel>
       {label} <span className="font-light ps-1">Description</span>
     </AutoCompleteLabel>
