@@ -26,7 +26,7 @@ export { TextInput };
 export { Chip };
 export { Tooltip };
 export { SegmentedControl };
-export { Step };
+export { Stepper, Step };
 
 // Export the tailwind plugin
 export default tailwindPlugin;

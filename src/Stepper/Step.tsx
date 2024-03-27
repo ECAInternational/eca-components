@@ -1,16 +1,18 @@
 import React, { HTMLAttributes, PropsWithChildren, ReactElement } from 'react';
 
-type StepState = 'default' | 'completed' | 'error';
+export type StepState = 'default' | 'completed' | 'error';
+export type StepLabelPosition = 'left' | 'below';
 
 export interface StepProps extends HTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   index?: number;
+  labelPosition?: StepLabelPosition;
   selected?: boolean;
   state?: StepState;
 }
 
 export function Step(props: PropsWithChildren<StepProps>) {
-  const { children, disabled, index, selected, state = 'default' } = props;
+  const { children, disabled, index, labelPosition = 'below', selected, state = 'default', ...others } = props;
 
   const text: Record<StepState, string> = {
     default: 'text-neutral-detail-bold hover:text-neutral-detail-bolder focus-visible:text-neutral-detail-boldest active:text-neutral-detail-boldest',
@@ -36,27 +38,41 @@ export function Step(props: PropsWithChildren<StepProps>) {
     error: 'border-none text-states-error bg-states-error-paler outline-states-error-paler'
   };
 
+  const buttonLayout: Record<StepLabelPosition, string> = {
+    below: 'flex-col',
+    left: 'flex-row items-center'
+  };
+
   const discContent: Record<StepState, ReactElement> = {
     default: <span>{index}</span>,
-    completed: <i className='fi-sr-check flex'></i>,
-    error: <i className='fi-sr-exclamation flex'></i>
+    completed: <i className='fi-sr-check flex' />,
+    error: <i className='fi-sr-exclamation flex' />
   };
+
+  const label: Record<StepLabelPosition, string> = {
+    left: 'pr-4',
+    below: 'pt-2 w-7.5 justify-center'
+  };
+
+  const labelElement = children && <span className={`flex label-sm-lighter ${label[labelPosition]}`}>{children}</span>;
 
   return (
     <button
-      className={`group flex cursor-pointer flex-col items-center text-sm outline-0 ${(selected ? textSelected : text)[state]}
+      className={`group flex cursor-pointer ${buttonLayout[labelPosition]} outline-0 ${(selected ? textSelected : text)[state]}
       disabled:cursor-not-allowed disabled:text-neutral-detail`}
       disabled={disabled}
+      {...others}
     >
+      {labelPosition === 'left' && labelElement}
       <span
-        className={`m-1 flex size-5.5 items-center justify-center rounded-full ${(selected ? discSelected : disc)[state]} font-medium
+        className={`m-1 flex size-5.5 items-center justify-center rounded-full ${(selected ? discSelected : disc)[state]} font-medium text-sm
         outline outline-2 outline-offset-2 outline-default-transparent
         group-disabled:border-none group-disabled:bg-neutral-detail-palest group-disabled:text-neutral-detail-pale group-disabled:outline-none
        `}
       >
         {discContent[state]}
       </span>
-      {children && <span className='mt-2'>{children}</span>}
+      {labelPosition === 'below' && labelElement}
     </button>
   );
 }

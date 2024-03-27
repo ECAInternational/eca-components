@@ -9,9 +9,14 @@ export default {
   parameters: {
     componentSubtitle: 'Stepper Component'
   },
-  argTypes: {},
+  argTypes: {
+    layout: {
+      control: 'select',
+      description: "Defines how the stepper control's layout, horizontal is the default"
+    }
+  },
   args: {},
-  render: (args) => (
+  render: (args: StepperProps) => (
     <Stepper {...args}>
       <Step selected>Selected</Step>
       <Step>Label</Step>
