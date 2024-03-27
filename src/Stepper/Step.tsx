@@ -54,7 +54,7 @@ export function Step(props: PropsWithChildren<StepProps>) {
     below: 'pt-2 w-7.5 justify-center'
   };
 
-  const labelElement = children && <span className={`flex label-sm-lighter ${label[labelPosition]}`}>{children}</span>;
+  const labelElement = children && <span className={`flex text-nowrap label-sm-lighter ${label[labelPosition]}`}>{children}</span>;
 
   return (
     <button
@@ -65,8 +65,8 @@ export function Step(props: PropsWithChildren<StepProps>) {
     >
       {labelPosition === 'left' && labelElement}
       <span
-        className={`m-1 flex size-5.5 items-center justify-center rounded-full ${(selected ? discSelected : disc)[state]} font-medium text-sm
-        outline outline-2 outline-offset-2 outline-default-transparent
+        className={`m-1 flex size-5.5 items-center justify-center rounded-full ${(selected ? discSelected : disc)[state]} 
+        font-medium text-sm outline outline-2 outline-offset-2 ${!selected && 'outline-default-transparent'}
         group-disabled:border-none group-disabled:bg-neutral-detail-palest group-disabled:text-neutral-detail-pale group-disabled:outline-none
        `}
       >

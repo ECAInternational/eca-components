@@ -1,0 +1,55 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as Stepper from './Stepper.stories';
+
+<Meta of={Stepper} />
+<Title>Components/Stepper</Title>
+<Subtitle>Stepper Component</Subtitle>
+
+<Primary />
+<Controls />
+
+## Step States
+
+Steps might be numbered, contain a tick to demonstrate a section is complete, or an exclamation mark to highlight an error
+
+### Numbered
+
+<Canvas of={Stepper.DefaultState} />
+
+### Tick
+
+<Canvas of={Stepper.CompletedState} />
+
+### Error
+
+<Canvas of={Stepper.ErrorState} />
+
+## Layout
+
+The stepper control supports multiple layouts
+
+### Horizontal (default)
+
+<Canvas of={Stepper.HorizontalLayout} />
+
+### Vertical
+
+<Canvas of={Stepper.VerticalLayout} />
+
+## Stepper flow
+
+### Non-linear
+
+A user can navigate through the steps freely, e.g. in a calculator. They never use the ‘tick’, just numbers and possibly errors
+
+<Canvas of={Stepper.NonLinearFlow} />
+
+### Linear
+
+The user can only access the next step when the current step is complete / hits the validation criteria.
+
+As the user cannot navigate forwards without completing a section, subsequent steps should be disabled
+
+The user should be able to navigate backwards through sections they have completed though so any previous ‘ticked’ steps should be hoverable, focussable & pressable.
+
+<Canvas of={Stepper.LinearFlow} />
