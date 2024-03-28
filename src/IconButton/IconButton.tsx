@@ -10,7 +10,7 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
 }
 
 export function IconButton(props: IconButtonProps) {
-  const { name, id, variant, selected, size = 'medium', icon, ...others } = props;
+  const { name, id, variant, selected, size = 'medium', icon, className, ...others } = props;
 
   const bg = {
     standard: 'bg-default-transparent text-neutral-detail-bold',
@@ -83,7 +83,7 @@ export function IconButton(props: IconButtonProps) {
     <button
       id={id || name}
       name={name}
-      className={`flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent transition
+      className={`font-medium flex items-center justify-center outline-2 outline-offset-2 outline-default-transparent transition
       ${size === 'large' ? 'rounded-md' : 'rounded'}
       ${variant === 'outline' ? 'p-px' : 'p-0'}
       ${(selected ? bgSelected : bg)[variant]}
@@ -92,7 +92,8 @@ export function IconButton(props: IconButtonProps) {
       ${(selected ? activeSelected : active)[variant]}
       active:scale-92
       ${disabled[variant]}
-      disabled:cursor-not-allowed`}
+      disabled:cursor-not-allowed
+      ${className}`}
       {...others}
     >
       <i className={`fi ${icon} ${textSize[size]} ${(variant === 'outline' ? outlineMarin : margin)[size]} flex items-center justify-center`} />

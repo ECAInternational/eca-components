@@ -50,7 +50,7 @@ export function AutoCompleteInput({
         onClick={callAll(stopPropagation, onClick)}
         {...props}
       />
-      <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} />
+      <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className={'rounded-full'} />
       {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
       {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
     </Combobox.Button>

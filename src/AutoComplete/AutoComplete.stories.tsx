@@ -94,7 +94,7 @@ export const Default = {
         <FieldSet disabled={disabled}>
           <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
             <Label>
-              {label} <span className='ps-1 label-xs-lighter'>Description</span>
+              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
             </Label>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
@@ -135,7 +135,7 @@ export const Multiple = {
         <FieldSet>
           <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} multiple>
             <Label>
-              {label} <span className='ps-1 label-xs-lighter'>Description</span>
+              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
             </Label>
             <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={(p: string[]) => p.join(', ')} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
@@ -170,7 +170,7 @@ const defaultRender = ({ name, state, label, description, disabled, defaultValue
       <FieldSet disabled={disabled}>
         <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
           <Label>
-            {label} <span className='ps-1 label-xs-lighter'>{description}</span>
+            {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
           </Label>
           <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
           <AutoCompleteOptions onClose={() => setQuery('')}>
