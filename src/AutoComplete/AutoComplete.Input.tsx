@@ -2,6 +2,7 @@ import { Combobox } from '@headlessui/react';
 import React, { ComponentPropsWithRef } from 'react';
 import { useAutoCompleteContext } from './AutoComplete.tsx';
 import { callAll } from '../utils/call-all.ts';
+import { IconButton } from '../IconButton/IconButton.tsx';
 
 export function AutoCompleteInput({
   className,
@@ -49,7 +50,7 @@ export function AutoCompleteInput({
         onClick={callAll(stopPropagation, onClick)}
         {...props}
       />
-      {open ? <i className='fi fi-sr-angle-small-up flex size-5 items-center ps-3' aria-hidden='true' /> : <i className='fi fi-sr-angle-small-down flex size-5 items-center ps-3' aria-hidden='true' />}
+      <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} />
       {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
       {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
     </Combobox.Button>
