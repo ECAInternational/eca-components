@@ -35,7 +35,7 @@ export function Stepper(props: PropsWithChildren<StepperProps>) {
             clonedElement
           ) : (
             <>
-              {clonedElement} <div className={`border border-controls-border ${stepDivider[layout]}`} />
+              {clonedElement} <div className={`border-t border-controls-border ${stepDivider[layout]}`} />
             </>
           );
         }
