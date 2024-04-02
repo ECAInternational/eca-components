@@ -15,9 +15,6 @@
     "declaration": true,
     "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "~/*": ["./src/*"]
-    },
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "noEmit": true

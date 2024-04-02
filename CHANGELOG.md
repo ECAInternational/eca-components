@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.8](https://github.com/ECAInternational/eca-components/compare/v2.0.7...v2.0.8) (2024-04-02)
+
+
+### Features
+
+* Add Autocomplete Components ([#164](https://github.com/ECAInternational/eca-components/issues/164)) ([fd5969e](https://github.com/ECAInternational/eca-components/commit/fd5969e2c03e340368996b0951bdd23c53cdc291))
+
 ## [2.0.7](https://github.com/ECAInternational/eca-components/compare/v2.0.6...v2.0.7) (2024-03-26)
 
 
