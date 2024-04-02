@@ -22,7 +22,7 @@ export const AutoCompleteOptionContext = createContext<OptionRenderPropArg>(null
 export function useAutoCompleteOptionContext() {
   const context = React.useContext(AutoCompleteOptionContext);
   if (!context) {
-    throw new Error('ComboBox compound components cannot be rendered outside the ComboBox component');
+    throw new Error('ComboBox option component cannot be rendered outside the ComboBox options component');
   }
   return context;
 }
