@@ -32,7 +32,8 @@ export function AutoCompleteInput({
     error: 'focus-within:outline-states-error hover:focus-within:outline-states-error'
   };
 
-  const stopPropagation = (e: MouseEvent) => {
+  const stopPropagation = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.currentTarget?.select();
     if (open) e.stopPropagation();
   };
 
@@ -50,7 +51,7 @@ export function AutoCompleteInput({
         onClick={callAll(stopPropagation, onClick)}
         {...props}
       />
-      <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className={'rounded-full'} />
+      <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className='rounded-full' />
       {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
       {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
     </Combobox.Button>
