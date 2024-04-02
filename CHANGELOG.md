@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.9](https://github.com/ECAInternational/eca-components/compare/v2.0.8...v2.0.9) (2024-04-02)
+
+
+### Bug Fixes
+
+* fix nested button warning. ([23756a0](https://github.com/ECAInternational/eca-components/commit/23756a0114d565a7550ec73c2af1f9a4ba822eb1))
+* release ([#169](https://github.com/ECAInternational/eca-components/issues/169)) ([23756a0](https://github.com/ECAInternational/eca-components/commit/23756a0114d565a7550ec73c2af1f9a4ba822eb1))
+
 ## [2.0.8](https://github.com/ECAInternational/eca-components/compare/v2.0.7...v2.0.8) (2024-04-02)
 
 
