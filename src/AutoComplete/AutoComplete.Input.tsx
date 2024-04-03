@@ -39,6 +39,7 @@ export function AutoCompleteInput({
 
   return (
     <Combobox.Button
+      as='div'
       className={`relative flex w-full items-center rounded border p-3 text-controls-placeholder-text outline
         outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid
         has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
