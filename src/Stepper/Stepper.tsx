@@ -21,8 +21,8 @@ export function Stepper(props: PropsWithChildren<StepperProps>) {
   };
 
   const stepDivider: Record<StepperLayout, string> = {
-    horizontal: 'w-full h-0 translate-y-3.5',
-    vertical: 'h-full min-h-4 w-0 -translate-x-3.5'
+    horizontal: 'w-full h-0 translate-y-3.5 border-t',
+    vertical: 'h-full min-h-4 w-0 -translate-x-3.5 border-l'
   };
 
   return (
@@ -35,7 +35,7 @@ export function Stepper(props: PropsWithChildren<StepperProps>) {
             clonedElement
           ) : (
             <>
-              {clonedElement} <div className={`border-t border-controls-border ${stepDivider[layout]}`} />
+              {clonedElement} <div className={`border-controls-border ${stepDivider[layout]}`} />
             </>
           );
         }
