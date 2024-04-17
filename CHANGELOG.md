@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.10](https://github.com/ECAInternational/eca-components/compare/v2.0.9...v2.0.10) (2024-04-17)
+
+
+### Features
+
+* Add stepper component ([#161](https://github.com/ECAInternational/eca-components/issues/161)) ([740e56c](https://github.com/ECAInternational/eca-components/commit/740e56cc4f722aa0731c55f6f6d72d9fe5f30f57))
+
+
+### Bug Fixes
+
+* Fix design tokens storybook ([#178](https://github.com/ECAInternational/eca-components/issues/178)) ([dbf8964](https://github.com/ECAInternational/eca-components/commit/dbf896497d0751042c5b49fe39d8e5cee0f4a5fa))
+
 ## [2.0.9](https://github.com/ECAInternational/eca-components/compare/v2.0.8...v2.0.9) (2024-04-02)
 
 
