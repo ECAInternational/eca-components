@@ -126,9 +126,6 @@
     "jackspeak": "2.1.1"
   },
   "dependencies": {
-    "@flaticon/flaticon-uicons": "^3.1.0",
-    "express": "^4.19.2",
-    "follow-redirects": "^1.15.6",
-    "tar": "^6.2.1"
+    "@flaticon/flaticon-uicons": "^3.1.0"
   }
 }
