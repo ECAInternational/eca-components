@@ -1,0 +1,61 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as TextArea from './TextArea.stories';
+
+<Meta of={TextArea} />
+<Title>Components/TextArea</Title>
+<Subtitle>Basic Text Area</Subtitle>
+
+<Primary />
+<Controls />
+
+### Enabled
+
+<Canvas of={TextArea.Enabled} />
+
+### Disabled
+
+<Canvas of={TextArea.Disabled} />
+
+### No Max Length
+
+<Canvas of={TextArea.NoMaxLength} />
+
+### No Label
+
+<Canvas of={TextArea.NoLabel} />
+
+### With Description
+
+<Canvas of={TextArea.Description} />
+
+### Minimum height
+
+Use the `minRows` prop to define the minimum height of the component:
+
+<Canvas of={TextArea.MinRows} />
+
+### Maximum height
+
+Use the `maxRows` prop to define the maximum height of the component:
+
+<Canvas of={TextArea.MaxRows} />
+
+## States
+
+Text Input support 2 states, Warning & Error
+
+### Error
+
+<Canvas of={TextArea.Error} />
+
+## Character Count
+
+When a `maxLength` is defined, a character count will be displayed when the textarea has focus or is invalid. If the character count exceeds the `maxLength`, the textarea will render in an error state
+
+### Valid
+
+<Canvas of={TextArea.MaxLengthValid} />
+
+### Invalid
+
+<Canvas of={TextArea.MaxLengthInvalid} />

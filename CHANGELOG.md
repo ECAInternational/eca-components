@@ -1,5 +1,167 @@
 # Changelog
 
+## [2.0.10](https://github.com/ECAInternational/eca-components/compare/v2.0.9...v2.0.10) (2024-04-17)
+
+
+### Features
+
+* Add stepper component ([#161](https://github.com/ECAInternational/eca-components/issues/161)) ([740e56c](https://github.com/ECAInternational/eca-components/commit/740e56cc4f722aa0731c55f6f6d72d9fe5f30f57))
+
+
+### Bug Fixes
+
+* Fix design tokens storybook ([#178](https://github.com/ECAInternational/eca-components/issues/178)) ([dbf8964](https://github.com/ECAInternational/eca-components/commit/dbf896497d0751042c5b49fe39d8e5cee0f4a5fa))
+
+## [2.0.9](https://github.com/ECAInternational/eca-components/compare/v2.0.8...v2.0.9) (2024-04-02)
+
+
+### Bug Fixes
+
+* fix nested button warning. ([23756a0](https://github.com/ECAInternational/eca-components/commit/23756a0114d565a7550ec73c2af1f9a4ba822eb1))
+* release ([#169](https://github.com/ECAInternational/eca-components/issues/169)) ([23756a0](https://github.com/ECAInternational/eca-components/commit/23756a0114d565a7550ec73c2af1f9a4ba822eb1))
+
+## [2.0.8](https://github.com/ECAInternational/eca-components/compare/v2.0.7...v2.0.8) (2024-04-02)
+
+
+### Features
+
+* Add Autocomplete Components ([#164](https://github.com/ECAInternational/eca-components/issues/164)) ([fd5969e](https://github.com/ECAInternational/eca-components/commit/fd5969e2c03e340368996b0951bdd23c53cdc291))
+
+## [2.0.7](https://github.com/ECAInternational/eca-components/compare/v2.0.6...v2.0.7) (2024-03-26)
+
+
+### Features
+
+* Add Typography ([#160](https://github.com/ECAInternational/eca-components/issues/160)) ([98928c6](https://github.com/ECAInternational/eca-components/commit/98928c6be0bdf969509e06be92eedbd3800a27c7))
+
+## [2.0.6](https://github.com/ECAInternational/eca-components/compare/v2.0.5...v2.0.6) (2024-03-22)
+
+
+### Features
+
+* Add Card Component ([#155](https://github.com/ECAInternational/eca-components/issues/155)) ([a516384](https://github.com/ECAInternational/eca-components/commit/a5163849abe05b92ca9f489ea13b77bb863db323))
+* Added SegmentedControl ([#114](https://github.com/ECAInternational/eca-components/issues/114)) ([e54e2cc](https://github.com/ECAInternational/eca-components/commit/e54e2ccc72f396a6dfe1009ff123ad71a2298e09))
+
+## [2.0.5](https://github.com/ECAInternational/eca-components/compare/v2.0.4...v2.0.5) (2024-03-18)
+
+
+### Bug Fixes
+
+* Fix imports ([#154](https://github.com/ECAInternational/eca-components/issues/154)) ([d0d20eb](https://github.com/ECAInternational/eca-components/commit/d0d20eb3720ceca6bc5f2dd1fb2f4dbd5210b60b))
+* Update readme ([#150](https://github.com/ECAInternational/eca-components/issues/150)) ([30ea70a](https://github.com/ECAInternational/eca-components/commit/30ea70acc5b25e84442a5ae56730b105a1f6f009))
+
+## [2.0.4](https://github.com/ECAInternational/eca-components/compare/v2.0.3...v2.0.4) (2024-03-15)
+
+
+### Bug Fixes
+
+* Fix release ([#148](https://github.com/ECAInternational/eca-components/issues/148)) ([0318ecb](https://github.com/ECAInternational/eca-components/commit/0318ecb85f76fba1af042342fb526bd55d1fe5ab))
+
+## [2.0.3](https://github.com/ECAInternational/eca-components/compare/v2.0.2...v2.0.3) (2024-03-15)
+
+
+### Features
+
+* Convert to proper tailwind package ([122a119](https://github.com/ECAInternational/eca-components/commit/122a119700f3120e5ae61858f09f8a5488816db7))
+
+## [2.0.2](https://github.com/ECAInternational/eca-components/compare/v2.0.1...v2.0.2) (2024-03-14)
+
+
+### Bug Fixes
+
+* Fix release ([#143](https://github.com/ECAInternational/eca-components/issues/143)) ([fcc231d](https://github.com/ECAInternational/eca-components/commit/fcc231d1bde857be46e1f981bb448cb3ee251313))
+
+## [2.0.1](https://github.com/ECAInternational/eca-components/compare/v2.0.0...v2.0.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* Package Updates ([#141](https://github.com/ECAInternational/eca-components/issues/141)) ([187e3cc](https://github.com/ECAInternational/eca-components/commit/187e3cc90765c044b41b6f5e7982994019d33650))
+
+## [2.0.0](https://github.com/ECAInternational/eca-components/compare/v1.0.35...v2.0.0) (2024-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Convert to typescript ([#137](https://github.com/ECAInternational/eca-components/issues/137))
+
+### Features
+
+* Convert to typescript ([#137](https://github.com/ECAInternational/eca-components/issues/137)) ([df9c541](https://github.com/ECAInternational/eca-components/commit/df9c54185566863f3e0dd07488aff4c414db34d9))
+
+
+### Bug Fixes
+
+* Fix the exported package ([#140](https://github.com/ECAInternational/eca-components/issues/140)) ([88132c9](https://github.com/ECAInternational/eca-components/commit/88132c9b3ed610bc3170ad4122a1d18c384ae059))
+* Fix the package ([88132c9](https://github.com/ECAInternational/eca-components/commit/88132c9b3ed610bc3170ad4122a1d18c384ae059))
+
+## [1.0.35](https://github.com/ECAInternational/eca-components/compare/v1.0.34...v1.0.35) (2024-03-12)
+
+
+### Features
+
+* Add beta build ([#133](https://github.com/ECAInternational/eca-components/issues/133)) ([5a63339](https://github.com/ECAInternational/eca-components/commit/5a63339fa60a9e8707a5857e46c5f16d72ed0dd0))
+
+
+### Bug Fixes
+
+* JS Build ([#134](https://github.com/ECAInternational/eca-components/issues/134)) ([76620df](https://github.com/ECAInternational/eca-components/commit/76620df0728c3153e8d9997a47c306d978f0209d))
+* JS build fix ([#135](https://github.com/ECAInternational/eca-components/issues/135)) ([bd57632](https://github.com/ECAInternational/eca-components/commit/bd57632fbe2c81d774a82766cd08d777d4d21891))
+
+## [1.0.34](https://github.com/ECAInternational/eca-components/compare/v1.0.33...v1.0.34) (2024-02-29)
+
+
+### Features
+
+* Add Chip component ([#120](https://github.com/ECAInternational/eca-components/issues/120)) ([6174a2b](https://github.com/ECAInternational/eca-components/commit/6174a2b159f00cdf2e27e96fb12a6b437f7fcbeb))
+
+## [1.0.33](https://github.com/ECAInternational/eca-components/compare/v1.0.32...v1.0.33) (2024-02-28)
+
+
+### Features
+
+* Create tooltip component ([#112](https://github.com/ECAInternational/eca-components/issues/112)) ([eec5dbf](https://github.com/ECAInternational/eca-components/commit/eec5dbf3ecf547cf2255d93011c9fd01d4bcf6d8))
+
+
+### Bug Fixes
+
+* Update pressed selected and indeterminate bg-color ([#119](https://github.com/ECAInternational/eca-components/issues/119)) ([6556db9](https://github.com/ECAInternational/eca-components/commit/6556db91022decf46d4485ff65053b1cb0bd631e))
+
+## [1.0.32](https://github.com/ECAInternational/eca-components/compare/v1.0.31...v1.0.32) (2024-02-27)
+
+
+### Bug Fixes
+
+* Fix checkbox state ([#124](https://github.com/ECAInternational/eca-components/issues/124)) ([6a2308a](https://github.com/ECAInternational/eca-components/commit/6a2308ad8badbb90f5411553c53d09a38b5d0d14))
+* Package updates ([#122](https://github.com/ECAInternational/eca-components/issues/122)) ([253d469](https://github.com/ECAInternational/eca-components/commit/253d469fa0ff9ecf552c83fe501e7938ea9d429c))
+
+## [1.0.31](https://github.com/ECAInternational/eca-components/compare/v1.0.30...v1.0.31) (2024-02-27)
+
+
+### Features
+
+* Upgrade to token 1.0.22 and fix states tokens ([#117](https://github.com/ECAInternational/eca-components/issues/117)) ([8c3056a](https://github.com/ECAInternational/eca-components/commit/8c3056a33061450375a959d721c94c13c243ea89))
+
+
+### Bug Fixes
+
+* Ensure all components are included in the exported package ([#121](https://github.com/ECAInternational/eca-components/issues/121)) ([35345e3](https://github.com/ECAInternational/eca-components/commit/35345e3392e81904c0a13d29e08ab04322c70861))
+
+## [1.0.30](https://github.com/ECAInternational/eca-components/compare/v1.0.29...v1.0.30) (2024-02-15)
+
+
+### Features
+
+* Add TextArea component ([#107](https://github.com/ECAInternational/eca-components/issues/107)) ([46c9e1f](https://github.com/ECAInternational/eca-components/commit/46c9e1fc3d3e45e133809820a756da7ac40ef592))
+* Added Icon Button ([0394679](https://github.com/ECAInternational/eca-components/commit/0394679012d115b3f927d712312d957e4b255cc5))
+
+## [1.0.29](https://github.com/ECAInternational/eca-components/compare/v1.0.28...v1.0.29) (2024-02-09)
+
+
+### Features
+
+* Add tab component ([#101](https://github.com/ECAInternational/eca-components/issues/101)) ([3b577b2](https://github.com/ECAInternational/eca-components/commit/3b577b2f38a38b8ea337097bffef59d81e63a6ff))
+
 ## [1.0.28](https://github.com/ECAInternational/eca-components/compare/v1.0.27...v1.0.28) (2024-02-02)
 
 

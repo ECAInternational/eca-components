@@ -8,10 +8,10 @@ on:
 jobs:
   build-lint:
     name: Build & Lint
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v1.0.15
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v1.0.20
     secrets: inherit
 
   #test:
-  #  name: Test
+  #  name: Tests
   #  uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-test-storybook.yml@v1.0.14
   #  secrets: inherit

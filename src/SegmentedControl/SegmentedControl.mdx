@@ -1,0 +1,49 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as SegmentedControl from './SegmentedControl.stories';
+
+<Meta of={SegmentedControl} />
+<Title>Components/SegmentedControl</Title>
+<Subtitle>Basic Segmented Control</Subtitle>
+
+<Primary />
+<Controls />
+
+### No Label
+
+<Canvas of={SegmentedControl.NoLabel} />
+
+### With Description
+
+<Canvas of={SegmentedControl.Description} />
+
+### Disabled
+
+## One Disabled
+
+Segmented control supports disabling individual options
+
+<Canvas of={SegmentedControl.OneDisabled} />
+
+## All Disabled
+
+Segmented control supports disabling all options
+
+<Canvas of={SegmentedControl.AllDisabled} />
+
+## Sizes
+
+Segmented control is available in small & medium (default)
+
+### Small
+
+<Canvas of={SegmentedControl.Small} />
+
+### Medium
+
+<Canvas of={SegmentedControl.Medium} />
+
+## Highlights
+
+Segmented control supports configuring a custom highlight colour per option
+
+<Canvas of={SegmentedControl.Highlights} />

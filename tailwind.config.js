@@ -1,25 +1,13 @@
-const { createThemes } = require('tw-colors');
-const ecaBrand = require('@ecainternational/eca-design-tokens/tailwind/eca-brand.tailwind');
-const ecaDark = require('@ecainternational/eca-design-tokens/tailwind/eca-dark-theme.tailwind');
-const ecaLight = require('@ecainternational/eca-design-tokens/tailwind/eca-light-theme.tailwind');
+import { createThemes } from 'tw-colors';
+import ecaDark from '@ecainternational/eca-design-tokens/tailwind/eca-dark-theme.tailwind';
+import ecaLight from '@ecainternational/eca-design-tokens/tailwind/eca-light-theme.tailwind';
+import { tailwindPlugin } from './src/tailwindPlugin.ts';
 
-module.exports = {
+export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  theme: {
-    ...ecaBrand,
-    extend: {
-      transitionDuration: {
-        DEFAULT: '200ms'
-      },
-      transitionTimingFunction: {
-        DEFAULT: 'ease-in-out'
-      },
-      scale: {
-        92: '0.92'
-      }
-    }
-  },
   plugins: [
+    tailwindPlugin,
+    require('@headlessui/tailwindcss'),
     createThemes({
       'eca-light': ecaLight,
       'eca-dark': ecaDark

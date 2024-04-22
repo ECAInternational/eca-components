@@ -1,0 +1,42 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as AutoComplete from './AutoComplete.stories.tsx';
+import Design from './design.md?raw';
+
+import { Markdown } from '@storybook/blocks';
+
+<Meta of={AutoComplete} />
+<Title>Components/AutoComplete</Title>
+<Subtitle>Auto Complete</Subtitle>
+
+<Primary />
+<Controls />
+
+<Markdown>{Design}</Markdown>
+
+### Multiple
+
+<Canvas of={AutoComplete.Multiple} />
+
+### Disabled
+
+<Canvas of={AutoComplete.Disabled} />
+
+### Warning
+
+<Canvas of={AutoComplete.Warning} />
+
+### Error
+
+<Canvas of={AutoComplete.Error} />
+
+### No Label
+
+<Canvas of={AutoComplete.NoLabel} />
+
+### With Description
+
+<Canvas of={AutoComplete.Description} />
+
+### With Default Value
+
+<Canvas of={AutoComplete.DefaultValue} />
