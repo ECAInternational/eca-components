@@ -34,7 +34,7 @@ export function Chip(props: ChipProps) {
   };
 
   return (
-    <span className={`font-regular inline-flex items-center gap-2 rounded border px-2.5 py-1.5 text-sm font-[350] leading-[1.125rem] ${chip[variant]}`} {...others}>
+    <span className={`inline-flex items-center gap-2 rounded border px-2.5 py-1.5 leading-[1.125rem] label-sm-mid ${chip[variant]}`} {...others}>
       <span>{label}</span>
       {onDelete && (
         <button

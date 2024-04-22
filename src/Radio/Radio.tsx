@@ -38,7 +38,7 @@ export function Radio(props: RadioProps) {
           active:[&:not(:disabled)]:bg-neutral-detail-palest'
       />
       {label && (
-        <label htmlFor={id} className='ps-2 text-sm font-light transition-all'>
+        <label htmlFor={id} className='ps-2 transition-all paragraph-sm-lighter'>
           {label}
         </label>
       )}

@@ -83,7 +83,7 @@ export function IconButton(props: IconButtonProps) {
     <button
       id={id || name}
       name={name}
-      className={`font-medium flex items-center justify-center outline-2 outline-offset-2 outline-default-transparent transition
+      className={`flex items-center justify-center outline-2 outline-offset-2 outline-default-transparent transition
       ${size === 'large' ? 'rounded-md' : 'rounded'}
       ${variant === 'outline' ? 'p-px' : 'p-0'}
       ${(selected ? bgSelected : bg)[variant]}

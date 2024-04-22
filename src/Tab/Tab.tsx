@@ -12,8 +12,8 @@ export function Tab(props: TabProps) {
   const { id, name, size = 'medium', label, selected = false, ...others } = props;
 
   const sizes = {
-    medium: 'text-sm font-regular py-2 px-3',
-    large: 'text-base font-medium py-2.5 px-3.5'
+    medium: 'label-sm-lighter py-2 px-3',
+    large: 'label-md-lighter py-2.5 px-3.5'
   };
 
   return (
@@ -35,7 +35,7 @@ export function Tab(props: TabProps) {
     >
       <div
         className={`
-      rounded-md px-3 py-2 leading-5
+      leading-5 rounded-md px-3 py-2
       outline outline-2 outline-default-transparent
       group-focus-visible:outline-offset-[-2px]
       ${selected ? 'group-focus-visible:outline-neutral-layer-2' : 'group-focus-visible:outline-neutral-detail-boldest'}

@@ -15,7 +15,7 @@ export function Checkbox(props: CheckboxProps) {
   return (
     <div className='flex items-center text-neutral-body has-[:disabled]:text-controls-content-disabled'>
       {label && alignment === 'left' && (
-        <label htmlFor={id} className='pe-2 text-sm font-light transition-all'>
+        <label htmlFor={id} className='pe-2 transition-all paragraph-sm-lighter'>
           {label}
         </label>
       )}
@@ -52,7 +52,7 @@ export function Checkbox(props: CheckboxProps) {
         <i className='fi fi-br-check pointer-events-none absolute flex size-6 scale-0 place-content-center items-center text-controls-highlight-palest opacity-0 transition-all peer-checked:scale-100 peer-checked:opacity-100 peer-disabled:text-controls-content-disabled' />
       </div>
       {label && alignment === 'right' && (
-        <label htmlFor={id} className='ps-2 text-sm font-light'>
+        <label htmlFor={id} className='ps-2 paragraph-sm-lighter'>
           {label}
         </label>
       )}
