@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { TabGroup } from './TabGroup';
-import { Tab, TabProps } from '../Tab/Tab';
+import { TabGroup } from './TabGroup.tsx';
+import { Tab, TabProps } from '../Tab/Tab.tsx';
 
 export default {
   component: TabGroup,
