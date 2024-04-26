@@ -1,7 +1,7 @@
 import React, { ComponentProps, createContext } from 'react';
 import { Listbox } from '@headlessui/react';
 
-export interface SelectProps extends Omit<ComponentProps<typeof Listbox>, 'multiple' | 'children'> {
+export interface SelectProps extends Omit<ComponentProps<typeof Listbox>, 'children'> {
   multiple?: boolean;
   children: React.ReactNode;
 }
@@ -9,7 +9,7 @@ export interface SelectProps extends Omit<ComponentProps<typeof Listbox>, 'multi
 export function Select({ multiple, children, ...rest }: SelectProps) {
   return (
     <Listbox {...rest} multiple={!!multiple as any}>
-      {(props) => <SelectContext.Provider value={props}>{children}</SelectContext.Provider>}
+      {(props) => <SelectContext.Provider value={{ ...props, multiple }}>{children}</SelectContext.Provider>}
     </Listbox>
   );
 }
@@ -18,6 +18,7 @@ type ListboxRenderPropArg<TValue> = {
   open: boolean;
   disabled: boolean;
   value: TValue;
+  multiple?: boolean;
 };
 
 export const SelectContext = createContext<ListboxRenderPropArg<unknown>>(null as unknown as ListboxRenderPropArg<unknown>);

@@ -13,9 +13,8 @@ The Select component is composed of the following components:
 - `Select` - the main component that wraps the `Listbox` component
 - `SelectButton` - the input field that the user interacts with to search for items
 - `SelectOptions` - the list of options that the user can select from
-- `SelectOption` - an individual option in the list of options
-- a collection of pre-styled option viewer components, for example: `DefaultOptionViewer`, `IconOptionViewer`, `ImageOptionViewer`, `TableOptionViewer`
-- `HighlightMatched` - a utility component that highlights the matched text in the options
+- `SelectOption` - an individual option in the list of opions
+- `SelectOptionGroup` - a grouping of options with a label
 
 Consumers can use the pre-styled option viewer components directly, or develop their own option viewer components.
 
@@ -29,9 +28,7 @@ Consumers can use the pre-styled option viewer components directly, or develop t
     <SelectOptions onClose={() => setQuery('')}>
       {filteredPeople.map((person) => (
         <SelectOption key={person} value={person}>
-          <DefaultOptionViewer>
-            <HighlightMatched content={person} query={query} />
-          </DefaultOptionViewer>
+          {person}
         </SelectOption>
       ))}
     </SelectOptions>

@@ -1,19 +1,31 @@
 import { Listbox } from '@headlessui/react';
 import React, { ComponentPropsWithRef, createContext, PropsWithChildren } from 'react';
+import { useSelectContext } from './Select';
+import { Checkbox } from '../Checkbox/Checkbox';
 
 export interface SelectOptionProps extends Omit<ComponentPropsWithRef<typeof Listbox.Option>, 'children'> {}
 
 export function SelectOption({ className, children, ...props }: PropsWithChildren<SelectOptionProps>) {
+  const { multiple, value } = useSelectContext();
   return (
     <Listbox.Option
-      className={`relative cursor-pointer select-none p-3 paragraph-sm-lighter
-      ui-disabled:pointer-events-none
-      ui-disabled:bg-neutral-layer-1 ui-disabled:text-controls-content-disabled ui-checked:ui-not-disabled:bg-controls-highlight-pale
+      className={`relative cursor-pointer select-none p-3 text-neutral-body paragraph-sm-lighter
+      ui-disabled:cursor-not-allowed
+      ui-disabled:bg-neutral-layer-1
+      ui-disabled:text-controls-content-disabled active:ui-not-disabled:bg-controls-highlight-pale ui-checked:ui-not-disabled:bg-controls-highlight-pale
       ui-selected:ui-not-disabled:bg-controls-highlight-palest
-      ui-active:ui-not-disabled:bg-controls-highlight-paler ${className}`}
+      active:ui-selected:ui-not-disabled:bg-controls-highlight-pale 
+      active:ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler  active:ui-active:ui-not-disabled:bg-controls-highlight-pale ${className}`}
       {...props}
     >
-      {(renderProps) => <SelectOptionContext.Provider value={renderProps}>{children}</SelectOptionContext.Provider>}
+      {(renderProps) => (
+        <SelectOptionContext.Provider value={renderProps}>
+          <div className='flex items-center gap-2.5'>
+            {multiple && <Checkbox name='selected' checked={Array.isArray(value) && value.includes(props.value)} disabled={props.disabled} />}
+            {children}{' '}
+          </div>
+        </SelectOptionContext.Provider>
+      )}
     </Listbox.Option>
   );
 }
