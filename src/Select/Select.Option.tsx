@@ -1,7 +1,7 @@
 import { Listbox } from '@headlessui/react';
 import React, { ComponentPropsWithRef, createContext, PropsWithChildren } from 'react';
-import { useSelectContext } from './Select';
-import { Checkbox } from '../Checkbox/Checkbox';
+import { useSelectContext } from './Select.tsx';
+import { Checkbox } from '../Checkbox/Checkbox.tsx';
 
 export interface SelectOptionProps extends Omit<ComponentPropsWithRef<typeof Listbox.Option>, 'children'> {}
 
