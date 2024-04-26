@@ -1,0 +1,46 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as Select from './Select.stories.tsx';
+import Design from './design.md?raw';
+
+import { Markdown } from '@storybook/blocks';
+
+<Meta of={Select} />
+<Title>Components/Select</Title>
+<Subtitle>Auto Complete</Subtitle>
+
+<Primary />
+<Controls />
+
+<Markdown>{Design}</Markdown>
+
+### Multiple
+
+<Canvas of={Select.Multiple} />
+
+### Disabled
+
+<Canvas of={Select.Disabled} />
+
+### Warning
+
+<Canvas of={Select.Warning} />
+
+### Error
+
+<Canvas of={Select.Error} />
+
+### No Label
+
+<Canvas of={Select.NoLabel} />
+
+### With Description
+
+<Canvas of={Select.Description} />
+
+### With Default Value
+
+<Canvas of={Select.DefaultValue} />
+
+### Groups
+
+<Canvas of={Select.Groups} />
