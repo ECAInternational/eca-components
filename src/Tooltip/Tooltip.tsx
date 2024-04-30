@@ -130,8 +130,8 @@ export function Tooltip(props: TooltipProps) {
   };
 
   const sizes = {
-    small: 'text-xs font-regular py-1.5 px-2 rounded-sm',
-    large: 'text-sm font-light p-3 rounded'
+    small: 'label-xs-lighter py-1.5 px-2 rounded-sm',
+    large: 'paragraph-sm-lighter p-3 rounded'
   };
 
   const positions = {
