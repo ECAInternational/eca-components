@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.12](https://github.com/ECAInternational/eca-components/compare/v2.0.11...v2.0.12) (2024-04-30)
+
+
+### Features
+
+* Add simple tab groups ([#103](https://github.com/ECAInternational/eca-components/issues/103)) ([31f82ae](https://github.com/ECAInternational/eca-components/commit/31f82aeb6e285e78008cb519392eb73283fc4174))
+
 ## [2.0.11](https://github.com/ECAInternational/eca-components/compare/v2.0.10...v2.0.11) (2024-04-30)
 
 
