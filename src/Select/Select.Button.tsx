@@ -49,7 +49,7 @@ export function SelectButton({
       {...props}
       onClick={onClick}
     >
-      <span className='font-light flex h-5 w-full items-center justify-start'>{children}</span>
+      <span className='font-light flex w-full items-center justify-start text-left'>{children}</span>
       <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className='rounded-full p-1' />
       {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-1 text-states-warning' />}
       {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-1 text-states-error' />}

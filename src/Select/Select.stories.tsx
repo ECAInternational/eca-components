@@ -152,7 +152,7 @@ export const Groups = {
     label: 'Label'
   },
   render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => {
-    const [selectedValue, setSelectedValue] = useState<string>('');
+    const [selectedValue, setSelectedValue] = useState<string>(colours[0]);
 
     return (
       <div className='h-72'>
@@ -256,16 +256,6 @@ export const Description = {
     label: 'Label',
     description: '(required)',
     placeholder: 'Placeholder text'
-  },
-  render: defaultRender
-};
-
-export const DefaultValue = {
-  args: {
-    name: 'default-value-button',
-    state: 'default',
-    label: 'Label',
-    defaultValue: people[0]
   },
   render: defaultRender
 };

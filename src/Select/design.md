@@ -3,18 +3,14 @@
 
 The Select component is a thin wrapper around the `Listbox` component, which is a part of the `@headlessui/react` package. The `Listbox` component is a fully accessible and unstyled UI component that is designed to integrate beautifully with Tailwind CSS.
 
-The design goal is to:
-1. to compile with UX team's design requirements
-2. to flexible enough to be used in different scenarios
-
 ### Composition
 
 The Select component is composed of the following components:
 - `Select` - the main component that wraps the `Listbox` component
-- `SelectButton` - the input field that the user interacts with to search for items
+- `SelectButton` - the button that the user interacts with to open and close the select
 - `SelectOptions` - the list of options that the user can select from
 - `SelectOption` - an individual option in the list of opions
-- `SelectOptionGroup` - a grouping of options with a label
+- `SelectOptionGroup` - a grouping of options with a heading label
 
 Consumers can use the pre-styled option viewer components directly, or develop their own option viewer components.
 
@@ -24,11 +20,11 @@ Consumers can use the pre-styled option viewer components directly, or develop t
     <Label>
       {label} <span className="font-light ps-1">Description</span>
     </Label>
-    <SelectButton state={state} onChange={(event) => setQuery(event.target.value)} />
-    <SelectOptions onClose={() => setQuery('')}>
-      {filteredPeople.map((person) => (
-        <SelectOption key={person} value={person}>
-          {person}
+    <SelectButton state={state}>{selectedPerson.name}</SelectButton>
+    <SelectOptions>
+      {people.map((person) => (
+        <SelectOption key={person.id} value={person} disabled={person.unavailable}>
+          {person.name}
         </SelectOption>
       ))}
     </SelectOptions>
