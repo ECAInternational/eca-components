@@ -12,8 +12,6 @@ The Select component is composed of the following components:
 - `SelectOption` - an individual option in the list of opions
 - `SelectOptionGroup` - a grouping of options with a heading label
 
-Consumers can use the pre-styled option viewer components directly, or develop their own option viewer components.
-
 ```tsx
 <FieldSet disabled={disabled}>
   <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
