@@ -84,7 +84,7 @@ export default {
 
 export const Default = {
   args: {
-    name: 'default-button',
+    name: 'default-select',
     state: 'default',
     label: 'Label',
     disabled: false
@@ -116,7 +116,7 @@ export const Default = {
 
 export const Multiple = {
   args: {
-    name: 'default-button',
+    name: 'multiple-select',
     state: 'default',
     label: 'Label'
   },
@@ -147,7 +147,7 @@ export const Multiple = {
 
 export const Groups = {
   args: {
-    name: 'default-button',
+    name: 'group-select',
     state: 'default',
     label: 'Label'
   },
@@ -211,7 +211,7 @@ const defaultRender = ({ name, state, label, description, disabled }: { name: st
 
 export const Disabled = {
   args: {
-    name: 'default-button',
+    name: 'disabled-select',
     state: 'default',
     label: 'Label',
     disabled: true
@@ -221,7 +221,7 @@ export const Disabled = {
 
 export const Warning = {
   args: {
-    name: 'warning-button',
+    name: 'warning-select',
     state: 'warning',
     placeholder: 'Placeholder text',
     label: 'Warning',
@@ -232,7 +232,7 @@ export const Warning = {
 
 export const Error = {
   args: {
-    name: 'error-button',
+    name: 'error-select',
     state: 'error',
     placeholder: 'Placeholder text',
     label: 'Error'
@@ -242,7 +242,7 @@ export const Error = {
 
 export const NoLabel = {
   args: {
-    name: 'no-label-button',
+    name: 'no-label-select',
     state: 'default',
     placeholder: 'Placeholder text'
   },
@@ -251,7 +251,7 @@ export const NoLabel = {
 
 export const Description = {
   args: {
-    name: 'description-button',
+    name: 'description-select',
     state: 'default',
     label: 'Label',
     description: '(required)',
