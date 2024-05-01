@@ -1,0 +1,29 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as TabGroupStories from './TabGroup.stories';
+
+<Meta of={TabGroupStories} />
+<Title>Components/TabGroup</Title>
+<Subtitle>A group of tab components</Subtitle>
+
+<Primary />
+<Controls />
+
+## Selected
+
+<Canvas of={TabGroupStories.DefaultSelectedTab} />
+
+## Disabled
+
+<Canvas of={TabGroupStories.DisableTab} />
+
+## Sizes
+
+Tabs are available in medium and large sizes.
+
+### Medium
+
+<Canvas of={TabGroupStories.MediumTab} />
+
+### Large
+
+<Canvas of={TabGroupStories.LargeTab} />

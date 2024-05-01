@@ -16,13 +16,13 @@ export function Switch(props: SwitchProps) {
   return (
     <div className={`flex ${alignment === 'top' && 'flex-col'} items-center text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled`}>
       {label && alignment === 'top' && (
-        <label htmlFor={id} className='pb-1 text-sm font-light transition'>
+        <label htmlFor={id} className='pb-1 transition label-sm-mid'>
           {label}
         </label>
       )}
 
       {label && alignment === 'left' && (
-        <label htmlFor={id} className='pe-2 text-sm font-light transition'>
+        <label htmlFor={id} className='pe-2 transition label-sm-mid'>
           {label}
         </label>
       )}
@@ -59,7 +59,7 @@ export function Switch(props: SwitchProps) {
         />
       </div>
       {label && alignment === 'right' && (
-        <label htmlFor={id} className='ps-2 text-sm font-light'>
+        <label htmlFor={id} className='ps-2 label-sm-mid'>
           {label}
         </label>
       )}

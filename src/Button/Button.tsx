@@ -44,16 +44,16 @@ export function Button(props: ButtonProps) {
   };
 
   const sizes = {
-    small: 'text-sm rounded px-4 py-2',
-    medium: 'text-sm rounded px-5 py-3',
-    large: 'text-base rounded-md px-6 py-4'
+    small: 'label-sm-mid rounded px-4 py-2',
+    medium: 'label-sm-mid rounded px-5 py-3',
+    large: 'label-md-mid rounded-md px-6 py-4'
   };
 
   return (
     <button
       id={id || name}
       name={name}
-      className={`flex items-center justify-center font-medium outline-2 outline-offset-2 outline-default-transparent transition
+      className={`flex items-center justify-center outline-2 outline-offset-2 outline-default-transparent transition
       active:scale-92
       disabled:cursor-not-allowed disabled:text-controls-content-disabled
       ${bg[variant]} ${disabled[variant]}

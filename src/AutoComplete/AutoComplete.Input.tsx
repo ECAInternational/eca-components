@@ -46,7 +46,7 @@ export function AutoCompleteInput({
         ${hover[state]} ${border[state]} ${focus[state]}`}
     >
       <Combobox.Input
-        className='font-light w-full rounded bg-default-transparent text-neutral-body placeholder:text-controls-placeholder-text
+        className='w-full rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
                placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
                disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60'
         onClick={callAll(stopPropagation, onClick)}

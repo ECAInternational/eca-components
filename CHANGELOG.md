@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.0.12](https://github.com/ECAInternational/eca-components/compare/v2.0.11...v2.0.12) (2024-04-30)
+
+
+### Features
+
+* Add simple tab groups ([#103](https://github.com/ECAInternational/eca-components/issues/103)) ([31f82ae](https://github.com/ECAInternational/eca-components/commit/31f82aeb6e285e78008cb519392eb73283fc4174))
+
+## [2.0.11](https://github.com/ECAInternational/eca-components/compare/v2.0.10...v2.0.11) (2024-04-30)
+
+
+### Features
+
+* Apply typography tokens to components ([#181](https://github.com/ECAInternational/eca-components/issues/181)) ([f39e130](https://github.com/ECAInternational/eca-components/commit/f39e13020f839cd2af2e16553329a093678c956e))
+
+
+### Bug Fixes
+
+* Update packages ([#182](https://github.com/ECAInternational/eca-components/issues/182)) ([6c65004](https://github.com/ECAInternational/eca-components/commit/6c650045e2662e65d35ed22512366b863b4df1c0))
+
 ## [2.0.10](https://github.com/ECAInternational/eca-components/compare/v2.0.9...v2.0.10) (2024-04-17)
 
 
