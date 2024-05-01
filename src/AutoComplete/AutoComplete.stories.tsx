@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { AutoComplete } from './AutoComplete.tsx';
-import { Label } from './Label.tsx';
+import { FieldSet, Label } from '../Form/index.ts';
 import { AutoCompleteInput } from './AutoComplete.Input.tsx';
 import { AutoCompleteOptions } from './AutoComplete.Options.tsx';
 import { AutoCompleteOption } from './AutoComplete.Option.tsx';
-import { FieldSet } from './FieldSet.tsx';
 import { HighlightMatched } from './HighlightMatched.tsx';
 import { DefaultOptionViewer } from './DefaultOptionViewer.tsx';
 

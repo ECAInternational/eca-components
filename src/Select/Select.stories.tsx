@@ -3,7 +3,7 @@ import { Select } from './Select.tsx';
 import { SelectButton } from './Select.Button.tsx';
 import { SelectOptions } from './Select.Options.tsx';
 import { SelectOption } from './Select.Option.tsx';
-import { FieldSet, Label } from '../AutoComplete/index.ts';
+import { FieldSet, Label } from '../Form/index.ts';
 import { SelectOptionGroup } from './Select.OptionGroup.tsx';
 
 type Person = { id: number; name: string; unavailable: boolean };
