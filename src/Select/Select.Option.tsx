@@ -7,9 +7,11 @@ export interface SelectOptionProps extends Omit<ComponentPropsWithRef<typeof Lis
 
 export function SelectOption({ className, children, ...props }: PropsWithChildren<SelectOptionProps>) {
   const { multiple, value } = useSelectContext();
+
+  const padding = multiple ? 'p-1 pe-3' : 'py-2 px-3';
   return (
     <Listbox.Option
-      className={`relative cursor-pointer select-none p-3 text-neutral-body paragraph-sm-lighter
+      className={`relative cursor-pointer select-none ${padding} text-neutral-body paragraph-sm-lighter
       ui-disabled:cursor-not-allowed
       ui-disabled:bg-neutral-layer-1
       ui-disabled:text-controls-content-disabled active:ui-not-disabled:bg-controls-highlight-pale ui-checked:ui-not-disabled:bg-controls-highlight-pale
@@ -21,7 +23,11 @@ export function SelectOption({ className, children, ...props }: PropsWithChildre
       {(renderProps) => (
         <SelectOptionContext.Provider value={renderProps}>
           <div className='flex items-center gap-2.5'>
-            {multiple && <Checkbox name='selected' checked={Array.isArray(value) && value.includes(props.value)} disabled={props.disabled} />}
+            {multiple && (
+              <span className='p-1'>
+                <Checkbox name='selected' checked={Array.isArray(value) && value.includes(props.value)} disabled={props.disabled} />
+              </span>
+            )}
             {children}{' '}
           </div>
         </SelectOptionContext.Provider>
