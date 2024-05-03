@@ -45,7 +45,7 @@ export function SelectButton({
       className={`relative flex w-full items-center rounded border text-neutral-body outline
         outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid
         disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled  disabled:outline-0
-        ${hover[state]} ${border[state]} ${padding[state]} ${focus[state]}`}
+        ${hover[state]} ${border[state]} ${padding[state]} ${focus[state]} ${className}`}
       {...props}
       onClick={onClick}
     >
