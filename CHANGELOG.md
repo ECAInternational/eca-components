@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.13](https://github.com/ECAInternational/eca-components/compare/v2.0.12...v2.0.13) (2024-05-03)
+
+
+### Features
+
+* Add Select component ([#185](https://github.com/ECAInternational/eca-components/issues/185)) ([2cfdc95](https://github.com/ECAInternational/eca-components/commit/2cfdc95297e06ecd1f60abb93ca016c1c33c4cb0))
+
 ## [2.0.12](https://github.com/ECAInternational/eca-components/compare/v2.0.11...v2.0.12) (2024-04-30)
 
 
