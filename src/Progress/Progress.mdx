@@ -1,0 +1,36 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as Progress from './Progress.stories.tsx';
+
+<Meta of={Progress} />
+<Title>Components/Progress</Title>
+<Subtitle>Basic Progress</Subtitle>
+
+<Primary />
+<Controls />
+
+This component provides a visual representation of progress for tasks and actions or the passage of time.
+
+It supports two main progress states:
+
+- Determinate: Use this for tasks with a defined duration where you can show the completion percentage. The progress bar fills up as the task progresses.
+- Indeterminate: Use this for tasks with an unknown duration or where you can't provide a specific percentage. The progress bar animates to indicate ongoing activity without a defined endpoint.
+
+## Determinate
+
+### Primary
+
+<Canvas of={Progress.Primary} />
+
+### Secondary
+
+<Canvas of={Progress.Secondary} />
+
+## Indeterminate (without value)
+
+### Primary
+
+<Canvas of={Progress.IndeterminatePrimary} />
+
+### Secondary
+
+<Canvas of={Progress.IndeterminateSecondary} />

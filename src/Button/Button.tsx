@@ -53,7 +53,7 @@ export function Button(props: ButtonProps) {
     <button
       id={id || name}
       name={name}
-      className={`flex items-center justify-center outline-2 outline-offset-2 outline-default-transparent transition
+      className={`relative flex items-center justify-center overflow-hidden outline-2 outline-offset-2 outline-default-transparent transition
       active:scale-92
       disabled:cursor-not-allowed disabled:text-controls-content-disabled
       ${bg[variant]} ${disabled[variant]}

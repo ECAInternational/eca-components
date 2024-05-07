@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Button.tsx';
+import { Progress } from '../Progress/Progress.tsx';
 
 export default {
   component: Button,
@@ -143,5 +144,57 @@ export const Block = {
     variant: 'primary',
     children: 'Block',
     className: 'w-full'
+  }
+};
+
+export const LoadDeterminatePrimary = {
+  args: {
+    name: 'loadDeterminatePimary',
+    variant: 'primary',
+    children: (
+      <>
+        Determinate
+        <Progress variant={'primary'} value={50} className='absolute bottom-0'></Progress>
+      </>
+    )
+  }
+};
+
+export const LoadDeterminateSecondary = {
+  args: {
+    name: 'loadDeterminateSecondary',
+    variant: 'outline',
+    children: (
+      <>
+        Determinate
+        <Progress variant={'secondary'} value={50} className='absolute bottom-0'></Progress>
+      </>
+    )
+  }
+};
+
+export const LoadIndeterminatePrimary = {
+  args: {
+    name: 'loadIndeterminatePrimary',
+    variant: 'primary',
+    children: (
+      <>
+        Determinate
+        <Progress variant={'primary'} className='absolute bottom-0'></Progress>
+      </>
+    )
+  }
+};
+
+export const LoadIndeterminateSecondary = {
+  args: {
+    name: 'loadIndeterminateSecondary',
+    variant: 'outline',
+    children: (
+      <>
+        Determinate
+        <Progress variant={'secondary'} className='absolute bottom-0'></Progress>
+      </>
+    )
   }
 };
