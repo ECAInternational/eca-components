@@ -13,7 +13,7 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function TextInput(props: TextInputProps) {
-  const { name, id, label, state = 'default', type = 'text', description, icon, prefix, suffix, ...others } = props;
+  const { name, id, label, state = 'default', type = 'text', description, icon, prefix, suffix, className, ...others } = props;
 
   const border = {
     default: 'border-controls-border',
@@ -58,7 +58,7 @@ export function TextInput(props: TextInputProps) {
           {...others}
           className={`w-full rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
                placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
-               disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60`}
+               disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60 ${className}`}
         />
         {suffix && <span className='flex items-center pe-2.5 paragraph-sm-heavier'>{suffix}</span>}
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
