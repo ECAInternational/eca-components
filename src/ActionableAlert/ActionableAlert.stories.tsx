@@ -24,28 +24,32 @@ const componentMeta: Meta = {
 
 export default componentMeta;
 
-const TemplateOneButton: (args: StoryProps) => React.ReactElement = ({ messageText, primaryButtonText, ...args }) => (
-  <ActionableAlert {...args}>
-    <span>{messageText}</span>
-    <Button name='primaryButton' variant='ghost'>
-      {primaryButtonText}
-    </Button>
-  </ActionableAlert>
-);
-
-const TemplateTwoButtons: (args: StoryProps) => React.ReactElement = ({ messageText, primaryButtonText, secondaryButtonText, ...args }) => (
-  <ActionableAlert {...args}>
-    <span>{messageText}</span>
-    <Button name='primaryButton' variant='ghost'>
-      {primaryButtonText}
-    </Button>
-    {secondaryButtonText && (
-      <Button name='secondaryButton' variant='outline'>
-        {secondaryButtonText}
+function TemplateOneButton({ messageText, primaryButtonText, ...args }: StoryProps) {
+  return (
+    <ActionableAlert {...args}>
+      <span>{messageText}</span>
+      <Button name='primaryButton' variant='ghost'>
+        {primaryButtonText}
       </Button>
-    )}
-  </ActionableAlert>
-);
+    </ActionableAlert>
+  );
+}
+
+function TemplateTwoButtons({ messageText, primaryButtonText, secondaryButtonText, ...args }: StoryProps) {
+  return (
+    <ActionableAlert {...args}>
+      <span>{messageText}</span>
+      <Button name='primaryButton' variant='ghost'>
+        {primaryButtonText}
+      </Button>
+      {secondaryButtonText && (
+        <Button name='secondaryButton' variant='outline'>
+          {secondaryButtonText}
+        </Button>
+      )}
+    </ActionableAlert>
+  );
+}
 
 export const InfoOneButton = {
   render: TemplateOneButton,

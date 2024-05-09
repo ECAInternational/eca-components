@@ -7,7 +7,7 @@ export interface AlertProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Alert(props: AlertProps) {
-  const { label, variant = 'neutral', onDelete, ...others } = props;
+  const { label, variant = 'neutral', onDelete } = props;
 
   const alert = {
     yellow: 'border-visualisation-2-accent text-visualisation-2-boldest bg-visualisation-2-palest',
