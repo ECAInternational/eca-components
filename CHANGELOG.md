@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.14](https://github.com/ECAInternational/eca-components/compare/v2.0.13...v2.0.14) (2024-05-09)
+
+
+### Bug Fixes
+
+* autocomplete regex exception ([#198](https://github.com/ECAInternational/eca-components/issues/198)) ([05fff43](https://github.com/ECAInternational/eca-components/commit/05fff43dbdb1f267202598bf3413eb3ec08d6e8a))
+
 ## [2.0.13](https://github.com/ECAInternational/eca-components/compare/v2.0.12...v2.0.13) (2024-05-03)
 
 
