@@ -14,8 +14,8 @@ export function Alert(props: AlertProps) {
     green: 'border-visualisation-3-accent text-visualisation-3-boldest bg-visualisation-3-palest',
     blue: 'border-visualisation-4-accent text-visualisation-4-boldest bg-visualisation-4-palest',
     red: 'border-visualisation-7-accent text-visualisation-7-boldest bg-visualisation-7-palest',
-    monochrome: 'border-neutral-detail-boldest text-neutral-layer-1 bg-neutral-detail-bold',
-    neutral: 'border-neutral-detail-pale text-neutral-detail-bolder bg-neutral-layer-2'
+    monochrome: 'border-neutral-detail-boldest text-neutral-layer-1 bg-neutral-detail-bold shadow-lg',
+    neutral: 'border-neutral-detail-pale text-neutral-detail-bolder bg-neutral-layer-2 shadow-lg'
   };
 
   const close = {
@@ -37,7 +37,7 @@ export function Alert(props: AlertProps) {
   };
 
   return (
-    <span className={`inline-flex w-full items-center gap-2 rounded border px-2.5 py-1.5 leading-[1.125rem] label-sm-mid ${alert[variant]}`} {...others}>
+    <div role='alert' className={`inline-flex w-full items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] label-sm-mid ${alert[variant]}`}>
       {icon[variant] && <i className={`fi ${icon[variant]} flex items-center justify-center`} />}
       <span className='w-full'>{label}</span>
       {onDelete && (
@@ -51,6 +51,6 @@ export function Alert(props: AlertProps) {
           <i className='fi fi-rr-cross-small size-3.5' />
         </button>
       )}
-    </span>
+    </div>
   );
 }

@@ -1,167 +1,124 @@
-import { expect, jest } from '@storybook/jest';
-import { userEvent, waitFor, within } from '@storybook/testing-library';
+import React from 'react';
+import { Meta } from '@storybook/react';
 import { ActionableAlert, ActionableAlertProps } from './ActionableAlert.tsx';
+import { Button } from '../Button/Button.tsx';
 
-export default {
-  component: ActionableAlert,
+interface StoryProps extends ActionableAlertProps {
+  messageText: string;
+  primaryButtonText: string;
+  secondaryButtonText?: string;
+}
+
+const componentMeta: Meta = {
   title: 'Components/ActionableAlert',
-  parameters: {
-    componentSubtitle: 'Actionable Alert'
-  },
+  component: ActionableAlert,
   argTypes: {
-    onPrimaryClick: {
-      action: 'primary',
-      description: "Providing an `onPrimary` function will render a 'ghost' button with an associated action.",
-      table: {
-        defaultValue: { summary: undefined }
-      },
-      control: 'none'
-    },
-    onSecondaryClick: {
-      action: 'secondary',
-      description: "Providing an `onSecondary` function will render a 'outline' button with an associated action.",
-      table: {
-        defaultValue: { summary: undefined }
-      },
-      control: 'none'
-    },
-    variant: {
-      table: {
-        defaultValue: { summary: 'blue' }
+    status: {
+      control: {
+        type: 'select',
+        options: ['info', 'warning', 'error', 'success']
       }
-    },
-    className: {
-      table: { disable: true }
-    },
-    id: {
-      table: { disable: true }
     }
-  },
-  args: {
-    label: 'Label',
-    primaryButtonText: undefined,
-    secondaryButtonText: undefined,
-    onPrimaryClick: undefined,
-    onSecondaryClick: undefined
   }
 };
 
-export const Default = {
-  args: {
-    label: 'I am an info with an action',
-    onPrimaryClick: () => {},
-    onSecondaryClick: () => {},
-    primaryButtonText: 'Deny',
-    secondaryButtonText: 'Accept'
-  }
-};
+export default componentMeta;
 
-export const Blue = {
+const TemplateOneButton: (args: StoryProps) => React.ReactElement = ({ messageText, primaryButtonText, ...args }) => (
+  <ActionableAlert {...args}>
+    <span>{messageText}</span>
+    <Button name='primaryButton' variant='ghost'>
+      {primaryButtonText}
+    </Button>
+  </ActionableAlert>
+);
+
+const TemplateTwoButtons: (args: StoryProps) => React.ReactElement = ({ messageText, primaryButtonText, secondaryButtonText, ...args }) => (
+  <ActionableAlert {...args}>
+    <span>{messageText}</span>
+    <Button name='primaryButton' variant='ghost'>
+      {primaryButtonText}
+    </Button>
+    {secondaryButtonText && (
+      <Button name='secondaryButton' variant='outline'>
+        {secondaryButtonText}
+      </Button>
+    )}
+  </ActionableAlert>
+);
+
+export const InfoOneButton = {
+  render: TemplateOneButton,
   args: {
-    label: 'I am an info with an action',
-    variant: 'blue',
-    onPrimaryClick: () => {},
+    status: 'info',
+    messageText: 'I am an info with an action',
     primaryButtonText: 'Accept'
   }
 };
 
-export const Green = {
+export const SuccessOneButton = {
+  render: TemplateOneButton,
   args: {
-    label: 'I am a success with an action',
-    variant: 'green',
-    onPrimaryClick: () => {},
+    status: 'success',
+    messageText: 'I am a success with an action',
     primaryButtonText: 'Accept'
   }
 };
 
-export const Yellow = {
+export const WarningOneButton = {
+  render: TemplateOneButton,
   args: {
-    label: 'I am a warning with an action',
-    variant: 'yellow',
-    onPrimaryClick: () => {},
+    status: 'warning',
+    messageText: 'I am a warning with an action',
     primaryButtonText: 'Undo'
   }
 };
 
-export const Red = {
+export const ErrorOneButton = {
+  render: TemplateOneButton,
   args: {
-    label: 'I am an error with an action',
-    variant: 'red',
-    onPrimaryClick: () => {},
+    status: 'error',
+    messageText: 'I am an error with an action',
     primaryButtonText: 'Undo'
   }
 };
 
-export const BinaryBlue = {
+export const InfoTwoButtons = {
+  render: TemplateTwoButtons,
   args: {
-    label: 'I am an info with an action',
-    variant: 'blue',
-    onPrimaryClick: () => {},
-    onSecondaryClick: () => {},
+    status: 'info',
+    messageText: 'I am an info with an action',
     primaryButtonText: 'Deny',
     secondaryButtonText: 'Accept'
   }
 };
 
-export const BinaryGreen = {
+export const SuccessTwoButtons = {
+  render: TemplateTwoButtons,
   args: {
-    label: 'I am a success with an action',
-    variant: 'green',
-    onPrimaryClick: () => {},
-    onSecondaryClick: () => {},
+    status: 'success',
+    messageText: 'I am a success with an action',
     primaryButtonText: 'Deny',
     secondaryButtonText: 'Accept'
   }
 };
 
-export const BinaryYellow = {
+export const WarningTwoButtons = {
+  render: TemplateTwoButtons,
   args: {
-    label: 'I am a warning with an action',
-    variant: 'yellow',
-    onPrimaryClick: () => {},
-    onSecondaryClick: () => {},
+    status: 'warning',
+    messageText: 'I am a warning with an action',
     primaryButtonText: 'Deny',
     secondaryButtonText: 'Accept'
   }
 };
 
-export const BinaryRed = {
+export const ErrorTwoButtons = {
+  render: TemplateTwoButtons,
   args: {
-    label: 'I am an error with an action',
-    variant: 'red',
-    onPrimaryClick: () => {},
-    onSecondaryClick: () => {},
+    status: 'error',
+    messageText: 'I am an error with an action',
     primaryButtonText: 'Deny',
     secondaryButtonText: 'Accept'
-  }
-};
-
-export const PrimaryClick = {
-  args: {
-    label: 'Primary',
-    onPrimaryClick: jest.fn()
-  },
-  play: async ({ args, canvasElement, step }: { args: ActionableAlertProps; canvasElement: any; step: any }) => {
-    const canvas = within(canvasElement);
-
-    await step('Click', async () => {
-      await userEvent.click(canvas.getByRole('button'));
-      await waitFor(() => expect(args.onPrimaryClick).toHaveBeenCalled());
-    });
-  }
-};
-
-export const SecondaryClick = {
-  args: {
-    label: 'Secondary',
-    onSecondaryClick: jest.fn()
-  },
-  play: async ({ args, canvasElement, step }: { args: ActionableAlertProps; canvasElement: any; step: any }) => {
-    const canvas = within(canvasElement);
-
-    await step('Click', async () => {
-      await userEvent.click(canvas.getByRole('button'));
-      await waitFor(() => expect(args.onSecondaryClick).toHaveBeenCalled());
-    });
   }
 };
