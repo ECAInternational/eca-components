@@ -17,8 +17,8 @@ import { tailwindPlugin } from './tailwindPlugin.ts';
 import { AutoComplete, AutoCompleteInput, AutoCompleteOption, AutoCompleteOptions, HighlightMatched, DefaultOptionViewer } from './AutoComplete/index.ts';
 import { Label, FieldSet } from './Form/index.ts';
 import { Select, SelectButton, SelectOption, SelectOptions, SelectOptionGroup } from './Select/index.ts';
-import { Alert } from './Alert/Alert.ts';
-import { ActionableAlert } from './ActionableAlert/ActionableAlert.ts';
+import { Alert } from './Alert/Alert.tsx';
+import { ActionableAlert } from './ActionableAlert/ActionableAlert.tsx';
 
 export { Card, CardBody, CardFooter, CardHeader };
 export { Button };
