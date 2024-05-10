@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.0.15](https://github.com/ECAInternational/eca-components/compare/v2.0.14...v2.0.15) (2024-05-09)
+
+
+### Bug Fixes
+
+* add class name to allow customising the text input ([#200](https://github.com/ECAInternational/eca-components/issues/200)) ([cb4cf4e](https://github.com/ECAInternational/eca-components/commit/cb4cf4ebde8c5427bb0a1cb47c17b5d08fe21d8f))
+* add class name to text put to allow customisation ([cb4cf4e](https://github.com/ECAInternational/eca-components/commit/cb4cf4ebde8c5427bb0a1cb47c17b5d08fe21d8f))
+
+## [2.0.14](https://github.com/ECAInternational/eca-components/compare/v2.0.13...v2.0.14) (2024-05-09)
+
+
+### Bug Fixes
+
+* autocomplete regex exception ([#198](https://github.com/ECAInternational/eca-components/issues/198)) ([05fff43](https://github.com/ECAInternational/eca-components/commit/05fff43dbdb1f267202598bf3413eb3ec08d6e8a))
+
 ## [2.0.13](https://github.com/ECAInternational/eca-components/compare/v2.0.12...v2.0.13) (2024-05-03)
 
 

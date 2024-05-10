@@ -11,7 +11,7 @@ export function HighlightMatched({
   highlightClassName?: string;
 }) {
   if (!query) return <span className={className}>{content}</span>;
-  const parts = content.split(new RegExp(`(${query})`, 'gi'));
+  const parts = splitByQuery(content, query);
   return (
     <span>
       {parts.map((part, index) => (
@@ -22,4 +22,9 @@ export function HighlightMatched({
       ))}
     </span>
   );
+}
+
+function splitByQuery(content: string, query: string) {
+  const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return content.split(new RegExp(`(${escapedQuery})`, 'gi'));
 }
