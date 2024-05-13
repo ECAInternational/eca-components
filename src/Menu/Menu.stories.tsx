@@ -80,13 +80,13 @@ export const Default = {
             </MenuButton>
             <MenuItems>
               <MenuItem>
-                <a>Open a page</a>
+                <a href='#'>Open a page</a>
               </MenuItem>
               <MenuItem disabled>
-                <a>Disabled Item</a>
+                <a href='#'>Disabled Item</a>
               </MenuItem>
               <MenuItem>
-                <a>Another menu Item</a>
+                <a href='#'>Another menu Item</a>
               </MenuItem>
             </MenuItems>
           </Menu>
