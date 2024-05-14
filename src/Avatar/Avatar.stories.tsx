@@ -77,8 +77,11 @@ export const WithIcon = {
 };
 
 export const WithImage = {
-  render: () => (
-    <Avatar>
+  args: {
+    size: 'large'
+  },
+  render: (args: { size: 'large' }) => (
+    <Avatar size={args.size}>
       <img alt='profile' src='/avatar.jpg' />
     </Avatar>
   )
