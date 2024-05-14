@@ -3,7 +3,7 @@ import React, { ComponentPropsWithRef } from 'react';
 
 export function MenuButton({ className, children, ...props }: ComponentPropsWithRef<typeof Menu.Button>) {
   return (
-    <Menu.Button as='button' className={`inline-flex w-full justify-center rounded-md ${className}`} {...props}>
+    <Menu.Button as='button' className={`inline-flex rounded-md ${className}`} {...props}>
       {children}
     </Menu.Button>
   );
