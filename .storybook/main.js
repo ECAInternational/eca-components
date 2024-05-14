@@ -14,6 +14,7 @@ const config = {
       options: { designTokenGlob: 'tokens/*' }
     }
   ],
+  staticDirs: ['./.public'],
   framework: {
     name: '@storybook/react-vite',
     options: {}

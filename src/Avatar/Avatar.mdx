@@ -1,0 +1,23 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as AvatarStories from './Avatar.stories';
+
+<Meta of={AvatarStories} />
+<Title>Components/Avatar</Title>
+<Subtitle>An Avatar component</Subtitle>
+
+<Primary />
+<Controls />
+
+## Variants
+
+### With Menu
+
+<Canvas of={AvatarStories.WithDropdown} />
+
+### With Icon
+
+<Canvas of={AvatarStories.WithIcon} />
+
+### With Image
+
+<Canvas of={AvatarStories.WithImage} />
