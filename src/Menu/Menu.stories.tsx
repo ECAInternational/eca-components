@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Menu } from './Menu.tsx';
 import { MenuButton } from './Menu.Button.tsx';
 import { MenuItems } from './Menu.Items.tsx';
@@ -70,28 +70,26 @@ export const Default = {
   args: {
     as: 'button'
   },
-  render: ({ as }: { as: 'div' | 'button' }) => {
-    return (
-      <div className='h-72 bg-neutral-layer-1 p-2 text-neutral-body'>
-        <div className='flex justify-end'>
-          <Menu>
-            <MenuButton as={as} className={'flex justify-end'}>
-              Menu
-            </MenuButton>
-            <MenuItems>
-              <MenuItem>
-                <a href='#'>Open a page</a>
-              </MenuItem>
-              <MenuItem disabled>
-                <a href='#'>Disabled Item</a>
-              </MenuItem>
-              <MenuItem>
-                <a href='#'>Another menu Item</a>
-              </MenuItem>
-            </MenuItems>
-          </Menu>
-        </div>
+  render: ({ as }: { as: 'div' | 'button' }) => (
+    <div className='h-72 bg-neutral-layer-1 p-2 text-neutral-body'>
+      <div className='flex justify-end'>
+        <Menu>
+          <MenuButton as={as} className='flex justify-end'>
+            Menu
+          </MenuButton>
+          <MenuItems>
+            <MenuItem>
+              <button className='w-full text-left'>Open a page</button>
+            </MenuItem>
+            <MenuItem disabled>
+              <button>Disabled Item</button>
+            </MenuItem>
+            <MenuItem>
+              <button className='w-full text-left'>Another menu Item</button>
+            </MenuItem>
+          </MenuItems>
+        </Menu>
       </div>
-    );
-  }
+    </div>
+  )
 };

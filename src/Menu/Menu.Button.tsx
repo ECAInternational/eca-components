@@ -1,4 +1,4 @@
-﻿import { Menu } from '@headlessui/react';
+import { Menu } from '@headlessui/react';
 import React, { ComponentPropsWithRef } from 'react';
 
 export function MenuButton({ className, children, ...props }: ComponentPropsWithRef<typeof Menu.Button>) {

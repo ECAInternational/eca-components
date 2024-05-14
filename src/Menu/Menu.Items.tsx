@@ -1,4 +1,4 @@
-﻿import React, { ComponentPropsWithRef, Fragment } from 'react';
+import React, { ComponentPropsWithRef, Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 
 export function MenuItems({

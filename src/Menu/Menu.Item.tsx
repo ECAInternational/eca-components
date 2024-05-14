@@ -1,4 +1,4 @@
-﻿import { Menu } from '@headlessui/react';
+import { Menu } from '@headlessui/react';
 import React, { ComponentPropsWithRef, PropsWithChildren } from 'react';
 
 export interface MenuItemProps extends Omit<ComponentPropsWithRef<typeof Menu.Item>, 'children'> {}
