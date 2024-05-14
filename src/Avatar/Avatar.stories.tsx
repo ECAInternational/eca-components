@@ -22,12 +22,11 @@ export default {
       description: 'Defines the size of the button, medium is the default size',
       options: ['small', 'medium', 'large']
     },
-    disabled: {
-      control: 'boolean',
-      description: 'Disables the button'
+    className: {
+      table: { disable: true }
     }
   },
-  args: { disabled: false, size: 'medium', variant: 'primary' }
+  args: { size: 'medium', variant: 'primary' }
 };
 
 export const Default = {
