@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes } from 'react';
 
 export interface AlertProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
-  variant?: 'yellow' | 'green' | 'blue' | 'red' | 'monochrome' | 'neutral';
+  variant?: 'warning' | 'success' | 'info' | 'error' | 'monochrome' | 'neutral';
   onDelete?: () => void;
 }
 
@@ -10,28 +10,28 @@ export function Alert(props: AlertProps) {
   const { label, variant = 'neutral', onDelete } = props;
 
   const alert = {
-    yellow: 'border-visualisation-2-accent text-visualisation-2-boldest bg-visualisation-2-palest',
-    green: 'border-visualisation-3-accent text-visualisation-3-boldest bg-visualisation-3-palest',
-    blue: 'border-visualisation-4-accent text-visualisation-4-boldest bg-visualisation-4-palest',
-    red: 'border-visualisation-7-accent text-visualisation-7-boldest bg-visualisation-7-palest',
-    monochrome: 'border-neutral-detail-boldest text-neutral-layer-1 bg-neutral-detail-bold shadow-lg',
-    neutral: 'border-neutral-detail-pale text-neutral-detail-bolder bg-neutral-layer-2 shadow-lg'
+    warning: 'border-states-warning text-neutral-body bg-states-warning-paler',
+    success: 'border-states-success text-neutral-body bg-states-success-palest',
+    info: 'border-states-info text-neutral-body bg-states-info-paler',
+    error: 'border-states-error text-neutral-body bg-states-error-palest',
+    monochrome: 'text-neutral-layer-1 bg-neutral-body shadow-lg',
+    neutral: 'border-neutral-detail-palest text-neutral-body bg-neutral-layer-2 shadow-lg'
   };
 
   const close = {
-    yellow: 'text-visualisation-2-paler bg-visualisation-2-bolder',
-    green: 'text-visualisation-3-paler bg-visualisation-3-bolder',
-    blue: 'text-visualisation-4-paler bg-visualisation-4-bolder',
-    red: 'text-visualisation-7-paler bg-visualisation-7-bolder',
-    monochrome: 'text-neutral-detail-palest bg-neutral-body',
-    neutral: 'text-neutral-detail-boldest bg-neutral-detail-paler'
+    warning: 'text-visualisation-2-paler bg-visualisation-2-bolder',
+    success: 'text-visualisation-3-paler bg-visualisation-3-bolder',
+    info: 'text-visualisation-4-paler bg-visualisation-4-bolder',
+    error: 'text-visualisation-7-paler bg-visualisation-7-bolder',
+    monochrome: 'text-neutral-detail-bolder bg-neutral-detail-paler',
+    neutral: 'text-neutral-detail-palest bg-neutral-body'
   };
 
   const icon = {
-    yellow: 'fi-rr-triangle-warning',
-    green: 'fi-rr-check',
-    blue: 'fi-rr-info',
-    red: 'fi-rr-exclamation',
+    warning: 'fi-rr-triangle-warning text-states-warning-boldest',
+    success: 'fi-rr-check text-states-success-boldest',
+    info: 'fi-rr-info text-states-info-boldest',
+    error: 'fi-rr-exclamation text-states-error-boldest',
     monochrome: '',
     neutral: ''
   };

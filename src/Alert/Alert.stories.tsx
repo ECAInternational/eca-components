@@ -41,31 +41,31 @@ export const Default = {
   }
 };
 
-export const Yellow = {
+export const Warning = {
   args: {
     label: 'I am a warning message',
-    variant: 'yellow'
+    variant: 'warning'
   }
 };
 
-export const Green = {
+export const Success = {
   args: {
     label: 'I am a success message',
-    variant: 'green'
+    variant: 'success'
   }
 };
 
-export const Blue = {
+export const Info = {
   args: {
     label: 'I am an info message',
-    variant: 'blue'
+    variant: 'info'
   }
 };
 
-export const Red = {
+export const Error = {
   args: {
     label: 'I am an error message',
-    variant: 'red'
+    variant: 'error'
   }
 };
 
@@ -82,34 +82,34 @@ export const Neutral = {
   }
 };
 
-export const DeletableYellow = {
+export const DeletableWarning = {
   args: {
     label: 'I am a warning message',
-    variant: 'yellow',
+    variant: 'warning',
     onDelete: () => {}
   }
 };
 
-export const DeletableGreen = {
+export const DeletableSuccess = {
   args: {
     label: 'I am a success message',
-    variant: 'green',
+    variant: 'success',
     onDelete: () => {}
   }
 };
 
-export const DeletableBlue = {
+export const DeletableInfo = {
   args: {
     label: 'I am an info message',
-    variant: 'blue',
+    variant: 'info',
     onDelete: () => {}
   }
 };
 
-export const DeletableRed = {
+export const DeletableError = {
   args: {
     label: 'I am an error message',
-    variant: 'red',
+    variant: 'error',
     onDelete: () => {}
   }
 };

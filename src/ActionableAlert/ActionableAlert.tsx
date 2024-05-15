@@ -13,17 +13,17 @@ export function ActionableAlert({ children, status = 'info' }: ActionableAlertPr
   const secondaryButton = childrenArray[2];
 
   const alert = {
-    warning: 'border-visualisation-2-accent text-visualisation-2-boldest bg-visualisation-2-palest',
-    success: 'border-visualisation-3-accent text-visualisation-3-boldest bg-visualisation-3-palest',
-    info: 'border-visualisation-4-accent text-visualisation-4-boldest bg-visualisation-4-palest',
-    error: 'border-visualisation-7-accent text-visualisation-7-boldest bg-visualisation-7-palest'
+    warning: 'bg-states-warning-paler',
+    success: 'bg-states-success-paler',
+    info: 'bg-states-info-paler',
+    error: 'bg-states-error-paler'
   };
 
   const icon = {
-    info: 'fi-rr-info',
-    warning: 'fi-rr-triangle-warning',
-    error: 'fi-rr-exclamation',
-    success: 'fi-rr-check'
+    warning: 'fi-rr-triangle-warning text-states-warning-boldest',
+    success: 'fi-rr-check text-states-success-boldest',
+    info: 'fi-rr-info text-states-info-boldest',
+    error: 'fi-rr-exclamation text-states-error-boldest'
   };
 
   return (
