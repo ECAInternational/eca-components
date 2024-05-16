@@ -4,11 +4,13 @@ export function Avatar({
   children,
   className,
   variant = 'primary',
-  size = 'medium'
+  size = 'medium',
+  as: Component = 'button'
 }: PropsWithChildren<{
   className?: string;
   variant?: 'primary' | 'outline' | 'ghost';
   size?: 'small' | 'medium' | 'large';
+  as?: 'button' | 'div';
 }>) {
   const bg = {
     primary: 'bg-primary-main border-0 text-default-white',
@@ -22,5 +24,5 @@ export function Avatar({
     large: 'label-md-mid size-12'
   };
 
-  return <div className={`relative inline-flex items-center justify-center overflow-hidden rounded-full ${bg[variant]} ${sizes[size]} ${className}`}>{children}</div>;
+  return <Component className={`relative inline-flex items-center justify-center overflow-hidden rounded-full ${bg[variant]} ${sizes[size]} ${className}`}>{children}</Component>;
 }
