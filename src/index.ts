@@ -12,6 +12,7 @@ import { Tooltip } from './Tooltip/Tooltip.tsx';
 import { SegmentedControl } from './SegmentedControl/SegmentedControl.tsx';
 import { Stepper, Step } from './Stepper/index.ts';
 import { Avatar } from './Avatar/index.ts';
+import { Menu, MenuButton, MenuItem, MenuItems } from './Menu/index.ts';
 
 import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
 import { tailwindPlugin } from './tailwindPlugin.ts';
@@ -37,5 +38,6 @@ export { AutoComplete, AutoCompleteOptions, AutoCompleteOption, AutoCompleteInpu
 export { Label, FieldSet };
 export { Select, SelectButton, SelectOption, SelectOptions, SelectOptionGroup };
 export { Avatar };
+export { Menu, MenuButton, MenuItem, MenuItems };
 // Export the tailwind plugin
 export default tailwindPlugin;
