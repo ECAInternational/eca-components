@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { HTMLAttributes, PropsWithChildren } from 'react';
 
 export function Avatar({
   children,
@@ -6,12 +6,13 @@ export function Avatar({
   variant = 'primary',
   size = 'medium',
   as: Component = 'button'
-}: PropsWithChildren<{
-  className?: string;
-  variant?: 'primary' | 'outline' | 'ghost';
-  size?: 'small' | 'medium' | 'large';
-  as?: 'button' | 'div';
-}>) {
+}: PropsWithChildren<
+  {
+    variant?: 'primary' | 'outline' | 'ghost';
+    size?: 'small' | 'medium' | 'large';
+    as?: 'button' | 'div';
+  } & HTMLAttributes<HTMLButtonElement | HTMLDivElement>
+>) {
   const bg = {
     primary: 'bg-primary-main border-0 text-default-white',
     outline: 'bg-default-transparent border border-neutral-detail-boldest text-neutral-detail-boldest',
