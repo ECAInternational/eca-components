@@ -92,3 +92,14 @@ export const WithImage = {
     </Avatar>
   )
 };
+
+export const AsDiv = {
+  args: {
+    as: 'div'
+  },
+  render: (args: { as: 'div' }) => (
+    <Avatar as={args.as}>
+      <button>EC</button>
+    </Avatar>
+  )
+};
