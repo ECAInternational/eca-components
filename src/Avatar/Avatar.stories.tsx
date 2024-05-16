@@ -17,6 +17,12 @@ export default {
       description: 'Defines the colour scheme of the button based on the current theme',
       options: ['primary', 'outline', 'ghost']
     },
+    as: {
+      control: 'select',
+      description: 'Defines the element of the button',
+      options: ['button', 'div'],
+      defaultValue: 'button'
+    },
     size: {
       control: 'select',
       description: 'Defines the size of the button, medium is the default size',
