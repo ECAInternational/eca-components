@@ -14,15 +14,15 @@ export function Avatar({
   } & HTMLAttributes<HTMLButtonElement | HTMLDivElement>
 >) {
   const bg = {
-    primary: 'bg-primary-main border-0 text-default-white',
-    outline: 'bg-default-transparent border border-neutral-detail-boldest text-neutral-detail-boldest',
-    ghost: 'bg-default-transparent border-2 border-default-transparent text-neutral-detail-boldest'
+    primary: 'text-primary-bolder border-0 bg-primary-paler outline outline-1 outline-offset-2 outline-primary-main hover:outline-neutral-detail-bolder focus-visible:outline-neutral-detail-bolder',
+    outline: 'bg-default-transparent border border-neutral-detail-boldest text-neutral-detail-bold hover:border-neutral-detail-bold focus-visible:border-neutral-detail-bold',
+    ghost: 'bg-default-transparent border-2 border-default-transparent text-neutral-detail-boldest hover:text-neutral-detail-bold focus-visible:text-neutral-detail-bold'
   };
 
   const sizes = {
-    small: 'label-sm-mid size-8',
-    medium: 'label-sm-mid size-10',
-    large: 'label-md-mid size-12'
+    small: 'heading-xs-heavier size-8',
+    medium: 'heading-xs-heavier size-10',
+    large: 'heading-md-heavier size-12'
   };
 
   return <Component className={`relative inline-flex items-center justify-center overflow-hidden rounded-full ${bg[variant]} ${sizes[size]} ${className}`}>{children}</Component>;
