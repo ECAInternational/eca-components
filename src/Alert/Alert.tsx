@@ -1,14 +1,13 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 
-export interface AlertProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
   variant?: 'warning' | 'success' | 'info' | 'error' | 'monochrome' | 'neutral';
   onDelete?: () => void;
+  className?: string;
 }
 
-export function Alert(props: AlertProps) {
-  const { label, variant = 'neutral', onDelete } = props;
-
+export function Alert({ label, variant = 'neutral', onDelete, className = '', ...rest }: AlertProps) {
   const alert = {
     warning: 'border-states-warning text-neutral-body bg-states-warning-paler',
     success: 'border-states-success text-neutral-body bg-states-success-palest',
@@ -37,7 +36,7 @@ export function Alert(props: AlertProps) {
   };
 
   return (
-    <div role='alert' className={`inline-flex w-full items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] label-sm-mid ${alert[variant]}`}>
+    <div role='alert' className={`inline-flex w-full items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] label-sm-mid ${alert[variant]} ${className}`} {...rest}>
       {icon[variant] && <i className={`fi ${icon[variant]} flex items-center justify-center`} />}
       <span className='w-full'>{label}</span>
       {onDelete && (

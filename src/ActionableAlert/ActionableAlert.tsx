@@ -1,17 +1,11 @@
-import React, { ButtonHTMLAttributes, Children } from 'react';
+import React, { HTMLAttributes } from 'react';
 
-export interface ActionableAlertProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ActionableAlertProps extends HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   status?: 'info' | 'warning' | 'error' | 'success';
 }
 
-export function ActionableAlert({ children, status = 'info' }: ActionableAlertProps) {
-  const childrenArray = Children.toArray(children);
-
-  const label = childrenArray[0];
-  const primaryButton = childrenArray[1];
-  const secondaryButton = childrenArray[2];
-
+export function ActionableAlert({ children, className, status = 'info', ...props }: ActionableAlertProps) {
   const alert = {
     warning: 'bg-states-warning-paler',
     success: 'bg-states-success-paler',
@@ -27,15 +21,11 @@ export function ActionableAlert({ children, status = 'info' }: ActionableAlertPr
   };
 
   return (
-    <div role='alert' className={`inline-flex w-full rounded shadow-lg`}>
-      <span className={`inline-flex items-center rounded-l p-4 ${alert[status]}`}>
+    <div role='alert' className={`inline-flex w-full rounded shadow-lg ${className}`} {...props}>
+      <div className={`inline-flex items-center rounded-l p-4 ${alert[status]}`}>
         <i className={`fi ${icon[status]} flex items-center justify-center`} />
-      </span>
-      <span className={`inline-flex w-full items-center gap-2 rounded py-3 pl-4 pr-3 leading-[1.125rem] label-sm-mid`}>
-        <span className='w-full'>{label}</span>
-        {secondaryButton}
-        {primaryButton}
-      </span>
+      </div>
+      {children}
     </div>
   );
 }
