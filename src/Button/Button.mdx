@@ -1,11 +1,4 @@
-import {
-  Canvas,
-  Controls,
-  Primary,
-  Meta,
-  Subtitle,
-  Title
-} from '@storybook/blocks';
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
 import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} />
@@ -66,3 +59,23 @@ Each of the above types are available in small, medium & large
 ### Large
 
 <Canvas of={ButtonStories.Large} />
+
+## Load
+
+Adding a progress bar to the button provides users with real-time feedback on any ongoing action.
+
+### Determinate Primary
+
+<Canvas of={ButtonStories.LoadDeterminatePrimary} />
+
+### Determinate Secondary
+
+<Canvas of={ButtonStories.LoadDeterminateSecondary} />
+
+### Indeterminate Primary
+
+<Canvas of={ButtonStories.LoadIndeterminatePrimary} />
+
+### Indeterminate Secondary
+
+<Canvas of={ButtonStories.LoadIndeterminateSecondary} />

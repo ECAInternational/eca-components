@@ -20,6 +20,15 @@ export default {
       },
       boxShadow: {
         'inner-button': 'inset 0 0 0 0.2rem rgba(0, 0, 0, 1)'
+      },
+      keyframes: {
+        progress: {
+          '50%': { width: '100%' },
+          '100%': { right: 0, left: 'unset' }
+        }
+      },
+      animation: {
+        progress: 'progress 2s ease-in-out infinite'
       }
     }
   }
