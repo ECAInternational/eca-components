@@ -36,7 +36,7 @@ export function Alert({ label, variant = 'neutral', onDelete, className = '', ..
   };
 
   return (
-    <div role='alert' className={`inline-flex w-full items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] label-sm-mid ${alert[variant]} ${className}`} {...rest}>
+    <div role='alert' className={`inline-flex w-full items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] paragraph-sm-mid ${alert[variant]} ${className}`} {...rest}>
       {icon[variant] && <i className={`fi ${icon[variant]} flex items-center justify-center`} />}
       <span className='w-full'>{label}</span>
       {onDelete && (
