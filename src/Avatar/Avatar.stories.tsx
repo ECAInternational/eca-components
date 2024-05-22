@@ -77,7 +77,7 @@ export const WithIcon = {
   },
   render: (args: { icon: string }) => (
     <Avatar>
-      <i className={`fi ${args.icon}`} />
+      <i className={`fi ${args.icon} flex`} />
     </Avatar>
   )
 };
