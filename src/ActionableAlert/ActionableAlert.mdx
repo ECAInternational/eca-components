@@ -1,0 +1,49 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as ActionableAlert from './ActionableAlert.stories';
+
+<Meta of={ActionableAlert} />
+<Title>Components/ActionableAlert</Title>
+<Subtitle>Actionable Alert</Subtitle>
+
+<Primary />
+<Controls />
+
+## Variants
+
+Actionable Alert is available in many colour variants. To include a 'ghost' button, include the corresponding button HTML inside the `ActionableAlert` element and define `primaryButtonText`.
+
+### Info
+
+<Canvas of={ActionableAlert.InfoOneButton} />
+
+### Success
+
+<Canvas of={ActionableAlert.SuccessOneButton} />
+
+### Warning
+
+<Canvas of={ActionableAlert.WarningOneButton} />
+
+### Error
+
+<Canvas of={ActionableAlert.ErrorOneButton} />
+
+## Binary
+
+Each variant above can render a second 'outline' button. To include this button, include the corresponding button HTML inside the `ActionableAlert` element and define `secondaryButtonText`.
+
+### Info
+
+<Canvas of={ActionableAlert.InfoTwoButtons} />
+
+### Success
+
+<Canvas of={ActionableAlert.SuccessTwoButtons} />
+
+### Warning
+
+<Canvas of={ActionableAlert.WarningTwoButtons} />
+
+### Error
+
+<Canvas of={ActionableAlert.ErrorTwoButtons} />
