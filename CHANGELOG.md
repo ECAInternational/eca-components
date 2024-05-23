@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.16](https://github.com/ECAInternational/eca-components/compare/v2.0.15...v2.0.16) (2024-05-23)
+
+
+### Features
+
+* Added alert components ([#197](https://github.com/ECAInternational/eca-components/issues/197)) ([6f3d17b](https://github.com/ECAInternational/eca-components/commit/6f3d17b402e7f316c18cf5714c3d71315a233caa))
+* Added Progress component and progress button examples ([9a23209](https://github.com/ECAInternational/eca-components/commit/9a232097f960ccf7a73846901e10d8d8f0605121))
+* Added Progress component and progress button examples ([#196](https://github.com/ECAInternational/eca-components/issues/196)) ([9a23209](https://github.com/ECAInternational/eca-components/commit/9a232097f960ccf7a73846901e10d8d8f0605121))
+
+
+### Bug Fixes
+
+* Add basic menu component ([#204](https://github.com/ECAInternational/eca-components/issues/204)) ([83ac09d](https://github.com/ECAInternational/eca-components/commit/83ac09d564e8807459f6d1644421e49ad1bf149d))
+
 ## [2.0.15](https://github.com/ECAInternational/eca-components/compare/v2.0.14...v2.0.15) (2024-05-09)
 
 
