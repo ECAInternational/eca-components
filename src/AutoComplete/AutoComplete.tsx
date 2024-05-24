@@ -1,15 +1,20 @@
-import React, { ComponentProps, createContext } from 'react';
+import React, { ComponentProps, createContext, useMemo } from 'react';
 import { Combobox } from '@headlessui/react';
 
 export interface AutoCompleteProps extends Omit<ComponentProps<typeof Combobox>, 'multiple' | 'children'> {
   multiple?: boolean;
   children: React.ReactNode;
+  maxSelections?: number;
 }
 
-export function AutoComplete({ multiple, children, ...rest }: AutoCompleteProps) {
+export function AutoComplete({ multiple, children, maxSelections, ...rest }: AutoCompleteProps) {
   return (
     <Combobox {...rest} multiple={!!multiple as any}>
-      {(props) => <AutoCompleteContext.Provider value={props}>{children}</AutoCompleteContext.Provider>}
+      {(props) => {
+        const contextValue = useMemo(() => ({ ...props, maxSelections, multiple }), [props, maxSelections, multiple]);
+
+        return <AutoCompleteContext.Provider value={contextValue}>{children}</AutoCompleteContext.Provider>;
+      }}
     </Combobox>
   );
 }
@@ -20,6 +25,8 @@ type ComboboxRenderPropArg<TValue, TActive = TValue> = {
   activeIndex: number | null;
   activeOption: TActive | null;
   value: TValue;
+  maxSelections?: number;
+  multiple?: boolean;
 };
 
 export const AutoCompleteContext = createContext<ComboboxRenderPropArg<unknown, unknown>>(null as unknown as ComboboxRenderPropArg<unknown, unknown>);
