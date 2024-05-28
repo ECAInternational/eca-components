@@ -39,9 +39,7 @@ export function AutoCompleteInput({
 
   const stopPropagation = (e: React.MouseEvent<HTMLInputElement>) => {
     e.currentTarget?.select();
-    if (open) {
-      e.stopPropagation();
-    }
+    if (open) e.stopPropagation();
   };
 
   // Handler to remove item
