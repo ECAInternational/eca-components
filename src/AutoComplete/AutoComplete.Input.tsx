@@ -12,7 +12,7 @@ export function AutoCompleteInput({
 }: ComponentPropsWithRef<typeof Combobox.Input> & {
   state: 'default' | 'error' | 'warning';
 }) {
-  const { open, value, multiple } = useAutoCompleteContext();
+  const { open, value, multiple, setValue } = useAutoCompleteContext();
 
   const border = {
     default: 'border-controls-border',
@@ -36,14 +36,20 @@ export function AutoCompleteInput({
   if (multiple && value && Array.isArray(value)) {
     selectedItems = value;
   }
+
   const stopPropagation = (e: React.MouseEvent<HTMLInputElement>) => {
     e.currentTarget?.select();
     if (open) {
       e.stopPropagation();
     }
   };
-  // TODO clear filter on selection
-  // TODO bos secim yapilabiliyor
+
+  // Handler to remove item
+  const handleRemoveItem = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, item: any) => {
+    event.stopPropagation();
+    setValue(selectedItems.filter((selectedItem) => selectedItem !== item));
+  };
+
   return (
     <Combobox.Button
       as='div'
@@ -52,17 +58,20 @@ export function AutoCompleteInput({
         has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
         ${hover[state]} ${border[state]} ${focus[state]}`}
     >
-      <div className={'flex w-full flex-row'}>
-        <div className={'flex-grow'}>
-          <div className={'flex flex-wrap gap-2'}>
+      <div className='flex w-full flex-row'>
+        <div className='flex-grow'>
+          <div className='flex flex-wrap gap-2'>
             {selectedItems.length > 0 &&
               !props.displayValue &&
               selectedItems.map((item) => (
-                <span key={item} className={'rounded border border-b-neutral-detail-pale px-1 py-1.5'}>
-                  {item}
-                </span>
+                <div key={item} className='flex flex-row items-center gap-2 rounded border border-b-neutral-detail-pale px-1 py-1.5'>
+                  <span> {item} </span>
+                  <button className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)}>
+                    <i className='fi fi-rr-cross-small flex items-center text-neutral-detail-boldest' />
+                  </button>
+                </div>
               ))}
-            <div className={'flex flex-1 flex-row'}>
+            <div className='flex flex-1 flex-row'>
               <Combobox.Input
                 className='w-full flex-grow rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
          placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
@@ -73,8 +82,8 @@ export function AutoCompleteInput({
             </div>
           </div>
         </div>
-        <div className={'flex-column flex justify-center'}>
-          <div className={'flex flex-col justify-center'}>
+        <div className='flex-column flex justify-center'>
+          <div className='flex flex-col justify-center'>
             <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className='rounded-full' />
           </div>
           {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}

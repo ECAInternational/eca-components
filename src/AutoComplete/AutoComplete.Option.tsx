@@ -15,7 +15,7 @@ export function AutoCompleteOption({ className, children, ...props }: PropsWithC
   }
 
   return (
-    <Combobox.Option className={`relative cursor-pointer select-none p-3 paragraph-sm-lighter ui-checked:ui-not-disabled:bg-controls-highlight-pale ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler ${className}`} {...props} disabled={isDisabled}>
+    <Combobox.Option className={`relative cursor-pointer select-none p-3 paragraph-sm-lighter ui-disabled:opacity-50 ui-checked:ui-not-disabled:bg-controls-highlight-pale ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler  ${className}`} {...props} disabled={isDisabled}>
       {(renderProps) => <AutoCompleteOptionContext.Provider value={renderProps}>{children}</AutoCompleteOptionContext.Provider>}
     </Combobox.Option>
   );
