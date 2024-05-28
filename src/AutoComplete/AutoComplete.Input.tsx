@@ -64,7 +64,7 @@ export function AutoCompleteInput({
               selectedItems.map((item) => (
                 <div key={item} className='flex flex-row items-center gap-2 rounded border border-b-neutral-detail-pale px-1 py-1.5'>
                   <span> {item} </span>
-                  <button className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)}>
+                  <button className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)} aria-label={`Remove ${item}`}>
                     <i className='fi fi-rr-cross-small flex items-center text-neutral-detail-boldest' />
                   </button>
                 </div>
