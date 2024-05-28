@@ -44,9 +44,6 @@ export default {
     multiple: {
       table: { disable: true }
     },
-    maxSelections: {
-      table: { disable: true }
-    },
     form: {
       table: { disable: true }
     },
@@ -135,7 +132,7 @@ export const Multiple = {
     return (
       <div className='h-72'>
         <FieldSet>
-          <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} multiple maxSelections={3}>
+          <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} multiple>
             <Label>
               {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
             </Label>

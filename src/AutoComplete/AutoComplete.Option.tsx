@@ -1,21 +1,11 @@
 import { Combobox } from '@headlessui/react';
 import React, { ComponentPropsWithRef, createContext, PropsWithChildren } from 'react';
-import { useAutoCompleteContext } from './AutoComplete.tsx';
 
 export interface AutoCompleteOptionProps extends Omit<ComponentPropsWithRef<typeof Combobox.Option>, 'children'> {}
 
 export function AutoCompleteOption({ className, children, ...props }: PropsWithChildren<AutoCompleteOptionProps>) {
-  const { value, maxSelections, multiple } = useAutoCompleteContext();
-
-  let isDisabled = false;
-  if (multiple && maxSelections) {
-    if (Array.isArray(value) && value.length) {
-      isDisabled = value.length >= maxSelections && value.indexOf(props.value) < 0;
-    }
-  }
-
   return (
-    <Combobox.Option className={`relative cursor-pointer select-none p-3 paragraph-sm-lighter ui-disabled:opacity-50 ui-checked:ui-not-disabled:bg-controls-highlight-pale ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler  ${className}`} {...props} disabled={isDisabled}>
+    <Combobox.Option className={`relative cursor-pointer select-none p-3 paragraph-sm-lighter ui-checked:ui-not-disabled:bg-controls-highlight-pale ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler  ${className}`} {...props} disabled={props.disabled}>
       {(renderProps) => <AutoCompleteOptionContext.Provider value={renderProps}>{children}</AutoCompleteOptionContext.Provider>}
     </Combobox.Option>
   );

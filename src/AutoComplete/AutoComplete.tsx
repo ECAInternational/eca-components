@@ -4,16 +4,15 @@ import { Combobox } from '@headlessui/react';
 export interface AutoCompleteProps extends Omit<ComponentProps<typeof Combobox>, 'multiple' | 'children'> {
   multiple?: boolean;
   children: React.ReactNode;
-  maxSelections?: number;
 }
 
-export function AutoComplete({ multiple, children, maxSelections, ...rest }: AutoCompleteProps) {
+export function AutoComplete({ multiple, children, ...rest }: AutoCompleteProps) {
   const [value, setValue] = useState();
 
   return (
     <Combobox {...rest} multiple={!!multiple as any} value={value} onChange={setValue}>
       {(props) => {
-        const contextValue = useMemo(() => ({ ...props, maxSelections, multiple, setValue }), [props, maxSelections, multiple, setValue]);
+        const contextValue = useMemo(() => ({ ...props, multiple, setValue }), [props, multiple, setValue]);
         return <AutoCompleteContext.Provider value={contextValue}>{children}</AutoCompleteContext.Provider>;
       }}
     </Combobox>
@@ -27,7 +26,6 @@ type ComboboxRenderPropArg<TValue, TActive = TValue> = {
   activeOption: TActive | null;
   value: TValue;
   setValue: any;
-  maxSelections?: number;
   multiple?: boolean;
 };
 

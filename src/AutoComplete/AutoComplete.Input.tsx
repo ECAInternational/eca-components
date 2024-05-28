@@ -57,21 +57,20 @@ export function AutoCompleteInput({
         ${hover[state]} ${border[state]} ${focus[state]}`}
     >
       <div className='flex w-full flex-row'>
-        <div className='flex-grow'>
+        <div className='grow'>
           <div className='flex flex-wrap gap-2'>
             {selectedItems.length > 0 &&
               !props.displayValue &&
               selectedItems.map((item) => (
                 <div key={item} className='flex flex-row items-center gap-2 rounded border border-b-neutral-detail-pale px-1 py-1.5'>
                   <span> {item} </span>
-                  <button className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)} aria-label={`Remove ${item}`}>
-                    <i className='fi fi-rr-cross-small flex items-center text-neutral-detail-boldest' />
-                  </button>
+
+                  <IconButton name='delete' variant='standard' size='xsmall' icon={`${'fi-rr-cross-small'}`} className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)} />
                 </div>
               ))}
             <div className='flex flex-1 flex-row'>
               <Combobox.Input
-                className='w-full flex-grow rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
+                className='w-full grow rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
          placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
          disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60'
                 onClick={callAll(stopPropagation, onClick)}
