@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.17](https://github.com/ECAInternational/eca-components/compare/v2.0.16...v2.0.17) (2024-05-29)
+
+
+### Features
+
+* Auto complete selection design and limit ([#213](https://github.com/ECAInternational/eca-components/issues/213)) ([e1d1e71](https://github.com/ECAInternational/eca-components/commit/e1d1e7100ec80370d646bf9bd7858dcc97344d92))
+
 ## [2.0.16](https://github.com/ECAInternational/eca-components/compare/v2.0.15...v2.0.16) (2024-05-23)
 
 
