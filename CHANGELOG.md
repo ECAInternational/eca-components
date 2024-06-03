@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.18](https://github.com/ECAInternational/eca-components/compare/v2.0.17...v2.0.18) (2024-06-03)
+
+
+### Bug Fixes
+
+* refactor auto complete to use the value and onChange instead of … ([#217](https://github.com/ECAInternational/eca-components/issues/217)) ([ee45675](https://github.com/ECAInternational/eca-components/commit/ee456754260ef7676273ce6dd819c4dedf5222a0))
+* refactor auto complete to use the value and onChange instead of its own value/setValue state. ([ee45675](https://github.com/ECAInternational/eca-components/commit/ee456754260ef7676273ce6dd819c4dedf5222a0))
+
 ## [2.0.17](https://github.com/ECAInternational/eca-components/compare/v2.0.16...v2.0.17) (2024-05-29)
 
 
