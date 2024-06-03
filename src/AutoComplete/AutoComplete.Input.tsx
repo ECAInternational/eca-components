@@ -12,7 +12,7 @@ export function AutoCompleteInput({
 }: ComponentPropsWithRef<typeof Combobox.Input> & {
   state: 'default' | 'error' | 'warning';
 }) {
-  const { open, value, multiple, setValue } = useAutoCompleteContext();
+  const { open, value, multiple, onChange } = useAutoCompleteContext();
 
   const border = {
     default: 'border-controls-border',
@@ -45,7 +45,7 @@ export function AutoCompleteInput({
   // Handler to remove item
   const handleRemoveItem = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, item: any) => {
     event.stopPropagation();
-    setValue(selectedItems.filter((selectedItem) => selectedItem !== item));
+    onChange(selectedItems.filter((selectedItem) => selectedItem !== item));
   };
 
   return (
