@@ -1,14 +1,14 @@
-import React, { Fragment, ReactNode } from 'react';
-import { Tab as HeadlessTab } from '@headlessui/react';
+import React, { ElementType, Fragment, ReactNode } from 'react';
+import { Tab as HeadlessTab, TabProps } from '@headlessui/react';
 
-export interface TabProps {
+export interface Props {
   size?: 'medium' | 'large';
   disabled?: boolean;
   children: ReactNode;
 }
 
-export function Tab(props: TabProps) {
-  const { children, size = 'medium', disabled = false } = props;
+export function Tab(props: Props & TabProps<ElementType>) {
+  const { children, size = 'medium', disabled = false, ...rest } = props;
 
   const sizes = {
     medium: 'label-sm-lighter py-2 px-3',
@@ -16,7 +16,7 @@ export function Tab(props: TabProps) {
   };
 
   return (
-    <HeadlessTab as={Fragment} disabled={disabled}>
+    <HeadlessTab as={Fragment} disabled={disabled} {...rest}>
       {({ selected }) => (
         <button
           className={`disabled:default-transparent group

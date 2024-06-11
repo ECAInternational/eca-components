@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TabGroup } from './TabGroup.tsx';
-import { Tab, TabProps } from '../Tab/Tab.tsx';
+import { Tab, Props } from '../Tab/Tab.tsx';
 
 export default {
   component: TabGroup,
@@ -36,7 +36,7 @@ export const Default = {
   args: {
     name: 'default'
   },
-  render: (args: TabProps) => (
+  render: (args: Props) => (
     <TabGroup>
       <Tab {...args}>Tab One</Tab>
       <Tab {...args}>Tab Two</Tab>
@@ -50,7 +50,7 @@ export const DefaultSelectedTab = {
   args: {
     name: 'selected'
   },
-  render: (args: TabProps) => (
+  render: (args: Props) => (
     <TabGroup defaultIndex={2}>
       <Tab {...args}>Tab One</Tab>
       <Tab {...args}>Tab Two</Tab>
@@ -64,7 +64,7 @@ export const DisableTab = {
   args: {
     name: 'disabled'
   },
-  render: (args: TabProps) => (
+  render: (args: Props) => (
     <TabGroup>
       <Tab {...args}>Tab One</Tab>
       <Tab {...args} disabled>
@@ -83,7 +83,7 @@ export const MediumTab = {
     name: 'medium',
     size: 'medium'
   },
-  render: (args: TabProps) => (
+  render: (args: Props) => (
     <TabGroup>
       <Tab {...args}>Tab One</Tab>
       <Tab {...args} disabled>
@@ -102,7 +102,7 @@ export const LargeTab = {
     name: 'large',
     size: 'large'
   },
-  render: (args: TabProps) => (
+  render: (args: Props) => (
     <TabGroup>
       <Tab {...args}>Tab One</Tab>
       <Tab {...args} disabled>
