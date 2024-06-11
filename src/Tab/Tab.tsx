@@ -1,13 +1,13 @@
 import React, { ElementType, Fragment, ReactNode } from 'react';
-import { Tab as HeadlessTab, TabProps } from '@headlessui/react';
+import { Tab as HeadlessTab, TabProps as HeadlessTabProps } from '@headlessui/react';
 
-export interface Props {
+export type TabProps = {
   size?: 'medium' | 'large';
   disabled?: boolean;
   children: ReactNode;
-}
+} & HeadlessTabProps<ElementType>;
 
-export function Tab(props: Props & TabProps<ElementType>) {
+export function Tab(props: TabProps) {
   const { children, size = 'medium', disabled = false, ...rest } = props;
 
   const sizes = {
