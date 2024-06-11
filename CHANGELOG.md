@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.19](https://github.com/ECAInternational/eca-components/compare/v2.0.18...v2.0.19) (2024-06-11)
+
+
+### Bug Fixes
+
+* open customisation for tab group and tab ([#223](https://github.com/ECAInternational/eca-components/issues/223)) ([96d01f4](https://github.com/ECAInternational/eca-components/commit/96d01f457450a33c7040795902302ad7a109aa16))
+
 ## [2.0.18](https://github.com/ECAInternational/eca-components/compare/v2.0.17...v2.0.18) (2024-06-03)
 
 
