@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.20](https://github.com/ECAInternational/eca-components/compare/v2.0.19...v2.0.20) (2024-06-19)
+
+
+### Bug Fixes
+
+* Export Progress ([#229](https://github.com/ECAInternational/eca-components/issues/229)) ([8df495c](https://github.com/ECAInternational/eca-components/commit/8df495cc9b9d1601ca1780aecfeca6a573e3ef70))
+
 ## [2.0.19](https://github.com/ECAInternational/eca-components/compare/v2.0.18...v2.0.19) (2024-06-11)
 
 
