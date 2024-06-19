@@ -12,6 +12,7 @@ import { Tooltip } from './Tooltip/Tooltip.tsx';
 import { SegmentedControl } from './SegmentedControl/SegmentedControl.tsx';
 import { Stepper, Step } from './Stepper/index.ts';
 import { Avatar } from './Avatar/index.ts';
+import { Progress } from './Progress/Progress.tsx';
 import { Menu, MenuButton, MenuItem, MenuItems } from './Menu/index.ts';
 
 import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
@@ -24,6 +25,7 @@ import { ActionableAlert } from './ActionableAlert/ActionableAlert.tsx';
 
 export { Card, CardBody, CardFooter, CardHeader };
 export { Button };
+export { Progress };
 export { Checkbox };
 export { IconButton };
 export { Radio };

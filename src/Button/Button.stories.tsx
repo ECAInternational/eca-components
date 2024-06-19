@@ -149,12 +149,12 @@ export const Block = {
 
 export const LoadDeterminatePrimary = {
   args: {
-    name: 'loadDeterminatePimary',
+    name: 'loadDeterminatePrimary',
     variant: 'primary',
     children: (
       <>
         Determinate
-        <Progress variant={'primary'} value={50} className='absolute bottom-0'></Progress>
+        <Progress variant='primary' value={50} className='absolute bottom-0' />
       </>
     )
   }
@@ -167,7 +167,7 @@ export const LoadDeterminateSecondary = {
     children: (
       <>
         Determinate
-        <Progress variant={'secondary'} value={50} className='absolute bottom-0'></Progress>
+        <Progress variant='secondary' value={50} className='absolute bottom-0' />
       </>
     )
   }
@@ -179,8 +179,8 @@ export const LoadIndeterminatePrimary = {
     variant: 'primary',
     children: (
       <>
-        Determinate
-        <Progress variant={'primary'} className='absolute bottom-0'></Progress>
+        Indeterminate
+        <Progress variant='primary' className='absolute bottom-0' />
       </>
     )
   }
@@ -192,8 +192,8 @@ export const LoadIndeterminateSecondary = {
     variant: 'outline',
     children: (
       <>
-        Determinate
-        <Progress variant={'secondary'} className='absolute bottom-0'></Progress>
+        Indeterminate
+        <Progress variant='secondary' className='absolute bottom-0' />
       </>
     )
   }
