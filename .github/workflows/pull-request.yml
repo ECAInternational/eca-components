@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   visual-review:
-    name: Create Visual Review
+    name: Deploy PR Storybook
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
