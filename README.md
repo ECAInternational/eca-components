@@ -1,4 +1,4 @@
-# ECA Components
+# ECA Components.
 
 A library of reusable components for across ECA applications.
 
