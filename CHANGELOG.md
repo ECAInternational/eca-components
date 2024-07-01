@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.21](https://github.com/ECAInternational/eca-components/compare/v2.0.20...v2.0.21) (2024-07-01)
+
+
+### Features
+
+* Remove Chromatic Comparisons ([#233](https://github.com/ECAInternational/eca-components/issues/233)) ([1225753](https://github.com/ECAInternational/eca-components/commit/1225753379a1849cb90ddb87d01375e0306d934c))
+
 ## [2.0.20](https://github.com/ECAInternational/eca-components/compare/v2.0.19...v2.0.20) (2024-06-19)
 
 
