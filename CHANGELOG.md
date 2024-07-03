@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.22](https://github.com/ECAInternational/eca-components/compare/v2.0.21...v2.0.22) (2024-07-03)
+
+
+### Bug Fixes
+
+* pass ref to auto complete input. ([#240](https://github.com/ECAInternational/eca-components/issues/240)) ([db46e5c](https://github.com/ECAInternational/eca-components/commit/db46e5cefe9b0ed317b797a8c4884747e166eab0))
+
 ## [2.0.21](https://github.com/ECAInternational/eca-components/compare/v2.0.20...v2.0.21) (2024-07-01)
 
 
