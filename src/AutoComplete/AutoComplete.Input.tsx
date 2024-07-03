@@ -1,17 +1,14 @@
 import { Combobox } from '@headlessui/react';
-import React, { ComponentPropsWithRef } from 'react';
+import React, { ComponentProps, ForwardedRef, forwardRef } from 'react';
 import { useAutoCompleteContext } from './AutoComplete.tsx';
 import { callAll } from '../utils/call-all.ts';
 import { IconButton } from '../IconButton/IconButton.tsx';
 
-export function AutoCompleteInput({
-  className,
-  state,
-  onClick,
-  ...props
-}: ComponentPropsWithRef<typeof Combobox.Input> & {
+type AutoCompleteInputProps = ComponentProps<typeof Combobox.Input> & {
   state: 'default' | 'error' | 'warning';
-}) {
+};
+
+export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...props }: AutoCompleteInputProps, ref: ForwardedRef<HTMLInputElement>) => {
   const { open, value, multiple, onChange } = useAutoCompleteContext();
 
   const border = {
@@ -74,6 +71,7 @@ export function AutoCompleteInput({
          placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
          disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60'
                 onClick={callAll(stopPropagation, onClick)}
+                ref={ref}
                 {...props}
               />
             </div>
@@ -89,4 +87,4 @@ export function AutoCompleteInput({
       </div>
     </Combobox.Button>
   );
-}
+});
