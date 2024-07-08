@@ -7,5 +7,11 @@ export default defineConfig({
     react({
       babel: {}
     })
-  ]
+  ],
+  test: {
+    include: ['./src/**/*.test.{ts,tsx}'],
+    setupFiles: ['./tests/setup/setup-test-env.ts'],
+    restoreMocks: true,
+    environmentMatchGlobs: [['**/*.test.tsx', 'jsdom']]
+  }
 });
