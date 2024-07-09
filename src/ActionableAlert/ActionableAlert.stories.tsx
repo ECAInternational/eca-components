@@ -27,7 +27,7 @@ export default componentMeta;
 function TemplateOneButton({ messageText, primaryButtonText, ...args }: StoryProps) {
   return (
     <ActionableAlert {...args}>
-      <div className={`inline-flex w-full items-center gap-2 rounded py-3 pl-4 pr-3 leading-[1.125rem] paragraph-sm-mid`}>
+      <div className='inline-flex w-full items-center gap-2 rounded py-3 pl-4 pr-3 leading-[1.125rem] paragraph-sm-mid'>
         <span className='w-full'>{messageText}</span>
         <Button name='primaryButton' variant='ghost'>
           {primaryButtonText}
@@ -40,7 +40,7 @@ function TemplateOneButton({ messageText, primaryButtonText, ...args }: StoryPro
 function TemplateTwoButtons({ messageText, primaryButtonText, secondaryButtonText, ...args }: StoryProps) {
   return (
     <ActionableAlert {...args}>
-      <div className={`inline-flex w-full items-center gap-2 rounded py-3 pl-4 pr-3 leading-[1.125rem] paragraph-sm-mid`}>
+      <div className='inline-flex w-full items-center gap-2 rounded py-3 pl-4 pr-3 leading-[1.125rem] paragraph-sm-mid'>
         <span className='w-full'>{messageText}</span>
         <Button name='primaryButton' variant='ghost'>
           {primaryButtonText}

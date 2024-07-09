@@ -12,7 +12,8 @@ export default {
   argTypes: {
     layout: {
       control: 'select',
-      description: "Defines how the stepper control's layout, horizontal is the default"
+      // prettier-ignore
+      description: 'Defines how the stepper control\'s layout, horizontal is the default'
     }
   },
   args: {},
