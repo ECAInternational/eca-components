@@ -42,24 +42,11 @@ export function TextInput(props: TextInputProps) {
         </label>
       )}
 
-      <span
-        className={`relative flex rounded border p-3 text-controls-placeholder-text outline
-        outline-2 outline-offset-2 outline-default-transparent transition
-        has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
-        ${hover[state]} ${border[state]} ${focus[state]}`}
-      >
+      <span className={`relative flex rounded border p-3 text-controls-placeholder-text outline outline-2 outline-offset-2 outline-default-transparent transition has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state]} ${focus[state]}`}>
         {prefix && <span className='flex items-center pe-1 paragraph-sm-heavier'>{prefix}</span>}
         {icon && <i className={`fi ${icon} flex items-center pe-2.5 text-neutral-detail-bold`} />}
 
-        <input
-          id={id || name}
-          name={name}
-          type={type}
-          {...others}
-          className={`w-full rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
-               placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
-               disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60 ${className}`}
-        />
+        <input id={id || name} name={name} type={type} {...others} className={`w-full rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60 ${className}`} />
         {suffix && <span className='flex items-center pe-2.5 paragraph-sm-heavier'>{suffix}</span>}
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
         {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}

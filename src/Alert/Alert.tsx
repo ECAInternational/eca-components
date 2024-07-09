@@ -40,13 +40,7 @@ export function Alert({ label, variant = 'neutral', onDelete, className = '', ..
       {icon[variant] && <i className={`fi ${icon[variant]} flex items-center justify-center`} />}
       <span className='w-full'>{label}</span>
       {onDelete && (
-        <button
-          onClick={onDelete}
-          aria-label={`Delete ${label}`}
-          className={`flex items-center justify-center rounded-sm ${close[variant]}
-          opacity-50 hover:opacity-70 focus-visible:outline
-          focus-visible:outline-neutral-detail-boldest active:opacity-60`}
-        >
+        <button onClick={onDelete} aria-label={`Delete ${label}`} className={`flex items-center justify-center rounded-sm ${close[variant]} opacity-50 hover:opacity-70 focus-visible:outline focus-visible:outline-neutral-detail-boldest active:opacity-60`}>
           <i className='fi fi-rr-cross-small size-3.5' />
         </button>
       )}

@@ -80,22 +80,7 @@ export function IconButton(props: IconButtonProps) {
   const textSize = { xsmall: 'text-sm', small: 'text-lg', medium: 'text-xl', large: 'text-2xl' };
 
   return (
-    <button
-      id={id || name}
-      name={name}
-      className={`flex items-center justify-center outline-2 outline-offset-2 outline-default-transparent transition
-      ${size === 'large' ? 'rounded-md' : 'rounded'}
-      ${variant === 'outline' ? 'p-px' : 'p-0'}
-      ${(selected ? bgSelected : bg)[variant]}
-      ${(selected ? hoverSelected : hover)[variant]}
-      ${(selected ? focusSelected : focus)[variant]}
-      ${(selected ? activeSelected : active)[variant]}
-      active:scale-92
-      ${disabled[variant]}
-      disabled:cursor-not-allowed
-      ${className}`}
-      {...others}
-    >
+    <button id={id || name} name={name} className={`flex items-center justify-center outline-2 outline-offset-2 outline-default-transparent transition ${size === 'large' ? 'rounded-md' : 'rounded'} ${variant === 'outline' ? 'p-px' : 'p-0'} ${(selected ? bgSelected : bg)[variant]} ${(selected ? hoverSelected : hover)[variant]} ${(selected ? focusSelected : focus)[variant]} ${(selected ? activeSelected : active)[variant]} active:scale-92 ${disabled[variant]} disabled:cursor-not-allowed ${className}`} {...others}>
       <i className={`fi ${icon} ${textSize[size]} ${(variant === 'outline' ? outlineMarin : margin)[size]} flex items-center justify-center`} />
     </button>
   );

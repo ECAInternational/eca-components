@@ -171,11 +171,7 @@ export function TextArea(props: TextAreaProps) {
       <textarea onChange={handleChange} id={id || name} name={name} value={value} rows={minRows} disabled={disabled} placeholder={placeholder} {...others} className={className} ref={inputRef} aria-describedby={charCountLabelId} {...(invalid ? { 'aria-invalid': true } : {})} />
       <textarea aria-hidden className={className} readOnly ref={shadowRef} tabIndex={-1} style={{ ...styles.shadow, paddingTop: 0, paddingBottom: 0 }} />
       {maxLength && (
-        <p
-          id={charCountLabelId}
-          className={`mt-1 paragraph-xs-lighter 
-        ${invalid ? 'text-states-error' : 'invisible peer-focus:visible peer-focus:text-controls-highlight'}`}
-        >
+        <p id={charCountLabelId} className={`mt-1 paragraph-xs-lighter ${invalid ? 'text-states-error' : 'invisible peer-focus:visible peer-focus:text-controls-highlight'}`}>
           {charCountLabel}
         </p>
       )}

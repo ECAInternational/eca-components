@@ -69,21 +69,9 @@ export function Step(props: PropsWithChildren<StepProps>) {
   const labelElement = children && <span className={`flex text-nowrap label-sm-lighter ${label[labelPosition]}`}>{children}</span>;
 
   return (
-    <button
-      className={`group flex cursor-pointer ${buttonLayout[labelPosition]} outline-0 ${(selected ? textSelected : text)[state]}
-      disabled:cursor-not-allowed disabled:text-neutral-detail`}
-      disabled={disabled}
-      {...others}
-    >
+    <button className={`group flex cursor-pointer ${buttonLayout[labelPosition]} outline-0 ${(selected ? textSelected : text)[state]} disabled:cursor-not-allowed disabled:text-neutral-detail`} disabled={disabled} {...others}>
       {labelPosition === 'left' && labelElement}
-      <span
-        className={`m-1 flex size-5.5 items-center justify-center rounded-full ${(selected ? discSelected : disc)[state]} 
-        outline outline-2 outline-offset-2 label-sm-mid ${!selected && 'outline-default-transparent'}
-        group-disabled:border-none group-disabled:bg-neutral-detail-palest group-disabled:text-neutral-detail-pale group-disabled:outline-none
-       `}
-      >
-        {discContent[state]}
-      </span>
+      <span className={`m-1 flex size-5.5 items-center justify-center rounded-full ${(selected ? discSelected : disc)[state]} outline outline-2 outline-offset-2 label-sm-mid ${!selected && 'outline-default-transparent'} group-disabled:border-none group-disabled:bg-neutral-detail-palest group-disabled:text-neutral-detail-pale group-disabled:outline-none`}>{discContent[state]}</span>
       {labelPosition === 'below' && labelElement}
     </button>
   );

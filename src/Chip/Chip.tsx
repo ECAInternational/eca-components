@@ -37,13 +37,7 @@ export function Chip(props: ChipProps) {
     <span className={`inline-flex items-center gap-2 rounded border px-2.5 py-1.5 leading-[1.125rem] label-sm-mid ${chip[variant]}`} {...others}>
       <span>{label}</span>
       {onDelete && (
-        <button
-          onClick={onDelete}
-          aria-label={`Delete ${label}`}
-          className={`flex items-center justify-center rounded-sm ${close[variant]}
-          opacity-50 hover:opacity-70 focus-visible:outline
-          focus-visible:outline-neutral-detail-boldest active:opacity-60`}
-        >
+        <button onClick={onDelete} aria-label={`Delete ${label}`} className={`flex items-center justify-center rounded-sm ${close[variant]} opacity-50 hover:opacity-70 focus-visible:outline focus-visible:outline-neutral-detail-boldest active:opacity-60`}>
           <i className='fi fi-rr-cross-small size-3.5' />
         </button>
       )}

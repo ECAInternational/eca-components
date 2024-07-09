@@ -46,13 +46,7 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...pro
   };
 
   return (
-    <Combobox.Button
-      as='div'
-      className={`relative flex w-full items-center rounded border p-3 text-controls-placeholder-text outline
-        outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid
-        has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
-        ${hover[state]} ${border[state]} ${focus[state]}`}
-    >
+    <Combobox.Button as='div' className={`relative flex w-full items-center rounded border p-3 text-controls-placeholder-text outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state]} ${focus[state]}`}>
       <div className='flex w-full flex-row'>
         <div className='grow'>
           <div className='flex flex-wrap gap-2'>
@@ -66,14 +60,7 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...pro
                 </div>
               ))}
             <div className='flex flex-1 flex-row'>
-              <Combobox.Input
-                className='w-full grow rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
-         placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
-         disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60'
-                onClick={callAll(stopPropagation, onClick)}
-                ref={ref}
-                {...props}
-              />
+              <Combobox.Input className='w-full grow rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60' onClick={callAll(stopPropagation, onClick)} ref={ref} {...props} />
             </div>
           </div>
         </div>

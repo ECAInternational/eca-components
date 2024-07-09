@@ -10,16 +10,7 @@ export function SelectOption({ className, children, ...props }: PropsWithChildre
 
   const padding = multiple ? 'p-1 pe-3' : 'py-2 px-3';
   return (
-    <Listbox.Option
-      className={`relative cursor-pointer select-none ${padding} text-neutral-body paragraph-sm-lighter
-      ui-disabled:cursor-not-allowed
-      ui-disabled:bg-neutral-layer-1
-      ui-disabled:text-controls-content-disabled active:ui-not-disabled:bg-controls-highlight-pale ui-checked:ui-not-disabled:bg-controls-highlight-pale
-      ui-selected:ui-not-disabled:bg-controls-highlight-palest
-      active:ui-selected:ui-not-disabled:bg-controls-highlight-pale 
-      active:ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler  active:ui-active:ui-not-disabled:bg-controls-highlight-pale ${className}`}
-      {...props}
-    >
+    <Listbox.Option className={`relative cursor-pointer select-none ${padding} text-neutral-body paragraph-sm-lighter ui-disabled:cursor-not-allowed ui-disabled:bg-neutral-layer-1 ui-disabled:text-controls-content-disabled active:ui-not-disabled:bg-controls-highlight-pale ui-checked:ui-not-disabled:bg-controls-highlight-pale ui-selected:ui-not-disabled:bg-controls-highlight-palest active:ui-selected:ui-not-disabled:bg-controls-highlight-pale active:ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler active:ui-active:ui-not-disabled:bg-controls-highlight-pale ${className}`} {...props}>
       {(renderProps) => (
         <SelectOptionContext.Provider value={renderProps}>
           <div className='flex items-center gap-2.5'>
