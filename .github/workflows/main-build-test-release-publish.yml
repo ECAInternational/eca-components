@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 permissions:
   contents: write
@@ -24,6 +29,7 @@ jobs:
 
   update-release:
     name: Update Release
+    if: ${{ (github.ref == 'refs/heads/main') }}
     needs: [build-lint] #[build-lint, test]
     uses: ECAInternational/eca-reusable-workflows/.github/workflows/update-release.yml@v1.0.20
     with:
