@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/ECAInternational/eca-components/compare/v2.1.0...v2.1.1) (2024-07-10)
+
+
+### Bug Fixes
+
+* Restored paths in package to match v2.0 ([#247](https://github.com/ECAInternational/eca-components/issues/247)) ([779de20](https://github.com/ECAInternational/eca-components/commit/779de20b1c3ea655a3de9e4007a2566af1dc3b48))
+
 ## [2.1.0](https://github.com/ECAInternational/eca-components/compare/v2.0.22...v2.1.0) (2024-07-10)
 
 
