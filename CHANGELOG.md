@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/ECAInternational/eca-components/compare/v2.0.22...v2.1.0) (2024-07-10)
+
+
+### Features
+
+* Add isSubmitting prop to Button ([#245](https://github.com/ECAInternational/eca-components/issues/245)) ([7f2bd5d](https://github.com/ECAInternational/eca-components/commit/7f2bd5d1705e86a01597f06d5b7dc9c514c6b6f3))
+
 ## [2.0.22](https://github.com/ECAInternational/eca-components/compare/v2.0.21...v2.0.22) (2024-07-03)
 
 
