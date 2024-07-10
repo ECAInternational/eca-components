@@ -30,7 +30,6 @@ export default [
       typescript({
         exclude: ['**/tests/**', '**/*.test.tsx']
       }),
-      // typescript(),
       resolve({
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }),
