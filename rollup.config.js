@@ -27,7 +27,10 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
-      typescript(),
+      typescript({
+        exclude: ['**/tests/**', '**/*.test.tsx']
+      }),
+      // typescript(),
       resolve({
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }),
