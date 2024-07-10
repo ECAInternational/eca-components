@@ -34,6 +34,16 @@ export default {
       description: 'Defines the state of the select component',
       options: ['default', 'warning', 'error']
     },
+    variant: {
+      control: 'select',
+      description: 'Defines the variant of the select component',
+      options: ['outline', 'tonal']
+    },
+    size: {
+      control: 'select',
+      description: 'Defines the size of the select component',
+      options: ['small', 'medium']
+    },
     disabled: {
       control: 'boolean',
       description: 'Disables the select component'
@@ -89,9 +99,11 @@ export const Default = {
     name: 'default-select',
     state: 'default',
     label: 'Label',
+    variant: 'outline',
+    size: 'medium',
     disabled: false
   },
-  render: ({ name, state, label, disabled }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean }) => {
+  render: ({ name, state, label, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => {
     const [selectedPerson, setSelectedPerson] = useState<Person>(people[0]);
 
     return (
@@ -101,7 +113,9 @@ export const Default = {
             <Label>
               {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
             </Label>
-            <SelectButton state={state}>{selectedPerson.name}</SelectButton>
+            <SelectButton state={state} variant={variant} size={size}>
+              {selectedPerson.name}
+            </SelectButton>
             <SelectOptions>
               {people.map((person) => (
                 <SelectOption key={person.id} value={person} disabled={person.unavailable}>
@@ -187,7 +201,7 @@ export const Groups = {
   }
 };
 
-const defaultRender = ({ name, state, label, description, disabled }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean }) => {
+const defaultRender = ({ name, state, label, description, disabled, variant }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean; variant?: 'outline' | 'tonal' }) => {
   const [selectedPerson, setSelectedPerson] = useState<Person>(people[0]);
 
   return (
@@ -197,7 +211,9 @@ const defaultRender = ({ name, state, label, description, disabled }: { name: st
           <Label>
             {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
           </Label>
-          <SelectButton state={state}>{selectedPerson.name}</SelectButton>
+          <SelectButton state={state} variant={variant}>
+            {selectedPerson.name}
+          </SelectButton>
           <SelectOptions>
             {people.map((person) => (
               <SelectOption key={person.id} value={person} disabled={person.unavailable}>
@@ -216,6 +232,18 @@ export const Disabled = {
     name: 'disabled-select',
     state: 'default',
     label: 'Label',
+    variant: 'outline',
+    disabled: true
+  },
+  render: defaultRender
+};
+
+export const DisabledTonal = {
+  args: {
+    name: 'disabled-select',
+    state: 'default',
+    label: 'Label',
+    variant: 'tonal',
     disabled: true
   },
   render: defaultRender
