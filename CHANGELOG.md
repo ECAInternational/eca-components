@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/ECAInternational/eca-components/compare/v2.1.1...v2.2.0) (2024-07-10)
+
+
+### Features
+
+* add variant and size to select component ([#250](https://github.com/ECAInternational/eca-components/issues/250)) ([c8e7a99](https://github.com/ECAInternational/eca-components/commit/c8e7a993cd36d51d754019ce6b4d62f346fb0ab5))
+
 ## [2.1.1](https://github.com/ECAInternational/eca-components/compare/v2.1.0...v2.1.1) (2024-07-10)
 
 
