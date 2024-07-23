@@ -12,6 +12,11 @@ export default {
       description: 'Defines the state of the button',
       options: ['default', 'warning', 'error']
     },
+    variant: {
+      control: 'select',
+      description: 'Defines the variant of the select component',
+      options: ['outline', 'tonal']
+    },
     disabled: {
       control: 'boolean',
       description: 'Disables the text input'
@@ -28,7 +33,8 @@ export default {
   },
   args: {
     disabled: false,
-    state: 'default'
+    state: 'default',
+    variant: 'outline'
   }
 };
 

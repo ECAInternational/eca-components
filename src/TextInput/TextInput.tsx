@@ -5,6 +5,7 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
   label?: string;
   state?: 'default' | 'warning' | 'error';
+  variant?: 'outline' | 'tonal';
   type?: string;
   description?: string;
   icon?: string;
@@ -13,12 +14,21 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function TextInput(props: TextInputProps) {
-  const { name, id, label, state = 'default', type = 'text', description, icon, prefix, suffix, className, ...others } = props;
+  const { name, id, label, variant = 'outline', state = 'default', type = 'text', description, icon, prefix, suffix, className, ...others } = props;
 
   const border = {
-    default: 'border-controls-border',
-    warning: 'border-states-warning',
-    error: 'border-states-error'
+    default: {
+      outline: 'border-controls-border',
+      tonal: 'border-default-transparent bg-controls-bg-unselected'
+    },
+    warning: {
+      outline: 'border-states-warning',
+      tonal: 'border-states-warning bg-controls-bg-unselected'
+    },
+    error: {
+      outline: 'border-states-error',
+      tonal: 'border-states-error bg-controls-bg-unselected'
+    }
   };
 
   const hover = {
@@ -42,7 +52,7 @@ export function TextInput(props: TextInputProps) {
         </label>
       )}
 
-      <span className={`relative flex rounded border p-3 text-controls-placeholder-text outline outline-2 outline-offset-2 outline-default-transparent transition has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state]} ${focus[state]}`}>
+      <span className={`relative flex rounded border p-3 text-controls-placeholder-text outline outline-2 outline-offset-2 outline-default-transparent transition has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state][variant]} ${focus[state]}`}>
         {prefix && <span className='flex items-center pe-1 paragraph-sm-heavier'>{prefix}</span>}
         {icon && <i className={`fi ${icon} flex items-center pe-2.5 text-neutral-detail-bold`} />}
 
