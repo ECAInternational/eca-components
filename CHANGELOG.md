@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/ECAInternational/eca-components/compare/v2.2.1...v2.2.2) (2024-07-23)
+
+
+### Bug Fixes
+
+* Change select text style to paragraph-sm-lighter ([#259](https://github.com/ECAInternational/eca-components/issues/259)) ([78e2880](https://github.com/ECAInternational/eca-components/commit/78e2880f2cfd52304a04251524f34c218a7334fa))
+
 ## [2.2.1](https://github.com/ECAInternational/eca-components/compare/v2.2.0...v2.2.1) (2024-07-23)
 
 
