@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/ECAInternational/eca-components/compare/v2.2.0...v2.2.1) (2024-07-23)
+
+
+### Features
+
+* Add tonal input button variant ([#257](https://github.com/ECAInternational/eca-components/issues/257)) ([94b6203](https://github.com/ECAInternational/eca-components/commit/94b6203b1a873d1a47e625ad212f2b7bacb4bc4e))
+
 ## [2.2.0](https://github.com/ECAInternational/eca-components/compare/v2.1.1...v2.2.0) (2024-07-10)
 
 
