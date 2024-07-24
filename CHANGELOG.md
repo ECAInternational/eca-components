@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/ECAInternational/eca-components/compare/v2.2.2...v2.3.0) (2024-07-24)
+
+
+### Features
+
+* add variant and size to select component ([e69ce11](https://github.com/ECAInternational/eca-components/commit/e69ce111ff148b794fd621a9bb3a6548c4d583c6))
+
+
+### Bug Fixes
+
+* append to existing class names for auto complete options ([#261](https://github.com/ECAInternational/eca-components/issues/261)) ([e69ce11](https://github.com/ECAInternational/eca-components/commit/e69ce111ff148b794fd621a9bb3a6548c4d583c6))
+
 ## [2.2.2](https://github.com/ECAInternational/eca-components/compare/v2.2.1...v2.2.2) (2024-07-23)
 
 
