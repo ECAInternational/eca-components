@@ -39,19 +39,11 @@ export function Alert({ label, variant = 'neutral', onDelete, fullWidth = true, 
   const wideClassName = fullWidth ? 'w-full' : '';
 
   return (
-    <div
-      role='alert'
-      className={`inline-flex ${wideClassName} items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] paragraph-sm-mid ${alert[variant]} ${className}`}
-      {...rest}
-    >
+    <div role='alert' className={`inline-flex ${wideClassName} items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] paragraph-sm-mid ${alert[variant]} ${className}`} {...rest}>
       {icon[variant] && <i className={`fi ${icon[variant]} flex items-center justify-center`} />}
       <span className='w-full'>{label}</span>
       {onDelete && (
-        <button
-          onClick={onDelete}
-          aria-label={`Delete ${label}`}
-          className={`flex items-center justify-center rounded-sm ${close[variant]} opacity-50 hover:opacity-70 focus-visible:outline focus-visible:outline-neutral-detail-boldest active:opacity-60`}
-        >
+        <button onClick={onDelete} aria-label={`Delete ${label}`} className={`flex items-center justify-center rounded-sm ${close[variant]} opacity-50 hover:opacity-70 focus-visible:outline focus-visible:outline-neutral-detail-boldest active:opacity-60`}>
           <i className='fi fi-rr-cross-small size-3.5' />
         </button>
       )}
