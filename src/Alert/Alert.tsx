@@ -5,9 +5,10 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   variant?: 'warning' | 'success' | 'info' | 'error' | 'monochrome' | 'neutral';
   onDelete?: () => void;
   className?: string;
+  fullWidth?: boolean;
 }
 
-export function Alert({ label, variant = 'neutral', onDelete, className = '', ...rest }: AlertProps) {
+export function Alert({ label, variant = 'neutral', onDelete, fullWidth = true, className = '', ...rest }: AlertProps) {
   const alert = {
     warning: 'border-states-warning text-neutral-body bg-states-warning-paler',
     success: 'border-states-success text-neutral-body bg-states-success-palest',
@@ -35,12 +36,22 @@ export function Alert({ label, variant = 'neutral', onDelete, className = '', ..
     neutral: ''
   };
 
+  const wideClassName = fullWidth ? 'w-full' : '';
+
   return (
-    <div role='alert' className={`inline-flex w-full items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] paragraph-sm-mid ${alert[variant]} ${className}`} {...rest}>
+    <div
+      role='alert'
+      className={`inline-flex ${wideClassName} items-center gap-2 rounded border px-3 py-2 leading-[1.125rem] paragraph-sm-mid ${alert[variant]} ${className}`}
+      {...rest}
+    >
       {icon[variant] && <i className={`fi ${icon[variant]} flex items-center justify-center`} />}
       <span className='w-full'>{label}</span>
       {onDelete && (
-        <button onClick={onDelete} aria-label={`Delete ${label}`} className={`flex items-center justify-center rounded-sm ${close[variant]} opacity-50 hover:opacity-70 focus-visible:outline focus-visible:outline-neutral-detail-boldest active:opacity-60`}>
+        <button
+          onClick={onDelete}
+          aria-label={`Delete ${label}`}
+          className={`flex items-center justify-center rounded-sm ${close[variant]} opacity-50 hover:opacity-70 focus-visible:outline focus-visible:outline-neutral-detail-boldest active:opacity-60`}
+        >
           <i className='fi fi-rr-cross-small size-3.5' />
         </button>
       )}
