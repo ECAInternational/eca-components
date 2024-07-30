@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/ECAInternational/eca-components/compare/v2.3.0...v2.4.0) (2024-07-30)
+
+
+### Features
+
+* Add full width option to alerts ([#268](https://github.com/ECAInternational/eca-components/issues/268)) ([fe68133](https://github.com/ECAInternational/eca-components/commit/fe681333debc607aab7c4cc9e3b6f7b6f24d2b96))
+
 ## [2.3.0](https://github.com/ECAInternational/eca-components/compare/v2.2.2...v2.3.0) (2024-07-24)
 
 
