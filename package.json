@@ -34,8 +34,8 @@
     "test-storybook": "test-storybook --maxWorkers=2"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.2",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@ecainternational/eca-design-tokens": "^1.0.32",
