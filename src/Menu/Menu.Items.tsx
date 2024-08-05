@@ -9,7 +9,7 @@ export function MenuItems({
   onClose?: () => void;
 }) {
   return (
-    <Transition as={Fragment} leave='transition ease-in duration-150' leaveFrom='opacity-100' leaveTo='opacity-0' afterLeave={() => onClose && onClose()} show>
+    <Transition as={Fragment} leave='transition ease-in duration-150' leaveFrom='opacity-100' leaveTo='opacity-0' afterLeave={() => onClose && onClose()} show={false}>
       <Menu.Items className={`absolute right-0 mt-2 w-56 overflow-auto rounded border border-neutral-detail-paler bg-neutral-layer-2 text-left shadow-lg paragraph-sm-lighter focus:outline-none ${className}`} {...props} />
     </Transition>
   );
