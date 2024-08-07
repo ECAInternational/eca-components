@@ -10,7 +10,9 @@ updates:
     schedule:
       interval: 'weekly'
     ignore:
-      - dependency-name: '*'
+      - dependency-name: 'storybook'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook*'
         update-types: ['version-update:semver-major']
     groups:
       storybook:
