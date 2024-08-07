@@ -1,5 +1,6 @@
 import '../src/index.css';
 import { themes } from '@storybook/theming';
+import { fn } from '@storybook/test';
 
 const viewports = {
   mobile: {
@@ -30,7 +31,10 @@ const preview = {
     designToken: {
       disable: true
     },
-    actions: { argTypesRegex: '^on.*' },
+    actions: {
+      onClick: fn(),
+      onChange: fn()
+    },
     docs: {
       theme: themes.light,
       story: {

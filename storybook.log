@@ -1,0 +1,34 @@
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE could not resolve
+npm ERR! 
+npm ERR! While resolving: storybook-addon-data-theme-switcher@0.3.0
+npm ERR! Found: @storybook/manager-api@8.2.7
+npm ERR! node_modules/@storybook/manager-api
+npm ERR!   @storybook/manager-api@"^8.2.7" from @storybook/react@8.2.7
+npm ERR!   node_modules/@storybook/react
+npm ERR!     @storybook/react@"8.2.7" from @storybook/react-vite@8.2.7
+npm ERR!     node_modules/@storybook/react-vite
+npm ERR!       dev @storybook/react-vite@"^8.2.7" from the root project
+npm ERR!     dev @storybook/react@"^8.2.7" from the root project
+npm ERR!   dev @storybook/manager-api@"^8.2.7" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer @storybook/manager-api@"^7.0.4" from storybook-addon-data-theme-switcher@0.3.0
+npm ERR! node_modules/storybook-addon-data-theme-switcher
+npm ERR!   dev storybook-addon-data-theme-switcher@"^0.3.0" from the root project
+npm ERR! 
+npm ERR! Conflicting peer dependency: @storybook/manager-api@7.6.20
+npm ERR! node_modules/@storybook/manager-api
+npm ERR!   peer @storybook/manager-api@"^7.0.4" from storybook-addon-data-theme-switcher@0.3.0
+npm ERR!   node_modules/storybook-addon-data-theme-switcher
+npm ERR!     dev storybook-addon-data-theme-switcher@"^0.3.0" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! 
+npm ERR! For a full report see:
+npm ERR! C:\Users\okan.sarica\AppData\Local\npm-cache\_logs\2024-08-07T12_34_31_028Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in: C:\Users\okan.sarica\AppData\Local\npm-cache\_logs\2024-08-07T12_34_31_028Z-debug-0.log

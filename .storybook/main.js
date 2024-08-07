@@ -1,13 +1,10 @@
 import { themes } from '@storybook/theming';
 
 const config = {
-  typescript: {
-    reactDocgen: 'react-docgen-typescript'
-  },
   stories: ['../src/Intro.mdx', '../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
+
   addons: [
     '@storybook/addon-actions',
-    '@storybook/addon-docs',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
@@ -17,14 +14,20 @@ const config = {
       name: 'storybook-design-token',
       options: { designTokenGlob: 'tokens/*' }
     },
-    '@storybook/addon-mdx-gfm',
     '@chromatic-com/storybook'
   ],
+
   staticDirs: ['./.public'],
+
   framework: {
     name: '@storybook/react-vite',
     options: {}
   },
-  docs: {}
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 };
 export default config;
