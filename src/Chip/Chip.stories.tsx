@@ -1,5 +1,4 @@
-import { expect, jest } from '@storybook/jest';
-import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { expect, userEvent, waitFor, within, fn } from '@storybook/test';
 import { Chip, ChipProps } from './Chip.tsx';
 
 export default {
@@ -177,7 +176,7 @@ export const DeletableNeutral = {
 export const DeletableClick = {
   args: {
     label: 'Deletable',
-    onDelete: jest.fn()
+    onDelete: fn()
   },
   play: async ({ args, canvasElement, step }: { args: ChipProps; canvasElement: any; step: any }) => {
     const canvas = within(canvasElement);

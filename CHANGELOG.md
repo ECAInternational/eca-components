@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/ECAInternational/eca-components/compare/v2.4.0...v2.4.1) (2024-08-07)
+
+
+### Bug Fixes
+
+* revert of storybook update ([#279](https://github.com/ECAInternational/eca-components/issues/279)) ([c7c8657](https://github.com/ECAInternational/eca-components/commit/c7c86571c04932c62480aef5a8caa6d66d21dbd3))
+
 ## [2.4.0](https://github.com/ECAInternational/eca-components/compare/v2.3.0...v2.4.0) (2024-07-30)
 
 
