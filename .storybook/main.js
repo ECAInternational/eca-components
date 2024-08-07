@@ -1,6 +1,9 @@
 import { themes } from '@storybook/theming';
 
 const config = {
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  },
   stories: ['../src/Intro.mdx', '../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
   addons: [
     '@storybook/addon-actions',
