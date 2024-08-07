@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/ECAInternational/eca-components/compare/v2.4.1...v2.5.0) (2024-08-07)
+
+
+### Features
+
+* storybook version upgrade to 8 ([#283](https://github.com/ECAInternational/eca-components/issues/283)) ([52bf1b3](https://github.com/ECAInternational/eca-components/commit/52bf1b357b2c4134074dae7d032a1df01b5aad11))
+
 ## [2.4.1](https://github.com/ECAInternational/eca-components/compare/v2.4.0...v2.4.1) (2024-08-07)
 
 
