@@ -1,0 +1,211 @@
+🔎 checking possible migrations..
+
+🔎 found a 'remove-jest-testing-library' migration:
+╭ Automigration detected ──────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                              │
+│   Attention: We've detected that you're using the following packages which are known to be incompatible since Storybook 8:   │
+│                                                                                                                              │
+│   - @storybook/jest                                                                                                          │
+│   - @storybook/testing-library                                                                                               │
+│                                                                                                                              │
+│   We will uninstall them for you and install @storybook/test instead.                                                        │
+│                                                                                                                              │
+│   Also, we can help you migrate your stories to use the new package.                                                         │
+│                                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'remove-jest-testing-library' migration on your project? » (Y/n)√ Do you want to run the 'remove-jest-testing-library' migration on your project? ... yes
+
+An error occurred while installing dependencies:
+Int.default is not a function
+❌ error when running remove-jest-testing-library migration
+HandledError: TypeError: Int.default is not a function
+    at QJ.addDependencies (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core\dist\common\index.cjs:153206:72)
+    at async Object.run (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:534:296)
+    ... 4 lines matching cause stack trace ...
+    at async upgrade (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:679:2075) {
+  handled: true,
+  cause: TypeError: Int.default is not a function
+      at QJ.runAddDeps (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core\dist\common\index.cjs:153512:20)
+      at async QJ.addDependencies (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core\dist\common\index.cjs:153203:9)
+      at async Object.run (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:534:296)
+      at async runFixes (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:665:1794)
+      at async automigrate (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:663:1620)
+      at async doUpgrade (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:679:1608)
+      at async withTelemetry (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core\dist\core-server\index.cjs:255711:12)
+      at async upgrade (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:679:2075)
+}
+
+
+🔎 found a 'remove-argtypes-regex' migration:
+╭ Manual migration detected ───────────────────────────────────────────────────────────────────╮
+│                                                                                              │
+│   Attention: We've detected that you're using argTypesRegex:                                 │
+│                                                                                              │
+│   .storybook\preview.js                                                                      │
+│     31 |       disable: true                                                                 │
+│     32 |     },                                                                              │
+│   > 33 |     actions: { argTypesRegex: '^on.*' },                                            │
+│        |                ^^^^^^^^^^^^^                                                        │
+│     34 |     docs: {                                                                         │
+│     35 |       theme: themes.light,                                                          │
+│     36 |       story: {                                                                      │
+│                                                                                              │
+│   Storybook's play functions let you render your stories interactively.                      │
+│                                                                                              │
+│   In the past, play functions mocked action args implicitly by analyzing the argTypesRegex   │
+│   in your preview.js|ts file.                                                                │
+│                                                                                              │
+│   However, Storybook 8 changes this behavior, and we now recommend using the                 │
+│   (fn) function to mock your component's methods instead.                                    │
+│                                                                                              │
+│   Use the following command to check for implied mocked actions in your play functions:      │
+│   npx storybook migrate find-implicit-spies --glob="**/*.stories.@(js|jsx|ts|tsx)"           │
+│                                                                                              │
+│   Then, refer to our docs to migrate your play functions to Storybook 8:                     │
+│   https://storybook.js.org/docs/8.0/essentials/actions#via-storybooktest-fn-spy-function     │
+│                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────╯
+
+? Select continue once you have made the required changes, or quit to exit the migration process » quit / continue√ Select continue once you have made the required changes, or quit to exit the migration process ... quit / continue
+
+🔎 found a 'github-flavored-markdown-mdx' migration:
+╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                   │
+│   In MDX1 you had the option of using GitHub flavored markdown.                                                                                   │
+│                                                                                                                                                   │
+│   Storybook >= 8.0 uses MDX3 for compiling MDX, and thus no longer supports GFM out of the box.                                                   │
+│   Because of this you need to explicitly add the GFM plugin in the addon-docs options:                                                            │
+│   https://storybook.js.org/docs/writing-docs/mdx#markdown-tables-arent-rendering-correctly                                                        │
+│                                                                                                                                                   │
+│   We recommend that you follow the guide in the link above; however, we can add a temporary Storybook addon to help make this migration easier.   │
+│   We'll install the addon and add it to your storybook config.                                                                                    │
+│                                                                                                                                                   │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'github-flavored-markdown-mdx' migration on your project? » (Y/n)√ Do you want to run the 'github-flavored-markdown-mdx' migration on your project? ... yes
+
+An error occurred while installing dependencies:
+EPERM: operation not permitted, rename 'C:\Users\okan.sarica\AppData\Local\Temp\6e5829983beff75e8b0780c9390d5d95\storybook.log' -> 'C:\repos\eca-components\storybook.log'
+❌ error when running github-flavored-markdown-mdx migration
+HandledError: Error: EPERM: operation not permitted, rename 'C:\Users\okan.sarica\AppData\Local\Temp\6e5829983beff75e8b0780c9390d5d95\storybook.log' -> 'C:\repos\eca-components\storybook.log'
+    at QJ.addDependencies (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core\dist\common\index.cjs:153206:72)
+    at async Object.run (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:238:231)
+    at async runFixes (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:665:1794)
+    at async automigrate (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:663:1620)
+    at async doUpgrade (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:679:1608)
+    at async withTelemetry (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core\dist\core-server\index.cjs:255711:12)
+    at async upgrade (C:\Users\okan.sarica\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\storybook\dist\generate.cjs:679:2075) {
+  handled: true,
+  cause: [Error: EPERM: operation not permitted, rename 'C:\Users\okan.sarica\AppData\Local\Temp\6e5829983beff75e8b0780c9390d5d95\storybook.log' -> 'C:\repos\eca-components\storybook.log'] {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\okan.sarica\\AppData\\Local\\Temp\\6e5829983beff75e8b0780c9390d5d95\\storybook.log',
+    dest: 'C:\\repos\\eca-components\\storybook.log'
+  }
+}
+
+
+🔎 found a 'react-docgen' migration:
+╭ Automigration detected ─────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                 │
+│   Since Storybook 8.0, react-docgen is now the default for generating component controls, replacing react-docgen-typescript.    │
+│   This offers better performance and suits most cases.                                                                          │
+│   However, for complex TypeScript types or specific type features, the generated controls might not be as precise.              │
+│                                                                                                                                 │
+│   For more on this change, check the migration guide:                                                                           │
+│   https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-docgen-component-analysis-by-default                    │
+│                                                                                                                                 │
+│   For known "react-docgen" limitations, see:                                                                                    │
+│   https://github.com/storybookjs/storybook/issues/26606                                                                         │
+│                                                                                                                                 │
+│   Press Y to revert to react-docgen-typescript, press N to use react-docgen                                                     │
+│                                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'react-docgen' migration on your project? » (Y/n)√ Do you want to run the 'react-docgen' migration on your project? ... yes
+✅ Setting typescript.reactDocgen
+✅ ran react-docgen migration
+
+🔎 found a 'upgradeStorybookRelatedDependencies' migration:
+╭ Automigration detected ────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                        │
+│   You're upgrading to the latest version of Storybook. We recommend upgrading the following packages:                                  │
+│   - @storybook/test-runner: 0.16.0 => 0.19.1                                                                                           │
+│   - storybook-addon-data-theme-switcher: 0.3.0 => 0.4.2                                                                                │
+│   - storybook-design-token: 3.0.0 => 3.1.0                                                                                             │
+│                                                                                                                                        │
+│   After upgrading, we will run the dedupe command, which could possibly have effects on dependencies that are not Storybook related.   │
+│   see: https://docs.npmjs.com/cli/commands/npm-dedupe                                                                                  │
+│                                                                                                                                        │
+│   Do you want to proceed (upgrade the detected packages)?                                                                              │
+│                                                                                                                                        │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'upgradeStorybookRelatedDependencies' migration on your project? » (y/N)√ Do you want to run the 'upgradeStorybookRelatedDependencies' migration on your project? ... yes
+Installing dependencies...
+
+
+We upgraded 3 packages:
+- @storybook/test-runner: 0.16.0 => 0.19.1
+- storybook-addon-data-theme-switcher: 0.3.0 => 0.4.2
+- storybook-design-token: 3.0.0 => 3.1.0
+
+✅ ran upgradeStorybookRelatedDependencies migration
+
+🔎 found a 'visual-tests-addon' migration:
+╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                                                                       │
+│   New to Storybook 8: Storybook's Visual Tests addon helps you catch unintentional changes/bugs in your stories. The addon is powered by Chromatic, a cloud-based testing tool developed by           │
+│   Storybook's core team.                                                                                                                                                                              │
+│                                                                                                                                                                                                       │
+│   Learn more: https://storybook.js.org/docs/writing-tests/visual-testing                                                                                                                              │
+│                                                                                                                                                                                                       │
+│   Install Visual Tests addon in your project?                                                                                                                                                         │
+│                                                                                                                                                                                                       │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'visual-tests-addon' migration on your project? » (Y/n)√ Do you want to run the 'visual-tests-addon' migration on your project? ... yes
+✅ Adding "@chromatic-com/storybook" addon
+✅ ran visual-tests-addon migration
+
+🔎 found a 'autodocs-tags' migration:
+╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                   │
+│   The docs.autodocs setting in .storybook\main.js is deprecated.                                                  │
+│                                                                                                                   │
+│   Learn more: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#mainjs-docsautodocs-is-deprecated   │
+│                                                                                                                   │
+│   Remove docs.autodocs?                                                                                           │
+│                                                                                                                   │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'autodocs-tags' migration on your project? » (Y/n)√ Do you want to run the 'autodocs-tags' migration on your project? ... yes
+✅ Removing "docs.autodocs" from .storybook\main.js
+✅ ran autodocs-tags migration
+
+╭ Migration check ran with failures ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                                                       │
+│   Successful migrations:                                                                                                                                                              │
+│                                                                                                                                                                                       │
+│   react-docgen, upgradeStorybookRelatedDependencies, visual-tests-addon, autodocs-tags                                                                                                │
+│                                                                                                                                                                                       │
+│   Failed migrations:                                                                                                                                                                  │
+│                                                                                                                                                                                       │
+│   remove-jest-testing-library:                                                                                                                                                        │
+│   TypeError: Int.default is not a function                                                                                                                                            │
+│   github-flavored-markdown-mdx:                                                                                                                                                       │
+│   Error: EPERM: operation not permitted, rename 'C:\Users\okan.sarica\AppData\Local\Temp\6e5829983beff75e8b0780c9390d5d95\storybook.log' -> 'C:\repos\eca-components\storybook.log'   │
+│                                                                                                                                                                                       │
+│   You can find the full logs in C:\repos\eca-components\migration-storybook.log                                                                                                       │
+│                                                                                                                                                                                       │
+│   Manual migrations:                                                                                                                                                                  │
+│                                                                                                                                                                                       │
+│   remove-argtypes-regex                                                                                                                                                               │
+│                                                                                                                                                                                       │
+│   ─────────────────────────────────────────────────                                                                                                                                   │
+│                                                                                                                                                                                       │
+│   If you'd like to run the migrations again, you can do so by running 'npx storybook automigrate'                                                                                     │
+│                                                                                                                                                                                       │
+│   The automigrations try to migrate common patterns in your project, but might not contain everything needed to migrate to the latest version of Storybook.                           │
+│                                                                                                                                                                                       │
+│   Please check the changelog and migration guide for manual migrations and more information: https://storybook.js.org/docs/8.0/migration-guide                                        │
+│   And reach out on Discord if you need help: https://discord.gg/storybook                                                                                                             │
+│                                                                                                                                                                                       │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
