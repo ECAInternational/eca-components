@@ -16,15 +16,15 @@ const config = {
     {
       name: 'storybook-design-token',
       options: { designTokenGlob: 'tokens/*' }
-    }
+    },
+    '@storybook/addon-mdx-gfm',
+    '@chromatic-com/storybook'
   ],
   staticDirs: ['./.public'],
   framework: {
     name: '@storybook/react-vite',
     options: {}
   },
-  docs: {
-    autodocs: 'tag'
-  }
+  docs: {}
 };
 export default config;
