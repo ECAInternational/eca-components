@@ -40,7 +40,7 @@ export function Switch(props: SwitchProps) {
       )}
 
       <div className='flex items-center'>
-        <input type='checkbox' id={id || name} name={name} disabled={disabled} checked={checked} {...others} className={`${baseClasses} ${checkedClasses} ${activeClasses} ${checkedActiveClasses} checked:enabled:bg-controls-highlight-palest ${disabledClasses} ${checkedDisabledClasses}`} />
+        <input type='checkbox' id={id || name} name={name} disabled={disabled} checked={checked} {...others} className={`${baseClasses} ${checkedClasses} ${activeClasses} ${checkedActiveClasses} ${disabledClasses} ${checkedDisabledClasses}`} />
       </div>
       {label && alignment === 'right' && (
         <label htmlFor={id} className='ps-2 label-sm-mid'>
