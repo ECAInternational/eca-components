@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.1](https://github.com/ECAInternational/eca-components/compare/v2.5.0...v2.5.1) (2024-08-08)
+
+
+### Bug Fixes
+
+* Add background to stories and docs ([#285](https://github.com/ECAInternational/eca-components/issues/285)) ([7b74787](https://github.com/ECAInternational/eca-components/commit/7b747879a10d00e122ff77af6ae13dab9e4211fc))
+
 ## [2.5.0](https://github.com/ECAInternational/eca-components/compare/v2.4.1...v2.5.0) (2024-08-07)
 
 
