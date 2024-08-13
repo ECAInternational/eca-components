@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.2](https://github.com/ECAInternational/eca-components/compare/v2.5.1...v2.5.2) (2024-08-13)
+
+
+### Bug Fixes
+
+* bump dependencies ([fc65d87](https://github.com/ECAInternational/eca-components/commit/fc65d87e208c0c141760adf1cd0e4238d8148642))
+* bump dependencies to trigger release ([#291](https://github.com/ECAInternational/eca-components/issues/291)) ([fc65d87](https://github.com/ECAInternational/eca-components/commit/fc65d87e208c0c141760adf1cd0e4238d8148642))
+
 ## [2.5.1](https://github.com/ECAInternational/eca-components/compare/v2.5.0...v2.5.1) (2024-08-08)
 
 
