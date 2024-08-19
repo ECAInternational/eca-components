@@ -15,7 +15,7 @@ export function LinkMenuItem({ pathname, details, isNavExpanded, isTopLevel, isC
           {isTopLevel ? <MenuItemTitle details={details} isNavExpanded={isNavExpanded} /> : label}
         </a>
       </div>
-      {isTopLevel && <PopOutContent menuItemDetails={details} isContentVisible={isTopLevel && isContentVisible} shouldShowSubItems isNavExpanded={isNavExpanded} />}
+      {isTopLevel && <PopOutContent pathname={pathname} menuItemDetails={details} isContentVisible={isTopLevel && isContentVisible} shouldShowSubItems isNavExpanded={isNavExpanded} />}
     </>
   );
 }

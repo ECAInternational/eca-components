@@ -1,9 +1,10 @@
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { NavFooter } from './nav-footer';
 
 describe('NavFooter', () => {
   it('should display CollapseIcon and title "Collapse" when isNavExpanded is true', () => {
-    render(<NavFooter isNavExpanded={true} toggleNavExpanded={() => {}} />);
+    render(<NavFooter isNavExpanded toggleNavExpanded={() => {}} />);
 
     expect(screen.getByTitle('Collapse')).toBeVisible();
     expect(screen.getByTestId('collapse-icon')).toBeVisible();
@@ -20,14 +21,14 @@ describe('NavFooter', () => {
 
   it('should call toggleNavExpanded when button is clicked', () => {
     const toggleNavExpanded = vi.fn();
-    render(<NavFooter isNavExpanded={true} toggleNavExpanded={toggleNavExpanded} />);
+    render(<NavFooter isNavExpanded toggleNavExpanded={toggleNavExpanded} />);
     fireEvent.click(screen.getByRole('button'));
 
     expect(toggleNavExpanded).toHaveBeenCalled();
   });
 
   it('should display PlatformIcon when Expanded and text', () => {
-    render(<NavFooter isNavExpanded={true} toggleNavExpanded={() => {}} />);
+    render(<NavFooter isNavExpanded toggleNavExpanded={() => {}} />);
 
     expect(screen.getByTestId('platform-icon')).toBeVisible();
     expect(screen.queryByText('Platform')).toBeVisible();
