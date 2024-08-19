@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { NavFooter } from './nav-footer';
+import { NavFooter } from './NavFooter.tsx';
 
 describe('NavFooter', () => {
   it('should display CollapseIcon and title "Collapse" when isNavExpanded is true', () => {
