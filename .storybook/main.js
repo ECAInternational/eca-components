@@ -1,5 +1,3 @@
-import { themes } from '@storybook/theming';
-
 const config = {
   stories: ['../src/Intro.mdx', '../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
 
@@ -27,7 +25,7 @@ const config = {
   docs: {},
 
   typescript: {
-    reactDocgen: 'react-docgen-typescript'
+    reactDocgen: false
   }
 };
 export default config;
