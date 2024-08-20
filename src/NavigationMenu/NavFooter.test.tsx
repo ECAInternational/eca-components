@@ -1,5 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { NavFooter } from './NavFooter.tsx';
 
 describe('NavFooter', () => {

@@ -1,5 +1,8 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
+import { describe, expect, it } from 'vitest';
 import { LinkMenuItem } from './LinkMenuItem.tsx';
 
 describe('LinkMenuItem', () => {
@@ -12,14 +15,11 @@ describe('LinkMenuItem', () => {
         icon: 'link-icon',
         enabled: true
       },
+      pathname: '/my-link',
       isNavExpanded: true
     };
 
-    render(
-      <MemoryRouter initialEntries={['/my-link']}>
-        <LinkMenuItem {...props} />
-      </MemoryRouter>
-    );
+    render(<LinkMenuItem {...props} />);
     expect(screen.getByRole('link', { name: 'My Link' })).toHaveClass('bg-controls-element-tonal');
   });
 
@@ -32,12 +32,13 @@ describe('LinkMenuItem', () => {
         icon: 'link-icon',
         enabled: true
       },
+      pathname: '/my-link',
       isNavExpanded: true,
       isTopLevel: true,
       isContentVisible: true
     };
 
-    render(<LinkMenuItem {...props} />, { wrapper: MemoryRouter });
+    render(<LinkMenuItem {...props} />);
 
     expect(screen.getByRole('link', { name: 'My Link' })).toBeInTheDocument();
     expect(screen.getByTestId('link-icon')).toBeInTheDocument();
@@ -53,10 +54,11 @@ describe('LinkMenuItem', () => {
         label: 'My Link',
         enabled: true
       },
+      pathname: '/my-link',
       isNavExpanded: true,
       isTopLevel: false
     };
-    render(<LinkMenuItem {...props} />, { wrapper: MemoryRouter });
+    render(<LinkMenuItem {...props} />);
 
     expect(screen.getByRole('link', { name: 'My Link' })).toBeInTheDocument();
     expect(screen.getByTestId('menu-branch')).toBeInTheDocument();
