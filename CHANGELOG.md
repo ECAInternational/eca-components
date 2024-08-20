@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/ECAInternational/eca-components/compare/v2.5.2...v2.6.0) (2024-08-20)
+
+
+### Features
+
+* Add rounded chip variant ([#299](https://github.com/ECAInternational/eca-components/issues/299)) ([a2607df](https://github.com/ECAInternational/eca-components/commit/a2607dff431aee7eb2807333c8b477b14b55c28f))
+
 ## [2.5.2](https://github.com/ECAInternational/eca-components/compare/v2.5.1...v2.5.2) (2024-08-13)
 
 
