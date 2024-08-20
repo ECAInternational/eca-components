@@ -9,10 +9,14 @@ export interface TooltipProps {
   position?: 'top' | 'right' | 'bottom' | 'left';
   delay?: number;
   children: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  disableHoverListener?: boolean;
+  disableFocusListener?: boolean;
 }
 
 export function Tooltip(props: TooltipProps) {
-  const { content, icon = '', state = 'info', size = 'small', position = 'bottom', delay = 0, children } = props;
+  const { content, icon = '', state = 'info', size = 'small', position = 'bottom', delay = 0, children, className, style, disableHoverListener, disableFocusListener } = props;
 
   const [visible, setVisible] = useState<boolean>(false);
   const [transform, setTransform] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -30,7 +34,7 @@ export function Tooltip(props: TooltipProps) {
   const handleMouseLeave = () => {
     setIsMouseOver(false);
     const hostElement = hostRef.current;
-    if (hostElement && hostElement.matches(':focus-within') && document.activeElement?.matches(':focus-visible')) return;
+    if (hostElement?.matches(':focus-within') || document.activeElement?.matches(':focus-visible')) return;
     hideTooltip();
   };
 
@@ -111,7 +115,7 @@ export function Tooltip(props: TooltipProps) {
     y = Math.round(y);
 
     setTransform({ x, y });
-  }, [visible]);
+  }, [visible, content]);
 
   useLayoutEffect(() => {
     setTooltipID(`tooltip-${Math.random().toString(36).substring(2, 15)}`);
@@ -153,7 +157,7 @@ export function Tooltip(props: TooltipProps) {
 
   return (
     <>
-      <span className='inline-block' ref={hostRef} aria-describedby={visible ? tooltipID : undefined} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onFocus={handleFocus} onBlur={handleBlur}>
+      <span className={`inline-block ${className}`} style={style} ref={hostRef} aria-describedby={visible ? tooltipID : undefined} onMouseEnter={disableHoverListener ? undefined : handleMouseEnter} onMouseLeave={disableHoverListener ? undefined : handleMouseLeave} onFocus={disableFocusListener ? undefined : handleFocus} onBlur={disableFocusListener ? undefined : handleBlur}>
         {children}
       </span>
       {visible && ReactDOM.createPortal(tooltip, document.body)}
