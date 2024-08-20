@@ -1,7 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import '@testing-library/jest-dom/vitest';
 import { describe, expect, it } from 'vitest';
 import { LinkMenuItem } from './LinkMenuItem.tsx';
 
