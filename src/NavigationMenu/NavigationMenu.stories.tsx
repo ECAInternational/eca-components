@@ -7,7 +7,7 @@ export default {
   args: {}
 };
 
-export const Default = {
+export const DefaultMenuConfig = {
   args: {
     pathname: '/scenarios',
     menuItems: [
