@@ -1,37 +1,52 @@
-import { Ranger, useRanger } from '@tanstack/react-ranger';
-import React, { InputHTMLAttributes, useLayoutEffect } from 'react';
+import { Ranger, RangerOptions, useRanger } from '@tanstack/react-ranger';
+import React, { HTMLAttributes } from 'react';
 import { Tooltip } from '../Tooltip/Tooltip';
 
-export interface SliderProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface SliderProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
   id?: string;
+  disabled?: boolean;
+  min: number;
+  max: number;
+  marks: { value: number; label: string }[];
+  value: number;
+  variant?: 'discrete';
+  onChange?: any;
 }
 
 export function Slider(props: SliderProps) {
-  const { name, id, className, ...others } = props;
+  const { name, id, className, disabled, min, max, marks = [], onChange, value, variant = 'discrete', ...others } = props;
 
   const rangerRef = React.useRef<HTMLDivElement>(null);
   const handleRef = React.useRef<HTMLButtonElement>(null);
-  const [values, setValues] = React.useState<ReadonlyArray<number>>([0]);
-
-  useLayoutEffect(() => {}, [values]);
-
-  const rangerInstance = useRanger<HTMLDivElement>({
+  const [values, setValues] = React.useState<ReadonlyArray<number>>([value]);
+  const rangerOptions: RangerOptions<HTMLDivElement> = {
     getRangerElement: () => rangerRef.current,
     values,
-    min: 0,
-    max: 100,
-    steps: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-    onChange: (instance: Ranger<HTMLDivElement>) => setValues(instance.sortedValues)
-  });
+    min,
+    max,
+    steps: marks.map((mark) => mark.value),
+    onChange: (instance: Ranger<HTMLDivElement>) => handleOnChange(instance.sortedValues[0]),
+    onDrag: (instance: Ranger<HTMLDivElement>) => handleOnChange(instance.sortedValues[0])
+  };
+  const rangerInstance = useRanger<HTMLDivElement>(rangerOptions);
 
-  const { value, onKeyDownHandler, onMouseDownHandler, onTouchStart, isActive } = rangerInstance.handles()[0];
+  const { onKeyDownHandler, onMouseDownHandler, onTouchStart } = rangerInstance.handles()[0];
+  const mark = marks.find((mark) => mark.value === value);
 
   const handleSliderClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const value = rangerInstance.getValueForClientX(e.clientX);
-    const step = rangerInstance.roundToStep(value);
+    if (disabled) return;
+    const newValue = rangerInstance.getValueForClientX(e.clientX);
+    const step = rangerInstance.roundToStep(newValue);
     handleRef.current?.focus();
-    setValues([step]);
+    handleOnChange(step);
+  };
+
+  const handleOnChange = (newValue: number) => {
+    setValues([newValue]);
+    if (onChange) {
+      onChange(newValue);
+    }
   };
 
   const handleOnKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -39,20 +54,20 @@ export function Slider(props: SliderProps) {
       case 'ArrowUp':
         e.preventDefault();
         const nextValue = rangerInstance.getNextStep(value, 1);
-        setValues([nextValue]);
+        handleOnChange(nextValue);
         break;
       case 'ArrowDown':
         e.preventDefault();
         const prevValue = rangerInstance.getNextStep(value, -1);
-        setValues([prevValue]);
+        handleOnChange(prevValue);
         break;
       case 'Home':
         e.preventDefault();
-        setValues([rangerInstance.options.min]);
+        handleOnChange(rangerInstance.options.min);
         break;
       case 'End':
         e.preventDefault();
-        setValues([rangerInstance.options.max]);
+        handleOnChange(rangerInstance.options.max);
         break;
       default:
         onKeyDownHandler(e);
@@ -61,10 +76,10 @@ export function Slider(props: SliderProps) {
 
   return (
     <div className='relative'>
-      <div ref={rangerRef} role='slider' aria-valuemin={rangerInstance.options.min} aria-valuemax={rangerInstance.options.max} aria-valuenow={value} onClick={(e) => handleSliderClick(e)} className='relative h-2 cursor-pointer rounded-full bg-neutral-detail-palest' {...others}>
-        <div className={`absolute h-full rounded-full bg-controls-highlight ${isActive ? '' : 'transitions-[width]'}`} style={{ width: `${rangerInstance.getPercentageForValue(value)}%` }}></div>
+      <div id={id || name} ref={rangerRef} role='slider' aria-disabled={disabled} aria-valuemin={rangerInstance.options.min} aria-valuemax={rangerInstance.options.max} aria-valuenow={value} onClick={(e) => handleSliderClick(e)} className={`relative h-2 ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} rounded-full bg-neutral-detail-palest`} {...others}>
+        <div className={`absolute h-full rounded-full ${disabled ? 'cursor-not-allowed bg-controls-content-disabled' : 'bg-controls-highlight'}`} style={{ width: `${rangerInstance.getPercentageForValue(value)}%` }}></div>
         <Tooltip
-          content={value.toString()}
+          content={mark?.label || value.toString()}
           position='top'
           className='absolute'
           disableHoverListener={true}
@@ -73,18 +88,18 @@ export function Slider(props: SliderProps) {
             top: '-100%'
           }}
         >
-          <button ref={handleRef} onKeyDown={handleOnKeyDown} onMouseDown={onMouseDownHandler} onTouchStart={onTouchStart} className='group absolute top-1/2 -translate-x-1/2 -translate-y-2 p-2 outline-none'>
-            <div className={`flex size-6 items-center justify-center rounded-full border border-controls-border bg-neutral-layer-2 group-hover:border-2 group-hover:border-neutral-detail-pale group-focus:border-2 group-focus:border-controls-highlight`}>
-              <div className='size-3 rounded-full group-hover:bg-neutral-detail-pale group-focus:bg-controls-highlight'></div>
-            </div>
+          <button ref={handleRef} disabled={disabled} onKeyDown={handleOnKeyDown} onMouseDown={onMouseDownHandler} onTouchStart={onTouchStart} className={`group absolute top-1/2 -translate-x-1/2 -translate-y-2 p-2 outline-none ${disabled ? 'pointer-events-none cursor-not-allowed' : ''}`}>
+            <div className={`flex size-6 items-center justify-center rounded-full border ${disabled ? 'border-controls-border-disabled bg-neutral-detail-palest' : 'border-controls-border bg-neutral-layer-2'} group-hover:border-2 group-hover:border-neutral-detail-pale group-focus:border-2 group-focus:border-controls-highlight`}>{disabled ? null : <div className='size-3 rounded-full group-hover:bg-neutral-detail-pale group-focus:bg-controls-highlight'></div>}</div>
           </button>
         </Tooltip>
       </div>
-      <div className='pt-2'>
-        {rangerInstance.getTicks().map(({ key, percentage }) => (
-          <span key={key} className='absolute h-2 w-0 -translate-x-px border border-neutral-detail-pale' style={{ left: `${percentage}%` }}></span>
-        ))}
-      </div>
+      {variant === 'discrete' ? (
+        <div className='pt-2'>
+          {rangerInstance.getTicks().map(({ key, percentage }) => (
+            <span key={key} className={`absolute h-2 w-0 -translate-x-px border ${disabled ? 'border-neutral-detail-paler' : 'border-neutral-detail-pale'}`} style={{ left: `${percentage}%` }}></span>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
