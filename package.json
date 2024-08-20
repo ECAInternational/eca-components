@@ -39,7 +39,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@chromatic-com/storybook": "^1.6.1",
-    "@ecainternational/eca-design-tokens": "^1.0.32",
+    "@ecainternational/eca-design-tokens": "^1.1.0",
     "@headlessui/react": "^1.7.19",
     "@headlessui/tailwindcss": "^0.2.0",
     "@playwright/test": "^1.41.2",
@@ -60,7 +60,7 @@
     "@storybook/react-vite": "^8.2.8",
     "@storybook/test-runner": "^0.19.1",
     "@storybook/theming": "^8.2.8",
-    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
     "@types/react-dom": "^18.2.22",
     "@types/rollup-plugin-peer-deps-external": "^2.2.5",
@@ -108,7 +108,7 @@
     "tailwindcss": "^3.4.9",
     "tw-colors": "^3.3.1",
     "vite": "^5.4.0",
-    "vitest": "^1.4.0",
+    "vitest": "^1.6.0",
     "zx": "^7.2.3"
   },
   "peerDependencies": {
