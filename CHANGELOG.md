@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.0](https://github.com/ECAInternational/eca-components/compare/v2.6.0...v2.7.0) (2024-08-21)
+
+
+### Features
+
+* Add size prop to Chip component ([#304](https://github.com/ECAInternational/eca-components/issues/304)) ([4eaac03](https://github.com/ECAInternational/eca-components/commit/4eaac03efff5e913e47b5bd2ef1a1006d0d6c94d))
+
 ## [2.6.0](https://github.com/ECAInternational/eca-components/compare/v2.5.2...v2.6.0) (2024-08-20)
 
 
