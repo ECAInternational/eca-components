@@ -187,3 +187,10 @@ export const DeletableClick = {
     });
   }
 };
+
+export const Rounded = {
+  args: {
+    label: 'Rounded',
+    className: 'rounded-full'
+  }
+};
