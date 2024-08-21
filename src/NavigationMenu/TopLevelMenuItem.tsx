@@ -3,7 +3,7 @@ import type { MenuItemDetails } from './types';
 import { LinkMenuItem } from './LinkMenuItem.tsx';
 import { ExpandableMenuItem } from './ExpandableMenuItem.tsx';
 
-export function TopLevelMenuItem({ pathname, menuItemDetails, isListExpanded, collapseSubItemsExcept, isNavExpanded }: { pathname: string; menuItemDetails: MenuItemDetails; isListExpanded: boolean; collapseSubItemsExcept: (expandedMenuItemId: string) => void; isNavExpanded: boolean }) {
+export function TopLevelMenuItem({ url, menuItemDetails, isListExpanded, collapseSubItemsExcept, isNavExpanded }: { url: string; menuItemDetails: MenuItemDetails; isListExpanded: boolean; collapseSubItemsExcept: (expandedMenuItemId: string) => void; isNavExpanded: boolean }) {
   const [isHovering, setIsHovering] = useState(false);
   const { id, subItems } = menuItemDetails;
 
@@ -25,7 +25,7 @@ export function TopLevelMenuItem({ pathname, menuItemDetails, isListExpanded, co
 
   return (
     <li className='flex flex-col justify-between' onFocus={handleMouseOver} onMouseOver={handleMouseOver} onBlur={handleMouseOut} onMouseOut={handleMouseOut}>
-      {subItems ? <ExpandableMenuItem pathname={pathname} details={menuItemDetails} isNavExpanded={isNavExpanded} onClick={onToggleMenuItem} isListExpanded={isListExpanded} isContentVisible={isContentVisible} onNavigate={onNavigate} /> : <LinkMenuItem pathname={pathname} onNavigate={onNavigate} details={menuItemDetails} isNavExpanded={isNavExpanded} isTopLevel isContentVisible={isContentVisible} />}
+      {subItems ? <ExpandableMenuItem url={url} details={menuItemDetails} isNavExpanded={isNavExpanded} onClick={onToggleMenuItem} isListExpanded={isListExpanded} isContentVisible={isContentVisible} onNavigate={onNavigate} /> : <LinkMenuItem url={url} onNavigate={onNavigate} details={menuItemDetails} isNavExpanded={isNavExpanded} isTopLevel isContentVisible={isContentVisible} />}
     </li>
   );
 }

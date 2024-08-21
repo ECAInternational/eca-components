@@ -3,9 +3,9 @@ import type { MenuItemDetails } from './types';
 import { MenuItemTitle } from './MenuItemTitle.tsx';
 import { PopOutContent } from './PopOutContent.tsx';
 
-export function LinkMenuItem({ pathname, details, isNavExpanded, isTopLevel, isContentVisible, onNavigate }: { pathname: string; details: MenuItemDetails; isNavExpanded: boolean; isTopLevel?: boolean; isContentVisible?: boolean; onNavigate?: () => void }) {
+export function LinkMenuItem({ url, details, isNavExpanded, isTopLevel, isContentVisible, onNavigate }: { url: string; details: MenuItemDetails; isNavExpanded: boolean; isTopLevel?: boolean; isContentVisible?: boolean; onNavigate?: () => void }) {
   const { link = '', label, enabled } = details;
-  const isSelected = pathname === link;
+  const isSelected = url === link;
 
   return (
     <>
@@ -15,7 +15,7 @@ export function LinkMenuItem({ pathname, details, isNavExpanded, isTopLevel, isC
           {isTopLevel ? <MenuItemTitle details={details} isNavExpanded={isNavExpanded} /> : label}
         </a>
       </div>
-      {isTopLevel && <PopOutContent pathname={pathname} menuItemDetails={details} isContentVisible={isTopLevel && isContentVisible} shouldShowSubItems isNavExpanded={isNavExpanded} />}
+      {isTopLevel && <PopOutContent url={url} menuItemDetails={details} isContentVisible={isTopLevel && isContentVisible} shouldShowSubItems isNavExpanded={isNavExpanded} />}
     </>
   );
 }
