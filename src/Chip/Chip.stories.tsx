@@ -17,9 +17,14 @@ export default {
       control: 'none'
     },
     variant: {
-      table: {
-        defaultValue: { summary: 'neutral' }
-      }
+      defaultValue: { summary: 'neutral' },
+      control: 'select',
+      options: ['yellow', 'green', 'blue', 'purple', 'pink', 'orange', 'red', 'monochrome', 'neutral']
+    },
+    size: {
+      defaultValue: { summary: 'medium' },
+      control: 'select',
+      options: ['xsmall', 'small', 'medium']
     },
     className: {
       table: { disable: true }
@@ -192,5 +197,50 @@ export const Rounded = {
   args: {
     label: 'Rounded',
     className: 'rounded-full'
+  }
+};
+
+export const XSmall = {
+  args: {
+    label: 'XSmall',
+    size: 'xsmall'
+  }
+};
+
+export const XSmallDeletable = {
+  args: {
+    label: 'XSmall',
+    size: 'xsmall',
+    onDelete: () => {}
+  }
+};
+
+export const Small = {
+  args: {
+    label: 'Small',
+    size: 'small'
+  }
+};
+
+export const SmallDeletable = {
+  args: {
+    label: 'Small',
+    size: 'small',
+    onDelete: () => {}
+  }
+};
+
+export const Medium = {
+  args: {
+    label: 'Medium',
+    size: 'medium'
+  }
+};
+
+export const MediumDeletable = {
+  args: {
+    label: 'Medium',
+    size: 'medium',
+    onDelete: () => {}
   }
 };
