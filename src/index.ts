@@ -23,6 +23,8 @@ import { Label, FieldSet } from './Form/index.ts';
 import { Select, SelectButton, SelectOption, SelectOptions, SelectOptionGroup } from './Select/index.ts';
 import { Alert } from './Alert/Alert.tsx';
 import { ActionableAlert } from './ActionableAlert/ActionableAlert.tsx';
+import { AccountMenu } from './AccountMenu/AccountMenu.tsx';
+import { Slider } from './Slider/Slider.tsx';
 
 export { Card, CardBody, CardFooter, CardHeader };
 export { Button };
