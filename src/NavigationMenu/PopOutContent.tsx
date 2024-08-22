@@ -9,10 +9,10 @@ type Props = {
   shouldShowSubItems?: boolean;
   isContentVisible?: boolean;
   onNavigate?: () => void;
-  pathname: string;
+  url: string;
 };
 
-export const PopOutContent = memo(({ pathname, onNavigate, menuItemDetails, isNavExpanded, shouldShowSubItems, isContentVisible }: Props) => {
+export const PopOutContent = memo(({ url, onNavigate, menuItemDetails, isNavExpanded, shouldShowSubItems, isContentVisible }: Props) => {
   const { label, subItems } = menuItemDetails;
   const popOverClasses = 'absolute left-10 bg-neutral-layer-1 shadow-md rounded-md z-10 border border-neutral-detail-palest p-3';
 
@@ -22,7 +22,7 @@ export const PopOutContent = memo(({ pathname, onNavigate, menuItemDetails, isNa
       {subItems?.length && shouldShowSubItems && (
         <ol className='pl-5'>
           {subItems.map((subItemDetails: MenuItemDetails) => (
-            <LinkMenuItem pathname={pathname} onNavigate={onNavigate} details={subItemDetails} isNavExpanded={isNavExpanded} key={subItemDetails.id} />
+            <LinkMenuItem url={url} onNavigate={onNavigate} details={subItemDetails} isNavExpanded={isNavExpanded} key={subItemDetails.id} />
           ))}
         </ol>
       )}
