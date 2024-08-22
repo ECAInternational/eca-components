@@ -9,7 +9,7 @@ export default {
 
 export const DefaultMenuConfig = {
   args: {
-    pathname: '/scenarios',
+    url: '/scenarios',
     menuItems: [
       {
         id: 'dashboard',
