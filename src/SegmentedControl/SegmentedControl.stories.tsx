@@ -42,13 +42,25 @@ export const Default = {
     label: 'Label'
   },
   render: (args: SegmentedControlProps) => (
-    <div className='w-72'>
-      <SegmentedControl {...args}>
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-      </SegmentedControl>
-    </div>
+    <SegmentedControl {...args}>
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+    </SegmentedControl>
+  )
+};
+
+export const Width = {
+  args: {
+    name: 'width',
+    label: 'Label'
+  },
+  render: (args: SegmentedControlProps) => (
+    <SegmentedControl {...args} className='w-72'>
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+    </SegmentedControl>
   )
 };
 
@@ -58,13 +70,11 @@ export const OneDisabled = {
     label: 'One disabled option'
   },
   render: (args: SegmentedControlProps) => (
-    <div className='w-72'>
-      <SegmentedControl {...args}>
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' disabled />
-      </SegmentedControl>
-    </div>
+    <SegmentedControl {...args}>
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' disabled />
+    </SegmentedControl>
   )
 };
 
@@ -74,14 +84,12 @@ export const AllDisabled = {
     label: 'All disabled'
   },
   render: (args: SegmentedControlProps) => (
-    <div className='w-96'>
-      <SegmentedControl {...args} disabled>
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-      </SegmentedControl>
-    </div>
+    <SegmentedControl {...args} disabled>
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+    </SegmentedControl>
   )
 };
 
@@ -92,12 +100,10 @@ export const Small = {
     size: 'small'
   },
   render: (args: SegmentedControlProps) => (
-    <div className='w-32'>
-      <SegmentedControl {...args}>
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-      </SegmentedControl>
-    </div>
+    <SegmentedControl {...args}>
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+    </SegmentedControl>
   )
 };
 
@@ -107,13 +113,11 @@ export const Medium = {
     label: 'Medium (default)'
   },
   render: (args: SegmentedControlProps) => (
-    <div className='w-72'>
-      <SegmentedControl {...args}>
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-      </SegmentedControl>
-    </div>
+    <SegmentedControl {...args}>
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+    </SegmentedControl>
   )
 };
 
@@ -122,13 +126,11 @@ export const NoLabel = {
     name: 'no-label'
   },
   render: (args: SegmentedControlProps) => (
-    <div className='w-72'>
-      <SegmentedControl {...args}>
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-      </SegmentedControl>
-    </div>
+    <SegmentedControl {...args}>
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+    </SegmentedControl>
   )
 };
 
@@ -139,13 +141,11 @@ export const Description = {
     description: '(required)'
   },
   render: (args: SegmentedControlProps) => (
-    <div className='w-72'>
-      <SegmentedControl {...args}>
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-        <input type='radio' aria-label='Option' />
-      </SegmentedControl>
-    </div>
+    <SegmentedControl {...args}>
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+      <input type='radio' aria-label='Option' />
+    </SegmentedControl>
   )
 };
 
