@@ -9,7 +9,7 @@ export default {
   argTypes: {
     state: {
       control: 'select',
-      description: 'Defines the state of the button',
+      description: 'Defines the state of the input',
       options: ['default', 'warning', 'error']
     },
     variant: {
@@ -24,9 +24,6 @@ export default {
     id: {
       table: { disable: true }
     },
-    type: {
-      table: { disable: true }
-    },
     className: {
       table: { disable: true }
     }
@@ -34,13 +31,14 @@ export default {
   args: {
     disabled: false,
     state: 'default',
-    variant: 'outline'
+    variant: 'outline',
+    type: 'text'
   }
 };
 
 export const Default = {
   args: {
-    name: 'default-button',
+    name: 'default-input',
     state: 'default',
     placeholder: 'Placeholder text',
     label: 'Label'
@@ -49,7 +47,7 @@ export const Default = {
 
 export const Enabled = {
   args: {
-    name: 'enabled-button',
+    name: 'enabled-input',
     state: 'default',
     placeholder: 'Placeholder text',
     label: 'Enabled'
@@ -58,7 +56,7 @@ export const Enabled = {
 
 export const Disabled = {
   args: {
-    name: 'disabled-button',
+    name: 'disabled-input',
     disabled: true,
     state: 'default',
     placeholder: 'Placeholder text',
@@ -68,7 +66,7 @@ export const Disabled = {
 
 export const Warning = {
   args: {
-    name: 'warning-button',
+    name: 'warning-input',
     state: 'warning',
     placeholder: 'Placeholder text',
     label: 'Warning'
@@ -77,7 +75,7 @@ export const Warning = {
 
 export const Error = {
   args: {
-    name: 'error-button',
+    name: 'error-input',
     state: 'error',
     placeholder: 'Placeholder text',
     label: 'Error'
@@ -86,7 +84,7 @@ export const Error = {
 
 export const NoLabel = {
   args: {
-    name: 'no-label-button',
+    name: 'no-label-input',
     state: 'default',
     placeholder: 'Placeholder text'
   }
@@ -94,7 +92,7 @@ export const NoLabel = {
 
 export const Description = {
   args: {
-    name: 'description-button',
+    name: 'description-input',
     state: 'default',
     label: 'Label',
     description: '(required)',
@@ -104,7 +102,7 @@ export const Description = {
 
 export const Icon = {
   args: {
-    name: 'icon-button',
+    name: 'icon-input',
     state: 'default',
     label: 'Icon',
     placeholder: 'Placeholder text',
@@ -114,7 +112,7 @@ export const Icon = {
 
 export const Prefix = {
   args: {
-    name: 'prefix-button',
+    name: 'prefix-input',
     state: 'default',
     label: 'Prefix',
     placeholder: 'Placeholder text',
@@ -124,10 +122,20 @@ export const Prefix = {
 
 export const Suffix = {
   args: {
-    name: 'suffix-button',
+    name: 'suffix-input',
     state: 'default',
     label: 'Suffix',
     placeholder: 'Placeholder text',
     suffix: 'GBP'
+  }
+};
+
+export const Password = {
+  args: {
+    name: 'password-input',
+    state: 'default',
+    label: 'Password',
+    placeholder: 'Enter your password',
+    type: 'password'
   }
 };
