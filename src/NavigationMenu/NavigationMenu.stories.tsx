@@ -8,6 +8,13 @@ export default {
 };
 
 export const DefaultMenuConfig = {
+  argTypes: {
+    url: {
+      control: 'select',
+      description: 'Defines the current application url path',
+      options: ['/scenarios', '/dashboard', 'https://localhost:123/scenarios', 'https://localhost:123/dashboard']
+    }
+  },
   args: {
     url: '/scenarios',
     menuItems: [
@@ -34,7 +41,7 @@ export const DefaultMenuConfig = {
           {
             id: 'cases',
             label: 'Cases',
-            link: '/cases',
+            link: 'http://localhost:123/cases',
             enabled: false
           },
           {

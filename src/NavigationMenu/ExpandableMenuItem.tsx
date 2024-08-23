@@ -2,10 +2,12 @@ import React from 'react';
 import { MenuItemTitle } from './MenuItemTitle.tsx';
 import type { MenuItemDetails } from './types';
 import { PopOutContent } from './PopOutContent.tsx';
+import isLinkCurrentLocation from './isLinkCurrentLocation.ts';
 
 export function ExpandableMenuItem({ url, details, onClick, isListExpanded, isNavExpanded, isContentVisible, onNavigate }: { url: string; details: MenuItemDetails; onClick: () => void; isListExpanded: boolean; isNavExpanded: boolean; isContentVisible: boolean; onNavigate: () => void }) {
   const { label, subItems } = details;
-  const isSelected = url && subItems?.find((subItem) => subItem.link === url);
+
+  const isSelected = url && subItems?.find((subItem) => isLinkCurrentLocation(subItem.link, url));
   const hasPersistentPopout = isListExpanded && !isNavExpanded;
   const shouldShowSubItems = isNavExpanded || hasPersistentPopout;
 
