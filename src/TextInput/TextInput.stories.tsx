@@ -1,5 +1,5 @@
-import { TextInput, TextInputProps } from './TextInput.tsx';
 import React from 'react';
+import { TextInput, TextInputProps } from './TextInput.tsx';
 import { FieldSet } from '../Form/FieldSet.tsx';
 import { Label } from '../Form/Label.tsx';
 
@@ -86,14 +86,12 @@ export const WithLabel = {
     state: 'default',
     placeholder: 'Placeholder text'
   },
-  render: (args: TextInputProps) => {
-    return (
-      <FieldSet>
-        <Label htmlFor={args.name}>Label</Label>
-        <TextInput {...args} />
-      </FieldSet>
-    );
-  }
+  render: (args: TextInputProps) => (
+    <FieldSet>
+      <Label htmlFor={args.name}>Label</Label>
+      <TextInput {...args} />
+    </FieldSet>
+  )
 };
 
 export const WithDescription = {
@@ -102,16 +100,14 @@ export const WithDescription = {
     state: 'default',
     placeholder: 'Placeholder text'
   },
-  render: (args: TextInputProps) => {
-    return (
-      <FieldSet>
-        <Label htmlFor={args.name}>
-          Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
-        </Label>
-        <TextInput {...args} />
-      </FieldSet>
-    );
-  }
+  render: (args: TextInputProps) => (
+    <FieldSet>
+      <Label htmlFor={args.name}>
+        Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <TextInput {...args} />
+    </FieldSet>
+  )
 };
 
 export const Icon = {

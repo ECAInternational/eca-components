@@ -120,14 +120,12 @@ export const WithLabel = {
     state: 'default',
     placeholder: 'Placeholder text'
   },
-  render: (args: TextAreaProps) => {
-    return (
-      <FieldSet>
-        <Label htmlFor={args.name}>Label</Label>
-        <TextArea {...args} />
-      </FieldSet>
-    );
-  }
+  render: (args: TextAreaProps) => (
+    <FieldSet>
+      <Label htmlFor={args.name}>Label</Label>
+      <TextArea {...args} />
+    </FieldSet>
+  )
 };
 
 export const WithDescription = {
@@ -136,16 +134,14 @@ export const WithDescription = {
     state: 'default',
     placeholder: 'Placeholder text'
   },
-  render: (args: TextAreaProps) => {
-    return (
-      <FieldSet>
-        <Label htmlFor={args.name}>
-          Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
-        </Label>
-        <TextArea {...args} />
-      </FieldSet>
-    );
-  }
+  render: (args: TextAreaProps) => (
+    <FieldSet>
+      <Label htmlFor={args.name}>
+        Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <TextArea {...args} />
+    </FieldSet>
+  )
 };
 
 export const MaxLengthValid = {
