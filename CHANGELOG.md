@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.8.0](https://github.com/ECAInternational/eca-components/compare/v2.7.0...v2.8.0) (2024-08-23)
+
+
+### Features
+
+* Add view/obscure password button ([#303](https://github.com/ECAInternational/eca-components/issues/303)) ([1fa869f](https://github.com/ECAInternational/eca-components/commit/1fa869fcfae34fe98c41faf7c550dc0d78c01cc8))
+* Allow className to passed to SegmentedControl ([#309](https://github.com/ECAInternational/eca-components/issues/309)) ([dcc7255](https://github.com/ECAInternational/eca-components/commit/dcc7255d86522ee3c04a7b9f0b220e40bc5fd212))
+
+
+### Bug Fixes
+
+* Stop buttons translating when clicked in disabled state ([#308](https://github.com/ECAInternational/eca-components/issues/308)) ([f8b74c9](https://github.com/ECAInternational/eca-components/commit/f8b74c966c5b88af77bdc936cf4b462c2a0ef049))
+
 ## [2.7.0](https://github.com/ECAInternational/eca-components/compare/v2.6.0...v2.7.0) (2024-08-21)
 
 
