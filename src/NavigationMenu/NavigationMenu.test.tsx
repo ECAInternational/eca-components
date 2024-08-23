@@ -4,6 +4,7 @@ import { act } from 'react-dom/test-utils';
 import { userEvent } from '@testing-library/user-event';
 
 import { NavigationMenu } from './NavigationMenu';
+import { MenuProvider } from './MenuContext';
 import type { MenuItemDetails } from './types';
 
 describe('NavigationMenu', () => {
@@ -14,8 +15,12 @@ describe('NavigationMenu', () => {
 
   const mockUrl = 'http://example.com/test';
 
+  const renderWithProvider = (ui: React.ReactElement) => {
+    render(<MenuProvider>{ui}</MenuProvider>);
+  };
+
   it('renders NavHeader, NavFooter, and the menu items', () => {
-    render(<NavigationMenu menuItems={menuItems} url={mockUrl} />);
+    renderWithProvider(<NavigationMenu menuItems={menuItems} url={mockUrl} />);
 
     expect(screen.getByRole('heading', { name: 'Your Company' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Collapse' })).toBeInTheDocument();
@@ -26,7 +31,7 @@ describe('NavigationMenu', () => {
 
   it('handles navigation expansion and collapse', async () => {
     const user = userEvent.setup({});
-    render(<NavigationMenu menuItems={menuItems} url={mockUrl} />);
+    renderWithProvider(<NavigationMenu menuItems={menuItems} url={mockUrl} />);
 
     await act(async () => {
       await user.click(screen.getByRole('button', { name: /Collapse/i }));
@@ -41,7 +46,7 @@ describe('NavigationMenu', () => {
 
   it('collapses other menu items when one is expanded', async () => {
     const user = userEvent.setup({});
-    render(<NavigationMenu menuItems={menuItems} url={mockUrl} />);
+    renderWithProvider(<NavigationMenu menuItems={menuItems} url={mockUrl} />);
 
     await act(async () => {
       await user.click(screen.getByRole('button', { name: /Item 1/i }));
@@ -59,7 +64,7 @@ describe('NavigationMenu', () => {
 
   it('highlights correct options for relative links', async () => {
     const user = userEvent.setup({});
-    render(<NavigationMenu menuItems={menuItems} url={'https://localhost/1.1'} />);
+    renderWithProvider(<NavigationMenu menuItems={menuItems} url={'https://localhost/1.1'} />);
 
     expect(await screen.findByRole('button', { name: /Item 1/i })).toHaveClass('bg-controls-element-tonal');
 
@@ -72,7 +77,7 @@ describe('NavigationMenu', () => {
 
   it('highlights correct options for absolute links', async () => {
     const user = userEvent.setup({});
-    render(<NavigationMenu menuItems={menuItems} url={'https://localhost/2.1'} />);
+    renderWithProvider(<NavigationMenu menuItems={menuItems} url='https://localhost/2.1' />);
 
     expect(await screen.findByRole('button', { name: /Item 2/i })).toHaveClass('bg-controls-element-tonal');
 
