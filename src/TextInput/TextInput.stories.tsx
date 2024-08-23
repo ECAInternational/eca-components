@@ -1,4 +1,8 @@
-import { TextInput } from './TextInput.tsx';
+import { render } from '@testing-library/react';
+import { TextInput, TextInputProps } from './TextInput.tsx';
+import React from 'react';
+import { FieldSet } from '../Form/FieldSet.tsx';
+import { Label } from '../Form/Label.tsx';
 
 export default {
   component: TextInput,
@@ -40,8 +44,7 @@ export const Default = {
   args: {
     name: 'default-input',
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Label'
+    placeholder: 'Placeholder text'
   }
 };
 
@@ -49,8 +52,7 @@ export const Enabled = {
   args: {
     name: 'enabled-input',
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Enabled'
+    placeholder: 'Placeholder text'
   }
 };
 
@@ -59,8 +61,7 @@ export const Disabled = {
     name: 'disabled-input',
     disabled: true,
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Disabled'
+    placeholder: 'Placeholder text'
   }
 };
 
@@ -68,8 +69,7 @@ export const Warning = {
   args: {
     name: 'warning-input',
     state: 'warning',
-    placeholder: 'Placeholder text',
-    label: 'Warning'
+    placeholder: 'Placeholder text'
   }
 };
 
@@ -77,26 +77,41 @@ export const Error = {
   args: {
     name: 'error-input',
     state: 'error',
-    placeholder: 'Placeholder text',
-    label: 'Error'
+    placeholder: 'Placeholder text'
   }
 };
 
-export const NoLabel = {
+export const WithLabel = {
   args: {
     name: 'no-label-input',
     state: 'default',
     placeholder: 'Placeholder text'
+  },
+  render: (args: TextInputProps) => {
+    return (
+      <FieldSet>
+        <Label>Label</Label>
+        <TextInput {...args} />
+      </FieldSet>
+    );
   }
 };
 
-export const Description = {
+export const WithDescription = {
   args: {
     name: 'description-input',
     state: 'default',
-    label: 'Label',
-    description: '(required)',
     placeholder: 'Placeholder text'
+  },
+  render: (args: TextInputProps) => {
+    return (
+      <FieldSet>
+        <Label>
+          Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
+        </Label>
+        <TextInput {...args} />
+      </FieldSet>
+    );
   }
 };
 
@@ -104,7 +119,6 @@ export const Icon = {
   args: {
     name: 'icon-input',
     state: 'default',
-    label: 'Icon',
     placeholder: 'Placeholder text',
     icon: 'fi-rr-search'
   }
@@ -114,7 +128,6 @@ export const Prefix = {
   args: {
     name: 'prefix-input',
     state: 'default',
-    label: 'Prefix',
     placeholder: 'Placeholder text',
     prefix: '£'
   }
@@ -124,7 +137,6 @@ export const Suffix = {
   args: {
     name: 'suffix-input',
     state: 'default',
-    label: 'Suffix',
     placeholder: 'Placeholder text',
     suffix: 'GBP'
   }
@@ -134,7 +146,6 @@ export const Password = {
   args: {
     name: 'password-input',
     state: 'default',
-    label: 'Password',
     placeholder: 'Enter your password',
     type: 'password'
   }
