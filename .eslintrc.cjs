@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2021: true
   },
   extends: ['airbnb', 'prettier', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
@@ -9,34 +9,17 @@ module.exports = {
   overrides: [
     {
       env: {
-        node: true,
+        node: true
       },
       files: ['.eslintrc.cjs'],
       parserOptions: {
-        sourceType: 'script',
-      },
-    },
-    // Typescript
-    {
-      files: ['**/*.{ts,tsx}'],
-      plugins: ['@typescript-eslint', 'import'],
-      parser: '@typescript-eslint/parser',
-      settings: {
-        'import/resolver': {
-          node: {
-            extensions: ['.ts', '.tsx'],
-          },
-          typescript: {
-            alwaysTryTypes: true,
-          },
-        },
-      },
-      extends: ['plugin:@typescript-eslint/recommended', 'plugin:import/recommended', 'plugin:import/typescript'],
-    },
+        sourceType: 'script'
+      }
+    }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
     quotes: ['error', 'single'],
@@ -50,6 +33,6 @@ module.exports = {
     'import/export': 'off',
     'max-len': 'off',
     'tailwindcss/no-custom-classname': 'off',
-    'no-use-before-define': 'off',
-  },
+    'no-use-before-define': 'off'
+  }
 };

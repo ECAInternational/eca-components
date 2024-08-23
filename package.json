@@ -78,6 +78,7 @@
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.34.0",
@@ -91,7 +92,6 @@
     "polished": "^4.2.2",
     "postcss": "^8.4.33",
     "prettier": "^3.2.4",
-    "prettier-eslint": "^16.3.0",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -130,8 +130,5 @@
   },
   "resolutions": {
     "jackspeak": "2.1.1"
-  },
-  "plugins": [
-    "prettier-plugin-tailwindcss"
-  ]
+  }
 }
