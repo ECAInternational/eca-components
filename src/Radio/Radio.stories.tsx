@@ -84,31 +84,31 @@ export const Vertical = {
   render: (args: RadioProps) => (
     <FieldSet className='flex flex-col justify-start'>
       <div className='flex items-center py-2'>
-        <Radio {...args} name='apples' value='apples' defaultChecked />
+        <Radio {...args} id='apples' value='apples' defaultChecked />
         <Label htmlFor='apples' className='ps-2 transition-all paragraph-sm-lighter'>
           Apples
         </Label>
       </div>
       <div className='flex items-center py-2'>
-        <Radio {...args} name='bananas' value='bananas' />
+        <Radio {...args} id='bananas' value='bananas' />
         <Label htmlFor='bananas' className='ps-2 transition-all paragraph-sm-lighter'>
           Bananas
         </Label>
       </div>
       <div className='flex items-center py-2'>
-        <Radio {...args} name='oranges' value='oranges' />
+        <Radio {...args} id='oranges' value='oranges' />
         <Label htmlFor='oranges' className='ps-2 transition-all paragraph-sm-lighter'>
           Oranges
         </Label>
       </div>
       <div className='flex items-center py-2'>
-        <Radio {...args} name='mangos' value='mangos' />
+        <Radio {...args} id='mangos' value='mangos' />
         <Label htmlFor='mangos' className='ps-2 transition-all paragraph-sm-lighter'>
           Mangos
         </Label>
       </div>
       <div className='flex items-center py-2'>
-        <Radio {...args} name='strawberries' value='strawberries' />
+        <Radio {...args} id='strawberries' value='strawberries' />
         <Label htmlFor='strawberries' className='ps-2 transition-all paragraph-sm-lighter'>
           Strawberries
         </Label>
@@ -124,32 +124,32 @@ export const Horizontal = {
   render: (args: RadioProps) => (
     <FieldSet className='flex flex-row items-center'>
       <span className='flex items-center pe-4'>
-        <Radio {...args} name='apples2' value='apples' defaultChecked />
-        <Label htmlFor='apples' className='ps-2 transition-all paragraph-sm-lighter'>
+        <Radio {...args} id='apples2' value='apples' defaultChecked />
+        <Label htmlFor='apples2' className='ps-2 transition-all paragraph-sm-lighter'>
           Apples
         </Label>
       </span>
       <span className='flex items-center pe-4'>
-        <Radio {...args} name='bananas2' value='bananas' />
-        <Label htmlFor='bananas' className='ps-2 transition-all paragraph-sm-lighter'>
+        <Radio {...args} id='bananas2' value='bananas' />
+        <Label htmlFor='bananas2' className='ps-2 transition-all paragraph-sm-lighter'>
           Bananas
         </Label>
       </span>
       <span className='flex items-center pe-4'>
-        <Radio {...args} name='oranges2' value='oranges' />
-        <Label htmlFor='oranges' className='ps-2 transition-all paragraph-sm-lighter'>
+        <Radio {...args} id='oranges2' value='oranges' />
+        <Label htmlFor='oranges2' className='ps-2 transition-all paragraph-sm-lighter'>
           Oranges
         </Label>
       </span>
       <span className='flex items-center pe-4'>
-        <Radio {...args} name='mangos2' value='mangos' />
-        <Label htmlFor='mangos' className='ps-2 transition-all paragraph-sm-lighter'>
+        <Radio {...args} id='mangos2' value='mangos' />
+        <Label htmlFor='mangos2' className='ps-2 transition-all paragraph-sm-lighter'>
           Mangos
         </Label>
       </span>
       <span className='flex items-center pe-4'>
-        <Radio {...args} name='strawberries2' value='strawberries' />
-        <Label htmlFor='strawberries' className='ps-2 transition-all paragraph-sm-lighter'>
+        <Radio {...args} id='strawberries2' value='strawberries' />
+        <Label htmlFor='strawberries2' className='ps-2 transition-all paragraph-sm-lighter'>
           Strawberries
         </Label>
       </span>
