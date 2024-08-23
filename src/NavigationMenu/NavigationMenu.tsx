@@ -25,12 +25,10 @@ export function NavigationMenu({ url, menuItems }: NavigationMenuProps) {
     setIsNavExpanded(!isNavExpanded);
   }, [isNavExpanded]);
 
-  const urlPathname = new URL(url, 'http://placeholder.com').pathname;
-
   return (
     <nav id='main-nav' aria-label='Main' className={`flex h-full flex-col divide-y divide-neutral-detail-palest duration-300 ease-in-out ${isNavExpanded ? NAV_EXPANDED_WIDTH : NAV_COLLAPSED_WIDTH}`}>
       <NavHeader isNavExpanded={isNavExpanded} />
-      <ol className='grow flex-col gap-3 overflow-hidden p-4'>{menuItems?.map((menuItemDetails) => <TopLevelMenuItem url={urlPathname} key={menuItemDetails.id} menuItemDetails={menuItemDetails} isListExpanded={menuItemDetails.id === expandedMenuItemId} collapseSubItemsExcept={collapseSubItemsExcept} isNavExpanded={isNavExpanded} />)}</ol>
+      <ol className='grow flex-col gap-3 overflow-hidden p-4'>{menuItems?.map((menuItemDetails) => <TopLevelMenuItem url={url} key={menuItemDetails.id} menuItemDetails={menuItemDetails} isListExpanded={menuItemDetails.id === expandedMenuItemId} collapseSubItemsExcept={collapseSubItemsExcept} isNavExpanded={isNavExpanded} />)}</ol>
       <NavFooter isNavExpanded={isNavExpanded} toggleNavExpanded={toggleNavExpanded} />
     </nav>
   );
