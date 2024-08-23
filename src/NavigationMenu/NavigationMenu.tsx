@@ -34,7 +34,7 @@ export function NavigationMenu({ url, menuItems }: NavigationMenuProps) {
   );
 }
 
-export default function NavigationMenuWithProvider(props: NavigationMenuProps) {
+export function NavigationMenuWithProvider(props: NavigationMenuProps) {
   return (
     <MenuProvider>
       <NavigationMenu {...props} />

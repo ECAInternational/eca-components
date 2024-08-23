@@ -14,7 +14,7 @@ import { Stepper, Step } from './Stepper/index.ts';
 import { Avatar } from './Avatar/index.ts';
 import { Progress } from './Progress/Progress.tsx';
 import { Menu, MenuButton, MenuItem, MenuItems } from './Menu/index.ts';
-import { NavigationMenu } from './NavigationMenu/index.ts';
+import { NavigationMenuWithProvider as NavigationMenu } from './NavigationMenu/index.ts';
 
 import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
 import { tailwindPlugin } from './tailwindPlugin.ts';
