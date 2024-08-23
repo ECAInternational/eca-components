@@ -5,8 +5,6 @@ export interface SegmentedControlProps {
   id?: string;
   disabled?: boolean;
   size: 'small' | 'medium';
-  label?: string;
-  description?: string;
   className?: string;
 }
 
@@ -15,7 +13,7 @@ export interface SegmentedControlChildProps extends HTMLInputElement {
 }
 
 export function SegmentedControl(props: PropsWithChildren<SegmentedControlProps>) {
-  const { id, name, children, className, disabled, size = 'medium', label, description } = props;
+  const { id, name, children, className, disabled, size = 'medium' } = props;
 
   const sizes = {
     input: {
@@ -43,12 +41,6 @@ export function SegmentedControl(props: PropsWithChildren<SegmentedControlProps>
 
   return (
     <div role='radiogroup' aria-labelledby={labelID} className={`text-controls-content-disabled has-[:enabled]:text-neutral-detail-bolder ${className}`}>
-      {label && (
-        <span id={labelID} className='block py-1 transition-all label-sm-mid'>
-          {label}
-          {description && <span className='ps-1 paragraph-sm-lighter'>{description}</span>}
-        </span>
-      )}
       <div className='flex rounded outline outline-2 outline-offset-2 outline-default-transparent has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-controls-highlight'>
         {Children.map(children, (child) => {
           const isElement = isValidElement<SegmentedControlChildProps>(child);

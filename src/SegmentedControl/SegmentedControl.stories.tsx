@@ -1,5 +1,7 @@
 import React from 'react';
 import { SegmentedControl, SegmentedControlProps } from './SegmentedControl.tsx';
+import { FieldSet } from '../Form/FieldSet.tsx';
+import { Label } from '../Form/Label.tsx';
 
 export default {
   component: SegmentedControl,
@@ -38,86 +40,98 @@ export default {
 
 export const Default = {
   args: {
-    name: 'default',
-    label: 'Label'
+    name: 'default'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label>Label</Label>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
 export const Width = {
   args: {
-    name: 'width',
-    label: 'Label'
+    name: 'width'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args} className='w-72'>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label>Label</Label>
+      <SegmentedControl {...args} className='w-72'>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
 export const OneDisabled = {
   args: {
-    name: 'one-disabled',
-    label: 'One disabled option'
+    name: 'one-disabled'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' disabled />
-    </SegmentedControl>
+    <FieldSet>
+      <Label>Label</Label>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' disabled />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
 export const AllDisabled = {
   args: {
-    name: 'all-disabled',
-    label: 'All disabled'
+    name: 'all-disabled'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args} disabled>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label>Label</Label>
+      <SegmentedControl {...args} disabled>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
 export const Small = {
   args: {
     name: 'small',
-    label: 'Small',
     size: 'small'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label>Label</Label>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
 export const Medium = {
   args: {
-    name: 'medium',
-    label: 'Medium (default)'
+    name: 'medium'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label>Label</Label>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
@@ -126,44 +140,51 @@ export const NoLabel = {
     name: 'no-label'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
 export const Description = {
   args: {
-    name: 'description',
-    label: 'Label',
-    description: '(required)'
+    name: 'description'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label>
+        Label <span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
 export const Highlights = {
   args: {
-    name: 'Highlights',
-    label: 'Label'
+    name: 'Highlights'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Default' />
-      <input type='radio' aria-label='Orange' data-highlight='orange' />
-      <input type='radio' aria-label='Yelow' data-highlight='yellow' />
-      <input type='radio' aria-label='Green' data-highlight='green' />
-      <input type='radio' aria-label='Blue' data-highlight='blue' />
-      <input type='radio' aria-label='Purple' data-highlight='purple' />
-      <input type='radio' aria-label='Pink' data-highlight='pink' />
-      <input type='radio' aria-label='Red' data-highlight='red' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label>Label</Label>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Default' />
+        <input type='radio' aria-label='Orange' data-highlight='orange' />
+        <input type='radio' aria-label='Yelow' data-highlight='yellow' />
+        <input type='radio' aria-label='Green' data-highlight='green' />
+        <input type='radio' aria-label='Blue' data-highlight='blue' />
+        <input type='radio' aria-label='Purple' data-highlight='purple' />
+        <input type='radio' aria-label='Pink' data-highlight='pink' />
+        <input type='radio' aria-label='Red' data-highlight='red' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
