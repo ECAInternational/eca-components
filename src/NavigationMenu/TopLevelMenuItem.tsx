@@ -2,8 +2,10 @@
 import type { MenuItemDetails } from './types';
 import { LinkMenuItem } from './LinkMenuItem.tsx';
 import { ExpandableMenuItem } from './ExpandableMenuItem.tsx';
+import { useMenuContext } from './MenuContext.tsx';
 
-export function TopLevelMenuItem({ url, menuItemDetails, isListExpanded, collapseSubItemsExcept, isNavExpanded }: { url: string; menuItemDetails: MenuItemDetails; isListExpanded: boolean; collapseSubItemsExcept: (expandedMenuItemId: string) => void; isNavExpanded: boolean }) {
+export function TopLevelMenuItem({ url, menuItemDetails, isListExpanded, isNavExpanded }: { url: string; menuItemDetails: MenuItemDetails; isListExpanded: boolean; isNavExpanded: boolean }) {
+  const { collapseSubItemsExcept } = useMenuContext();
   const [isHovering, setIsHovering] = useState(false);
   const { id, subItems } = menuItemDetails;
 

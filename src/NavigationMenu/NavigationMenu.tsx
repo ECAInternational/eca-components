@@ -1,4 +1,6 @@
 ﻿import React, { useCallback, useState } from 'react';
+
+import { MenuProvider, useMenuContext } from './MenuContext';
 import { NavHeader } from './NavHeader.tsx';
 import type { MenuItemDetails } from './types';
 import { NavFooter } from './NavFooter.tsx';
@@ -14,22 +16,28 @@ const NAV_COLLAPSED_WIDTH = 'min-w-20';
 
 export function NavigationMenu({ url, menuItems }: NavigationMenuProps) {
   const [isNavExpanded, setIsNavExpanded] = useState<boolean>(true);
-  const [expandedMenuItemId, setExpandedMenuItemId] = useState<string>('');
-
-  const collapseSubItemsExcept = useCallback((id?: string) => setExpandedMenuItemId(id || ''), []);
+  const { expandedMenuItemId, collapseSubItemsExcept } = useMenuContext();
 
   const toggleNavExpanded = useCallback(() => {
     if (isNavExpanded) {
-      setExpandedMenuItemId('');
+      collapseSubItemsExcept();
     }
     setIsNavExpanded(!isNavExpanded);
-  }, [isNavExpanded]);
+  }, [isNavExpanded, collapseSubItemsExcept]);
 
   return (
     <nav id='main-nav' aria-label='Main' className={`flex h-full flex-col divide-y divide-neutral-detail-palest duration-300 ease-in-out ${isNavExpanded ? NAV_EXPANDED_WIDTH : NAV_COLLAPSED_WIDTH}`}>
       <NavHeader isNavExpanded={isNavExpanded} />
-      <ol className='grow flex-col gap-3 overflow-hidden p-4'>{menuItems?.map((menuItemDetails) => <TopLevelMenuItem url={url} key={menuItemDetails.id} menuItemDetails={menuItemDetails} isListExpanded={menuItemDetails.id === expandedMenuItemId} collapseSubItemsExcept={collapseSubItemsExcept} isNavExpanded={isNavExpanded} />)}</ol>
+      <ol className='grow flex-col gap-3 overflow-hidden p-4'>{menuItems?.map((menuItemDetails) => <TopLevelMenuItem url={url} key={menuItemDetails.id} menuItemDetails={menuItemDetails} isListExpanded={menuItemDetails.id === expandedMenuItemId} isNavExpanded={isNavExpanded} />)}</ol>
       <NavFooter isNavExpanded={isNavExpanded} toggleNavExpanded={toggleNavExpanded} />
     </nav>
+  );
+}
+
+export default function NavigationMenuWithProvider(props: NavigationMenuProps) {
+  return (
+    <MenuProvider>
+      <NavigationMenu {...props} />
+    </MenuProvider>
   );
 }
