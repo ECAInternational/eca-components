@@ -1,7 +1,7 @@
+import React from 'react';
 import { within } from '@storybook/test';
 import { Checkbox, CheckboxProps } from './Checkbox.tsx';
 import { FieldSet } from '../Form/FieldSet.tsx';
-import React from 'react';
 import { Label } from '../Form/Label.tsx';
 
 export default {

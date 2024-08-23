@@ -1,5 +1,5 @@
-import { TextArea, TextAreaProps } from './TextArea.tsx';
 import React from 'react';
+import { TextArea, TextAreaProps } from './TextArea.tsx';
 import { FieldSet } from '../Form/FieldSet.tsx';
 import { Label } from '../Form/Label.tsx';
 
