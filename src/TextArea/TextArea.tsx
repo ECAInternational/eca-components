@@ -19,8 +19,6 @@ const getStyleValue = (v: string) => parseInt(v, 10) || 0;
 export interface TextAreaProps {
   name: string;
   id: string;
-  label: string;
-  description: string;
   state?: string;
   placeholder: string;
   value: string;
@@ -33,7 +31,7 @@ export interface TextAreaProps {
 }
 
 export function TextArea(props: TextAreaProps) {
-  const { name, id, label, description, state = 'default', placeholder, value, maxLength, minRows = 1, maxRows, disabled, onChange, ...others } = props;
+  const { name, id, state = 'default', placeholder, value, maxLength, minRows = 1, maxRows, disabled, onChange, ...others } = props;
   const [count, setCount] = useState(value?.length ?? 0);
 
   const { current: isControlled } = React.useRef(value !== undefined);
@@ -162,12 +160,6 @@ export function TextArea(props: TextAreaProps) {
 
   return (
     <div className='text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled'>
-      {label && (
-        <label htmlFor={id} className='block py-1 transition-all label-sm-mid'>
-          {label}
-          {description && <span className='ps-1 paragraph-sm-lighter'>{description}</span>}
-        </label>
-      )}
       <textarea onChange={handleChange} id={id || name} name={name} value={value} rows={minRows} disabled={disabled} placeholder={placeholder} {...others} className={className} ref={inputRef} aria-describedby={charCountLabelId} {...(invalid ? { 'aria-invalid': true } : {})} />
       <textarea aria-hidden className={className} readOnly ref={shadowRef} tabIndex={-1} style={{ ...styles.shadow, paddingTop: 0, paddingBottom: 0 }} />
       {maxLength && (
