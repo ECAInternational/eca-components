@@ -123,7 +123,7 @@ export const WithLabel = {
   },
   render: (args: SegmentedControlProps) => (
     <FieldSet>
-      <Label>Label</Label>
+      <Label htmlFor={args.name}>Label</Label>
       <SegmentedControl {...args}>
         <input type='radio' aria-label='Option' />
         <input type='radio' aria-label='Option' />
@@ -139,7 +139,7 @@ export const WithDescription = {
   },
   render: (args: SegmentedControlProps) => (
     <FieldSet>
-      <Label>
+      <Label htmlFor={args.name}>
         Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
       </Label>
       <SegmentedControl {...args}>

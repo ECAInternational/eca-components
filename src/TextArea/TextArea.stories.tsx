@@ -123,7 +123,7 @@ export const WithLabel = {
   render: (args: TextAreaProps) => {
     return (
       <FieldSet>
-        <Label>Label</Label>
+        <Label htmlFor={args.name}>Label</Label>
         <TextArea {...args} />
       </FieldSet>
     );
@@ -139,7 +139,7 @@ export const WithDescription = {
   render: (args: TextAreaProps) => {
     return (
       <FieldSet>
-        <Label>
+        <Label htmlFor={args.name}>
           Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
         </Label>
         <TextArea {...args} />

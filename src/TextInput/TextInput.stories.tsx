@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import { TextInput, TextInputProps } from './TextInput.tsx';
 import React from 'react';
 import { FieldSet } from '../Form/FieldSet.tsx';
@@ -90,7 +89,7 @@ export const WithLabel = {
   render: (args: TextInputProps) => {
     return (
       <FieldSet>
-        <Label>Label</Label>
+        <Label htmlFor={args.name}>Label</Label>
         <TextInput {...args} />
       </FieldSet>
     );
@@ -106,7 +105,7 @@ export const WithDescription = {
   render: (args: TextInputProps) => {
     return (
       <FieldSet>
-        <Label>
+        <Label htmlFor={args.name}>
           Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
         </Label>
         <TextInput {...args} />
