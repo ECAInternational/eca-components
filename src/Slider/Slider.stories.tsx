@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Slider, SliderProps } from './Slider.tsx';
+import { FieldSet } from '../Form/FieldSet.tsx';
+import { Label } from '../Form/Label.tsx';
 
 export default {
   component: Slider,
@@ -12,9 +14,6 @@ export default {
       table: { disable: true }
     },
     name: {
-      table: { disable: true }
-    },
-    type: {
       table: { disable: true }
     },
     className: {
@@ -84,5 +83,59 @@ export const Discrete = {
   args: {
     name: 'discrete-slider',
     variant: 'discrete'
+  }
+};
+
+export const WithLabel = {
+  args: {
+    name: 'slider-with-label',
+    min: 0,
+    max: 5,
+    value: 2,
+    marks: [
+      { value: 0, label: 'Value 0' },
+      { value: 1, label: 'Value 1' },
+      { value: 2, label: 'Value 2' },
+      { value: 3, label: 'Value 3' },
+      { value: 4, label: 'Value 4' },
+      { value: 5, label: 'Value 5' }
+    ]
+  },
+  render: (args: SliderProps) => {
+    const [value, setValue] = useState<number>(args.value);
+    return (
+      <FieldSet>
+        <Label htmlFor={args.name}>Label</Label>
+        <Slider {...args} value={value} onChange={setValue} />
+      </FieldSet>
+    );
+  }
+};
+
+export const WithDescription = {
+  args: {
+    name: 'slider-with-description',
+    min: 0,
+    max: 5,
+    value: 2,
+    marks: [
+      { value: 0, label: 'Value 0' },
+      { value: 1, label: 'Value 1' },
+      { value: 2, label: 'Value 2' },
+      { value: 3, label: 'Value 3' },
+      { value: 4, label: 'Value 4' },
+      { value: 5, label: 'Value 5' }
+    ]
+  },
+  render: (args: SliderProps) => {
+    const [value, setValue] = useState<number>(args.value);
+    return (
+      <FieldSet>
+        <Label htmlFor={args.name}>
+          Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
+        </Label>
+        <Slider {...args} value={value} onChange={setValue} />
+      </FieldSet>
+    );
   }
 };
