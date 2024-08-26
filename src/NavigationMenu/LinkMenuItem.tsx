@@ -2,10 +2,12 @@ import React from 'react';
 import type { MenuItemDetails } from './types';
 import { MenuItemTitle } from './MenuItemTitle.tsx';
 import { PopOutContent } from './PopOutContent.tsx';
+import isLinkCurrentLocation from './isLinkCurrentLocation.ts';
 
 export function LinkMenuItem({ url, details, isNavExpanded, isTopLevel, isContentVisible, onNavigate }: { url: string; details: MenuItemDetails; isNavExpanded: boolean; isTopLevel?: boolean; isContentVisible?: boolean; onNavigate?: () => void }) {
   const { link = '', label, enabled } = details;
-  const isSelected = url === link;
+
+  const isSelected = isLinkCurrentLocation(link, url);
 
   return (
     <>
