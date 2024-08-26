@@ -34,7 +34,7 @@ export function Slider(props: SliderProps) {
   const { onKeyDownHandler, onMouseDownHandler, onTouchStart } = rangerInstance.handles()[0];
   const mark = marks.find((mark) => mark.value === value);
 
-  const handleSliderClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const onClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     if (disabled) return;
     const newValue = rangerInstance.getValueForClientX(e.clientX);
     const step = rangerInstance.roundToStep(newValue);
@@ -49,6 +49,7 @@ export function Slider(props: SliderProps) {
     }
   };
 
+  // Extend tanstack react-ranger with more keydown handlers
   const handleOnKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     switch (e.key) {
       case 'ArrowUp':
@@ -75,31 +76,23 @@ export function Slider(props: SliderProps) {
   };
 
   return (
-    <div className='relative'>
-      <div id={id || name} ref={rangerRef} role='slider' aria-disabled={disabled} aria-valuemin={rangerInstance.options.min} aria-valuemax={rangerInstance.options.max} aria-valuenow={value} onClick={(e) => handleSliderClick(e)} className={`relative h-2 ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} rounded-full bg-neutral-detail-palest`} {...others}>
-        <div className={`absolute h-full rounded-full ${disabled ? 'cursor-not-allowed bg-controls-content-disabled' : 'bg-controls-highlight'}`} style={{ width: `${rangerInstance.getPercentageForValue(value)}%` }}></div>
-        <Tooltip
-          content={mark?.label || value.toString()}
-          position='top'
-          className='absolute'
-          disableHoverListener={true}
-          style={{
-            left: `${rangerInstance.getPercentageForValue(value)}%`,
-            top: '-100%'
-          }}
-        >
-          <button ref={handleRef} disabled={disabled} onKeyDown={handleOnKeyDown} onMouseDown={onMouseDownHandler} onTouchStart={onTouchStart} className={`group absolute top-1/2 -translate-x-1/2 -translate-y-2 p-2 outline-none ${disabled ? 'pointer-events-none cursor-not-allowed' : ''}`}>
-            <div className={`flex size-6 items-center justify-center rounded-full border ${disabled ? 'border-controls-border-disabled bg-neutral-detail-palest' : 'border-controls-border bg-neutral-layer-2'} group-hover:border-2 group-hover:border-neutral-detail-pale group-focus:border-2 group-focus:border-controls-highlight`}>{disabled ? null : <div className='size-3 rounded-full group-hover:bg-neutral-detail-pale group-focus:bg-controls-highlight'></div>}</div>
-          </button>
-        </Tooltip>
-      </div>
-      {variant === 'discrete' ? (
-        <div className='pt-2'>
-          {rangerInstance.getTicks().map(({ key, percentage }) => (
-            <span key={key} className={`absolute h-2 w-0 -translate-x-px border ${disabled ? 'border-neutral-detail-paler' : 'border-neutral-detail-pale'}`} style={{ left: `${percentage}%` }}></span>
-          ))}
-        </div>
-      ) : null}
+    <div ref={rangerRef} onClick={onClickHandler} className={`relative mt-2 h-2 ${variant === 'discrete' ? 'mb-4' : 'mb-2'} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} rounded-full bg-neutral-detail-palest ${className === undefined ? '' : className}`} {...others}>
+      <div className={`absolute h-full rounded-full ${disabled ? 'cursor-not-allowed bg-controls-content-disabled' : 'bg-controls-highlight'}`} style={{ width: `${rangerInstance.getPercentageForValue(value)}%` }}></div>
+      <Tooltip
+        content={mark?.label || value.toString()}
+        position='top'
+        className='absolute'
+        disableHoverListener={true}
+        style={{
+          left: `${rangerInstance.getPercentageForValue(value)}%`,
+          top: '-100%'
+        }}
+      >
+        <button id={id || name} ref={handleRef} role='slider' aria-valuemin={rangerInstance.options.min} aria-valuemax={rangerInstance.options.max} aria-valuenow={value} disabled={disabled} onKeyDown={handleOnKeyDown} onMouseDown={onMouseDownHandler} onTouchStart={onTouchStart} className={`group absolute top-1/2 -translate-x-1/2 -translate-y-2 p-2 outline-none ${disabled ? 'pointer-events-none cursor-not-allowed' : ''}`}>
+          <div className={`flex size-6 items-center justify-center rounded-full border ${disabled ? 'border-controls-border-disabled bg-neutral-detail-palest' : 'border-controls-border bg-neutral-layer-2'} group-hover:border-2 group-hover:border-neutral-detail-pale group-focus:border-2 group-focus:border-controls-highlight`}>{disabled ? null : <div className='size-3 rounded-full group-hover:bg-neutral-detail-pale group-focus:bg-controls-highlight'></div>}</div>
+        </button>
+      </Tooltip>
+      {variant === 'discrete' ? rangerInstance.getTicks().map(({ key, percentage }) => <span key={key} className={`absolute -bottom-4 h-2 w-0 -translate-x-px border ${disabled ? 'border-neutral-detail-paler' : 'border-neutral-detail-pale'}`} style={{ left: `${percentage}%` }}></span>) : null}
     </div>
   );
 }
