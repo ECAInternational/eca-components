@@ -59,11 +59,17 @@ export function Tooltip(props: TooltipProps) {
     }
   };
 
+  const handleDocumentScroll = () => {
+    hideTooltip();
+  };
+
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('scroll', handleDocumentScroll, { passive: true, capture: true });
     if (timeoutID) clearTimeout(timeoutID);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('scroll', handleDocumentScroll);
     };
   }, []);
 
@@ -80,8 +86,8 @@ export function Tooltip(props: TooltipProps) {
 
       let offsetElement: HTMLElement | null = hostElement;
       while (offsetElement && offsetElement !== containerElement) {
-        x += offsetElement.offsetLeft;
-        y += offsetElement.offsetTop;
+        x += offsetElement.offsetLeft - offsetElement.scrollLeft;
+        y += offsetElement.offsetTop - offsetElement.scrollTop;
         offsetElement = offsetElement.offsetParent as HTMLElement;
       }
 
