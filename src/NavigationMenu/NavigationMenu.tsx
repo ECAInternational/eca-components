@@ -14,8 +14,9 @@ const NAV_EXPANDED_WIDTH = 'min-w-72'; // due to current linting rules 'min-w-${
 const NAV_COLLAPSED_WIDTH = 'min-w-20';
 
 export function NavigationMenu({ url, menuItems }: NavigationMenuProps) {
+  const openItemId = url && menuItems?.find((menuItem) => menuItem.subItems?.find((item) => isLinkCurrentLocation(item.link, url)))?.id;
   const [isNavExpanded, setIsNavExpanded] = useState<boolean>(true);
-  const [expandedMenuItemId, setExpandedMenuItemId] = useState<string>('');
+  const [expandedMenuItemId, setExpandedMenuItemId] = useState<string>(openItemId || '');
 
   const collapseSubItemsExcept = useCallback((id?: string) => setExpandedMenuItemId(id || ''), []);
 
@@ -26,11 +27,11 @@ export function NavigationMenu({ url, menuItems }: NavigationMenuProps) {
     setIsNavExpanded(!isNavExpanded);
   }, [isNavExpanded]);
 
-  useEffect(() => {
-    const openItemId = url && menuItems?.find((menuItem) => menuItem.subItems?.find((item) => isLinkCurrentLocation(item.link, url)))?.id;
+  // useEffect(() => {
+  //   const openItemId = url && menuItems?.find((menuItem) => menuItem.subItems?.find((item) => isLinkCurrentLocation(item.link, url)))?.id;
 
-    collapseSubItemsExcept(openItemId || '');
-  }, [url, menuItems]);
+  //   collapseSubItemsExcept(openItemId || '');
+  // }, [url, menuItems]);
 
   return (
     <nav id='main-nav' aria-label='Main' className={`flex h-full flex-col divide-y divide-neutral-detail-palest duration-300 ease-in-out ${isNavExpanded ? NAV_EXPANDED_WIDTH : NAV_COLLAPSED_WIDTH}`}>
