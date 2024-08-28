@@ -1,9 +1,10 @@
 import React from 'react';
+import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import { userEvent } from '@testing-library/user-event';
 
-import { NavigationMenu } from './NavigationMenu';
+import { NavigationMenu } from './NavigationMenu.tsx';
 import type { MenuItemDetails } from './types';
 
 describe('NavigationMenu', () => {
@@ -57,28 +58,30 @@ describe('NavigationMenu', () => {
     expect(screen.queryByRole('link', { name: /Item 1.1/i })).not.toBeInTheDocument();
   });
 
+  it('expands menu item that contains sublink matching current url on render for relative links', async () => {
+    render(<NavigationMenu menuItems={menuItems} url='https://localhost/1.1' />);
+
+    expect(await screen.findByRole('link', { name: /Item 1.1/i })).toBeInTheDocument();
+  });
+
+  it('expands menu item that contains sublink matching current url on render for absolute links', async () => {
+    render(<NavigationMenu menuItems={menuItems} url='https://localhost/2.1' />);
+
+    expect(await screen.findByRole('link', { name: /Item 2.1/i })).toBeInTheDocument();
+  });
+
   it('highlights correct options for relative links', async () => {
-    const user = userEvent.setup({});
-    render(<NavigationMenu menuItems={menuItems} url={'https://localhost/1.1'} />);
+    render(<NavigationMenu menuItems={menuItems} url='https://localhost/1.1' />);
 
     expect(await screen.findByRole('button', { name: /Item 1/i })).toHaveClass('bg-controls-element-tonal');
-
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: /Item 1/i }));
-    });
 
     expect(await screen.findByRole('link', { name: /Item 1.1/i })).toHaveClass('bg-controls-element-tonal');
   });
 
   it('highlights correct options for absolute links', async () => {
-    const user = userEvent.setup({});
-    render(<NavigationMenu menuItems={menuItems} url={'https://localhost/2.1'} />);
+    render(<NavigationMenu menuItems={menuItems} url='https://localhost/2.1' />);
 
     expect(await screen.findByRole('button', { name: /Item 2/i })).toHaveClass('bg-controls-element-tonal');
-
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: /Item 2/i }));
-    });
 
     expect(await screen.findByRole('link', { name: /Item 2.1/i })).toHaveClass('bg-controls-element-tonal');
   });

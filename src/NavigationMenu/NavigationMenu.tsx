@@ -1,8 +1,9 @@
-﻿import React, { useCallback, useState } from 'react';
+﻿import React, { useCallback, useEffect, useState } from 'react';
 import { NavHeader } from './NavHeader.tsx';
 import type { MenuItemDetails } from './types';
 import { NavFooter } from './NavFooter.tsx';
 import { TopLevelMenuItem } from './TopLevelMenuItem.tsx';
+import isLinkCurrentLocation from './isLinkCurrentLocation.ts';
 
 interface NavigationMenuProps {
   menuItems: MenuItemDetails[];
@@ -24,6 +25,12 @@ export function NavigationMenu({ url, menuItems }: NavigationMenuProps) {
     }
     setIsNavExpanded(!isNavExpanded);
   }, [isNavExpanded]);
+
+  useEffect(() => {
+    const openItemId = url && menuItems?.find((menuItem) => menuItem.subItems?.find((item) => isLinkCurrentLocation(item.link, url)))?.id;
+
+    collapseSubItemsExcept(openItemId || '');
+  }, [url, menuItems]);
 
   return (
     <nav id='main-nav' aria-label='Main' className={`flex h-full flex-col divide-y divide-neutral-detail-palest duration-300 ease-in-out ${isNavExpanded ? NAV_EXPANDED_WIDTH : NAV_COLLAPSED_WIDTH}`}>
