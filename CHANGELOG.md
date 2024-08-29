@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.1](https://github.com/ECAInternational/eca-components/compare/v2.8.0...v2.8.1) (2024-08-29)
+
+
+### Bug Fixes
+
+* Expand nav on render ([#317](https://github.com/ECAInternational/eca-components/issues/317)) ([7334b00](https://github.com/ECAInternational/eca-components/commit/7334b000eb3aa5a73d05ad59c1a5332c0a2b6830))
+* Tooltip offset incorrect after scrolling ([#318](https://github.com/ECAInternational/eca-components/issues/318)) ([b0c7a3b](https://github.com/ECAInternational/eca-components/commit/b0c7a3ba02167d355ebd2bc9b04aaaeec4eeffc0))
+
 ## [2.8.0](https://github.com/ECAInternational/eca-components/compare/v2.7.0...v2.8.0) (2024-08-23)
 
 
