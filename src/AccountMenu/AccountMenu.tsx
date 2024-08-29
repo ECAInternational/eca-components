@@ -26,9 +26,9 @@ export function AccountMenu({ initials, authWebUrl, theme }: { initials: string;
         <MenuItem>
           <div className='flex flex-row'>
             <i className='fi fi-sr-exit px-2 text-primary-accent' />
-            <button name='intent' value='logout' type='submit' className='w-full text-left text-neutral-body'>
+            <a href={`${authWebUrl}/log-out`} className='w-full text-left text-neutral-body'>
               {t('Log out')}
-            </button>
+            </a>
           </div>
         </MenuItem>
         <MenuItem>
