@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.2](https://github.com/ECAInternational/eca-components/compare/v2.8.1...v2.8.2) (2024-08-29)
+
+
+### Bug Fixes
+
+* redirect to logout routes instead of a form submission. ([#320](https://github.com/ECAInternational/eca-components/issues/320)) ([a254bb4](https://github.com/ECAInternational/eca-components/commit/a254bb4b5a85e126e39b18f30bb0caa83d17d91a))
+
 ## [2.8.1](https://github.com/ECAInternational/eca-components/compare/v2.8.0...v2.8.1) (2024-08-29)
 
 
