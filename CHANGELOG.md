@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://github.com/ECAInternational/eca-components/compare/v2.8.2...v2.9.0) (2024-08-29)
+
+
+### Features
+
+* Add Slider component ([#293](https://github.com/ECAInternational/eca-components/issues/293)) ([99ee8c6](https://github.com/ECAInternational/eca-components/commit/99ee8c6e0cc3759ca794aea4b1e7f6f5f909005f))
+
 ## [2.8.2](https://github.com/ECAInternational/eca-components/compare/v2.8.1...v2.8.2) (2024-08-29)
 
 
