@@ -1,4 +1,4 @@
-﻿import React, { useCallback, useEffect, useState } from 'react';
+﻿import React, { useCallback, useState } from 'react';
 import { NavHeader } from './NavHeader.tsx';
 import type { MenuItemDetails } from './types';
 import { NavFooter } from './NavFooter.tsx';
