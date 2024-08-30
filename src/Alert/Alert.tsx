@@ -10,28 +10,28 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
 
 export function Alert({ label, variant = 'neutral', onDelete, fullWidth = true, className = '', ...rest }: AlertProps) {
   const alert = {
-    warning: 'border-states-warning text-neutral-body bg-states-warning-paler',
-    success: 'border-states-success text-neutral-body bg-states-success-palest',
-    info: 'border-states-info text-neutral-body bg-states-info-paler',
-    error: 'border-states-error text-neutral-body bg-states-error-palest',
+    warning: 'border-states-warning text-neutral-body bg-states-warning-pale',
+    success: 'border-states-success text-neutral-body bg-states-success-pale',
+    info: 'border-states-info text-neutral-body bg-states-info-pale',
+    error: 'border-states-error text-neutral-body bg-states-error-paler',
     monochrome: 'text-neutral-layer-1 bg-neutral-body shadow-lg',
     neutral: 'border-neutral-detail-palest text-neutral-body bg-neutral-layer-2 shadow-lg'
   };
 
   const close = {
-    warning: 'text-visualisation-2-paler bg-visualisation-2-bolder',
-    success: 'text-visualisation-3-paler bg-visualisation-3-bolder',
-    info: 'text-visualisation-4-paler bg-visualisation-4-bolder',
-    error: 'text-visualisation-7-paler bg-visualisation-7-bolder',
+    warning: 'text-neutral-800 bg-default-white',
+    success: 'text-neutral-800 bg-default-white',
+    info: 'text-neutral-800 bg-default-white',
+    error: 'text-neutral-800 bg-default-white',
     monochrome: 'text-neutral-detail-bolder bg-neutral-detail-paler',
     neutral: 'text-neutral-detail-palest bg-neutral-body'
   };
 
   const icon = {
-    warning: 'fi-rr-triangle-warning text-states-warning-boldest',
-    success: 'fi-rr-check text-states-success-boldest',
-    info: 'fi-rr-info text-states-info-boldest',
-    error: 'fi-rr-exclamation text-states-error-boldest',
+    warning: 'fi-rr-triangle-warning text-states-warning-bold',
+    success: 'fi-rr-check text-states-success-bold',
+    info: 'fi-rr-info text-states-info-bold',
+    error: 'fi-rr-exclamation text-states-error-bold',
     monochrome: '',
     neutral: ''
   };
