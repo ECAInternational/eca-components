@@ -15,7 +15,7 @@ export function Button(props: ButtonProps) {
   const { name, id, variant, type = 'button', size = 'medium', children, className = '', isSubmitting = false, ...others } = props;
 
   const bg = {
-    primary: `${isSubmitting ? 'bg-primary-pale' : 'bg-primary-main'} border-0 ${isSubmitting ? 'text-red-100' : 'text-default-white'}`,
+    primary: `${isSubmitting ? 'bg-primary-pale' : 'bg-primary-main'} border-0 ${isSubmitting ? 'text-red-100' : 'text-primary-text-1'}`,
     outline: `bg-default-transparent border ${isSubmitting ? 'border-neutral-detail-pale text-neutral-detail-pale' : 'border-neutral-detail-boldest text-neutral-detail-boldest'}`,
     ghost: 'bg-default-transparent border-2 border-default-transparent text-neutral-detail-boldest'
   };
@@ -46,14 +46,14 @@ export function Button(props: ButtonProps) {
 
   const sizes = {
     small: 'label-sm-mid rounded px-4 py-2',
-    medium: 'label-sm-mid rounded px-5 py-3',
-    large: 'label-md-mid rounded-md px-6 py-4'
+    medium: 'label-sm-mid rounded-md px-5 py-3',
+    large: 'label-md-mid rounded-lg px-6 py-4'
   };
 
   const commonIsSubmittingClassNames = isSubmitting ? 'pointer-events-none' : '';
 
   return (
-    <button id={id || name} name={name} className={`relative flex items-center justify-center overflow-hidden outline-2 outline-offset-2 outline-default-transparent transition enabled:active:scale-92 disabled:cursor-not-allowed disabled:text-controls-content-disabled ${bg[variant]} ${disabled[variant]} ${hover[variant]} ${active[variant]} ${focus[variant]} ${sizes[size]} ${commonIsSubmittingClassNames} ${className}`} type={type} {...others}>
+    <button id={id || name} name={name} className={`relative flex items-center justify-center overflow-hidden outline-2 outline-offset-2 outline-default-transparent transition disabled:cursor-not-allowed disabled:text-controls-content-disabled ${bg[variant]} ${disabled[variant]} ${hover[variant]} ${active[variant]} ${focus[variant]} ${sizes[size]} ${commonIsSubmittingClassNames} ${className}`} type={type} {...others}>
       {children}
     </button>
   );
