@@ -15,9 +15,9 @@ const activeClasses = 'active:border-neutral-detail-bold active:bg-neutral-detai
 
 const checkedActiveClasses = 'checked:active:border-controls-highlight-bold checked:active:bg-controls-highlight-palest checked:active:outline-controls-highlight-palest checked:active:before:bg-controls-highlight-bold';
 
-const disabledClasses = 'disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-detail-palest disabled:before:bg-neutral-detail-pale disabled:before:opacity-60';
+const disabledClasses = 'disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-detail-palest disabled:before:bg-neutral-detail-pale disabled:opacity-70 disabled:before:opacity-60';
 
-const checkedDisabledClasses = 'checked:disabled:border-controls-highlight-pale checked:disabled:bg-controls-bg-disabled checked:disabled:before:bg-controls-highlight-pale disabled:hover:outline-0';
+const checkedDisabledClasses = 'checked:disabled:border-controls-highlight checked:disabled:bg-controls-bg-disabled checked:disabled:before:bg-controls-highlight disabled:opacity-70 disabled:hover:outline-0';
 
 export function Switch(props: SwitchProps) {
   const { name, id, checked, disabled = false, ...others } = props;
