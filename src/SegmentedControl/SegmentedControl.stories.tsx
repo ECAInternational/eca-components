@@ -158,13 +158,13 @@ export const Highlights = {
   render: (args: SegmentedControlProps) => (
     <SegmentedControl {...args}>
       <input type='radio' aria-label='Default' />
-      <input type='radio' aria-label='Orange' data-highlight='orange' />
-      <input type='radio' aria-label='Yelow' data-highlight='yellow' />
-      <input type='radio' aria-label='Green' data-highlight='green' />
-      <input type='radio' aria-label='Blue' data-highlight='blue' />
-      <input type='radio' aria-label='Purple' data-highlight='purple' />
-      <input type='radio' aria-label='Pink' data-highlight='pink' />
-      <input type='radio' aria-label='Red' data-highlight='red' />
+      <input type='radio' aria-label='Visualisation 1' data-highlight='vis-1' />
+      <input type='radio' aria-label='Visualisation 2' data-highlight='vis-2' />
+      <input type='radio' aria-label='Visualisation 3' data-highlight='vis-3' />
+      <input type='radio' aria-label='Visualisation 4' data-highlight='vis-4' />
+      <input type='radio' aria-label='Visualisation 5' data-highlight='vis-5' />
+      <input type='radio' aria-label='Visualisation 6' data-highlight='vis-6' />
+      <input type='radio' aria-label='Visualisation 7' data-highlight='vis-7' />
     </SegmentedControl>
   )
 };
