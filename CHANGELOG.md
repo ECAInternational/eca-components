@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.10.0](https://github.com/ECAInternational/eca-components/compare/v2.9.0...v2.10.0) (2024-08-30)
+
+
+### Features
+
+* Apply rebranding ([#326](https://github.com/ECAInternational/eca-components/issues/326)) ([0e6ec91](https://github.com/ECAInternational/eca-components/commit/0e6ec917862990a8dfb7b3c9ee46ab605b2f5e88))
+* Update eca-design-tokens (New font) ([#323](https://github.com/ECAInternational/eca-components/issues/323)) ([3079995](https://github.com/ECAInternational/eca-components/commit/3079995f4d2af8cd656cc136963ea0477028294b))
+
 ## [2.9.0](https://github.com/ECAInternational/eca-components/compare/v2.8.2...v2.9.0) (2024-08-29)
 
 
