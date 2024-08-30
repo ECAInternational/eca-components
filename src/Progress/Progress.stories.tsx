@@ -9,6 +9,11 @@ export default {
   argTypes: {
     className: {
       table: { disable: true }
+    },
+    variant: {
+      defaultValue: { summary: 'primary' },
+      control: 'select',
+      options: ['primary', 'secondary']
     }
   },
   args: {}

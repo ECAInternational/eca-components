@@ -9,7 +9,7 @@ export interface ProgressProps {
 export function Progress(props: ProgressProps) {
   const { variant = 'primary', className = '', value, ...others } = props;
   const bg = {
-    primary: 'bg-red-200',
+    primary: 'bg-primary-pale',
     secondary: 'bg-controls-highlight'
   };
 
