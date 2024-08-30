@@ -19,7 +19,7 @@ export default {
     variant: {
       defaultValue: { summary: 'neutral' },
       control: 'select',
-      options: ['yellow', 'green', 'blue', 'purple', 'pink', 'orange', 'red', 'monochrome', 'neutral']
+      options: ['vis-1', 'vis-2', 'vis-3', 'vis-4', 'vis-5', 'vis-6', 'vis-7', 'monochrome', 'neutral']
     },
     size: {
       defaultValue: { summary: 'medium' },
@@ -45,52 +45,52 @@ export const Default = {
   }
 };
 
-export const Yellow = {
+export const Visualisation1 = {
   args: {
-    label: 'Yellow',
-    variant: 'yellow'
+    label: 'Visualisation 1',
+    variant: 'vis-1'
   }
 };
 
-export const Green = {
+export const Visualisation2 = {
   args: {
-    label: 'Green',
-    variant: 'green'
+    label: 'Visualisation 2',
+    variant: 'vis-2'
   }
 };
 
-export const Blue = {
+export const Visualisation3 = {
   args: {
-    label: 'Blue',
-    variant: 'blue'
+    label: 'Visualisation 3',
+    variant: 'vis-3'
   }
 };
 
-export const Purple = {
+export const Visualisation4 = {
   args: {
-    label: 'Purple',
-    variant: 'purple'
+    label: 'Visualisation 4',
+    variant: 'vis-4'
   }
 };
 
-export const Pink = {
+export const Visualisation5 = {
   args: {
-    label: 'Pink',
-    variant: 'pink'
+    label: 'Visualisation 5',
+    variant: 'vis-5'
   }
 };
 
-export const Orange = {
+export const Visualisation6 = {
   args: {
-    label: 'Orange',
-    variant: 'orange'
+    label: 'Visualisation 6',
+    variant: 'vis-6'
   }
 };
 
-export const Red = {
+export const Visualisation7 = {
   args: {
-    label: 'Red',
-    variant: 'red'
+    label: 'Visualisation 7',
+    variant: 'vis-7'
   }
 };
 
@@ -107,58 +107,58 @@ export const Neutral = {
   }
 };
 
-export const DeletableYellow = {
+export const DeletableVisualisation1 = {
   args: {
     label: 'Deletable',
-    variant: 'yellow',
+    variant: 'vis-1',
     onDelete: () => {}
   }
 };
 
-export const DeletableGreen = {
+export const DeletableVisualisation2 = {
   args: {
     label: 'Deletable',
-    variant: 'green',
+    variant: 'vis-2',
     onDelete: () => {}
   }
 };
 
-export const DeletableBlue = {
+export const DeletableVisualisation3 = {
   args: {
     label: 'Deletable',
-    variant: 'blue',
+    variant: 'vis-3',
     onDelete: () => {}
   }
 };
 
-export const DeletablePurple = {
+export const DeletableVisualisation4 = {
   args: {
     label: 'Deletable',
-    variant: 'purple',
+    variant: 'vis-4',
     onDelete: () => {}
   }
 };
 
-export const DeletablePink = {
+export const DeletableVisualisation5 = {
   args: {
     label: 'Deletable',
-    variant: 'pink',
+    variant: 'vis-5',
     onDelete: () => {}
   }
 };
 
-export const DeletableOrange = {
+export const DeletableVisualisation6 = {
   args: {
     label: 'Deletable',
-    variant: 'orange',
+    variant: 'vis-6',
     onDelete: () => {}
   }
 };
 
-export const DeletableRed = {
+export const DeletableVisualisation7 = {
   args: {
     label: 'Deletable',
-    variant: 'red',
+    variant: 'vis-7',
     onDelete: () => {}
   }
 };
