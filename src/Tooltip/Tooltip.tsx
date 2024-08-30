@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 export interface TooltipProps {
   content: string;
   icon?: string;
-  state?: 'info' | 'warning' | 'error';
+  state?: 'neutral' | 'info' | 'warning' | 'error';
   size?: 'small' | 'large';
   position?: 'top' | 'right' | 'bottom' | 'left';
   delay?: number;
@@ -16,7 +16,7 @@ export interface TooltipProps {
 }
 
 export function Tooltip(props: TooltipProps) {
-  const { content, icon = '', state = 'info', size = 'small', position = 'bottom', delay = 0, children, className, style, disableHoverListener, disableFocusListener } = props;
+  const { content, icon = '', state = 'neutral', size = 'small', position = 'bottom', delay = 0, children, className, style, disableHoverListener, disableFocusListener } = props;
 
   const [visible, setVisible] = useState<boolean>(false);
   const [transform, setTransform] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -123,12 +123,14 @@ export function Tooltip(props: TooltipProps) {
   }, [visible]);
 
   const states = {
-    info: 'border-states-info bg-states-info-paler text-states-info-boldest',
-    warning: 'border-states-warning bg-states-warning-paler text-states-warning-boldest',
+    neutral: 'border-controls-lines-pale bg-neutral-layer-2 text-neutral-detail-boldest',
+    info: 'border-states-info bg-states-info-pale text-states-info-boldest',
+    warning: 'border-states-warning bg-states-warning-pale text-states-warning-boldest',
     error: 'border-states-error bg-states-error-paler text-states-error-boldest'
   };
 
   const iconStates = {
+    neutral: 'text-neutral-detail-boldest',
     info: 'text-states-info',
     warning: 'text-states-warning',
     error: 'text-states-error'
