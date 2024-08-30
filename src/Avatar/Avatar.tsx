@@ -14,7 +14,7 @@ export function Avatar({
   } & HTMLAttributes<HTMLButtonElement | HTMLDivElement>
 >) {
   const bg = {
-    primary: 'text-primary-bolder border-0 bg-primary-paler outline outline-1 outline-offset-2 outline-primary-main hover:outline-neutral-detail-bolder focus-visible:outline-neutral-detail-bolder',
+    primary: 'text-primary-text-1 border-0 bg-primary-main outline outline-1 outline-offset-2 outline-default-transparent hover:outline-primary-main focus-visible:outline-primary-main',
     outline: 'bg-default-transparent border border-neutral-detail-boldest text-neutral-detail-bold hover:border-neutral-detail-bold focus-visible:border-neutral-detail-bold',
     ghost: 'bg-default-transparent border-2 border-default-transparent text-neutral-detail-boldest hover:text-neutral-detail-bold focus-visible:text-neutral-detail-bold'
   };
