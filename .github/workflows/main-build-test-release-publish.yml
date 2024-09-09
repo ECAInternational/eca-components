@@ -26,6 +26,7 @@ jobs:
     secrets: inherit
     with:
       use-vitest: true
+      disable-e2e-tests: true
 
   update-release:
     name: Update Release

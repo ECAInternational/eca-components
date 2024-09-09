@@ -20,6 +20,7 @@ jobs:
     secrets: inherit
     with:
       use-vitest: true
+      disable-e2e-tests: true
 
   publish-beta-version:
     name: Get Beta Version
