@@ -2,7 +2,7 @@
 
 A library of reusable components for across ECA applications.
 
-Uses Storybook for component development and documentation.
+Uses Storybook for component development and documentation
 
 ## Live Documentation
 
