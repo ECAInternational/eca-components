@@ -18,7 +18,7 @@ describe('NavigationMenu', () => {
   it('renders NavHeader, NavFooter, and the menu items', () => {
     render(<NavigationMenu menuItems={menuItems} url={mockUrl} />);
 
-    expect(screen.getByRole('heading', { name: 'Your Company' })).toBeInTheDocument();
+    expect(screen.getByTestId('company-logo-expanded')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Collapse' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Item 1' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Item 2' })).toBeInTheDocument();

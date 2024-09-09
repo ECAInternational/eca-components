@@ -28,18 +28,4 @@ describe('NavFooter', () => {
 
     expect(toggleNavExpanded).toHaveBeenCalled();
   });
-
-  it('should display PlatformIcon when Expanded and text', () => {
-    render(<NavFooter isNavExpanded toggleNavExpanded={() => {}} />);
-
-    expect(screen.getByTestId('platform-icon')).toBeVisible();
-    expect(screen.queryByText('Platform')).toBeVisible();
-  });
-
-  it('should display PlatformIcon when collapsed and no text', () => {
-    render(<NavFooter isNavExpanded={false} toggleNavExpanded={() => {}} />);
-
-    expect(screen.getByTestId('platform-icon')).toBeVisible();
-    expect(screen.queryByText('Platform')).not.toBeInTheDocument();
-  });
 });

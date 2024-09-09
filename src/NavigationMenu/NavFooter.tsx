@@ -1,8 +1,8 @@
 import React from 'react';
-import { PlatformIcon } from './Icons/platform-icon.tsx';
 import { useTranslation } from '../locale/use-translation.ts';
 import { CollapseIcon } from './Icons/CollapseIcon.tsx';
 import { ExpandIcon } from './Icons/ExpandIcon.tsx';
+import { PlatformIconCollapsed } from './Icons/PlatformIconCollapsed.tsx';
 
 export function NavFooter({ isNavExpanded, toggleNavExpanded }: { isNavExpanded: boolean; toggleNavExpanded: () => void }) {
   const { t } = useTranslation();
@@ -13,9 +13,8 @@ export function NavFooter({ isNavExpanded, toggleNavExpanded }: { isNavExpanded:
       </button>
       <div className='flex items-center gap-3 overflow-hidden p-4'>
         <i className='inline-block'>
-          <PlatformIcon />
+          <PlatformIconCollapsed />
         </i>
-        {isNavExpanded && <span className='text-neutral-detail'>{t('Platform')}</span>}
       </div>
     </div>
   );
