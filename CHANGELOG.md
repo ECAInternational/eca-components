@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.1](https://github.com/ECAInternational/eca-components/compare/v2.10.0...v2.10.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* Upgrade reusables to 5.6.0 ([#334](https://github.com/ECAInternational/eca-components/issues/334)) ([dceaf70](https://github.com/ECAInternational/eca-components/commit/dceaf70162f4c878be62bbf9cf5b99a31bbc68b2))
+
 ## [2.10.0](https://github.com/ECAInternational/eca-components/compare/v2.9.0...v2.10.0) (2024-08-30)
 
 
