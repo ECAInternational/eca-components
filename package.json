@@ -28,7 +28,8 @@
     "chromatic": "chromatic --exit-zero-on-changes",
     "copy-tokens": "ncp node_modules/@ecainternational/eca-design-tokens/css/ tokens",
     "lint": "npx eslint ./** --fix",
-    "prettier": "npx prettier . --write",
+    "typecheck": "tsc",
+    "prettify": "npx prettier . --write",
     "prepare": "husky install",
     "storybook": "npm run copy-tokens && storybook dev -p 6006",
     "test-storybook": "test-storybook --maxWorkers=2"
