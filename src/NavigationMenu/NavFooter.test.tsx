@@ -6,7 +6,7 @@ import { NavFooter } from './NavFooter.tsx';
 
 describe('NavFooter', () => {
   it('should display CollapseIcon and title "Collapse" when isNavExpanded is true', () => {
-    render(<NavFooter isNavExpanded={false} toggleNavExpanded={() => {}} />);
+    render(<NavFooter isNavExpanded={true} toggleNavExpanded={() => {}} />);
 
     expect(screen.getByTitle('Collapse')).toBeVisible();
     expect(screen.getByTestId('collapse-icon')).toBeVisible();

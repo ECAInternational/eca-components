@@ -33,6 +33,7 @@ module.exports = {
     'import/export': 'off',
     'max-len': 'off',
     'tailwindcss/no-custom-classname': 'off',
-    'no-use-before-define': 'off'
+    'no-use-before-define': 'off',
+    'react/jsx-boolean-value': 'off'
   }
 };
