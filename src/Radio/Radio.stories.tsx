@@ -1,5 +1,7 @@
 import React from 'react';
 import { Radio, RadioProps } from './Radio.tsx';
+import { Label } from '../Form/Label.tsx';
+import { FieldSet } from '../Form/FieldSet.tsx';
 
 export default {
   component: Radio,
@@ -42,14 +44,20 @@ export const Default = {
     name: 'default'
   },
   render: (args: RadioProps) => (
-    <div className='flex flex-col justify-start'>
-      <div className='py-2'>
-        <Radio {...args} label='Radio 1' id='one' value='one' defaultChecked />
+    <FieldSet className='flex flex-col justify-start'>
+      <div className='flex items-center py-2'>
+        <Radio {...args} id='one' value='one' defaultChecked />
+        <Label htmlFor='one' className='ps-2 transition-all paragraph-sm-lighter'>
+          Radio 1
+        </Label>
       </div>
-      <div className='py-2'>
-        <Radio {...args} label='Radio 2' id='two' value='two' />
+      <div className='flex items-center py-2'>
+        <Radio {...args} id='two' value='two' />
+        <Label htmlFor='two' className='ps-2 transition-all paragraph-sm-lighter'>
+          Radio 2
+        </Label>
       </div>
-    </div>
+    </FieldSet>
   )
 };
 
@@ -69,36 +77,43 @@ export const Unselected = {
   }
 };
 
-export const Label = {
-  args: {
-    label: 'A Label',
-    name: 'label',
-    value: 'label'
-  }
-};
-
 export const Vertical = {
   args: {
     name: 'vertical'
   },
   render: (args: RadioProps) => (
-    <div className='flex flex-col justify-start'>
-      <div className='py-2'>
-        <Radio {...args} label='Apples' name='apples' value='apples' defaultChecked />
+    <FieldSet className='flex flex-col justify-start'>
+      <div className='flex items-center py-2'>
+        <Radio {...args} id='apples' value='apples' defaultChecked />
+        <Label htmlFor='apples' className='ps-2 transition-all paragraph-sm-lighter'>
+          Apples
+        </Label>
       </div>
-      <div className='py-2'>
-        <Radio {...args} label='Bananas' name='bananas' value='bananas' />
+      <div className='flex items-center py-2'>
+        <Radio {...args} id='bananas' value='bananas' />
+        <Label htmlFor='bananas' className='ps-2 transition-all paragraph-sm-lighter'>
+          Bananas
+        </Label>
       </div>
-      <div className='py-2'>
-        <Radio {...args} label='Oranges' name='oranges' value='oranges' />
+      <div className='flex items-center py-2'>
+        <Radio {...args} id='oranges' value='oranges' />
+        <Label htmlFor='oranges' className='ps-2 transition-all paragraph-sm-lighter'>
+          Oranges
+        </Label>
       </div>
-      <div className='py-2'>
-        <Radio {...args} label='Mangos' name='mangos' value='mangos' />
+      <div className='flex items-center py-2'>
+        <Radio {...args} id='mangos' value='mangos' />
+        <Label htmlFor='mangos' className='ps-2 transition-all paragraph-sm-lighter'>
+          Mangos
+        </Label>
       </div>
-      <div className='py-2'>
-        <Radio {...args} label='Strawberries' name='strawberries' value='strawberries' />
+      <div className='flex items-center py-2'>
+        <Radio {...args} id='strawberries' value='strawberries' />
+        <Label htmlFor='strawberries' className='ps-2 transition-all paragraph-sm-lighter'>
+          Strawberries
+        </Label>
       </div>
-    </div>
+    </FieldSet>
   )
 };
 
@@ -107,22 +122,37 @@ export const Horizontal = {
     name: 'horizontal'
   },
   render: (args: RadioProps) => (
-    <div className='flex flex-row items-center'>
-      <span className='pe-4'>
-        <Radio {...args} label='Apples' name='apples2' value='apples' defaultChecked />
+    <FieldSet className='flex flex-row items-center'>
+      <span className='flex items-center pe-4'>
+        <Radio {...args} id='apples2' value='apples' defaultChecked />
+        <Label htmlFor='apples2' className='ps-2 transition-all paragraph-sm-lighter'>
+          Apples
+        </Label>
       </span>
-      <span className='pe-4'>
-        <Radio {...args} label='Bananas' name='bananas2' value='bananas' />
+      <span className='flex items-center pe-4'>
+        <Radio {...args} id='bananas2' value='bananas' />
+        <Label htmlFor='bananas2' className='ps-2 transition-all paragraph-sm-lighter'>
+          Bananas
+        </Label>
       </span>
-      <span className='pe-4'>
-        <Radio {...args} label='Oranges' name='oranges2' value='oranges' />
+      <span className='flex items-center pe-4'>
+        <Radio {...args} id='oranges2' value='oranges' />
+        <Label htmlFor='oranges2' className='ps-2 transition-all paragraph-sm-lighter'>
+          Oranges
+        </Label>
       </span>
-      <span className='pe-4'>
-        <Radio {...args} label='Mangos' name='mangos2' value='mangos' />
+      <span className='flex items-center pe-4'>
+        <Radio {...args} id='mangos2' value='mangos' />
+        <Label htmlFor='mangos2' className='ps-2 transition-all paragraph-sm-lighter'>
+          Mangos
+        </Label>
       </span>
-      <span className='pe-4'>
-        <Radio {...args} label='Strawberries' name='strawberries2' value='strawberries' />
+      <span className='flex items-center pe-4'>
+        <Radio {...args} id='strawberries2' value='strawberries' />
+        <Label htmlFor='strawberries2' className='ps-2 transition-all paragraph-sm-lighter'>
+          Strawberries
+        </Label>
       </span>
-    </div>
+    </FieldSet>
   )
 };

@@ -1,12 +1,9 @@
 import React, { InputHTMLAttributes } from 'react';
 
-interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   id?: string;
-  label?: string;
-  alignment?: 'left' | 'right' | 'top';
   checked?: boolean;
-
   disabled?: boolean;
 }
 
@@ -18,35 +15,12 @@ const activeClasses = 'active:border-neutral-detail-bold active:bg-neutral-detai
 
 const checkedActiveClasses = 'checked:active:border-controls-highlight-bold checked:active:bg-controls-highlight-palest checked:active:outline-controls-highlight-palest checked:active:before:bg-controls-highlight-bold';
 
-const disabledClasses = 'disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-detail-palest disabled:before:bg-neutral-detail-pale disabled:before:opacity-60';
+const disabledClasses = 'disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-detail-palest disabled:before:bg-neutral-detail-pale disabled:opacity-70 disabled:before:opacity-60';
 
-const checkedDisabledClasses = 'checked:disabled:border-controls-highlight-pale checked:disabled:bg-controls-bg-disabled checked:disabled:before:bg-controls-highlight-pale disabled:hover:outline-0';
+const checkedDisabledClasses = 'checked:disabled:border-controls-highlight checked:disabled:bg-controls-bg-disabled checked:disabled:before:bg-controls-highlight disabled:opacity-70 disabled:hover:outline-0';
 
 export function Switch(props: SwitchProps) {
-  const { name, id, label, alignment = 'left', checked, disabled = false, ...others } = props;
+  const { name, id, checked, disabled = false, ...others } = props;
 
-  return (
-    <div className={`flex ${alignment === 'top' && 'flex-col'} items-center text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled`}>
-      {label && alignment === 'top' && (
-        <label htmlFor={id} className='pb-1 transition label-sm-mid'>
-          {label}
-        </label>
-      )}
-
-      {label && alignment === 'left' && (
-        <label htmlFor={id} className='pe-2 transition label-sm-mid'>
-          {label}
-        </label>
-      )}
-
-      <div className='flex items-center'>
-        <input type='checkbox' id={id || name} name={name} disabled={disabled} checked={checked} {...others} className={`${baseClasses} ${checkedClasses} ${activeClasses} ${checkedActiveClasses} ${disabledClasses} ${checkedDisabledClasses}`} />
-      </div>
-      {label && alignment === 'right' && (
-        <label htmlFor={id} className='ps-2 label-sm-mid'>
-          {label}
-        </label>
-      )}
-    </div>
-  );
+  return <input type='checkbox' id={id || name} name={name} disabled={disabled} checked={checked} {...others} className={`${baseClasses} ${checkedClasses} ${activeClasses} ${checkedActiveClasses} ${disabledClasses} ${checkedDisabledClasses}`} />;
 }

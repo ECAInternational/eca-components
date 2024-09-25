@@ -5,10 +5,18 @@ on:
     branches-ignore:
       - main
 
+permissions:
+  actions: write
+  checks: write
+  pull-requests: write
+  contents: write
+  packages: read
+
 jobs:
   build-lint:
     name: Build & Lint
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v3.1.1
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v5.6.0
     secrets: inherit
     with:
       use-vitest: true
+      disable-e2e-tests: true

@@ -44,7 +44,7 @@ export default {
     }
   },
   args: {
-    state: 'info',
+    state: 'neutral',
     content: 'Refresh',
     size: 'small',
     position: 'bottom',
@@ -62,6 +62,13 @@ export default {
 export const Default = {
   args: {
     name: 'default-tooltip'
+  }
+};
+
+export const Neutral = {
+  args: {
+    name: 'neutral-tooltip',
+    state: 'neutral'
   }
 };
 
@@ -83,6 +90,14 @@ export const Error = {
   args: {
     name: 'error-tooltip',
     state: 'error'
+  }
+};
+
+export const IconNeutral = {
+  args: {
+    name: 'info-tooltip',
+    state: 'neutral',
+    icon: 'fi-rr-info'
   }
 };
 

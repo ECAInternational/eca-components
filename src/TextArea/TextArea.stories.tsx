@@ -1,4 +1,7 @@
-import { TextArea } from './TextArea.tsx';
+import React from 'react';
+import { TextArea, TextAreaProps } from './TextArea.tsx';
+import { FieldSet } from '../Form/FieldSet.tsx';
+import { Label } from '../Form/Label.tsx';
 
 export default {
   component: TextArea,
@@ -55,9 +58,7 @@ export const Default = {
   args: {
     name: 'default-text-area',
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Label',
-    description: '(required)'
+    placeholder: 'Placeholder text'
   }
 };
 
@@ -65,8 +66,7 @@ export const Enabled = {
   args: {
     name: 'enabled-text-area',
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Enabled'
+    placeholder: 'Placeholder text'
   }
 };
 
@@ -75,8 +75,7 @@ export const Disabled = {
     name: 'disabled-text-area',
     disabled: true,
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Disabled'
+    placeholder: 'Placeholder text'
   }
 };
 
@@ -85,8 +84,7 @@ export const NoMaxLength = {
     name: 'no-max-length-text-area',
     maxLength: undefined,
     state: 'default',
-    placeholder: 'No Max Length',
-    label: 'No Max Length'
+    placeholder: 'No Max Length'
   }
 };
 
@@ -112,34 +110,44 @@ export const Error = {
   args: {
     name: 'error-text-area',
     state: 'error',
-    placeholder: 'Placeholder text',
-    label: 'Error'
+    placeholder: 'Placeholder text'
   }
 };
 
-export const NoLabel = {
+export const WithLabel = {
   args: {
     name: 'no-label-text-area',
     state: 'default',
     placeholder: 'Placeholder text'
-  }
+  },
+  render: (args: TextAreaProps) => (
+    <FieldSet>
+      <Label htmlFor={args.name}>Label</Label>
+      <TextArea {...args} />
+    </FieldSet>
+  )
 };
 
-export const Description = {
+export const WithDescription = {
   args: {
     name: 'description-text-area',
     state: 'default',
-    label: 'Label',
-    description: '(required)',
     placeholder: 'Placeholder text'
-  }
+  },
+  render: (args: TextAreaProps) => (
+    <FieldSet>
+      <Label htmlFor={args.name}>
+        Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <TextArea {...args} />
+    </FieldSet>
+  )
 };
 
 export const MaxLengthValid = {
   args: {
     name: 'max-length-valid-text-area',
     state: 'default',
-    label: 'Label',
     value: 'Bean beet bitter brinjal broccoli burdock cardoon cauliflower celery ceylon chicory daikon eggplant fennel florence fluted garbanzo garden good green henry jerusalem.',
     maxLength: 200
   }
@@ -149,7 +157,6 @@ export const MaxLengthInvalid = {
   args: {
     name: 'max-length-invalid-text-area',
     state: 'default',
-    label: 'Label',
     value: 'Bean beet bitter brinjal broccoli burdock cardoon cauliflower celery ceylon chicory daikon eggplant fennel florence fluted garbanzo garden good green henry jerusalem.',
     maxLength: 100
   }

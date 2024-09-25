@@ -1,5 +1,8 @@
+import React from 'react';
 import { within } from '@storybook/test';
-import { Checkbox } from './Checkbox.tsx';
+import { Checkbox, CheckboxProps } from './Checkbox.tsx';
+import { FieldSet } from '../Form/FieldSet.tsx';
+import { Label } from '../Form/Label.tsx';
 
 export default {
   component: Checkbox,
@@ -24,9 +27,7 @@ export default {
     }
   },
   args: {
-    disabled: false,
-    alignment: 'left',
-    label: 'A Label'
+    disabled: false
   }
 };
 
@@ -63,16 +64,28 @@ export const Indeterminate = {
 
 export const RightLabel = {
   args: {
-    name: 'rightLabel',
-    label: 'Right Label',
-    alignment: 'right'
-  }
+    name: 'rightLabel'
+  },
+  render: (args: CheckboxProps) => (
+    <FieldSet className='flex items-center'>
+      <Checkbox {...args} />
+      <Label htmlFor={args.name} className='ps-2 paragraph-sm-lighter'>
+        Label
+      </Label>
+    </FieldSet>
+  )
 };
 
 export const LeftLabel = {
   args: {
-    name: 'leftLabel',
-    label: 'Left Label',
-    alignment: 'left'
-  }
+    name: 'leftLabel'
+  },
+  render: (args: CheckboxProps) => (
+    <FieldSet className='flex items-center'>
+      <Label htmlFor={args.name} className='pe-2 paragraph-sm-lighter'>
+        Label
+      </Label>
+      <Checkbox {...args} />
+    </FieldSet>
+  )
 };

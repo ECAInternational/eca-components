@@ -1,0 +1,31 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as Slider from './Slider.stories';
+
+<Meta of={Slider} />
+<Title>Components/Slider</Title>
+<Subtitle>Slider</Subtitle>
+
+<Primary />
+<Controls />
+
+### Disabled
+
+<Canvas of={Slider.Disabled} />
+
+## Variants
+
+Slider is currently only available in one variant: Discrete
+
+### Discrete (default)
+
+<Canvas of={Slider.Discrete} />
+
+## Field Set
+
+### With Label
+
+<Canvas of={Slider.WithLabel} />
+
+### With Description
+
+<Canvas of={Slider.WithDescription} />

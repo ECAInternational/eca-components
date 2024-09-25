@@ -22,16 +22,17 @@ permissions:
 jobs:
   build-lint:
     name: Build & Lint
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v3.1.1
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v5.6.0
     secrets: inherit
     with:
       use-vitest: true
+      disable-e2e-tests: true
 
   update-release:
     name: Update Release
     if: ${{ (github.ref == 'refs/heads/main') }}
     needs: [build-lint] #[build-lint, test]
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/update-release.yml@v1.0.20
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/update-release.yml@v5.6.0
     with:
       release-type: 'node'
 
@@ -39,7 +40,7 @@ jobs:
     name: Publish NPM Package
     needs: update-release
     if: ${{ needs.update-release.outputs.release-created }}
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-package.yml@v1.0.20
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-package.yml@v5.6.0
     with:
       build-directory: dist
     secrets: inherit
@@ -48,4 +49,4 @@ jobs:
     name: Deploy Documentation
     needs: update-release
     if: ${{ needs.update-release.outputs.release-created }}
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-storybook-documentation.yml@v1.0.20
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-storybook-documentation.yml@v5.6.0

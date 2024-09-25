@@ -4,15 +4,19 @@ import ReactDOM from 'react-dom';
 export interface TooltipProps {
   content: string;
   icon?: string;
-  state?: 'info' | 'warning' | 'error';
+  state?: 'neutral' | 'info' | 'warning' | 'error';
   size?: 'small' | 'large';
   position?: 'top' | 'right' | 'bottom' | 'left';
   delay?: number;
   children: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  disableHoverListener?: boolean;
+  disableFocusListener?: boolean;
 }
 
 export function Tooltip(props: TooltipProps) {
-  const { content, icon = '', state = 'info', size = 'small', position = 'bottom', delay = 0, children } = props;
+  const { content, icon = '', state = 'neutral', size = 'small', position = 'bottom', delay = 0, children, className, style, disableHoverListener, disableFocusListener } = props;
 
   const [visible, setVisible] = useState<boolean>(false);
   const [transform, setTransform] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -30,7 +34,7 @@ export function Tooltip(props: TooltipProps) {
   const handleMouseLeave = () => {
     setIsMouseOver(false);
     const hostElement = hostRef.current;
-    if (hostElement && hostElement.matches(':focus-within') && document.activeElement?.matches(':focus-visible')) return;
+    if (hostElement?.matches(':focus-within') || document.activeElement?.matches(':focus-visible')) return;
     hideTooltip();
   };
 
@@ -59,11 +63,17 @@ export function Tooltip(props: TooltipProps) {
     }
   };
 
+  const handleDocumentScroll = () => {
+    hideTooltip();
+  };
+
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
-    if (timeoutID) clearTimeout(timeoutID);
+    document.addEventListener('scroll', handleDocumentScroll, { passive: true, capture: true });
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('scroll', handleDocumentScroll);
+      if (timeoutID) clearTimeout(timeoutID);
     };
   }, []);
 
@@ -76,14 +86,9 @@ export function Tooltip(props: TooltipProps) {
 
       if (!tooltipElement || !hostElement) return;
 
-      const containerElement = document.body;
-
-      let offsetElement: HTMLElement | null = hostElement;
-      while (offsetElement && offsetElement !== containerElement) {
-        x += offsetElement.offsetLeft;
-        y += offsetElement.offsetTop;
-        offsetElement = offsetElement.offsetParent as HTMLElement;
-      }
+      const clientRect = hostElement.getBoundingClientRect();
+      x = clientRect.x + window.scrollX;
+      y = clientRect.y + window.scrollY;
 
       const offset = 8;
       switch (position) {
@@ -111,19 +116,21 @@ export function Tooltip(props: TooltipProps) {
     y = Math.round(y);
 
     setTransform({ x, y });
-  }, [visible]);
+  }, [visible, content]);
 
   useLayoutEffect(() => {
     setTooltipID(`tooltip-${Math.random().toString(36).substring(2, 15)}`);
   }, [visible]);
 
   const states = {
-    info: 'border-states-info bg-states-info-paler text-states-info-boldest',
-    warning: 'border-states-warning bg-states-warning-paler text-states-warning-boldest',
+    neutral: 'border-controls-lines-pale bg-neutral-layer-2 text-neutral-detail-boldest',
+    info: 'border-states-info bg-states-info-pale text-states-info-boldest',
+    warning: 'border-states-warning bg-states-warning-pale text-states-warning-boldest',
     error: 'border-states-error bg-states-error-paler text-states-error-boldest'
   };
 
   const iconStates = {
+    neutral: 'text-neutral-detail-boldest',
     info: 'text-states-info',
     warning: 'text-states-warning',
     error: 'text-states-error'
@@ -153,7 +160,7 @@ export function Tooltip(props: TooltipProps) {
 
   return (
     <>
-      <span className='inline-block' ref={hostRef} aria-describedby={visible ? tooltipID : undefined} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onFocus={handleFocus} onBlur={handleBlur}>
+      <span className={`inline-block ${className}`} style={style} ref={hostRef} aria-describedby={visible ? tooltipID : undefined} onMouseEnter={disableHoverListener ? undefined : handleMouseEnter} onMouseLeave={disableHoverListener ? undefined : handleMouseLeave} onFocus={disableFocusListener ? undefined : handleFocus} onBlur={disableFocusListener ? undefined : handleBlur}>
         {children}
       </span>
       {visible && ReactDOM.createPortal(tooltip, document.body)}

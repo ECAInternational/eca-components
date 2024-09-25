@@ -13,7 +13,7 @@ describe('LinkMenuItem', () => {
         icon: 'link-icon',
         enabled: true
       },
-      pathname: '/my-link',
+      url: '/my-link',
       isNavExpanded: true
     };
 
@@ -30,7 +30,7 @@ describe('LinkMenuItem', () => {
         icon: 'link-icon',
         enabled: true
       },
-      pathname: '/my-link',
+      url: '/my-link',
       isNavExpanded: true,
       isTopLevel: true,
       isContentVisible: true
@@ -52,7 +52,7 @@ describe('LinkMenuItem', () => {
         label: 'My Link',
         enabled: true
       },
-      pathname: '/my-link',
+      url: '/my-link',
       isNavExpanded: true,
       isTopLevel: false
     };

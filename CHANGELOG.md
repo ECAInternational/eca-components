@@ -1,5 +1,69 @@
 # Changelog
 
+## [2.10.1](https://github.com/ECAInternational/eca-components/compare/v2.10.0...v2.10.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* Upgrade reusables to 5.6.0 ([#334](https://github.com/ECAInternational/eca-components/issues/334)) ([dceaf70](https://github.com/ECAInternational/eca-components/commit/dceaf70162f4c878be62bbf9cf5b99a31bbc68b2))
+
+## [2.10.0](https://github.com/ECAInternational/eca-components/compare/v2.9.0...v2.10.0) (2024-08-30)
+
+
+### Features
+
+* Apply rebranding ([#326](https://github.com/ECAInternational/eca-components/issues/326)) ([0e6ec91](https://github.com/ECAInternational/eca-components/commit/0e6ec917862990a8dfb7b3c9ee46ab605b2f5e88))
+* Update eca-design-tokens (New font) ([#323](https://github.com/ECAInternational/eca-components/issues/323)) ([3079995](https://github.com/ECAInternational/eca-components/commit/3079995f4d2af8cd656cc136963ea0477028294b))
+
+## [2.9.0](https://github.com/ECAInternational/eca-components/compare/v2.8.2...v2.9.0) (2024-08-29)
+
+
+### Features
+
+* Add Slider component ([#293](https://github.com/ECAInternational/eca-components/issues/293)) ([99ee8c6](https://github.com/ECAInternational/eca-components/commit/99ee8c6e0cc3759ca794aea4b1e7f6f5f909005f))
+
+## [2.8.2](https://github.com/ECAInternational/eca-components/compare/v2.8.1...v2.8.2) (2024-08-29)
+
+
+### Bug Fixes
+
+* redirect to logout routes instead of a form submission. ([#320](https://github.com/ECAInternational/eca-components/issues/320)) ([a254bb4](https://github.com/ECAInternational/eca-components/commit/a254bb4b5a85e126e39b18f30bb0caa83d17d91a))
+
+## [2.8.1](https://github.com/ECAInternational/eca-components/compare/v2.8.0...v2.8.1) (2024-08-29)
+
+
+### Bug Fixes
+
+* Expand nav on render ([#317](https://github.com/ECAInternational/eca-components/issues/317)) ([7334b00](https://github.com/ECAInternational/eca-components/commit/7334b000eb3aa5a73d05ad59c1a5332c0a2b6830))
+* Tooltip offset incorrect after scrolling ([#318](https://github.com/ECAInternational/eca-components/issues/318)) ([b0c7a3b](https://github.com/ECAInternational/eca-components/commit/b0c7a3ba02167d355ebd2bc9b04aaaeec4eeffc0))
+
+## [2.8.0](https://github.com/ECAInternational/eca-components/compare/v2.7.0...v2.8.0) (2024-08-23)
+
+
+### Features
+
+* Add view/obscure password button ([#303](https://github.com/ECAInternational/eca-components/issues/303)) ([1fa869f](https://github.com/ECAInternational/eca-components/commit/1fa869fcfae34fe98c41faf7c550dc0d78c01cc8))
+* Allow className to passed to SegmentedControl ([#309](https://github.com/ECAInternational/eca-components/issues/309)) ([dcc7255](https://github.com/ECAInternational/eca-components/commit/dcc7255d86522ee3c04a7b9f0b220e40bc5fd212))
+
+
+### Bug Fixes
+
+* Stop buttons translating when clicked in disabled state ([#308](https://github.com/ECAInternational/eca-components/issues/308)) ([f8b74c9](https://github.com/ECAInternational/eca-components/commit/f8b74c966c5b88af77bdc936cf4b462c2a0ef049))
+
+## [2.7.0](https://github.com/ECAInternational/eca-components/compare/v2.6.0...v2.7.0) (2024-08-21)
+
+
+### Features
+
+* Add size prop to Chip component ([#304](https://github.com/ECAInternational/eca-components/issues/304)) ([4eaac03](https://github.com/ECAInternational/eca-components/commit/4eaac03efff5e913e47b5bd2ef1a1006d0d6c94d))
+
+## [2.6.0](https://github.com/ECAInternational/eca-components/compare/v2.5.2...v2.6.0) (2024-08-20)
+
+
+### Features
+
+* Add rounded chip variant ([#299](https://github.com/ECAInternational/eca-components/issues/299)) ([a2607df](https://github.com/ECAInternational/eca-components/commit/a2607dff431aee7eb2807333c8b477b14b55c28f))
+
 ## [2.5.2](https://github.com/ECAInternational/eca-components/compare/v2.5.1...v2.5.2) (2024-08-13)
 
 

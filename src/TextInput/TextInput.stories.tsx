@@ -1,4 +1,7 @@
-import { TextInput } from './TextInput.tsx';
+import React from 'react';
+import { TextInput, TextInputProps } from './TextInput.tsx';
+import { FieldSet } from '../Form/FieldSet.tsx';
+import { Label } from '../Form/Label.tsx';
 
 export default {
   component: TextInput,
@@ -9,7 +12,7 @@ export default {
   argTypes: {
     state: {
       control: 'select',
-      description: 'Defines the state of the button',
+      description: 'Defines the state of the input',
       options: ['default', 'warning', 'error']
     },
     variant: {
@@ -24,9 +27,6 @@ export default {
     id: {
       table: { disable: true }
     },
-    type: {
-      table: { disable: true }
-    },
     className: {
       table: { disable: true }
     }
@@ -34,79 +34,86 @@ export default {
   args: {
     disabled: false,
     state: 'default',
-    variant: 'outline'
+    variant: 'outline',
+    type: 'text'
   }
 };
 
 export const Default = {
   args: {
-    name: 'default-button',
+    name: 'default-input',
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Label'
+    placeholder: 'Placeholder text'
   }
 };
 
 export const Enabled = {
   args: {
-    name: 'enabled-button',
+    name: 'enabled-input',
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Enabled'
+    placeholder: 'Placeholder text'
   }
 };
 
 export const Disabled = {
   args: {
-    name: 'disabled-button',
+    name: 'disabled-input',
     disabled: true,
     state: 'default',
-    placeholder: 'Placeholder text',
-    label: 'Disabled'
+    placeholder: 'Placeholder text'
   }
 };
 
 export const Warning = {
   args: {
-    name: 'warning-button',
+    name: 'warning-input',
     state: 'warning',
-    placeholder: 'Placeholder text',
-    label: 'Warning'
+    placeholder: 'Placeholder text'
   }
 };
 
 export const Error = {
   args: {
-    name: 'error-button',
+    name: 'error-input',
     state: 'error',
-    placeholder: 'Placeholder text',
-    label: 'Error'
-  }
-};
-
-export const NoLabel = {
-  args: {
-    name: 'no-label-button',
-    state: 'default',
     placeholder: 'Placeholder text'
   }
 };
 
-export const Description = {
+export const WithLabel = {
   args: {
-    name: 'description-button',
+    name: 'no-label-input',
     state: 'default',
-    label: 'Label',
-    description: '(required)',
     placeholder: 'Placeholder text'
-  }
+  },
+  render: (args: TextInputProps) => (
+    <FieldSet>
+      <Label htmlFor={args.name}>Label</Label>
+      <TextInput {...args} />
+    </FieldSet>
+  )
+};
+
+export const WithDescription = {
+  args: {
+    name: 'description-input',
+    state: 'default',
+    placeholder: 'Placeholder text'
+  },
+  render: (args: TextInputProps) => (
+    <FieldSet>
+      <Label htmlFor={args.name}>
+        Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <TextInput {...args} />
+    </FieldSet>
+  )
 };
 
 export const Icon = {
   args: {
-    name: 'icon-button',
+    name: 'icon-input',
     state: 'default',
-    label: 'Icon',
     placeholder: 'Placeholder text',
     icon: 'fi-rr-search'
   }
@@ -114,9 +121,8 @@ export const Icon = {
 
 export const Prefix = {
   args: {
-    name: 'prefix-button',
+    name: 'prefix-input',
     state: 'default',
-    label: 'Prefix',
     placeholder: 'Placeholder text',
     prefix: '£'
   }
@@ -124,10 +130,18 @@ export const Prefix = {
 
 export const Suffix = {
   args: {
-    name: 'suffix-button',
+    name: 'suffix-input',
     state: 'default',
-    label: 'Suffix',
     placeholder: 'Placeholder text',
     suffix: 'GBP'
+  }
+};
+
+export const Password = {
+  args: {
+    name: 'password-input',
+    state: 'default',
+    placeholder: 'Enter your password',
+    type: 'password'
   }
 };

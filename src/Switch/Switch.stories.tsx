@@ -1,4 +1,7 @@
-import { Switch } from './Switch.tsx';
+import React from 'react';
+import { Switch, SwitchProps } from './Switch.tsx';
+import { FieldSet } from '../Form/FieldSet.tsx';
+import { Label } from '../Form/Label.tsx';
 
 export default {
   component: Switch,
@@ -23,9 +26,7 @@ export default {
     }
   },
   args: {
-    disabled: false,
-    alignment: 'left',
-    label: 'A Label'
+    disabled: false
   }
 };
 
@@ -51,21 +52,40 @@ export const Off = {
 
 export const Right = {
   args: {
-    name: 'right',
-    alignment: 'right'
-  }
+    name: 'right'
+  },
+  render: (args: SwitchProps) => (
+    <FieldSet className='flex items-center'>
+      <Switch {...args} />
+      <Label className='ps-2' htmlFor={args.name}>
+        Label
+      </Label>
+    </FieldSet>
+  )
 };
 
 export const Left = {
   args: {
-    name: 'left',
-    alignment: 'left'
-  }
+    name: 'left'
+  },
+  render: (args: SwitchProps) => (
+    <FieldSet className='flex items-center'>
+      <Label className='pe-2' htmlFor={args.name}>
+        Label
+      </Label>
+      <Switch {...args} />
+    </FieldSet>
+  )
 };
 
 export const Top = {
   args: {
-    name: 'top',
-    alignment: 'top'
-  }
+    name: 'top'
+  },
+  render: (args: SwitchProps) => (
+    <FieldSet className='flex flex-col items-center'>
+      <Label htmlFor={args.name}>Label</Label>
+      <Switch {...args} />
+    </FieldSet>
+  )
 };

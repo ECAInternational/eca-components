@@ -16,15 +16,16 @@ permissions:
 jobs:
   build-lint:
     name: Build, Lint, and Test
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v3.1.1
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-checkout-setup-lint-build.yml@v5.6.0
     secrets: inherit
     with:
       use-vitest: true
+      disable-e2e-tests: true
 
   publish-beta-version:
     name: Get Beta Version
     needs: build-lint
-    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-beta-package.yml@v1.0.20
+    uses: ECAInternational/eca-reusable-workflows/.github/workflows/js-publish-npm-beta-package.yml@v5.6.0
     with:
       build-directory: dist
     secrets: inherit
