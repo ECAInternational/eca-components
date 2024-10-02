@@ -1,4 +1,5 @@
-import isLinkCurrentLocation from './isLinkCurrentLocation';
+import { describe, expect, it } from 'vitest';
+import isLinkCurrentLocation from './isLinkCurrentLocation.ts';
 
 describe('isLinkCurrentLocation', () => {
   it('returns false if either link or currentLocation is undefined', () => {
