@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.2](https://github.com/ECAInternational/eca-components/compare/v2.10.1...v2.10.2) (2024-10-02)
+
+
+### Bug Fixes
+
+* fix password revealed by pressing enter key on the keyboard ([#348](https://github.com/ECAInternational/eca-components/issues/348)) ([b6e6aea](https://github.com/ECAInternational/eca-components/commit/b6e6aea64d6923d26402847cdd58055a2036eb28))
+
 ## [2.10.1](https://github.com/ECAInternational/eca-components/compare/v2.10.0...v2.10.1) (2024-09-09)
 
 
