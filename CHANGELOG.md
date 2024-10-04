@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.3](https://github.com/ECAInternational/eca-components/compare/v2.10.2...v2.10.3) (2024-10-04)
+
+
+### Bug Fixes
+
+* [SIN-637] Enable autocomplete multiple to work with complex objects ([#352](https://github.com/ECAInternational/eca-components/issues/352)) ([8e98b7b](https://github.com/ECAInternational/eca-components/commit/8e98b7bf3d99d63481da01d87ee0adc1043c0515))
+
 ## [2.10.2](https://github.com/ECAInternational/eca-components/compare/v2.10.1...v2.10.2) (2024-10-02)
 
 
