@@ -9,7 +9,7 @@ type AutoCompleteInputProps = ComponentProps<typeof Combobox.Input> & {
 };
 
 export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...props }: AutoCompleteInputProps, ref: ForwardedRef<HTMLInputElement>) => {
-  const { open, value, multiple, onChange } = useAutoCompleteContext();
+  const { open, value, multiple, onChange, itemKey } = useAutoCompleteContext();
 
   const border = {
     default: 'border-controls-border',
@@ -52,7 +52,7 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...pro
           <div className='flex flex-wrap gap-2'>
             {selectedItems.length > 0 &&
               selectedItems.map((item) => (
-                <div key={item} className='flex flex-row items-center gap-2 rounded border border-b-neutral-detail-pale px-1 py-1.5'>
+                <div key={itemKey ? itemKey(item) : item} className='flex flex-row items-center gap-2 rounded border border-b-neutral-detail-pale px-1 py-1.5'>
                   <span> {props.displayValue ? props.displayValue(item) : item} </span>
                   <IconButton name='delete' variant='standard' size='xsmall' icon={`${'fi-rr-cross-small'}`} className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)} />
                 </div>
