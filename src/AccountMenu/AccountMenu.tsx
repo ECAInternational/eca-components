@@ -6,6 +6,7 @@ import { IconButton } from '../IconButton/IconButton.tsx';
 
 export function AccountMenu({ initials, authWebUrl, theme }: { initials: string; authWebUrl: string; theme: string }) {
   const { t } = useTranslation();
+  const currentUrl = window.location.href;
 
   return (
     // This translate-y-1 is a hack to compensate for some strange offset that is happening
@@ -18,7 +19,7 @@ export function AccountMenu({ initials, authWebUrl, theme }: { initials: string;
         <MenuItem>
           <div className='flex flex-row'>
             <i className='fi fi-sr-user-gear px-2 text-primary-main' />
-            <a href={`${authWebUrl}/account/update-profile/view`} className='w-full text-left text-neutral-body'>
+            <a href={`${authWebUrl}/account/update-profile/view?return-url=${currentUrl}`} className='w-full text-left text-neutral-body'>
               {t('Account settings')}
             </a>
           </div>
