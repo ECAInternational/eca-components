@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from '../locale/use-translation.ts';
 import { Menu, MenuButton, MenuItem, MenuItems } from '../Menu/index.ts';
 import { Avatar } from '../Avatar/index.ts';
@@ -9,7 +9,7 @@ export function AccountMenu({ initials, authWebUrl, theme }: { initials: string;
 
   const [userProfileUrl, setUserProfileReturnUrl] = React.useState('');
 
-  React.useEffect(() => {
+  useEffect(() => {
     const setUserProfileReturnUrlWithReturnUrl = `${authWebUrl}/account/update-profile/view?return-url=${window.location.href}`;
     setUserProfileReturnUrl(setUserProfileReturnUrlWithReturnUrl);
   }, []);
@@ -26,7 +26,7 @@ export function AccountMenu({ initials, authWebUrl, theme }: { initials: string;
           <div className='flex flex-row'>
             <i className='fi fi-sr-user-gear px-2 text-primary-main' />
             <a href={userProfileUrl} className='w-full text-left text-neutral-body'>
-              {t('Account settings')}
+              {t('Account settings')} v2
             </a>
           </div>
         </MenuItem>
