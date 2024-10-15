@@ -26,7 +26,7 @@ export function AccountMenu({ initials, authWebUrl, theme }: { initials: string;
           <div className='flex flex-row'>
             <i className='fi fi-sr-user-gear px-2 text-primary-main' />
             <a href={`${authWebUrl}/account/update-profile/view${accountSettingsLinkQueryParams}`} className='w-full text-left text-neutral-body'>
-              {t('Account settings')} v2
+              {t('Account settings')}
             </a>
           </div>
         </MenuItem>
