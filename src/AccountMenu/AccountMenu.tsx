@@ -7,11 +7,11 @@ import { IconButton } from '../IconButton/IconButton.tsx';
 export function AccountMenu({ initials, authWebUrl, theme }: { initials: string; authWebUrl: string; theme: string }) {
   const { t } = useTranslation();
 
-  const [userProfileUrl, setUserProfileReturnUrl] = React.useState('');
+  const [accountSettingsLinkQueryParams, setAccountSettingsLinkQueryParams] = React.useState('');
 
   useEffect(() => {
-    const setUserProfileReturnUrlWithReturnUrl = `${authWebUrl}/account/update-profile/view?return-url=${window.location.href}`;
-    setUserProfileReturnUrl(setUserProfileReturnUrlWithReturnUrl);
+    const queryParams = `?return-url=${window.location.href}`;
+    setAccountSettingsLinkQueryParams(queryParams);
   }, []);
 
   return (
@@ -25,7 +25,7 @@ export function AccountMenu({ initials, authWebUrl, theme }: { initials: string;
         <MenuItem>
           <div className='flex flex-row'>
             <i className='fi fi-sr-user-gear px-2 text-primary-main' />
-            <a href={userProfileUrl} className='w-full text-left text-neutral-body'>
+            <a href={`${authWebUrl}/account/update-profile/view${accountSettingsLinkQueryParams}`} className='w-full text-left text-neutral-body'>
               {t('Account settings')} v2
             </a>
           </div>
