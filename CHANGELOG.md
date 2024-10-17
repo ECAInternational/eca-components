@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.10.5](https://github.com/ECAInternational/eca-components/compare/v2.10.4...v2.10.5) (2024-10-17)
+
+
+### Bug Fixes
+
+* remove initials ([#361](https://github.com/ECAInternational/eca-components/issues/361)) ([af6c91e](https://github.com/ECAInternational/eca-components/commit/af6c91e41a09666a6fe579d5223448716ecb2570))
+
+## [2.10.4](https://github.com/ECAInternational/eca-components/compare/v2.10.3...v2.10.4) (2024-10-17)
+
+
+### Bug Fixes
+
+* [SIN-608] Update account menu per design ([#359](https://github.com/ECAInternational/eca-components/issues/359)) ([e032fd6](https://github.com/ECAInternational/eca-components/commit/e032fd6a9074c236efbde1eec42b36420ef0bd7f))
+
+## [2.10.3](https://github.com/ECAInternational/eca-components/compare/v2.10.2...v2.10.3) (2024-10-04)
+
+
+### Bug Fixes
+
+* [SIN-637] Enable autocomplete multiple to work with complex objects ([#352](https://github.com/ECAInternational/eca-components/issues/352)) ([8e98b7b](https://github.com/ECAInternational/eca-components/commit/8e98b7bf3d99d63481da01d87ee0adc1043c0515))
+
+## [2.10.2](https://github.com/ECAInternational/eca-components/compare/v2.10.1...v2.10.2) (2024-10-02)
+
+
+### Bug Fixes
+
+* fix password revealed by pressing enter key on the keyboard ([#348](https://github.com/ECAInternational/eca-components/issues/348)) ([b6e6aea](https://github.com/ECAInternational/eca-components/commit/b6e6aea64d6923d26402847cdd58055a2036eb28))
+
 ## [2.10.1](https://github.com/ECAInternational/eca-components/compare/v2.10.0...v2.10.1) (2024-09-09)
 
 
