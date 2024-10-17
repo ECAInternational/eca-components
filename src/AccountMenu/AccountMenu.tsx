@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from '../locale/use-translation.ts';
-import { Menu, MenuButton, MenuItem, MenuItems } from '../Menu/index.ts';
+import { Menu, MenuButton, MenuItems } from '../Menu/index.ts';
 import { Avatar } from '../Avatar/index.ts';
-import { IconButton } from '../IconButton/IconButton.tsx';
+import { Button } from '../Button/Button.tsx';
 
-export function AccountMenu({ initials, authWebUrl, theme }: { initials: string; authWebUrl: string; theme: string }) {
+export function AccountMenu({ firstName, lastName, company, authWebUrl }: { firstName: string; lastName: string; company: string; authWebUrl: string }) {
   const { t } = useTranslation();
 
   const [accountSettingsLinkQueryParams, setAccountSettingsLinkQueryParams] = React.useState('');
@@ -19,28 +19,36 @@ export function AccountMenu({ initials, authWebUrl, theme }: { initials: string;
     // inside Menu...
     <Menu className='translate-y-1'>
       <MenuButton as='div'>
-        <Avatar>{initials}</Avatar>
+        <Avatar>{`${firstName ? firstName[0] : ''}${lastName ? lastName[0] : ''}`.toUpperCase()}</Avatar>
       </MenuButton>
-      <MenuItems className='z-50'>
-        <MenuItem>
-          <div className='flex flex-row'>
-            <i className='fi fi-sr-user-gear px-2 text-primary-main' />
-            <a href={`${authWebUrl}/account/update-profile/view${accountSettingsLinkQueryParams}`} className='w-full text-left text-neutral-body'>
-              {t('Account settings')}
-            </a>
+      <MenuItems className='z-50 flex flex-col gap-3.5 bg-neutral-layer-2 p-5 text-neutral-body'>
+        <div className={'flex flex-col'}>
+          <div className={'flex paragraph-sm-heavier'}>
+            {firstName} {lastName}
           </div>
-        </MenuItem>
-        <MenuItem>
-          <div className='flex flex-row'>
-            <i className='fi fi-sr-exit px-2 text-primary-accent' />
-            <a href={`${authWebUrl}/log-out`} className='w-full text-left text-neutral-body'>
-              {t('Log out')}
-            </a>
-          </div>
-        </MenuItem>
-        <MenuItem>
-          <IconButton name='intent' value='theme' type='submit' icon={theme === 'eca-dark' ? 'fi-rr-eclipse-alt' : 'fi-rr-brightness'} variant='tonal' size='medium' className='self-start bg-neutral-layer-2' />
-        </MenuItem>
+          <div className={'flex paragraph-sm-lighter'}>{company}</div>
+        </div>
+
+        <div>
+          <a href={`${authWebUrl}/account/update-profile/view${accountSettingsLinkQueryParams}`}>
+            <Button name='outline' type={'button'} size='small' variant='outline'>
+              {t('Manage account')}
+            </Button>
+          </a>
+        </div>
+
+        <div className={'flex border-b-2 border-b-neutral-detail-paler'}></div>
+
+        <div className={'flex'}>
+          <a href={`${authWebUrl}/log-out`} className={'w-full'}>
+            <Button name='ghost' size='small' variant='ghost' type={'button'} className={'w-full !p-2'}>
+              <span className={'mr-3 rounded-3xl border-0 bg-neutral-detail-palest p-2'}>
+                <i className={`fi fi-sr-leave flex text-sm`} />
+              </span>
+              <span className={'w-full text-left'}>{t('Sign out')}</span>
+            </Button>
+          </a>
+        </div>
       </MenuItems>
     </Menu>
   );

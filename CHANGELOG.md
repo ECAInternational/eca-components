@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.10.5](https://github.com/ECAInternational/eca-components/compare/v2.10.4...v2.10.5) (2024-10-17)
+
+
+### Bug Fixes
+
+* remove initials ([#361](https://github.com/ECAInternational/eca-components/issues/361)) ([af6c91e](https://github.com/ECAInternational/eca-components/commit/af6c91e41a09666a6fe579d5223448716ecb2570))
+
+## [2.10.4](https://github.com/ECAInternational/eca-components/compare/v2.10.3...v2.10.4) (2024-10-17)
+
+
+### Bug Fixes
+
+* [SIN-608] Update account menu per design ([#359](https://github.com/ECAInternational/eca-components/issues/359)) ([e032fd6](https://github.com/ECAInternational/eca-components/commit/e032fd6a9074c236efbde1eec42b36420ef0bd7f))
+
 ## [2.10.3](https://github.com/ECAInternational/eca-components/compare/v2.10.2...v2.10.3) (2024-10-04)
 
 
