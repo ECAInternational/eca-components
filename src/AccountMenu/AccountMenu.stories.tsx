@@ -23,7 +23,7 @@ export const Default = {
   },
   render: ({ initials, authWebUrl, theme }: { initials: string; authWebUrl: string; theme: string }) => (
     <div className='items-top mb-4 flex h-72 flex-none flex-row justify-end'>
-      <AccountMenu initials={initials} authWebUrl={authWebUrl} theme={theme} />
+      <AccountMenu initials={initials} firstName={'Nat'} lastName={'Star'} company={'ECA International'} authWebUrl={authWebUrl} theme={theme} />
     </div>
   )
 };
