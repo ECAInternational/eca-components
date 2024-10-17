@@ -4,7 +4,7 @@ import { Menu, MenuButton, MenuItems } from '../Menu/index.ts';
 import { Avatar } from '../Avatar/index.ts';
 import { Button } from '../Button/Button.tsx';
 
-export function AccountMenu({ initials, firstName, lastName, company, authWebUrl }: { initials: string; firstName: string; lastName: string; company: string; authWebUrl: string; theme: string }) {
+export function AccountMenu({ initials, firstName, lastName, company, authWebUrl }: { initials: string; firstName: string; lastName: string; company: string; authWebUrl: string }) {
   const { t } = useTranslation();
 
   return (

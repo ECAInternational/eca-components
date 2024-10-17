@@ -19,11 +19,13 @@ export const Default = {
   args: {
     initials: 'JD',
     authWebUrl: 'https://www.example.com',
-    theme: 'eca-dark'
+    firstName: 'Nat',
+    lastName: 'Star',
+    company: 'ECA International'
   },
-  render: ({ initials, authWebUrl, theme }: { initials: string; authWebUrl: string; theme: string }) => (
+  render: ({ initials, authWebUrl, firstName, lastName, company }: { initials: string; authWebUrl: string; firstName: string; lastName: string; company: string }) => (
     <div className='items-top mb-4 flex h-72 flex-none flex-row justify-end'>
-      <AccountMenu initials={initials} firstName={'Nat'} lastName={'Star'} company={'ECA International'} authWebUrl={authWebUrl} theme={theme} />
+      <AccountMenu initials={initials} firstName={firstName} lastName={lastName} company={company} authWebUrl={authWebUrl} />
     </div>
   )
 };
