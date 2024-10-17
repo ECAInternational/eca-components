@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.5](https://github.com/ECAInternational/eca-components/compare/v2.10.4...v2.10.5) (2024-10-17)
+
+
+### Bug Fixes
+
+* remove initials ([#361](https://github.com/ECAInternational/eca-components/issues/361)) ([af6c91e](https://github.com/ECAInternational/eca-components/commit/af6c91e41a09666a6fe579d5223448716ecb2570))
+
 ## [2.10.4](https://github.com/ECAInternational/eca-components/compare/v2.10.3...v2.10.4) (2024-10-17)
 
 
