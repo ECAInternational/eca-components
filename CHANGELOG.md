@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.6](https://github.com/ECAInternational/eca-components/compare/v2.10.5...v2.10.6) (2024-10-18)
+
+
+### Bug Fixes
+
+* Update package.lock ([#364](https://github.com/ECAInternational/eca-components/issues/364)) ([52e8136](https://github.com/ECAInternational/eca-components/commit/52e8136267131f4a9d6ab993f09d0fec8c18ac26))
+
 ## [2.10.5](https://github.com/ECAInternational/eca-components/compare/v2.10.4...v2.10.5) (2024-10-17)
 
 
