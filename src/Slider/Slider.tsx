@@ -77,7 +77,7 @@ export function Slider(props: SliderProps) {
   };
 
   return (
-    <div ref={rangerRef} onClick={onClickHandler} className={`relative mt-2 h-2 ${variant === 'discrete' ? 'mb-4' : 'mb-2'} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} rounded-full bg-neutral-detail-palest ${className === undefined ? '' : className}`} {...others}>
+    <div ref={rangerRef} onClick={onClickHandler} className={`mt-2 h-2 ${variant === 'discrete' ? 'mb-4' : 'mb-2'} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} rounded-full bg-neutral-detail-palest ${className === undefined ? '' : className}`} {...others}>
       <div className={`absolute h-full rounded-full ${disabled ? 'cursor-not-allowed bg-controls-content-disabled' : 'bg-controls-highlight'}`} style={{ width: `${rangerInstance.getPercentageForValue(value)}%` }}></div>
       <Tooltip
         content={mark?.label || value.toString()}

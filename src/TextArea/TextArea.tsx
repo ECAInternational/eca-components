@@ -148,7 +148,7 @@ export function TextArea(props: TextAreaProps) {
     error: 'focus-within:outline-states-error hover:focus-within:outline-states-error'
   };
 
-  const className = `p-3 w-full paragraph-sm-lighter bg-default-transparent text-neutral-body border rounded-md relative transition resize peer
+  const className = `p-3 w-full paragraph-sm-lighter bg-default-transparent text-neutral-body border rounded-md transition resize peer
   outline outline-2 outline-offset-2 outline-default-transparent
   placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-default-transparent
   disabled:bg-neutral-layer-1 disabled:border-neutral-detail-paler disabled:text-controls-content-disabled disabled:outline-0

@@ -53,7 +53,7 @@ export function Button(props: ButtonProps) {
   const commonIsSubmittingClassNames = isSubmitting ? 'pointer-events-none' : '';
 
   return (
-    <button id={id || name} name={name} className={`relative flex items-center justify-center overflow-hidden outline-2 outline-offset-2 outline-default-transparent transition disabled:cursor-not-allowed disabled:text-controls-content-disabled ${bg[variant]} ${disabled[variant]} ${hover[variant]} ${active[variant]} ${focus[variant]} ${sizes[size]} ${commonIsSubmittingClassNames} ${className}`} type={type} {...others}>
+    <button id={id || name} name={name} className={`flex items-center justify-center overflow-hidden outline-2 outline-offset-2 outline-default-transparent transition disabled:cursor-not-allowed disabled:text-controls-content-disabled ${bg[variant]} ${disabled[variant]} ${hover[variant]} ${active[variant]} ${focus[variant]} ${sizes[size]} ${commonIsSubmittingClassNames} ${className}`} type={type} {...others}>
       {children}
     </button>
   );
