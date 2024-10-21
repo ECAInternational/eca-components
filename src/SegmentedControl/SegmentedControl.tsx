@@ -46,7 +46,7 @@ export function SegmentedControl(props: PropsWithChildren<SegmentedControlProps>
           return cloneElement<SegmentedControlChildProps>(child, {
             disabled: disabled || childDisabled,
             name,
-            className: `cursor-pointer peer appearance-none w-full z-10 relative overflow-hidden transition text-neutral-body
+            className: `cursor-pointer peer appearance-none w-full z-10 overflow-hidden transition text-neutral-body
               flex flex-col items-center justify-center bg-controls-bg-unselected ${sizes.input[size]}
               border border-controls-border border-l-0 outline-none first:border-l first:rounded-l-md last:rounded-r-md
               before:content-[attr(aria-label)] before:paragraph-sm-lighter

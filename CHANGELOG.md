@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.7](https://github.com/ECAInternational/eca-components/compare/v2.10.6...v2.10.7) (2024-10-21)
+
+
+### Bug Fixes
+
+* remove relative positioning and move nav styling into project ([#367](https://github.com/ECAInternational/eca-components/issues/367)) ([fecff05](https://github.com/ECAInternational/eca-components/commit/fecff05e8a0204b9365b9a21d30ac2920b04adff))
+
 ## [2.10.6](https://github.com/ECAInternational/eca-components/compare/v2.10.5...v2.10.6) (2024-10-18)
 
 

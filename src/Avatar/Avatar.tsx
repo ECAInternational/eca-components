@@ -25,5 +25,5 @@ export function Avatar({
     large: 'heading-md-heavier size-12'
   };
 
-  return <Component className={`relative inline-flex items-center justify-center overflow-hidden rounded-full ${bg[variant]} ${sizes[size]} ${className}`}>{children}</Component>;
+  return <Component className={`inline-flex items-center justify-center overflow-hidden rounded-full ${bg[variant]} ${sizes[size]} ${className}`}>{children}</Component>;
 }

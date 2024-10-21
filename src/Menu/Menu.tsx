@@ -7,7 +7,7 @@ export interface MenuProps extends Omit<ComponentProps<typeof HeadlessMenu>, 'ch
 
 export function Menu({ className, children, ...rest }: MenuProps) {
   return (
-    <HeadlessMenu as='div' className={`relative inline-block ${className}`} {...rest}>
+    <HeadlessMenu as='div' className={`inline-block ${className}`} {...rest}>
       {children}
     </HeadlessMenu>
   );

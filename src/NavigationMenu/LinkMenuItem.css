@@ -1,0 +1,22 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@flaticon/flaticon-uicons/css/all/all.css';
+
+.menuItem:last-of-type .branch:before {
+  @apply left-0 border-l-0 bg-pink-300;
+}
+
+.branch {
+  @apply absolute left-[-0.7rem] top-[2px] h-1/2 w-[0.7rem] rounded-bl-lg border-b border-l border-solid;
+  border-color: hsl(var(--twc-neutral-detail-pale));
+}
+
+.branch:before {
+  content: '';
+  @apply relative inline-block border-l;
+  height: 200%;
+  left: -1px; /* Width of border */
+  top: 0.9rem;
+  border-color: hsl(var(--twc-neutral-detail-pale));
+}

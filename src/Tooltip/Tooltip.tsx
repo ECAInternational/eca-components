@@ -151,7 +151,7 @@ export function Tooltip(props: TooltipProps) {
   const tooltip = (
     <div ref={tooltipRef} className={`leading-none absolute left-0 top-0 border will-change-transform ${states[state]} ${sizes[size]}`} role='tooltip' id={tooltipID} style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}>
       <div className={`absolute z-0 size-2.5 rotate-45 ${states[state]} ${positions[position]}`} />
-      <span className='relative flex'>
+      <span className='flex'>
         {icon && <i className={`fi ${icon} ${iconStates[state]} flex items-center pe-1`} />}
         <span>{content}</span>
       </span>
