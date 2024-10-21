@@ -1,27 +1,22 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@flaticon/flaticon-uicons/css/all/all.css';
+
 .menuItem:last-of-type .branch:before {
-  border-left: 0;
-  left: 0;
+  @apply left-0 border-l-0 bg-pink-300;
 }
 
 .branch {
-  position: absolute;
-  height: 50%;
-  top: 2px;
-  left: -0.7rem;
-  width: 0.7rem;
-  border-left: solid 1px;
-  border-bottom: solid 1px;
+  @apply absolute left-[-0.7rem] top-[2px] h-1/2 w-[0.7rem] rounded-bl-lg border-b border-l border-solid;
   border-color: hsl(var(--twc-neutral-detail-pale));
-  border-bottom-left-radius: 0.5rem;
 }
 
 .branch:before {
   content: '';
-  position: relative;
-  display: inline-block;
+  @apply relative inline-block border-l;
   height: 200%;
-  left: -1px; /* width of border */
+  left: -1px; /* Width of border */
   top: 0.9rem;
-  border-left: solid 1px;
   border-color: hsl(var(--twc-neutral-detail-pale));
 }
