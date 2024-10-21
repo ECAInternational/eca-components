@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.9](https://github.com/ECAInternational/eca-components/compare/v2.10.8...v2.10.9) (2024-10-21)
+
+
+### Bug Fixes
+
+* add auto complete story for using objects. ([#375](https://github.com/ECAInternational/eca-components/issues/375)) ([1373bac](https://github.com/ECAInternational/eca-components/commit/1373bacad6bcf1ef46caf83ed22c9cd3b40486e3))
+
 ## [2.10.8](https://github.com/ECAInternational/eca-components/compare/v2.10.7...v2.10.8) (2024-10-21)
 
 
