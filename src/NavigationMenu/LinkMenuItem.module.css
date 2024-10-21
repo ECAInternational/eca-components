@@ -1,0 +1,27 @@
+.menuItem:last-of-type .branch:before {
+  border-left: 0;
+  left: 0;
+}
+
+.branch {
+  position: absolute;
+  height: 50%;
+  top: 2px;
+  left: -0.7rem;
+  width: 0.7rem;
+  border-left: solid 1px;
+  border-bottom: solid 1px;
+  border-color: hsl(var(--twc-neutral-detail-pale));
+  border-bottom-left-radius: 0.5rem;
+}
+
+.branch:before {
+  content: '';
+  position: relative;
+  display: inline-block;
+  height: 200%;
+  left: -1px; /* width of border */
+  top: 0.9rem;
+  border-left: solid 1px;
+  border-color: hsl(var(--twc-neutral-detail-pale));
+}
