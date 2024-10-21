@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.8](https://github.com/ECAInternational/eca-components/compare/v2.10.7...v2.10.8) (2024-10-21)
+
+
+### Bug Fixes
+
+* bump version ([#373](https://github.com/ECAInternational/eca-components/issues/373)) ([847283e](https://github.com/ECAInternational/eca-components/commit/847283e3e265d9d8911b78ec7d29051e1ab590d4))
+
 ## [2.10.7](https://github.com/ECAInternational/eca-components/compare/v2.10.6...v2.10.7) (2024-10-21)
 
 
