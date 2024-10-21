@@ -158,6 +158,66 @@ export const Multiple = {
   }
 };
 
+export const MultipleObject = {
+  args: {
+    name: 'default-button',
+    state: 'default',
+    label: 'Label'
+  },
+  render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => {
+    interface Employee {
+      name: string;
+      role: string;
+      id: number;
+    }
+    const [employees, setEmployees] = useState<Employee[]>([]);
+    const [query, setQuery] = useState('');
+    const allEmployees: Employee[] = [
+      { name: 'Durward Reynolds', role: 'CEO', id: 1 },
+      { name: 'Kenton Towne', role: 'CFO', id: 2 },
+      { name: 'Therese Wunsch', role: 'Tech Lead', id: 3 },
+      { name: 'Benedict Kessler', role: 'Product Owner', id: 4 },
+      { name: 'Katelyn Rohan', role: 'Developer', id: 5 }
+    ];
+
+    const displayName = (employee: Employee) => {
+      if (employee && employee.name) {
+        return `${employee.name} - ${employee.role}`;
+      }
+      return '';
+    };
+
+    const filteredEmployees = query === '' ? allEmployees : allEmployees.filter((employee) => employee.name.toLowerCase().includes(query.toLowerCase()));
+
+    return (
+      <div className='h-72'>
+        <FieldSet>
+          <AutoComplete name={name} value={employees} by={(employeeA, employeeB) => (employeeA as Employee).id === (employeeB as Employee).id} itemKey={(employee) => `${(employee as Employee).id}`} onChange={setEmployees} multiple>
+            <Label>
+              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+            </Label>
+            <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={displayName} />
+            <AutoCompleteOptions onClose={() => setQuery('')}>
+              {filteredEmployees.length === 0 && (
+                <AutoCompleteOption value='' disabled>
+                  No Options
+                </AutoCompleteOption>
+              )}
+              {filteredEmployees.map((employee) => (
+                <AutoCompleteOption key={employee.id} value={employee}>
+                  <DefaultOptionViewer>
+                    <HighlightMatched content={displayName(employee)} query={query} />
+                  </DefaultOptionViewer>
+                </AutoCompleteOption>
+              ))}
+            </AutoCompleteOptions>
+          </AutoComplete>
+        </FieldSet>
+      </div>
+    );
+  }
+};
+
 const defaultRender = ({ name, state, label, description, disabled, defaultValue }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean; defaultValue?: string }) => {
   const [selectedPerson, setSelectedPerson] = useState(defaultValue || '');
   const [query, setQuery] = useState('');
