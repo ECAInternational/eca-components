@@ -1,7 +1,6 @@
 import React from 'react';
-import { describe, expect, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
+import { describe, expect, it, vi } from 'vitest';
+import { render, screen, act } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import { NavigationMenu } from './NavigationMenu.tsx';
@@ -41,6 +40,8 @@ describe('NavigationMenu', () => {
   });
 
   it('collapses other menu items when one is expanded', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+
     const user = userEvent.setup({});
     render(<NavigationMenu menuItems={menuItems} url={mockUrl} />);
 
@@ -54,7 +55,11 @@ describe('NavigationMenu', () => {
       await user.click(screen.getByRole('button', { name: /Item 2/i }));
     });
 
-    expect(await screen.findByRole('link', { name: /Item 2.1/i })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: /Item 2.1/i })).toBeVisible();
+
+    // Wait for menu collapse transition to complete
+    await vi.advanceTimersByTimeAsync(1000);
+
     expect(screen.queryByRole('link', { name: /Item 1.1/i })).not.toBeInTheDocument();
   });
 
