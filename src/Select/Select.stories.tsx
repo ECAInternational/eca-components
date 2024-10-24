@@ -107,25 +107,23 @@ export const Default = {
     const [selectedPerson, setSelectedPerson] = useState<Person>(people[0]);
 
     return (
-      <div className='h-72'>
-        <FieldSet disabled={disabled}>
-          <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <SelectButton state={state} variant={variant} size={size}>
-              {selectedPerson.name}
-            </SelectButton>
-            <SelectOptions>
-              {people.map((person) => (
-                <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-                  {person.name}
-                </SelectOption>
-              ))}
-            </SelectOptions>
-          </Select>
-        </FieldSet>
-      </div>
+      <FieldSet disabled={disabled}>
+        <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
+          <Label>
+            {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+          </Label>
+          <SelectButton state={state} variant={variant} size={size}>
+            {selectedPerson.name}
+          </SelectButton>
+          <SelectOptions>
+            {people.map((person) => (
+              <SelectOption key={person.id} value={person} disabled={person.unavailable}>
+                {person.name}
+              </SelectOption>
+            ))}
+          </SelectOptions>
+        </Select>
+      </FieldSet>
     );
   }
 };
@@ -140,23 +138,21 @@ export const Multiple = {
     const [selectedPeople, setSelectedPeople] = useState<Person[]>([]);
 
     return (
-      <div className='h-72'>
-        <FieldSet>
-          <Select name={name} value={selectedPeople} onChange={setSelectedPeople} multiple>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <SelectButton state={state}> {selectedPeople.map((p) => p.name).join(', ')}</SelectButton>
-            <SelectOptions>
-              {people.map((person) => (
-                <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-                  {person.name}
-                </SelectOption>
-              ))}
-            </SelectOptions>
-          </Select>
-        </FieldSet>
-      </div>
+      <FieldSet>
+        <Select name={name} value={selectedPeople} onChange={setSelectedPeople} multiple>
+          <Label>
+            {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+          </Label>
+          <SelectButton state={state}> {selectedPeople.map((p) => p.name).join(', ')}</SelectButton>
+          <SelectOptions>
+            {people.map((person) => (
+              <SelectOption key={person.id} value={person} disabled={person.unavailable}>
+                {person.name}
+              </SelectOption>
+            ))}
+          </SelectOptions>
+        </Select>
+      </FieldSet>
     );
   }
 };
@@ -171,32 +167,30 @@ export const Groups = {
     const [selectedValue, setSelectedValue] = useState<string>(colours[0]);
 
     return (
-      <div className='h-72'>
-        <FieldSet>
-          <Select name={name} value={selectedValue} onChange={setSelectedValue}>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <SelectButton state={state}>{selectedValue}</SelectButton>
-            <SelectOptions>
-              <SelectOptionGroup label='Colours'>
-                {colours.map((colour) => (
-                  <SelectOption key={colour} value={colour}>
-                    {colour}
-                  </SelectOption>
-                ))}
-              </SelectOptionGroup>
-              <SelectOptionGroup label='Animals'>
-                {animals.map((animal) => (
-                  <SelectOption key={animal} value={animal}>
-                    {animal}
-                  </SelectOption>
-                ))}
-              </SelectOptionGroup>
-            </SelectOptions>
-          </Select>
-        </FieldSet>
-      </div>
+      <FieldSet>
+        <Select name={name} value={selectedValue} onChange={setSelectedValue}>
+          <Label>
+            {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+          </Label>
+          <SelectButton state={state}>{selectedValue}</SelectButton>
+          <SelectOptions>
+            <SelectOptionGroup label='Colours'>
+              {colours.map((colour) => (
+                <SelectOption key={colour} value={colour}>
+                  {colour}
+                </SelectOption>
+              ))}
+            </SelectOptionGroup>
+            <SelectOptionGroup label='Animals'>
+              {animals.map((animal) => (
+                <SelectOption key={animal} value={animal}>
+                  {animal}
+                </SelectOption>
+              ))}
+            </SelectOptionGroup>
+          </SelectOptions>
+        </Select>
+      </FieldSet>
     );
   }
 };
@@ -205,25 +199,23 @@ const defaultRender = ({ name, state, label, description, disabled, variant }: {
   const [selectedPerson, setSelectedPerson] = useState<Person>(people[0]);
 
   return (
-    <div className={`${disabled ? 'h-24' : 'h-72'}`}>
-      <FieldSet disabled={disabled}>
-        <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
-          <Label>
-            {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
-          </Label>
-          <SelectButton state={state} variant={variant}>
-            {selectedPerson.name}
-          </SelectButton>
-          <SelectOptions>
-            {people.map((person) => (
-              <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-                {person.name}
-              </SelectOption>
-            ))}
-          </SelectOptions>
-        </Select>
-      </FieldSet>
-    </div>
+    <FieldSet disabled={disabled}>
+      <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
+        <Label>
+          {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
+        </Label>
+        <SelectButton state={state} variant={variant}>
+          {selectedPerson.name}
+        </SelectButton>
+        <SelectOptions>
+          {people.map((person) => (
+            <SelectOption key={person.id} value={person} disabled={person.unavailable}>
+              {person.name}
+            </SelectOption>
+          ))}
+        </SelectOptions>
+      </Select>
+    </FieldSet>
   );
 };
 

@@ -1,16 +1,16 @@
-import { Listbox } from '@headlessui/react';
+import { ListboxOption } from '@headlessui/react';
 import React, { ComponentPropsWithRef, createContext, PropsWithChildren } from 'react';
 import { useSelectContext } from './Select.tsx';
 import { Checkbox } from '../Checkbox/Checkbox.tsx';
 
-export interface SelectOptionProps extends Omit<ComponentPropsWithRef<typeof Listbox.Option>, 'children'> {}
+export interface SelectOptionProps extends Omit<ComponentPropsWithRef<typeof ListboxOption>, 'children'> {}
 
 export function SelectOption({ className, children, ...props }: PropsWithChildren<SelectOptionProps>) {
   const { multiple, value } = useSelectContext();
 
   const padding = multiple ? 'p-1 pe-3' : 'py-2 px-3';
   return (
-    <Listbox.Option className={`cursor-pointer select-none ${padding} ui-disabled:cursor-not-allowed ui-disabled:bg-neutral-layer-1 ui-disabled:text-controls-content-disabled active:ui-not-disabled:bg-controls-highlight-pale ui-checked:ui-not-disabled:bg-controls-highlight-pale ui-selected:ui-not-disabled:bg-controls-highlight-palest active:ui-selected:ui-not-disabled:bg-controls-highlight-pale active:ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler active:ui-active:ui-not-disabled:bg-controls-highlight-pale text-neutral-body paragraph-sm-lighter ${className}`} {...props}>
+    <ListboxOption className={`cursor-pointer select-none ${padding} text-neutral-body paragraph-sm-lighter active:bg-controls-highlight-pale data-[disabled]:cursor-not-allowed data-[active]:bg-controls-highlight-paler data-[checked]:bg-controls-highlight-pale data-[disabled]:bg-neutral-layer-1 data-[selected]:bg-controls-highlight-palest data-[disabled]:text-controls-content-disabled active:data-[selected]:bg-controls-highlight-palest ${className}`} {...props}>
       {(renderProps) => (
         <SelectOptionContext.Provider value={renderProps}>
           <div className='flex items-center gap-2.5'>
@@ -23,7 +23,7 @@ export function SelectOption({ className, children, ...props }: PropsWithChildre
           </div>
         </SelectOptionContext.Provider>
       )}
-    </Listbox.Option>
+    </ListboxOption>
   );
 }
 

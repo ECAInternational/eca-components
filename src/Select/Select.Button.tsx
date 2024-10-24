@@ -1,9 +1,9 @@
-import { Listbox } from '@headlessui/react';
+import { ListboxButton } from '@headlessui/react';
 import React, { ComponentPropsWithRef, PropsWithChildren } from 'react';
 import { useSelectContext } from './Select.tsx';
 import { IconButton } from '../IconButton/IconButton.tsx';
 
-export interface SelectButtonProps extends Omit<ComponentPropsWithRef<typeof Listbox.Button>, 'children'> {}
+export interface SelectButtonProps extends Omit<ComponentPropsWithRef<typeof ListboxButton>, 'children'> {}
 
 export function SelectButton({
   className,
@@ -63,11 +63,11 @@ export function SelectButton({
   };
 
   return (
-    <Listbox.Button className={`flex w-full items-center rounded-md border text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled disabled:outline-0 ${hover[state]} ${border[state][variant]} ${padding[state][size]} ${focus[state]} ${className}`} {...props} onClick={onClick}>
+    <ListboxButton className={`flex w-full items-center rounded-md border text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled disabled:outline-0 ${hover[state]} ${border[state][variant]} ${padding[state][size]} ${focus[state]} ${className}`} {...props} onClick={onClick}>
       <span className='flex w-full items-center justify-start text-left paragraph-sm-lighter'>{children}</span>
       <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className='rounded-full p-1' />
       {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-1 text-states-warning' />}
       {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-1 text-states-error' />}
-    </Listbox.Button>
+    </ListboxButton>
   );
 }
