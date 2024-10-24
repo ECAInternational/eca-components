@@ -1,13 +1,13 @@
-import { Combobox } from '@headlessui/react';
+import { ComboboxOption } from '@headlessui/react';
 import React, { ComponentPropsWithRef, createContext, PropsWithChildren } from 'react';
 
-export interface AutoCompleteOptionProps extends Omit<ComponentPropsWithRef<typeof Combobox.Option>, 'children'> {}
+export interface AutoCompleteOptionProps extends Omit<ComponentPropsWithRef<typeof ComboboxOption>, 'children'> {}
 
 export function AutoCompleteOption({ className, children, ...props }: PropsWithChildren<AutoCompleteOptionProps>) {
   return (
-    <Combobox.Option className={`ui-checked:ui-not-disabled:bg-controls-highlight-pale ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler cursor-pointer select-none p-3 paragraph-sm-lighter ${className}`} {...props} disabled={props.disabled}>
+    <ComboboxOption className={`cursor-pointer select-none p-2 paragraph-sm-lighter data-[disabled]:cursor-not-allowed data-[active]:bg-controls-highlight-paler data-[checked]:bg-controls-highlight-pale data-[disabled]:bg-neutral-layer-1 data-[selected]:bg-controls-highlight-palest data-[disabled]:text-controls-content-disabled ${className}`} {...props} disabled={props.disabled}>
       {(renderProps) => <AutoCompleteOptionContext.Provider value={renderProps}>{children}</AutoCompleteOptionContext.Provider>}
-    </Combobox.Option>
+    </ComboboxOption>
   );
 }
 

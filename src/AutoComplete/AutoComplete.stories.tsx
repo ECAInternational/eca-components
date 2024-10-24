@@ -89,30 +89,28 @@ export const Default = {
     const filteredPeople = query === '' ? people : people.filter((person) => person.toLowerCase().includes(query.toLowerCase()));
 
     return (
-      <div className='h-72'>
-        <FieldSet disabled={disabled}>
-          <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
-            <AutoCompleteOptions onClose={() => setQuery('')}>
-              {filteredPeople.length === 0 && (
-                <AutoCompleteOption value='' disabled>
-                  No Options
-                </AutoCompleteOption>
-              )}
-              {filteredPeople.map((person) => (
-                <AutoCompleteOption key={person} value={person}>
-                  <DefaultOptionViewer>
-                    <HighlightMatched content={person} query={query} />
-                  </DefaultOptionViewer>
-                </AutoCompleteOption>
-              ))}
-            </AutoCompleteOptions>
-          </AutoComplete>
-        </FieldSet>
-      </div>
+      <FieldSet disabled={disabled}>
+        <Label>
+          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+        </Label>
+        <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
+          <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
+          <AutoCompleteOptions onClose={() => setQuery('')}>
+            {filteredPeople.length === 0 && (
+              <AutoCompleteOption value='' disabled>
+                No Options
+              </AutoCompleteOption>
+            )}
+            {filteredPeople.map((person) => (
+              <AutoCompleteOption key={person} value={person}>
+                <DefaultOptionViewer>
+                  <HighlightMatched content={person} query={query} />
+                </DefaultOptionViewer>
+              </AutoCompleteOption>
+            ))}
+          </AutoCompleteOptions>
+        </AutoComplete>
+      </FieldSet>
     );
   }
 };
@@ -130,30 +128,28 @@ export const Multiple = {
     const filteredPeople = query === '' ? people : people.filter((person) => person.toLowerCase().includes(query.toLowerCase()));
 
     return (
-      <div className='h-72'>
-        <FieldSet>
-          <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} multiple>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
-            <AutoCompleteOptions onClose={() => setQuery('')}>
-              {filteredPeople.length === 0 && (
-                <AutoCompleteOption value='' disabled>
-                  No Options
-                </AutoCompleteOption>
-              )}
-              {filteredPeople.map((person) => (
-                <AutoCompleteOption key={person} value={person}>
-                  <DefaultOptionViewer>
-                    <HighlightMatched content={person} query={query} />
-                  </DefaultOptionViewer>
-                </AutoCompleteOption>
-              ))}
-            </AutoCompleteOptions>
-          </AutoComplete>
-        </FieldSet>
-      </div>
+      <FieldSet>
+        <Label>
+          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+        </Label>
+        <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson} multiple>
+          <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
+          <AutoCompleteOptions onClose={() => setQuery('')}>
+            {filteredPeople.length === 0 && (
+              <AutoCompleteOption value='' disabled>
+                No Options
+              </AutoCompleteOption>
+            )}
+            {filteredPeople.map((person) => (
+              <AutoCompleteOption key={person} value={person}>
+                <DefaultOptionViewer>
+                  <HighlightMatched content={person} query={query} />
+                </DefaultOptionViewer>
+              </AutoCompleteOption>
+            ))}
+          </AutoCompleteOptions>
+        </AutoComplete>
+      </FieldSet>
     );
   }
 };
@@ -190,30 +186,28 @@ export const MultipleObject = {
     const filteredEmployees = query === '' ? allEmployees : allEmployees.filter((employee) => employee.name.toLowerCase().includes(query.toLowerCase()));
 
     return (
-      <div className='h-72'>
-        <FieldSet>
-          <AutoComplete name={name} value={employees} by={(employeeA, employeeB) => (employeeA as Employee).id === (employeeB as Employee).id} itemKey={(employee) => `${(employee as Employee).id}`} onChange={setEmployees} multiple>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={displayName} />
-            <AutoCompleteOptions onClose={() => setQuery('')}>
-              {filteredEmployees.length === 0 && (
-                <AutoCompleteOption value='' disabled>
-                  No Options
-                </AutoCompleteOption>
-              )}
-              {filteredEmployees.map((employee) => (
-                <AutoCompleteOption key={employee.id} value={employee}>
-                  <DefaultOptionViewer>
-                    <HighlightMatched content={displayName(employee)} query={query} />
-                  </DefaultOptionViewer>
-                </AutoCompleteOption>
-              ))}
-            </AutoCompleteOptions>
-          </AutoComplete>
-        </FieldSet>
-      </div>
+      <FieldSet>
+        <Label>
+          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+        </Label>
+        <AutoComplete name={name} value={employees} by={(employeeA, employeeB) => (employeeA as Employee).id === (employeeB as Employee).id} itemKey={(employee) => `${(employee as Employee).id}`} onChange={setEmployees} multiple>
+          <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={displayName} />
+          <AutoCompleteOptions onClose={() => setQuery('')}>
+            {filteredEmployees.length === 0 && (
+              <AutoCompleteOption value='' disabled>
+                No Options
+              </AutoCompleteOption>
+            )}
+            {filteredEmployees.map((employee) => (
+              <AutoCompleteOption key={employee.id} value={employee}>
+                <DefaultOptionViewer>
+                  <HighlightMatched content={displayName(employee)} query={query} />
+                </DefaultOptionViewer>
+              </AutoCompleteOption>
+            ))}
+          </AutoCompleteOptions>
+        </AutoComplete>
+      </FieldSet>
     );
   }
 };
@@ -225,30 +219,28 @@ const defaultRender = ({ name, state, label, description, disabled, defaultValue
   const filteredPeople = query === '' ? people : people.filter((person) => person.toLowerCase().includes(query.toLowerCase()));
 
   return (
-    <div className={`${disabled ? 'h-24' : 'h-72'}`}>
-      <FieldSet disabled={disabled}>
-        <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
-          <Label>
-            {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
-          </Label>
-          <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
-          <AutoCompleteOptions onClose={() => setQuery('')}>
-            {filteredPeople.length === 0 && (
-              <AutoCompleteOption value='' disabled>
-                No Options
-              </AutoCompleteOption>
-            )}
-            {filteredPeople.map((person) => (
-              <AutoCompleteOption key={person} value={person}>
-                <DefaultOptionViewer>
-                  <HighlightMatched content={person} query={query} />
-                </DefaultOptionViewer>
-              </AutoCompleteOption>
-            ))}
-          </AutoCompleteOptions>
-        </AutoComplete>
-      </FieldSet>
-    </div>
+    <FieldSet disabled={disabled}>
+      <Label>
+        {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
+      </Label>
+      <AutoComplete name={name} value={selectedPerson} onChange={setSelectedPerson}>
+        <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
+        <AutoCompleteOptions onClose={() => setQuery('')}>
+          {filteredPeople.length === 0 && (
+            <AutoCompleteOption value='' disabled>
+              No Options
+            </AutoCompleteOption>
+          )}
+          {filteredPeople.map((person) => (
+            <AutoCompleteOption key={person} value={person}>
+              <DefaultOptionViewer>
+                <HighlightMatched content={person} query={query} />
+              </DefaultOptionViewer>
+            </AutoCompleteOption>
+          ))}
+        </AutoCompleteOptions>
+      </AutoComplete>
+    </FieldSet>
   );
 };
 
