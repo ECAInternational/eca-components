@@ -9,8 +9,8 @@ export function SelectOptions({
   ...props
 }: ComponentPropsWithRef<typeof ListboxOptions> & {
   onClose?: () => void;
-  position: 'top' | 'bottom' | 'left' | 'right';
-  align: 'start' | 'end';
+  position?: 'top' | 'bottom' | 'left' | 'right';
+  align?: 'start' | 'end';
 }) {
   return (
     <Transition as={Fragment} leave='transition ease-in duration-150' leaveFrom='opacity-100' leaveTo='opacity-0' afterLeave={() => onClose && onClose()}>
