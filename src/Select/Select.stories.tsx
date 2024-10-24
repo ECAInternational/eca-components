@@ -108,10 +108,10 @@ export const Default = {
 
     return (
       <FieldSet disabled={disabled}>
+        <Label>
+          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+        </Label>
         <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
-          <Label>
-            {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-          </Label>
           <SelectButton state={state} variant={variant} size={size}>
             {selectedPerson.name}
           </SelectButton>
@@ -139,10 +139,10 @@ export const Multiple = {
 
     return (
       <FieldSet>
+        <Label>
+          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+        </Label>
         <Select name={name} value={selectedPeople} onChange={setSelectedPeople} multiple>
-          <Label>
-            {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-          </Label>
           <SelectButton state={state}> {selectedPeople.map((p) => p.name).join(', ')}</SelectButton>
           <SelectOptions>
             {people.map((person) => (
@@ -168,10 +168,10 @@ export const Groups = {
 
     return (
       <FieldSet>
+        <Label>
+          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+        </Label>
         <Select name={name} value={selectedValue} onChange={setSelectedValue}>
-          <Label>
-            {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-          </Label>
           <SelectButton state={state}>{selectedValue}</SelectButton>
           <SelectOptions>
             <SelectOptionGroup label='Colours'>
@@ -200,10 +200,10 @@ const defaultRender = ({ name, state, label, description, disabled, variant }: {
 
   return (
     <FieldSet disabled={disabled}>
+      <Label>
+        {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
+      </Label>
       <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
-        <Label>
-          {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
-        </Label>
         <SelectButton state={state} variant={variant}>
           {selectedPerson.name}
         </SelectButton>
