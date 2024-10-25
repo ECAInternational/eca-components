@@ -6,9 +6,9 @@ export interface SelectProps extends Omit<ComponentProps<typeof Listbox>, 'child
   children: React.ReactNode;
 }
 
-export function Select({ multiple, children, ...rest }: SelectProps) {
+export function Select({ multiple, children, onChange, value, ...rest }: SelectProps) {
   return (
-    <Listbox {...rest} multiple={!!multiple as any}>
+    <Listbox {...rest} multiple={!!multiple as any} value={value} onChange={onChange}>
       {(props) => {
         const contextValue = React.useMemo(() => ({ ...props, multiple }), [props, multiple]);
         return <SelectContext.Provider value={contextValue}>{children}</SelectContext.Provider>;
