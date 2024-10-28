@@ -96,22 +96,20 @@ export const Default = {
     size: 'medium',
     disabled: false
   },
-  render: ({ name, state, label, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => {
-    return (
-      <FieldSet disabled={disabled}>
-        <Label>
-          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-        </Label>
-        <Select name={name} size={size} state={state} variant={variant}>
-          {people.map((person) => (
-            <option key={person.id} value={person.name} disabled={person.unavailable}>
-              {person.name}
-            </option>
-          ))}
-        </Select>
-      </FieldSet>
-    );
-  }
+  render: ({ name, state, label, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => (
+    <FieldSet disabled={disabled}>
+      <Label>
+        {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <Select name={name} size={size} state={state} variant={variant}>
+        {people.map((person) => (
+          <option key={person.id} value={person.name} disabled={person.unavailable}>
+            {person.name}
+          </option>
+        ))}
+      </Select>
+    </FieldSet>
+  )
 };
 
 export const Groups = {
@@ -120,45 +118,41 @@ export const Groups = {
     state: 'default',
     label: 'Label'
   },
-  render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => {
-    return (
-      <FieldSet>
-        <Label>
-          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-        </Label>
-        <Select name={name} state={state}>
-          {colours.map((colour) => (
-            <option key={colour} value={colour}>
-              {colour}
-            </option>
-          ))}
-          {animals.map((animal) => (
-            <option key={animal} value={animal}>
-              {animal}
-            </option>
-          ))}
-        </Select>
-      </FieldSet>
-    );
-  }
-};
-
-const defaultRender = ({ name, state, label, description, disabled, variant }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean; variant?: 'outline' | 'tonal' }) => {
-  return (
-    <FieldSet disabled={disabled} className={'w-40'}>
+  render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => (
+    <FieldSet>
       <Label>
-        {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
+        {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
       </Label>
-      <Select name={name} state={state} variant={variant}>
-        {people.map((person) => (
-          <option key={person.id} value={person.name} disabled={person.unavailable}>
-            {person.name}
+      <Select name={name} state={state}>
+        {colours.map((colour) => (
+          <option key={colour} value={colour}>
+            {colour}
+          </option>
+        ))}
+        {animals.map((animal) => (
+          <option key={animal} value={animal}>
+            {animal}
           </option>
         ))}
       </Select>
     </FieldSet>
-  );
+  )
 };
+
+const defaultRender = ({ name, state, label, description, disabled, variant }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean; variant?: 'outline' | 'tonal' }) => (
+  <FieldSet disabled={disabled} className='w-40'>
+    <Label>
+      {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
+    </Label>
+    <Select name={name} state={state} variant={variant}>
+      {people.map((person) => (
+        <option key={person.id} value={person.name} disabled={person.unavailable}>
+          {person.name}
+        </option>
+      ))}
+    </Select>
+  </FieldSet>
+);
 
 export const Tonal = {
   args: {
