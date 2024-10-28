@@ -124,16 +124,20 @@ export const Groups = {
         {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
       </Label>
       <Select name={name} state={state}>
-        {colours.map((colour) => (
-          <option key={colour} value={colour}>
-            {colour}
-          </option>
-        ))}
-        {animals.map((animal) => (
-          <option key={animal} value={animal}>
-            {animal}
-          </option>
-        ))}
+        <optgroup label='Colours'>
+          {colours.map((colour) => (
+            <option key={colour} value={colour}>
+              {colour}
+            </option>
+          ))}
+        </optgroup>
+        <optgroup label='Animals'>
+          {animals.map((animal) => (
+            <option key={animal} value={animal}>
+              {animal}
+            </option>
+          ))}
+        </optgroup>
       </Select>
     </FieldSet>
   )

@@ -13,15 +13,15 @@ export interface SelectProps extends Omit<ComponentProps<typeof HeadlessSelect>,
 export function Select({ name, value, children, onChange, className, state = 'default', variant = 'outline', size = 'medium' }: SelectProps) {
   const border = {
     default: {
-      outline: 'border-controls-border bg-default-transparent',
+      outline: 'border-controls-border bg-neutral-layer-1',
       tonal: 'border-default-transparent bg-controls-bg-unselected'
     },
     warning: {
-      outline: 'border-states-warning bg-default-transparent',
+      outline: 'border-states-warning bg-neutral-layer-1',
       tonal: 'border-states-warning bg-controls-bg-unselected'
     },
     error: {
-      outline: 'border-states-error bg-default-transparent',
+      outline: 'border-states-error bg-neutral-layer-1',
       tonal: 'border-states-error bg-controls-bg-unselected'
     }
   };
