@@ -10,7 +10,7 @@ export function SelectOption({ className, children, ...props }: PropsWithChildre
 
   const padding = multiple ? 'p-1 pe-3' : 'py-2 px-3';
   return (
-    <ListboxOption className={`cursor-pointer select-none ${padding} text-neutral-body paragraph-sm-lighter active:bg-controls-highlight-pale data-[disabled]:cursor-not-allowed data-[active]:bg-controls-highlight-paler data-[checked]:bg-controls-highlight-pale data-[disabled]:bg-neutral-layer-1 data-[selected]:bg-controls-highlight-palest data-[disabled]:text-controls-content-disabled active:data-[selected]:bg-controls-highlight-palest ${className}`} {...props}>
+    <ListboxOption onClick={() => console.log('eca-comp: listbox [clicked]')} className={`cursor-pointer select-none ${padding} text-neutral-body paragraph-sm-lighter active:bg-controls-highlight-pale data-[disabled]:cursor-not-allowed data-[active]:bg-controls-highlight-paler data-[checked]:bg-controls-highlight-pale data-[disabled]:bg-neutral-layer-1 data-[selected]:bg-controls-highlight-palest data-[disabled]:text-controls-content-disabled active:data-[selected]:bg-controls-highlight-palest ${className}`} {...props}>
       {(renderProps) => (
         <SelectOptionContext.Provider value={renderProps}>
           <div className='flex items-center gap-2.5'>
