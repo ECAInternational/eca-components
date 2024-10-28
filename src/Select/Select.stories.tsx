@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Select } from './Select.tsx';
-import { SelectButton } from './Select.Button.tsx';
-import { SelectOptions } from './Select.Options.tsx';
-import { SelectOption } from './Select.Option.tsx';
 import { FieldSet, Label } from '../Form/index.ts';
-import { SelectOptionGroup } from './Select.OptionGroup.tsx';
 
 type Person = { id: number; name: string; unavailable: boolean };
 
@@ -63,9 +59,6 @@ export default {
     className: {
       table: { disable: true }
     },
-    multiple: {
-      table: { disable: true }
-    },
     ref: {
       table: { disable: true }
     },
@@ -111,46 +104,12 @@ export const Default = {
         <Label>
           {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
         </Label>
-        <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
-          <SelectButton state={state} variant={variant} size={size}>
-            {selectedPerson.name}
-          </SelectButton>
-          <SelectOptions>
-            {people.map((person) => (
-              <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-                {person.name}
-              </SelectOption>
-            ))}
-          </SelectOptions>
-        </Select>
-      </FieldSet>
-    );
-  }
-};
-
-export const Multiple = {
-  args: {
-    name: 'multiple-select',
-    state: 'default',
-    label: 'Label'
-  },
-  render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => {
-    const [selectedPeople, setSelectedPeople] = useState<Person[]>([]);
-
-    return (
-      <FieldSet>
-        <Label>
-          {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-        </Label>
-        <Select name={name} value={selectedPeople} onChange={setSelectedPeople} multiple>
-          <SelectButton state={state}> {selectedPeople.map((p) => p.name).join(', ')}</SelectButton>
-          <SelectOptions>
-            {people.map((person) => (
-              <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-                {person.name}
-              </SelectOption>
-            ))}
-          </SelectOptions>
+        <Select name={name} value={selectedPerson.name} onChange={setSelectedPerson} size={size} state={state} variant={variant}>
+          {people.map((person) => (
+            <option key={person.id} value={person.name} disabled={person.unavailable}>
+              {person.name}
+            </option>
+          ))}
         </Select>
       </FieldSet>
     );
@@ -171,24 +130,21 @@ export const Groups = {
         <Label>
           {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
         </Label>
-        <Select name={name} value={selectedValue} onChange={setSelectedValue}>
-          <SelectButton state={state}>{selectedValue}</SelectButton>
-          <SelectOptions>
-            <SelectOptionGroup label='Colours'>
-              {colours.map((colour) => (
-                <SelectOption key={colour} value={colour}>
-                  {colour}
-                </SelectOption>
-              ))}
-            </SelectOptionGroup>
-            <SelectOptionGroup label='Animals'>
-              {animals.map((animal) => (
-                <SelectOption key={animal} value={animal}>
-                  {animal}
-                </SelectOption>
-              ))}
-            </SelectOptionGroup>
-          </SelectOptions>
+        <Select name={name} value={selectedValue} onChange={setSelectedValue} state={state}>
+          <optgroup label='Colours'>
+            {colours.map((colour) => (
+              <option key={colour} value={colour}>
+                {colour}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label='Animals'>
+            {animals.map((animal) => (
+              <option key={animal} value={animal}>
+                {animal}
+              </option>
+            ))}
+          </optgroup>
         </Select>
       </FieldSet>
     );
@@ -203,17 +159,12 @@ const defaultRender = ({ name, state, label, description, disabled, variant }: {
       <Label>
         {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
       </Label>
-      <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
-        <SelectButton state={state} variant={variant}>
-          {selectedPerson.name}
-        </SelectButton>
-        <SelectOptions>
-          {people.map((person) => (
-            <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-              {person.name}
-            </SelectOption>
-          ))}
-        </SelectOptions>
+      <Select name={name} value={selectedPerson.name} onChange={setSelectedPerson} state={state} variant={variant}>
+        {people.map((person) => (
+          <option key={person.id} value={person.name} disabled={person.unavailable}>
+            {person.name}
+          </option>
+        ))}
       </Select>
     </FieldSet>
   );
