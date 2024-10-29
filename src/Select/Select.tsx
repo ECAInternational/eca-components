@@ -8,6 +8,7 @@ export interface SelectProps extends Omit<ComponentProps<typeof HeadlessSelect>,
   state?: 'default' | 'error' | 'warning';
   variant?: 'outline' | 'tonal';
   size?: 'small' | 'medium';
+  onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
 }
 
 export function Select({ name, value, children, onChange, className, state = 'default', variant = 'outline', size = 'medium' }: SelectProps) {
