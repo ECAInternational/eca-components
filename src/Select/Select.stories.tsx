@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Select } from './Select.tsx';
 import { FieldSet, Label } from '../Form/index.ts';
 
@@ -216,21 +216,17 @@ export const NoLabel = {
     state: 'default',
     placeholder: 'Placeholder text'
   },
-  render: ({ name, state, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => {
-    const [selectedPerson, setSelectedPerson] = useState<Person>(people[0]);
-
-    return (
-      <FieldSet disabled={disabled}>
-        <Select name={name} value={selectedPerson.name} onChange={setSelectedPerson} size={size} state={state} variant={variant}>
-          {people.map((person) => (
-            <option key={person.id} value={person.name} disabled={person.unavailable}>
-              {person.name}
-            </option>
-          ))}
-        </Select>
-      </FieldSet>
-    );
-  }
+  render: ({ name, state, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => (
+    <FieldSet disabled={disabled}>
+      <Select name={name} size={size} state={state} variant={variant}>
+        {people.map((person) => (
+          <option key={person.id} value={person.name} disabled={person.unavailable}>
+            {person.name}
+          </option>
+        ))}
+      </Select>
+    </FieldSet>
+  )
 };
 
 export const Description = {
