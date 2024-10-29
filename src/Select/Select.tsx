@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select as HeadlessSelect, SelectProps as HeadlessSelectProps } from '@headlessui/react';
 
-export type SelectProps = HeadlessSelectProps & {
+export type SelectProps = Omit<HeadlessSelectProps, 'size'> & {
   children: React.ReactNode;
   state?: 'default' | 'error' | 'warning';
   variant?: 'outline' | 'tonal';
