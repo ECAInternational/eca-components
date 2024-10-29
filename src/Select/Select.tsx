@@ -1,16 +1,16 @@
-import React, { ComponentProps } from 'react';
-import { Select as HeadlessSelect } from '@headlessui/react';
+import React from 'react';
+import { Select as AVC, SelectProps as HeadlessSelectProps } from '@headlessui/react';
 
-export interface SelectProps extends Omit<ComponentProps<typeof HeadlessSelect>, 'children'> {
+export type SelectProps = HeadlessSelectProps & {
   children: React.ReactNode;
   state?: 'default' | 'error' | 'warning';
   variant?: 'outline' | 'tonal';
   size?: 'small' | 'medium';
   onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
-}
+};
 
 export function Select(props: SelectProps) {
-  const { children, onChange, className, state = 'default', variant = 'outline', size = 'medium', ...rest } = props;
+  const { name, value, children, onChange, className, state = 'default', variant = 'outline', size = 'medium', ...rest } = props;
   const border = {
     default: {
       outline: 'border-controls-border bg-neutral-layer-1',
@@ -55,9 +55,9 @@ export function Select(props: SelectProps) {
 
   return (
     <div className='relative flex'>
-      <HeadlessSelect onChange={onChange} className={`flex w-full appearance-none items-center rounded-md border text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled disabled:outline-0 ${hover[state]} ${border[state][variant]} ${padding[state][size]} ${focus[state]} ${className}`} {...rest}>
+      <AVC name={name} value={value} onChange={onChange} className={`flex w-full appearance-none items-center rounded-md border text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled disabled:outline-0 ${hover[state]} ${border[state][variant]} ${padding[state][size]} ${focus[state]} ${className}`} {...rest}>
         {children}
-      </HeadlessSelect>
+      </AVC>
       <div className={`pointer-events-none absolute ${size === 'medium' ? 'right-1.5' : 'right-0'} top-0 flex h-full items-center`}>
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center text-states-warning' />}
         {state === 'error' && <i className='fi fi-rr-exclamation flex items-center text-states-error' />}

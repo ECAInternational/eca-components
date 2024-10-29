@@ -2,14 +2,14 @@ import React from 'react';
 import { Select } from './Select.tsx';
 import { FieldSet, Label } from '../Form/index.ts';
 
-type Person = { id: number; name: string; unavailable: boolean; selected?: boolean };
+type Person = { id: number; name: string; unavailable: boolean };
 
 const people: Person[] = [
   { id: 1, name: 'Durward Reynolds', unavailable: false },
   { id: 2, name: 'Kenton Towne', unavailable: false },
   { id: 3, name: 'Therese Wunsch', unavailable: false },
   { id: 4, name: 'Benedict Kessler', unavailable: true },
-  { id: 5, name: 'Katelyn Rohan', unavailable: false, selected: true },
+  { id: 5, name: 'Katelyn Rohan', unavailable: false },
   { id: 6, name: 'Nicole Powell', unavailable: false },
   { id: 7, name: 'Blaire Collier', unavailable: false }
 ];
@@ -96,14 +96,14 @@ export const Default = {
     size: 'medium',
     disabled: false
   },
-  render: ({ name, state, label, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => (
+  render: ({ name, state, label, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean; variant?: 'outline' | 'tonal'; size?: 'small' | 'medium' }) => (
     <FieldSet disabled={disabled}>
       <Label>
         {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
       </Label>
       <Select id={name} size={size} state={state} variant={variant}>
         {people.map((person) => (
-          <option key={person.id} value={person.name} disabled={person.unavailable} selected={person.selected}>
+          <option key={person.id} value={person.name} disabled={person.unavailable}>
             {person.name}
           </option>
         ))}
@@ -150,7 +150,7 @@ const defaultRender = ({ name, state, label, description, disabled, variant }: {
     </Label>
     <Select id={name} state={state} variant={variant} aria-label='asd'>
       {people.map((person) => (
-        <option key={person.id} value={person.name} disabled={person.unavailable} selected={person.selected}>
+        <option key={person.id} value={person.name} disabled={person.unavailable}>
           {person.name}
         </option>
       ))}
@@ -214,13 +214,14 @@ export const NoLabel = {
   args: {
     name: 'no-label-select',
     state: 'default',
-    placeholder: 'Placeholder text'
+    placeholder: 'Placeholder text',
+    size: 'medium'
   },
-  render: ({ name, state, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => (
+  render: ({ name, state, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; disabled: boolean; variant?: 'outline' | 'tonal'; size?: 'small' | 'medium' }) => (
     <FieldSet disabled={disabled}>
       <Select id={name} size={size} state={state} variant={variant}>
         {people.map((person) => (
-          <option key={person.id} value={person.name} disabled={person.unavailable} selected={person.selected}>
+          <option key={person.id} value={person.name} disabled={person.unavailable}>
             {person.name}
           </option>
         ))}
