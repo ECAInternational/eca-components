@@ -3,15 +3,14 @@ import { Select as HeadlessSelect } from '@headlessui/react';
 
 export interface SelectProps extends Omit<ComponentProps<typeof HeadlessSelect>, 'children'> {
   children: React.ReactNode;
-  name: string;
-  value?: string | number | readonly string[] | undefined;
   state?: 'default' | 'error' | 'warning';
   variant?: 'outline' | 'tonal';
   size?: 'small' | 'medium';
   onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
 }
 
-export function Select({ name, value, children, onChange, className, state = 'default', variant = 'outline', size = 'medium' }: SelectProps) {
+export function Select(props: SelectProps) {
+  const { children, onChange, className, state = 'default', variant = 'outline', size = 'medium', ...rest } = props;
   const border = {
     default: {
       outline: 'border-controls-border bg-neutral-layer-1',
@@ -56,7 +55,7 @@ export function Select({ name, value, children, onChange, className, state = 'de
 
   return (
     <div className='relative flex'>
-      <HeadlessSelect name={name} value={value} onChange={onChange} className={`flex w-full appearance-none items-center rounded-md border text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled disabled:outline-0 ${hover[state]} ${border[state][variant]} ${padding[state][size]} ${focus[state]} ${className}`}>
+      <HeadlessSelect onChange={onChange} className={`flex w-full appearance-none items-center rounded-md border text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled disabled:outline-0 ${hover[state]} ${border[state][variant]} ${padding[state][size]} ${focus[state]} ${className}`} {...rest}>
         {children}
       </HeadlessSelect>
       <div className={`pointer-events-none absolute ${size === 'medium' ? 'right-1.5' : 'right-0'} top-0 flex h-full items-center`}>

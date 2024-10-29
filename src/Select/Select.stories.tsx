@@ -2,14 +2,14 @@ import React from 'react';
 import { Select } from './Select.tsx';
 import { FieldSet, Label } from '../Form/index.ts';
 
-type Person = { id: number; name: string; unavailable: boolean };
+type Person = { id: number; name: string; unavailable: boolean; selected?: boolean };
 
 const people: Person[] = [
   { id: 1, name: 'Durward Reynolds', unavailable: false },
   { id: 2, name: 'Kenton Towne', unavailable: false },
   { id: 3, name: 'Therese Wunsch', unavailable: false },
   { id: 4, name: 'Benedict Kessler', unavailable: true },
-  { id: 5, name: 'Katelyn Rohan', unavailable: false },
+  { id: 5, name: 'Katelyn Rohan', unavailable: false, selected: true },
   { id: 6, name: 'Nicole Powell', unavailable: false },
   { id: 7, name: 'Blaire Collier', unavailable: false }
 ];
@@ -101,9 +101,9 @@ export const Default = {
       <Label>
         {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
       </Label>
-      <Select name={name} size={size} state={state} variant={variant}>
+      <Select id={name} size={size} state={state} variant={variant}>
         {people.map((person) => (
-          <option key={person.id} value={person.name} disabled={person.unavailable}>
+          <option key={person.id} value={person.name} disabled={person.unavailable} selected={person.selected}>
             {person.name}
           </option>
         ))}
@@ -123,7 +123,7 @@ export const Groups = {
       <Label>
         {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
       </Label>
-      <Select name={name} state={state}>
+      <Select id={name} state={state}>
         <optgroup label='Colours'>
           {colours.map((colour) => (
             <option key={colour} value={colour}>
@@ -148,9 +148,9 @@ const defaultRender = ({ name, state, label, description, disabled, variant }: {
     <Label>
       {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
     </Label>
-    <Select name={name} state={state} variant={variant}>
+    <Select id={name} state={state} variant={variant} aria-label='asd'>
       {people.map((person) => (
-        <option key={person.id} value={person.name} disabled={person.unavailable}>
+        <option key={person.id} value={person.name} disabled={person.unavailable} selected={person.selected}>
           {person.name}
         </option>
       ))}
@@ -218,9 +218,9 @@ export const NoLabel = {
   },
   render: ({ name, state, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => (
     <FieldSet disabled={disabled}>
-      <Select name={name} size={size} state={state} variant={variant}>
+      <Select id={name} size={size} state={state} variant={variant}>
         {people.map((person) => (
-          <option key={person.id} value={person.name} disabled={person.unavailable}>
+          <option key={person.id} value={person.name} disabled={person.unavailable} selected={person.selected}>
             {person.name}
           </option>
         ))}
