@@ -18,11 +18,3 @@ type OptionRenderPropArg = {
 };
 
 export const AutoCompleteOptionContext = createContext<OptionRenderPropArg>(null as unknown as OptionRenderPropArg);
-
-export function useAutoCompleteOptionContext() {
-  const context = React.useContext(AutoCompleteOptionContext);
-  if (!context) {
-    throw new Error('ComboBox option component cannot be rendered outside the ComboBox options component');
-  }
-  return context;
-}
