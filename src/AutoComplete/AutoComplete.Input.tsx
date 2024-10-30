@@ -3,6 +3,7 @@ import React, { ComponentProps, ForwardedRef, forwardRef } from 'react';
 import { useAutoCompleteContext } from './AutoComplete.tsx';
 import { callAll } from '../utils/call-all.ts';
 import { IconButton } from '../IconButton/IconButton.tsx';
+import { Chip } from '../Chip/Chip.tsx';
 
 type AutoCompleteInputProps = ComponentProps<typeof ComboboxInput> & {
   state: 'default' | 'error' | 'warning';
@@ -40,22 +41,13 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...pro
   };
 
   // Handler to remove item
-  const handleRemoveItem = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, item: any) => {
-    event.stopPropagation();
+  const handleRemoveItem = (item: any) => {
     onChange(selectedItems.filter((selectedItem) => selectedItem !== item));
   };
 
   return (
     <div>
-      <div className={`flex flex-wrap gap-2 ${selectedItems.length > 0 ? 'mb-2' : ''}`}>
-        {selectedItems.length > 0 &&
-          selectedItems.map((item) => (
-            <div key={itemKey ? itemKey(item) : item} className='flex flex-row items-center gap-2 rounded border border-neutral-detail-pale px-1 py-1.5 text-controls-placeholder-text'>
-              <span> {props.displayValue ? props.displayValue(item) : item} </span>
-              <IconButton aria-label={`Remove ${props.displayValue ? props.displayValue(item) : item}`} name='delete' variant='standard' size='xsmall' icon={`${'fi-rr-cross-small'}`} className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)} />
-            </div>
-          ))}
-      </div>
+      <div className={`flex flex-wrap gap-2 ${selectedItems.length > 0 ? 'mb-2' : ''}`}>{selectedItems.length > 0 && selectedItems.map((item) => <Chip key={itemKey ? itemKey(item) : item} onDelete={() => handleRemoveItem(item)} label={props.displayValue ? props.displayValue(item) : item} size='medium' />)}</div>
       <ComboboxButton as='div' className={`flex w-full items-center rounded-md border p-3 text-controls-placeholder-text outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state]} ${focus[state]}`}>
         <div className='flex w-full flex-row'>
           <ComboboxInput className='w-full grow bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60' onClick={callAll(stopPropagation, onClick)} ref={ref} {...props} />
