@@ -52,7 +52,7 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...pro
           selectedItems.map((item) => (
             <div key={itemKey ? itemKey(item) : item} className='flex flex-row items-center gap-2 rounded border border-neutral-detail-pale px-1 py-1.5 text-controls-placeholder-text'>
               <span> {props.displayValue ? props.displayValue(item) : item} </span>
-              <IconButton name='delete' variant='standard' size='xsmall' icon={`${'fi-rr-cross-small'}`} className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)} />
+              <IconButton aria-label={`Remove ${props.displayValue ? props.displayValue(item) : item}`} name='delete' variant='standard' size='xsmall' icon={`${'fi-rr-cross-small'}`} className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)} />
             </div>
           ))}
       </div>
