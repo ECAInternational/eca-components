@@ -1,7 +1,6 @@
-import React from 'react';
-import { Select as HeadlessSelect, SelectProps as HeadlessSelectProps } from '@headlessui/react';
+import React, { SelectHTMLAttributes } from 'react';
 
-export type SelectProps = Omit<HeadlessSelectProps, 'size'> & {
+export type SelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'> & {
   children: React.ReactNode;
   state?: 'default' | 'error' | 'warning';
   variant?: 'outline' | 'tonal';
@@ -55,9 +54,9 @@ export function Select(props: SelectProps) {
 
   return (
     <div className='relative flex'>
-      <HeadlessSelect name={name} value={value} onChange={onChange} className={`flex w-full appearance-none items-center rounded-md border text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled disabled:outline-0 ${hover[state]} ${border[state][variant]} ${padding[state][size]} ${focus[state]} ${className}`} {...rest}>
+      <select name={name} value={value} onChange={onChange} className={`flex w-full appearance-none items-center rounded-md border text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-mid disabled:cursor-not-allowed disabled:border-neutral-detail-paler disabled:bg-neutral-layer-1 disabled:text-controls-content-disabled disabled:outline-0 ${hover[state]} ${border[state][variant]} ${padding[state][size]} ${focus[state]} ${className}`} {...rest}>
         {children}
-      </HeadlessSelect>
+      </select>
       <div className={`pointer-events-none absolute ${size === 'medium' ? 'right-1.5' : 'right-0'} top-0 flex h-full items-center`}>
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center text-states-warning' />}
         {state === 'error' && <i className='fi fi-rr-exclamation flex items-center text-states-error' />}

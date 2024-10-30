@@ -148,7 +148,7 @@ const defaultRender = ({ name, state, label, description, disabled, variant }: {
     <Label>
       {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
     </Label>
-    <Select id={name} state={state} variant={variant} aria-label='asd'>
+    <Select id={name} state={state} variant={variant}>
       {people.map((person) => (
         <option key={person.id} value={person.name} disabled={person.unavailable}>
           {person.name}
