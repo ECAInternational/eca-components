@@ -1,5 +1,6 @@
-import React, { useState, useRef, useLayoutEffect, useEffect, ReactNode } from 'react';
+import React, { useState, useRef, useEffect, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
+import useIsomorphicLayoutEffect from '../utils/use-isomorphic-layout-effect.ts';
 
 export interface TooltipProps {
   content: string;
@@ -14,9 +15,6 @@ export interface TooltipProps {
   disableHoverListener?: boolean;
   disableFocusListener?: boolean;
 }
-
-const isClient = () => typeof window !== 'undefined';
-const useIsomorphicLayoutEffect = isClient() ? useLayoutEffect : useEffect;
 
 export function Tooltip(props: TooltipProps) {
   const { content, icon = '', state = 'neutral', size = 'small', position = 'bottom', delay = 0, children, className, style, disableHoverListener, disableFocusListener } = props;
