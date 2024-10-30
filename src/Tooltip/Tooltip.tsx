@@ -15,6 +15,9 @@ export interface TooltipProps {
   disableFocusListener?: boolean;
 }
 
+const isClient = () => typeof window !== 'undefined';
+const useIsomorphicLayoutEffect = isClient() ? useLayoutEffect : useEffect;
+
 export function Tooltip(props: TooltipProps) {
   const { content, icon = '', state = 'neutral', size = 'small', position = 'bottom', delay = 0, children, className, style, disableHoverListener, disableFocusListener } = props;
 
@@ -77,7 +80,7 @@ export function Tooltip(props: TooltipProps) {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     let x = 0;
     let y = 0;
     if (visible) {
@@ -118,7 +121,7 @@ export function Tooltip(props: TooltipProps) {
     setTransform({ x, y });
   }, [visible, content]);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setTooltipID(`tooltip-${Math.random().toString(36).substring(2, 15)}`);
   }, [visible]);
 
