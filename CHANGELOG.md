@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/ECAInternational/eca-components/compare/v2.10.10...v3.0.0) (2024-10-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update HeadlessUI to v2 ([#377](https://github.com/ECAInternational/eca-components/issues/377))
+
+### Features
+
+* Update HeadlessUI to v2 ([#377](https://github.com/ECAInternational/eca-components/issues/377)) ([e8c6237](https://github.com/ECAInternational/eca-components/commit/e8c623704991e987bd1cdb28820da2607aac85ce))
+
 ## [2.10.10](https://github.com/ECAInternational/eca-components/compare/v2.10.9...v2.10.10) (2024-10-30)
 
 
