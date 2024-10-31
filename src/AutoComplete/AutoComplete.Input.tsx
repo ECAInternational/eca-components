@@ -3,6 +3,7 @@ import React, { ComponentProps, ForwardedRef, forwardRef } from 'react';
 import { useAutoCompleteContext } from './AutoComplete.tsx';
 import { IconButton } from '../IconButton/IconButton.tsx';
 import { Chip } from '../Chip/Chip.tsx';
+import { callAll } from '../utils/call-all.ts';
 
 type AutoCompleteInputProps = ComponentProps<typeof ComboboxInput> & {
   state: 'default' | 'error' | 'warning';
@@ -34,6 +35,11 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...pro
     selectedItems = value;
   }
 
+  const stopPropagation = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.currentTarget?.select();
+    if (open) e.stopPropagation();
+  };
+
   // Handler to remove item
   const handleRemoveItem = (item: any) => {
     onChange(selectedItems.filter((selectedItem) => selectedItem !== item));
@@ -43,7 +49,7 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...pro
     <>
       <div className={`flex flex-wrap gap-2 ${selectedItems.length > 0 ? 'mb-2' : ''}`}>{selectedItems.length > 0 && selectedItems.map((item) => <Chip key={itemKey ? itemKey(item) : item} onDelete={() => handleRemoveItem(item)} label={props.displayValue ? props.displayValue(item) : item} size='medium' />)}</div>
       <div className={`relative flex items-center rounded-md border bg-default-transparent text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-lighter focus-visible:outline-0 disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60 has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state]} ${focus[state]}`}>
-        <ComboboxInput className='w-full border-0 bg-default-transparent p-3 outline-0' ref={ref} {...props} />
+        <ComboboxInput className='w-full border-0 bg-default-transparent p-3 outline-0' ref={ref} {...props} onClick={callAll(stopPropagation, onClick)} />
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
         {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
         <ComboboxButton className='flex'>
