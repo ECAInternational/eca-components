@@ -9,7 +9,7 @@ export interface AutoCompleteProps extends Omit<ComponentProps<typeof Combobox>,
 
 export function AutoComplete({ multiple, itemKey, children, onChange, value, ...rest }: AutoCompleteProps) {
   return (
-    <Combobox {...rest} multiple={!!multiple as any} value={value} onChange={onChange}>
+    <Combobox immediate multiple={!!multiple as any} value={value} onChange={onChange} {...rest}>
       {(props) => {
         const contextValue = useMemo(() => ({ ...props, multiple, onChange, itemKey }), [props, multiple, onChange]);
         return <AutoCompleteContext.Provider value={contextValue}>{children}</AutoCompleteContext.Provider>;
