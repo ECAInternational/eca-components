@@ -1,5 +1,6 @@
-import React, { useState, useRef, useLayoutEffect, useEffect, ReactNode } from 'react';
+import React, { useState, useRef, useEffect, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
+import useIsomorphicLayoutEffect from '../utils/use-isomorphic-layout-effect.ts';
 
 export interface TooltipProps {
   content: string;
@@ -77,7 +78,7 @@ export function Tooltip(props: TooltipProps) {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     let x = 0;
     let y = 0;
     if (visible) {
@@ -118,7 +119,7 @@ export function Tooltip(props: TooltipProps) {
     setTransform({ x, y });
   }, [visible, content]);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setTooltipID(`tooltip-${Math.random().toString(36).substring(2, 15)}`);
   }, [visible]);
 

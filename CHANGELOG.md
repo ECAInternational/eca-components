@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.10](https://github.com/ECAInternational/eca-components/compare/v2.10.9...v2.10.10) (2024-10-30)
+
+
+### Bug Fixes
+
+* Stop useLayoutEffect rendering server side ([#382](https://github.com/ECAInternational/eca-components/issues/382)) ([7983191](https://github.com/ECAInternational/eca-components/commit/7983191396689db5b7defa64c5ffd4aeae8fe6c9))
+
 ## [2.10.9](https://github.com/ECAInternational/eca-components/compare/v2.10.8...v2.10.9) (2024-10-21)
 
 
