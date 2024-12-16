@@ -44,10 +44,10 @@
     "@headlessui/react": "^2.1.10",
     "@playwright/test": "^1.41.2",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-typescript": "^12.1.2",
     "@storybook/addon-a11y": "^8.2.8",
     "@storybook/addon-actions": "^8.2.8",
     "@storybook/addon-essentials": "^8.2.8",
@@ -117,7 +117,7 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.20.0"
+    "@rollup/rollup-linux-x64-gnu": "^4.28.1"
   },
   "peerDependenciesMeta": {
     "react": {
