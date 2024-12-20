@@ -178,18 +178,17 @@ export const DeletableNeutral = {
   }
 };
 
-export const DeletableClick = {
+export const DeletableClick: { args: ChipProps; play: () => Promise<void> } = {
   args: {
     label: 'Deletable',
-    onDelete: fn()
+    onDelete: fn(),
+    size: 'xsmall'
   },
-  play: async ({ args, canvasElement, step }: { args: ChipProps; canvasElement: any; step: any }) => {
-    const canvas = within(canvasElement);
+  play: async () => {
+    const canvas = within(document.body);
 
-    await step('Click', async () => {
-      await userEvent.click(canvas.getByRole('button'));
-      await waitFor(() => expect(args.onDelete).toHaveBeenCalled());
-    });
+    await userEvent.click(canvas.getByRole('button'));
+    await waitFor(() => expect(DeletableClick.args.onDelete).toHaveBeenCalled());
   }
 };
 

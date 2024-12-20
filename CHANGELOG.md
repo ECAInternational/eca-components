@@ -1,5 +1,51 @@
 # Changelog
 
+## [3.0.0](https://github.com/ECAInternational/eca-components/compare/v2.10.10...v3.0.0) (2024-10-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update HeadlessUI to v2 ([#377](https://github.com/ECAInternational/eca-components/issues/377))
+
+### Features
+
+* Update HeadlessUI to v2 ([#377](https://github.com/ECAInternational/eca-components/issues/377)) ([e8c6237](https://github.com/ECAInternational/eca-components/commit/e8c623704991e987bd1cdb28820da2607aac85ce))
+
+## [2.10.10](https://github.com/ECAInternational/eca-components/compare/v2.10.9...v2.10.10) (2024-10-30)
+
+
+### Bug Fixes
+
+* Stop useLayoutEffect rendering server side ([#382](https://github.com/ECAInternational/eca-components/issues/382)) ([7983191](https://github.com/ECAInternational/eca-components/commit/7983191396689db5b7defa64c5ffd4aeae8fe6c9))
+
+## [2.10.9](https://github.com/ECAInternational/eca-components/compare/v2.10.8...v2.10.9) (2024-10-21)
+
+
+### Bug Fixes
+
+* add auto complete story for using objects. ([#375](https://github.com/ECAInternational/eca-components/issues/375)) ([1373bac](https://github.com/ECAInternational/eca-components/commit/1373bacad6bcf1ef46caf83ed22c9cd3b40486e3))
+
+## [2.10.8](https://github.com/ECAInternational/eca-components/compare/v2.10.7...v2.10.8) (2024-10-21)
+
+
+### Bug Fixes
+
+* bump version ([#373](https://github.com/ECAInternational/eca-components/issues/373)) ([847283e](https://github.com/ECAInternational/eca-components/commit/847283e3e265d9d8911b78ec7d29051e1ab590d4))
+
+## [2.10.7](https://github.com/ECAInternational/eca-components/compare/v2.10.6...v2.10.7) (2024-10-21)
+
+
+### Bug Fixes
+
+* remove relative positioning and move nav styling into project ([#367](https://github.com/ECAInternational/eca-components/issues/367)) ([fecff05](https://github.com/ECAInternational/eca-components/commit/fecff05e8a0204b9365b9a21d30ac2920b04adff))
+
+## [2.10.6](https://github.com/ECAInternational/eca-components/compare/v2.10.5...v2.10.6) (2024-10-18)
+
+
+### Bug Fixes
+
+* Update package.lock ([#364](https://github.com/ECAInternational/eca-components/issues/364)) ([52e8136](https://github.com/ECAInternational/eca-components/commit/52e8136267131f4a9d6ab993f09d0fec8c18ac26))
+
 ## [2.10.5](https://github.com/ECAInternational/eca-components/compare/v2.10.4...v2.10.5) (2024-10-17)
 
 

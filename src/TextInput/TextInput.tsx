@@ -47,7 +47,7 @@ export function TextInput(props: TextInputProps) {
   const isPasswordInput = type === 'password';
 
   return (
-    <span className={`relative flex rounded-md border ${isPasswordInput ? 'py-1.5 pe-1 ps-3' : 'p-3'} text-controls-placeholder-text outline outline-2 outline-offset-2 outline-default-transparent transition has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state][variant]} ${focus[state]}`}>
+    <span className={`flex rounded-md border ${isPasswordInput ? 'py-1.5 pe-1 ps-3' : 'p-3'} text-controls-placeholder-text outline outline-2 outline-offset-2 outline-default-transparent transition has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state][variant]} ${focus[state]}`}>
       {prefix && <span className='flex items-center pe-1 paragraph-sm-heavier'>{prefix}</span>}
       {icon && <i className={`fi ${icon} flex items-center pe-2.5 text-neutral-detail-bold`} />}
 
