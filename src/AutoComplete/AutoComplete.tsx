@@ -3,14 +3,15 @@ import { Combobox } from '@headlessui/react';
 
 export interface AutoCompleteProps extends Omit<ComponentProps<typeof Combobox>, 'multiple' | 'children' | 'defaultValue'> {
   multiple?: boolean;
+  itemKey?: (a: unknown) => string;
   children: React.ReactNode;
 }
 
-export function AutoComplete({ multiple, children, onChange, value, ...rest }: AutoCompleteProps) {
+export function AutoComplete({ multiple, itemKey, children, onChange, value, ...rest }: AutoCompleteProps) {
   return (
-    <Combobox {...rest} multiple={!!multiple as any} value={value} onChange={onChange}>
+    <Combobox immediate multiple={!!multiple as any} value={value} onChange={onChange} {...rest}>
       {(props) => {
-        const contextValue = useMemo(() => ({ ...props, multiple, onChange }), [props, multiple, onChange]);
+        const contextValue = useMemo(() => ({ ...props, multiple, onChange, itemKey }), [props, multiple, onChange]);
         return <AutoCompleteContext.Provider value={contextValue}>{children}</AutoCompleteContext.Provider>;
       }}
     </Combobox>
@@ -24,6 +25,7 @@ type ComboboxRenderPropArg<TValue, TActive = TValue> = {
   activeOption: TActive | null;
   value: TValue;
   onChange: any;
+  itemKey?: (a: unknown) => string;
   multiple?: boolean;
 };
 

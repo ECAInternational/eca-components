@@ -1,5 +1,6 @@
-import React, { useState, useRef, useLayoutEffect, useEffect, ReactNode } from 'react';
+import React, { useState, useRef, useEffect, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
+import useIsomorphicLayoutEffect from '../utils/use-isomorphic-layout-effect.ts';
 
 export interface TooltipProps {
   content: string;
@@ -77,7 +78,7 @@ export function Tooltip(props: TooltipProps) {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     let x = 0;
     let y = 0;
     if (visible) {
@@ -118,7 +119,7 @@ export function Tooltip(props: TooltipProps) {
     setTransform({ x, y });
   }, [visible, content]);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setTooltipID(`tooltip-${Math.random().toString(36).substring(2, 15)}`);
   }, [visible]);
 
@@ -151,7 +152,7 @@ export function Tooltip(props: TooltipProps) {
   const tooltip = (
     <div ref={tooltipRef} className={`leading-none absolute left-0 top-0 border will-change-transform ${states[state]} ${sizes[size]}`} role='tooltip' id={tooltipID} style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}>
       <div className={`absolute z-0 size-2.5 rotate-45 ${states[state]} ${positions[position]}`} />
-      <span className='relative flex'>
+      <span className='flex'>
         {icon && <i className={`fi ${icon} ${iconStates[state]} flex items-center pe-1`} />}
         <span>{content}</span>
       </span>

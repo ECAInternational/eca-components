@@ -1,10 +1,10 @@
-import { Menu } from '@headlessui/react';
+import { MenuButton as HeadlessMenuButton } from '@headlessui/react';
 import React, { ComponentPropsWithRef } from 'react';
 
-export function MenuButton({ className, children, as, ...props }: ComponentPropsWithRef<typeof Menu.Button>) {
+export function MenuButton({ className, children, as, ...props }: ComponentPropsWithRef<typeof HeadlessMenuButton>) {
   return (
-    <Menu.Button as={as ?? 'button'} className={`inline-flex rounded-md ${className}`} {...props}>
+    <HeadlessMenuButton as={as ?? 'button'} className={`inline-flex rounded-md ${className}`} {...props}>
       {children}
-    </Menu.Button>
+    </HeadlessMenuButton>
   );
 }

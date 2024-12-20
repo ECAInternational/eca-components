@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Select } from './Select.tsx';
-import { SelectButton } from './Select.Button.tsx';
-import { SelectOptions } from './Select.Options.tsx';
-import { SelectOption } from './Select.Option.tsx';
 import { FieldSet, Label } from '../Form/index.ts';
-import { SelectOptionGroup } from './Select.OptionGroup.tsx';
 
 type Person = { id: number; name: string; unavailable: boolean };
 
@@ -63,9 +59,6 @@ export default {
     className: {
       table: { disable: true }
     },
-    multiple: {
-      table: { disable: true }
-    },
     ref: {
       table: { disable: true }
     },
@@ -103,62 +96,20 @@ export const Default = {
     size: 'medium',
     disabled: false
   },
-  render: ({ name, state, label, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean; variant?: 'outline' | 'tonal'; size: 'small' | 'medium' }) => {
-    const [selectedPerson, setSelectedPerson] = useState<Person>(people[0]);
-
-    return (
-      <div className='h-72'>
-        <FieldSet disabled={disabled}>
-          <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <SelectButton state={state} variant={variant} size={size}>
-              {selectedPerson.name}
-            </SelectButton>
-            <SelectOptions>
-              {people.map((person) => (
-                <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-                  {person.name}
-                </SelectOption>
-              ))}
-            </SelectOptions>
-          </Select>
-        </FieldSet>
-      </div>
-    );
-  }
-};
-
-export const Multiple = {
-  args: {
-    name: 'multiple-select',
-    state: 'default',
-    label: 'Label'
-  },
-  render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => {
-    const [selectedPeople, setSelectedPeople] = useState<Person[]>([]);
-
-    return (
-      <div className='h-72'>
-        <FieldSet>
-          <Select name={name} value={selectedPeople} onChange={setSelectedPeople} multiple>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <SelectButton state={state}> {selectedPeople.map((p) => p.name).join(', ')}</SelectButton>
-            <SelectOptions>
-              {people.map((person) => (
-                <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-                  {person.name}
-                </SelectOption>
-              ))}
-            </SelectOptions>
-          </Select>
-        </FieldSet>
-      </div>
-    );
-  }
+  render: ({ name, state, label, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean; variant?: 'outline' | 'tonal'; size?: 'small' | 'medium' }) => (
+    <FieldSet disabled={disabled}>
+      <Label>
+        {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <Select id={name} size={size} state={state} variant={variant}>
+        {people.map((person) => (
+          <option key={person.id} value={person.name} disabled={person.unavailable}>
+            {person.name}
+          </option>
+        ))}
+      </Select>
+    </FieldSet>
+  )
 };
 
 export const Groups = {
@@ -167,66 +118,55 @@ export const Groups = {
     state: 'default',
     label: 'Label'
   },
-  render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => {
-    const [selectedValue, setSelectedValue] = useState<string>(colours[0]);
-
-    return (
-      <div className='h-72'>
-        <FieldSet>
-          <Select name={name} value={selectedValue} onChange={setSelectedValue}>
-            <Label>
-              {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
-            </Label>
-            <SelectButton state={state}>{selectedValue}</SelectButton>
-            <SelectOptions>
-              <SelectOptionGroup label='Colours'>
-                {colours.map((colour) => (
-                  <SelectOption key={colour} value={colour}>
-                    {colour}
-                  </SelectOption>
-                ))}
-              </SelectOptionGroup>
-              <SelectOptionGroup label='Animals'>
-                {animals.map((animal) => (
-                  <SelectOption key={animal} value={animal}>
-                    {animal}
-                  </SelectOption>
-                ))}
-              </SelectOptionGroup>
-            </SelectOptions>
-          </Select>
-        </FieldSet>
-      </div>
-    );
-  }
+  render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => (
+    <FieldSet>
+      <Label>
+        {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <Select id={name} state={state}>
+        <optgroup label='Colours'>
+          {colours.map((colour) => (
+            <option key={colour} value={colour}>
+              {colour}
+            </option>
+          ))}
+        </optgroup>
+        <optgroup label='Animals'>
+          {animals.map((animal) => (
+            <option key={animal} value={animal}>
+              {animal}
+            </option>
+          ))}
+        </optgroup>
+      </Select>
+    </FieldSet>
+  )
 };
 
-const defaultRender = ({ name, state, label, description, disabled, variant }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean; variant?: 'outline' | 'tonal' }) => {
-  const [selectedPerson, setSelectedPerson] = useState<Person>(people[0]);
+const defaultRender = ({ name, state, label, description, disabled, variant }: { name: string; state: 'default' | 'error' | 'warning'; label: string; description: string; disabled?: boolean; variant?: 'outline' | 'tonal' }) => (
+  <FieldSet disabled={disabled} className='w-40'>
+    <Label>
+      {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
+    </Label>
+    <Select id={name} state={state} variant={variant}>
+      {people.map((person) => (
+        <option key={person.id} value={person.name} disabled={person.unavailable}>
+          {person.name}
+        </option>
+      ))}
+    </Select>
+  </FieldSet>
+);
 
-  return (
-    <div className={`${disabled ? 'h-24' : 'h-72'}`}>
-      <FieldSet disabled={disabled}>
-        <Select name={name} value={selectedPerson} onChange={setSelectedPerson}>
-          <Label>
-            {label} <span className='ps-1 paragraph-sm-lighter'>{description}</span>
-          </Label>
-          <SelectButton state={state} variant={variant}>
-            {selectedPerson.name}
-          </SelectButton>
-          <SelectOptions>
-            {people.map((person) => (
-              <SelectOption key={person.id} value={person} disabled={person.unavailable}>
-                {person.name}
-              </SelectOption>
-            ))}
-          </SelectOptions>
-        </Select>
-      </FieldSet>
-    </div>
-  );
+export const Tonal = {
+  args: {
+    name: 'tonal-select',
+    state: 'default',
+    label: 'Label',
+    variant: 'tonal'
+  },
+  render: defaultRender
 };
-
 export const Disabled = {
   args: {
     name: 'disabled-select',
@@ -274,9 +214,20 @@ export const NoLabel = {
   args: {
     name: 'no-label-select',
     state: 'default',
-    placeholder: 'Placeholder text'
+    placeholder: 'Placeholder text',
+    size: 'medium'
   },
-  render: defaultRender
+  render: ({ name, state, disabled, variant, size }: { name: string; state: 'default' | 'error' | 'warning'; disabled: boolean; variant?: 'outline' | 'tonal'; size?: 'small' | 'medium' }) => (
+    <FieldSet disabled={disabled}>
+      <Select id={name} size={size} state={state} variant={variant}>
+        {people.map((person) => (
+          <option key={person.id} value={person.name} disabled={person.unavailable}>
+            {person.name}
+          </option>
+        ))}
+      </Select>
+    </FieldSet>
+  )
 };
 
 export const Description = {

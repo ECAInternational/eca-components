@@ -1,12 +1,12 @@
-import { Menu } from '@headlessui/react';
+import { MenuItem as HeadlessMenuItem } from '@headlessui/react';
 import React, { ComponentPropsWithRef, PropsWithChildren } from 'react';
 
-export interface MenuItemProps extends Omit<ComponentPropsWithRef<typeof Menu.Item>, 'children'> {}
+export interface MenuItemProps extends Omit<ComponentPropsWithRef<typeof HeadlessMenuItem>, 'children'> {}
 
 export function MenuItem({ className, children, ...props }: PropsWithChildren<MenuItemProps>) {
   return (
-    <Menu.Item className={`relative block cursor-pointer select-none p-3 paragraph-sm-lighter ui-checked:ui-not-disabled:bg-controls-highlight-pale ui-selected:ui-not-disabled:bg-controls-highlight-palest ui-active:ui-not-disabled:bg-controls-highlight-paler ${className}`} {...props}>
+    <HeadlessMenuItem className={`block cursor-pointer select-none p-3 paragraph-sm-lighter data-[active]:bg-controls-highlight-paler data-[checked]:bg-controls-highlight-pale data-[selected]:bg-controls-highlight-palest ${className}`} {...props}>
       {children}
-    </Menu.Item>
+    </HeadlessMenuItem>
   );
 }

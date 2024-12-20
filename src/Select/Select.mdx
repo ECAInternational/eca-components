@@ -1,8 +1,5 @@
 import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
 import * as Select from './Select.stories.tsx';
-import Design from './design.md?raw';
-
-import { Markdown } from '@storybook/blocks';
 
 <Meta of={Select} />
 <Title>Components/Select</Title>
@@ -11,11 +8,9 @@ import { Markdown } from '@storybook/blocks';
 <Primary />
 <Controls />
 
-<Markdown>{Design}</Markdown>
+### Tonal
 
-### Multiple
-
-<Canvas of={Select.Multiple} />
+<Canvas of={Select.Tonal} />
 
 ### Groups
 
@@ -24,6 +19,10 @@ import { Markdown } from '@storybook/blocks';
 ### Disabled
 
 <Canvas of={Select.Disabled} />
+
+### Disabled Tonal
+
+<Canvas of={Select.DisabledTonal} />
 
 ### Warning
 
