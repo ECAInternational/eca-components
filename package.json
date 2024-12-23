@@ -35,10 +35,10 @@
     "test-storybook": "test-storybook --maxWorkers=2"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.3",
-    "@babel/preset-react": "^7.24.7",
-    "@babel/preset-typescript": "^7.24.7",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
     "@chromatic-com/storybook": "^1.6.1",
     "@ecainternational/eca-design-tokens": "^1.4.0",
     "@headlessui/react": "^2.1.10",
@@ -117,7 +117,7 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.28.1"
+    "@rollup/rollup-linux-x64-gnu": "^4.29.1"
   },
   "peerDependenciesMeta": {
     "react": {
