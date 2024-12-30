@@ -42,7 +42,7 @@
     "@chromatic-com/storybook": "^3.2.3",
     "@ecainternational/eca-design-tokens": "^1.4.0",
     "@headlessui/react": "^2.1.10",
-    "@playwright/test": "^1.41.2",
+    "@playwright/test": "^1.49.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
