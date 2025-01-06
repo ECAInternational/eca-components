@@ -73,7 +73,7 @@
     "@vitest/coverage-v8": "^1.5.3",
     "autoprefixer": "^10.4.20",
     "axe-playwright": "^2.0.1",
-    "boxen": "^7.1.1",
+    "boxen": "^8.0.1",
     "chromatic": "^10.3.1",
     "clean-publish": "^4.2.0",
     "daisyui": "^4.7.3",
