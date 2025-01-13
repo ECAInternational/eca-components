@@ -64,7 +64,7 @@
     "@storybook/theming": "^8.2.8",
     "@tanstack/react-ranger": "^0.0.4",
     "@testing-library/jest-dom": "^6.4.8",
-    "@testing-library/react": "^16.0.0",
+    "@testing-library/react": "^16.1.0",
     "@types/react-dom": "^18.2.22",
     "@types/rollup-plugin-peer-deps-external": "^2.2.5",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
