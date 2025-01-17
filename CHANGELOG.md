@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/ECAInternational/eca-components/compare/v3.0.0...v3.0.1) (2025-01-17)
+
+
+### Bug Fixes
+
+* Bump version to invoke a release + deploy ([#431](https://github.com/ECAInternational/eca-components/issues/431)) ([edd5975](https://github.com/ECAInternational/eca-components/commit/edd5975930c1ec470164483d59d218f3fcc0ff7e))
+
 ## [3.0.0](https://github.com/ECAInternational/eca-components/compare/v2.10.10...v3.0.0) (2024-10-31)
 
 
