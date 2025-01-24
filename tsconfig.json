@@ -1,6 +1,8 @@
 ﻿{
   "include": ["**/*.ts", "**/*.tsx", "postcss.config.mjs"],
   "compilerOptions": {
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -15,8 +17,6 @@
     "declaration": true,
     "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    "skipLibCheck": true
   }
 }
