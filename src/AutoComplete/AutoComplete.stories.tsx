@@ -80,7 +80,8 @@ export const Default = {
     name: 'default-button',
     state: 'default',
     label: 'Label',
-    disabled: false
+    disabled: false,
+    autoComplete: 'off'
   },
   render: ({ name, state, label, disabled }: { name: string; state: 'default' | 'error' | 'warning'; label: string; disabled: boolean }) => {
     const [selectedPerson, setSelectedPerson] = useState('');

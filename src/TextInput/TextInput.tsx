@@ -11,10 +11,11 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: string;
   prefix?: string;
   suffix?: string;
+  autoComplete?:'on'|'off';
 }
 
 export function TextInput(props: TextInputProps) {
-  const { name, id, variant = 'outline', state = 'default', type = 'text', disabled, icon, prefix, suffix, className, ...others } = props;
+  const { name, id, variant = 'outline', state = 'default', type = 'text', disabled, icon, prefix, suffix, className, autoComplete, ...others } = props;
   const [revealPassword, setRevealPassword] = useState(false);
 
   const border = {
@@ -51,7 +52,7 @@ export function TextInput(props: TextInputProps) {
       {prefix && <span className='flex items-center pe-1 paragraph-sm-heavier'>{prefix}</span>}
       {icon && <i className={`fi ${icon} flex items-center pe-2.5 text-neutral-detail-bold`} />}
 
-      <input id={id || name} name={name} type={revealPassword ? 'text' : type} disabled={disabled} {...others} className={`w-full rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60 [&::-ms-reveal]:hidden ${className}`} />
+      <input id={id || name} name={name} type={revealPassword ? 'text' : type} disabled={disabled} {...others} className={`w-full rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60 [&::-ms-reveal]:hidden ${className}`} autoComplete={autoComplete}/>
       {suffix && <span className='flex items-center pe-2.5 paragraph-sm-heavier'>{suffix}</span>}
       {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
       {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}

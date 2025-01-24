@@ -43,7 +43,8 @@ export const Default = {
   args: {
     name: 'default-input',
     state: 'default',
-    placeholder: 'Placeholder text'
+    placeholder: 'Placeholder text',
+    autoComplete: 'off'
   }
 };
 
