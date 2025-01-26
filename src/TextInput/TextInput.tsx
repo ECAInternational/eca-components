@@ -11,10 +11,11 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: string;
   prefix?: string;
   suffix?: string;
+  autoComplete?: 'on' | 'off';
 }
 
 export function TextInput(props: TextInputProps) {
-  const { name, id, variant = 'outline', state = 'default', type = 'text', disabled, icon, prefix, suffix, className, ...others } = props;
+  const { name, id, variant = 'outline', state = 'default', type = 'text', disabled, icon, prefix, suffix, className, autoComplete = 'off', ...others } = props;
   const [revealPassword, setRevealPassword] = useState(false);
 
   const border = {
