@@ -10,7 +10,7 @@ type AutoCompleteInputProps = ComponentProps<typeof ComboboxInput> & {
   autoComplete?: 'on' | 'off';
 };
 
-export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...props }: AutoCompleteInputProps, ref: ForwardedRef<HTMLInputElement>) => {
+export const AutoCompleteInput = forwardRef(({ state, className, onClick, autoComplete = 'off', ...props }: AutoCompleteInputProps, ref: ForwardedRef<HTMLInputElement>) => {
   const { open, value, multiple, onChange, itemKey } = useAutoCompleteContext();
 
   const border = {
