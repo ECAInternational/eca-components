@@ -56,12 +56,12 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, autoCo
   return (
     <>
       <div className={`flex flex-wrap gap-2 ${selectedItems.length > 0 ? 'mb-2' : ''}`}>{selectedItems.length > 0 && selectedItems.map((item) => <Chip key={itemKey ? itemKey(item) : item} onDelete={() => handleRemoveItem(item)} label={props.displayValue ? props.displayValue(item) : item} size="medium" />)}</div>
-      <div className={`relative flex items-center rounded-md border bg-default-transparent text-neutral-body outline outline-2 outline-offset-2 outline-default-transparent transition paragraph-sm-lighter focus-visible:outline-0 disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60 has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0 ${hover[state]} ${border[state]} ${focus[state]}`}>
-        <ComboboxInput className="w-full border-0 bg-default-transparent p-3 outline-0" ref={ref} {...inputProps} onClick={callAll(stopPropagation, onClick)} />
-        {state === 'warning' && <i className="fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning" />}
-        {state === 'error' && <i className="fi fi-rr-exclamation flex items-center ps-3 text-states-error" />}
-        <ComboboxButton className="flex">
-          <IconButton name="open" variant="standard" size="xsmall" icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className="my-px rounded-full p-1" />
+      <div className={`bg-default-transparent text-neutral-body outline-default-transparent paragraph-sm-lighter disabled:bg-neutral-layer-1 disabled:placeholder:text-controls-content-disabled has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled relative flex items-center rounded-md border outline outline-2 outline-offset-2 transition focus-visible:outline-0 disabled:cursor-not-allowed disabled:text-opacity-60 disabled:placeholder:text-opacity-60 has-[:disabled]:outline-0 ${hover[state]} ${border[state]} ${focus[state]}`}>
+        <ComboboxInput className='bg-default-transparent w-full border-0 p-3 outline-0' ref={ref} {...inputProps} onClick={callAll(stopPropagation, onClick)} />
+        {state === 'warning' && <i className='fi fi-rr-triangle-warning text-states-warning flex items-center ps-3' />}
+        {state === 'error' && <i className='fi fi-rr-exclamation text-states-error flex items-center ps-3' />}
+        <ComboboxButton className='flex'>
+          <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className='my-px rounded-full p-1' />
         </ComboboxButton>
       </div>
     </>
