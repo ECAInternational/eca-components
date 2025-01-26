@@ -11,7 +11,7 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: string;
   prefix?: string;
   suffix?: string;
-  autoComplete?:'on'|'off';
+  autoComplete?: 'on' | 'off';
 }
 
 export function TextInput(props: TextInputProps) {

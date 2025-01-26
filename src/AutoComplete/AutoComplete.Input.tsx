@@ -7,7 +7,7 @@ import { callAll } from '../utils/call-all.ts';
 
 type AutoCompleteInputProps = ComponentProps<typeof ComboboxInput> & {
   state: 'default' | 'error' | 'warning';
-  autoComplete?:'on'|'off';
+  autoComplete?: 'on' | 'off';
 };
 
 export const AutoCompleteInput = forwardRef(({ state, className, onClick, autoComplete='off', ...props }: AutoCompleteInputProps, ref: ForwardedRef<HTMLInputElement>) => {
@@ -50,7 +50,7 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, autoCo
   const inputProps = {
     ...props,
     autoComplete
-  }
+  };
   return (
     <>
       <div className={`flex flex-wrap gap-2 ${selectedItems.length > 0 ? 'mb-2' : ''}`}>{selectedItems.length > 0 && selectedItems.map((item) => <Chip key={itemKey ? itemKey(item) : item} onDelete={() => handleRemoveItem(item)} label={props.displayValue ? props.displayValue(item) : item} size='medium' />)}</div>
