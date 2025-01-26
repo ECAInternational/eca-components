@@ -48,7 +48,6 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, autoCo
     onChange(selectedItems.filter((selectedItem) => selectedItem !== item));
   };
 
-
   const inputProps = {
     ...props,
     autoComplete
