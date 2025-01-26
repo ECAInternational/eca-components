@@ -119,7 +119,8 @@ export const Multiple = {
   args: {
     name: 'default-button',
     state: 'default',
-    label: 'Label'
+    label: 'Label',
+    autoComplete: 'off'
   },
   render: ({ name, state, label }: { name: string; state: 'default' | 'error' | 'warning'; label: string }) => {
     const [selectedPerson, setSelectedPerson] = useState([]);

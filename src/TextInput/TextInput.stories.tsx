@@ -35,7 +35,8 @@ export default {
     disabled: false,
     state: 'default',
     variant: 'outline',
-    type: 'text'
+    type: 'text',
+    autoComplete: 'off'
   }
 };
 
