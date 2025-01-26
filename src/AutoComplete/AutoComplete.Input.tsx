@@ -7,6 +7,7 @@ import { callAll } from '../utils/call-all.ts';
 
 type AutoCompleteInputProps = ComponentProps<typeof ComboboxInput> & {
   state: 'default' | 'error' | 'warning';
+  autoComplete?: 'on' | 'off';
 };
 
 export const AutoCompleteInput = forwardRef(({ state, className, onClick, ...props }: AutoCompleteInputProps, ref: ForwardedRef<HTMLInputElement>) => {
