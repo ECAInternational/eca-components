@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/ECAInternational/eca-components/compare/v3.0.1...v3.1.0) (2025-01-27)
+
+
+### Features
+
+* autocomplete ([#446](https://github.com/ECAInternational/eca-components/issues/446)) ([4435897](https://github.com/ECAInternational/eca-components/commit/4435897ea241415a29998abfba838ced579a796e))
+
 ## [3.0.1](https://github.com/ECAInternational/eca-components/compare/v3.0.0...v3.0.1) (2025-01-17)
 
 
