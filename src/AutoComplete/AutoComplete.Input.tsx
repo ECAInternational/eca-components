@@ -1,7 +1,6 @@
 import { ComboboxButton, ComboboxInput } from '@headlessui/react';
 import React, { ComponentProps, ForwardedRef, forwardRef } from 'react';
 import { useAutoCompleteContext } from './AutoComplete.tsx';
-import { IconButton } from '../IconButton/IconButton.tsx';
 import { Chip } from '../Chip/Chip.tsx';
 import { callAll } from '../utils/call-all.ts';
 
@@ -59,7 +58,7 @@ export const AutoCompleteInput = forwardRef(({ state, className, onClick, autoCo
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
         {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
         <ComboboxButton className='flex'>
-          <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className='my-px rounded-full p-1' />
+          <i className={`my-px rounded-full p-1 m-1 text-sm flex items-center justify-center ${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} />
         </ComboboxButton>
       </div>
     </>
