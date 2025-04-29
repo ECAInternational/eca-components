@@ -4,7 +4,7 @@ export interface ChipProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   size: 'xsmall' | 'small' | 'medium';
   variant?: 'vis-1' | 'vis-2' | 'vis-3' | 'vis-4' | 'vis-5' | 'vis-6' | 'vis-7' | 'monochrome' | 'neutral';
-  onDelete?: () => void;
+  onDelete?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export function Chip(props: ChipProps) {
@@ -45,7 +45,7 @@ export function Chip(props: ChipProps) {
       <span>{label}</span>
       {onDelete && (
         <button onClick={onDelete} aria-label={`Delete ${label}`} className={`flex items-center justify-center rounded-sm ${close[variant]} opacity-50 hover:opacity-70 focus-visible:outline focus-visible:outline-neutral-detail-boldest active:opacity-60`}>
-          <i className='fi fi-rr-cross-small size-3.5' />
+          <i className="fi fi-rr-cross-small size-3.5" />
         </button>
       )}
     </span>
