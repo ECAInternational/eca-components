@@ -58,7 +58,9 @@ export const globalTypes = {
     defaultValue: {
       list: [
         { name: 'ECA Light', dataTheme: 'eca-light', color: '#ffffff' },
-        { name: 'ECA Dark', dataTheme: 'eca-dark', color: '#000000' }
+        { name: 'ECA Dark', dataTheme: 'eca-dark', color: '#000000' },
+        { name: 'Heineken Light', dataTheme: 'heineken-light', color: '#ffffff' },
+        { name: 'Heineken Dark', dataTheme: 'heineken-dark', color: '#000000' }
       ]
     }
   }
